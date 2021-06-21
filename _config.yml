@@ -24,7 +24,7 @@ pretty_urls:
 
 backup:
   type: git
-  theme: hexo-theme-matery
+  #theme: hexo-theme-matery
   repository:
     github: git@github.com:chungchris/chungchris.github.io.git,backup
 
