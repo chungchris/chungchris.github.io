@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -394,12 +396,12 @@
                                 <span class="chip bg-color">software</span>
                             </a>
                         
-                            <a href="/tags/coding/">
-                                <span class="chip bg-color">coding</span>
-                            </a>
-                        
                             <a href="/tags/python/">
                                 <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/coding/">
+                                <span class="chip bg-color">coding</span>
                             </a>
                         
                             <a href="/tags/multithread/">
@@ -441,7 +443,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4.1k
+                    4k
                 </div>
                 
 
@@ -468,6 +470,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -476,11 +483,11 @@
 <p>基本上並不建議混用 <code>threading</code> 和 <code>asyncio</code>，但依然會有本篇的需求原因是，即使單一 app/module 沒有混用 <code>threading</code> 和 <code>asyncio</code>，也會有需要和其他 app/module 互動的狀況。<br>身為一個採用 asyncio 設計的應用程式，如何安全的使用其他應用提供的接口，以及如何提供安全的接口給其他應用使用，是本篇的撰寫動機。</p>
 <p>之所以會有這篇整理是因為，若我們要用 <code>asyncio</code> 用來取代 multithread，會有一個關鍵差異是，multithread 仰賴於 CPU 分時，所以當各項任務跑在各個 thread，基本上如果哪個任務佔住了 CPU（就比如 time.sleep()），其實他終究無法真正獨佔住 CPU 那麼長時間，因為還有底層的 CPU 分時和 multicore 在運作，這不是他能控制的。但 asyncio 就不一樣了，他跑在單一 thread，在一個 event loop 上輪流執行多項任務，所以如果某個任務卡住了 event loop，那 loop 中排程的其他任務也就都被卡著無法執行了。所以，從不影響其他任務的角度來說，我們在使用 <code>asyncio</code> 時，要儘量避免有 blocking 的狀況，要改以 aysncio style 的 blocking，也就是說該 flow 是 block 住了，但事實上不會佔住 event loop 不釋放，讓其他 task 得以繼續在 event loop 上被執行。</p>
 <p>（本篇假設為 Pyhton 3.5 以後，所以不會看到 yield）</p>
-<br />
+<br>
 
 <p>使用 asyncio 會有以下三種情境</p>
 <h2 id="三種情境"><a href="#三種情境" class="headerlink" title="三種情境"></a>三種情境</h2><p>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)<br>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果<br>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</p>
-<br />
+<br>
 
 <hr>
 <h2 id="A-在-event-loop-中跑某個-task-時，想要將另一件-task-也排程進-event-loop-被執行-沒有跨-thread"><a href="#A-在-event-loop-中跑某個-task-時，想要將另一件-task-也排程進-event-loop-被執行-沒有跨-thread" class="headerlink" title="A.在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)"></a>A.在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</h2><p>假設現在正在跑的程式段叫做主線任務，我們可以觸發一個支線任務，支線任務其實就是一個 function call。主線任務與支線任務的關係有兩種，一種是不需要等待支線任務結束，也就是說只要觸發就行了，主線任務可以直接繼續跑。一種是要等待支線任務結束，可能是為了執行順序上的需要，更多時候是為了取得支線任務的產出或結果。</p>
@@ -527,7 +534,7 @@
 
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
         <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">task_b</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -538,7 +545,7 @@
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_c: put a task to executor'</span></span><span class="token punctuation">)</span>
     result <span class="token operator">=</span> <span class="token keyword">await</span> event_loop<span class="token punctuation">.</span>run_in_executor<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> task_b<span class="token punctuation">,</span> <span class="token string">"hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_c: result: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>result<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_c: result: </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
 
 event_loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span> 
 asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>task_a<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>event_loop<span class="token punctuation">)</span>
@@ -580,26 +587,26 @@ task_a: <span class="token number">5</span>
         job <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
         value <span class="token operator">=</span> job<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">)</span>
         callback <span class="token operator">=</span> job<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'callback'</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread: got job, with value </span><span class="token interpolation"><span class="token punctuation">&#123;</span>value<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread: got job, with value </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
         time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
         callback<span class="token punctuation">(</span>value<span class="token operator">*</span>value<span class="token punctuation">)</span>
 
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
         <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_b</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">callback</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'callback got result:</span><span class="token interpolation"><span class="token punctuation">&#123;</span>result<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'callback got result:</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
         <span class="token keyword">nonlocal</span> fut
         fut<span class="token punctuation">.</span>set_result<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
 
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b'</span></span><span class="token punctuation">)</span>
     fut <span class="token operator">=</span> event_loop<span class="token punctuation">.</span>create_future<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'value'</span><span class="token punctuation">:</span> i<span class="token punctuation">,</span> <span class="token string">'callback'</span><span class="token punctuation">:</span> callback<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'value'</span><span class="token punctuation">:</span> i<span class="token punctuation">,</span> <span class="token string">'callback'</span><span class="token punctuation">:</span> callback<span class="token punctuation">}</span><span class="token punctuation">)</span>
     result <span class="token operator">=</span> <span class="token keyword">await</span> fut
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b got result:</span><span class="token interpolation"><span class="token punctuation">&#123;</span>result<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b got result:</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
 
     <span class="token keyword">return</span> result
 
@@ -666,17 +673,17 @@ loop<span class="token punctuation">.</span>call_soon<span class="token punctuat
     future <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>run_coroutine_threadsafe<span class="token punctuation">(</span>my_task_b<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'my_thread: request sent'</span><span class="token punctuation">)</span>
     result <span class="token operator">=</span> future<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread result: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>result<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread result: </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
 
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">my_task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_a: </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
         <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 
 <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">my_task_b</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_b got job'</span></span><span class="token punctuation">)</span>
     countdown <span class="token operator">=</span> value
-    <span class="token keyword">while</span> countdown<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> countdown<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_b is processing job'</span></span><span class="token punctuation">)</span>
         <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
         countdown <span class="token operator">=</span> countdown <span class="token operator">-</span> <span class="token number">1</span>
@@ -721,16 +728,16 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>使用 asyncio 所會遇到的三種情境，若只有應用程式內部使用</p>
 <p><strong>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</strong></p>
 <p>就是用 <code>await</code> 和 <code>ensure_future()</code>。<code>await</code> 用於該 flow 需要等 callee 的結果才能繼續走，<code>ensure_future()</code> 用於只是要觸發 callee，不需要等其結果，直接可以繼續走。</p>
-<br />
+<br>
 
 <p>而對於需與其他應用程式交互的情境，分為提供 API 給其他人使用，以及呼叫其他人提供的 API。</p>
 <p><strong>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</strong></p>
 <p>當呼叫其他人提供的 API 時，我們不希望等待其結果的這段時間，會卡住我們的 event loop 無法運作。這種情境又會分為兩種狀況，取決於我們 call 外部 API 時，我們所需要取得的結果是透過 return 回傳還是透過 callback 回傳。若是透過 return 回傳，就使用 <code>run_in_executor()</code>；若是透過 callback 回傳，就需要用到 <code>create_future()</code> 創造 <code>future</code> 物件，<code>await</code> 該物件，然後在 callback 中<code>set_result()</code> 告知該 future 已有結果。</p>
-<br />
+<br>
 
 <p><strong>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</strong></p>
 <p>當提供 API 給其他人使用時，我們想將其他人交付的工作排程入 event loop，就是用 <code>run_coroutine_threadsafe()</code>。</p>
-<br />
+<br>
 
 <h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>本篇並沒有對各 API 舉詳細的範例及各種用法，不過相信以該 API 為關鍵字 Google 一下就有許多例子了。我想解決的痛點只是 <code>asyncio</code> 好像有好幾個名字都很像的 API 不知道什麼時候該使用哪個。</p>
 
@@ -801,12 +808,12 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
                                     <span class="chip bg-color">software</span>
                                 </a>
                             
-                                <a href="/tags/coding/">
-                                    <span class="chip bg-color">coding</span>
-                                </a>
-                            
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/coding/">
+                                    <span class="chip bg-color">coding</span>
                                 </a>
                             
                                 <a href="/tags/multithread/">
@@ -980,12 +987,12 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
                         <span class="chip bg-color">software</span>
                     </a>
                     
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
-                    </a>
-                    
                     <a href="/tags/python/">
                         <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/coding/">
+                        <span class="chip bg-color">coding</span>
                     </a>
                     
                     <a href="/tags/multithread/">
@@ -1177,7 +1184,7 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">25.4k</span>
+                        class="white-color">26k</span>
             
             
             

@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -484,6 +486,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -558,7 +565,7 @@
 <li>圖中有迴圈的情形也適用</li>
 <li>1 2 3 4 5</li>
 </ul>
-<p><img src="https://drive.google.com/uc?export=view&id=1kAUUd4qOkt5eRkzpA8jB95r9_jGhyy2U" alt="範例"></p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1kAUUd4qOkt5eRkzpA8jB95r9_jGhyy2U" alt="範例"></p>
 <h3 id="Graph-DFS-深度優先"><a href="#Graph-DFS-深度優先" class="headerlink" title="[Graph] DFS 深度優先"></a>[Graph] DFS 深度優先</h3><ul>
 <li>換成搭配 stack</li>
 <li>Inorder traversal：造訪順序為 左 -&gt; 中 -&gt; 右 (4 2 5 1 3)</li>
@@ -581,7 +588,7 @@
 <li>如此重複，直到選擇到終點為工作點為止</li>
 </ol>
 <ul>
-<li>若有 v 個點 e 個邊，時間為 O(v*v)<br/><br>原因是每一輪結束，都會確認下由起點到達某一點的最短路徑。總共可有 v-1 個點要確認，所以要進行 v-1 輪。而每一輪，要把當前工作點所一步能及的所有相鄰點做更新，每一點的相鄰點可為 v-1，所以總共是 O(v*v)</li>
+<li>若有 v 個點 e 個邊，時間為 O(v*v)<br><br>原因是每一輪結束，都會確認下由起點到達某一點的最短路徑。總共可有 v-1 個點要確認，所以要進行 v-1 輪。而每一輪，要把當前工作點所一步能及的所有相鄰點做更新，每一點的相鄰點可為 v-1，所以總共是 O(v*v)</li>
 <li>與 Bellman-Ford 比較，v 個點最多能有 v*(v-1)/2 個邊，且 v 大多數時候小於 e，所以 vv 大部份時候小於 ve，所以 Dijkstra’s 比較快，尤其是稀疏圖的 v 就是偏小的時候。而且若 Dijkstra’s 的實作使用 Fibonacci heap 存圖，則時間複雜度可提升到 O(e + v log v)</li>
 <li>Greedy 在每一輪得到從起點到某一點的最短路徑，所以這也造成無法處理有負數邊的狀況。因為每一輪都只能看到目前所看過的點和邊，如果是還沒看到的邊而且為負數邊，那就會造成以為已經得到到從起點到某一點的最短路徑但其實不然，因為未來某負數邊的加入會改變這一結論。（無法處理負迴圈，但可以處理迴圈）</li>
 </ul>
@@ -1050,7 +1057,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">25.4k</span>
+                        class="white-color">26k</span>
             
             
             

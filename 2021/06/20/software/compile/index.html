@@ -29,7 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 
@@ -468,6 +470,11 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
@@ -508,7 +515,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ gcc -o libmylib.so.1.0.0 -shared -Wl,-soname,libmylib.so.1 file1.o file2.o file3.o<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
-<li>so name：用來表示是一個特定 library 的名稱，像是 <code>libmylib.so.1</code> 。<br/>以 lib 開頭，接著是該 library 的名稱，然後是 <code>.so</code>，接著是版號，用來表名他的介面；如果介面改變時，就會增加版號來維護相容度。<br/>在 mac 上我遇到 <code>ld: unknown option: -soname</code>，須以 <code>-install_name</code> 取代 <code>-soname</code>。<br/>可以用 objdump 檢查 <code>$ objdump -p libmylib.so | grep SONAME</code></li>
+<li>so name：用來表示是一個特定 library 的名稱，像是 <code>libmylib.so.1</code> 。<br>以 lib 開頭，接著是該 library 的名稱，然後是 <code>.so</code>，接著是版號，用來表名他的介面；如果介面改變時，就會增加版號來維護相容度。<br>在 mac 上我遇到 <code>ld: unknown option: -soname</code>，須以 <code>-install_name</code> 取代 <code>-soname</code>。<br>可以用 objdump 檢查 <code>$ objdump -p libmylib.so | grep SONAME</code></li>
 <li>real name：是實際放有 library 程式的檔案名稱，即是 soname 後面再加上 minor 版號與 release 版號，像是 <code>libmylib.so.1.0.0</code>。一般來說版號的改變規則是，最尾碼的 release 版號用於程式內容的修正，介面完全沒有改變。中間的 minor 用於有新增加介面，但相舊介面沒改變，所以與舊版本相容。最前面的 version 版號用於原介面有移除或改變，與舊版不相容時</li>
 <li>linker name：是用於連結時的名稱，是不含版號的 so name ，如 <code>libmylib.so</code>。通常 linker name 與 real name 是用 ln 指到對應的 real name ，用來提供彈性與維護性</li>
 </ul>
@@ -567,36 +574,36 @@ $ <span class="token function">ln</span> -s libmylib.so.1.0.0 libmylib.so.1<span
 <li>int dlclose(void *handle)</li>
 </ul>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"dlfcn.h"</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
+<span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token operator">*</span>handle<span class="token punctuation">;</span>
     <span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token operator">*</span>f<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">char</span> <span class="token operator">*</span>error<span class="token punctuation">;</span>
 
     <span class="token comment">/* open the needed object */</span>
     handle <span class="token operator">=</span> <span class="token function">dlopen</span><span class="token punctuation">(</span><span class="token string">"./libmylib.so"</span><span class="token punctuation">,</span> RTLD_LAZY<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>handle<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>handle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">/* get diagnostic information */</span>
         <span class="token function">fputs</span><span class="token punctuation">(</span><span class="token function">dlerror</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">stderr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment">/* find the address of function and data objects */</span>
     f <span class="token operator">=</span> <span class="token function">dlsym</span><span class="token punctuation">(</span>handle<span class="token punctuation">,</span> <span class="token string">"function1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>error <span class="token operator">=</span> <span class="token function">dlerror</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>error <span class="token operator">=</span> <span class="token function">dlerror</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">"%s\n"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment">/* excute function1 */</span>
     <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">/* close a dlopen object */</span>
     <span class="token function">dlclose</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="3">
 <li>Compile. Since above function are implemented in the library <code>libdl.a</code>, we need to load this library</li>
@@ -869,10 +876,6 @@ $ <span class="token function">ln</span> -s libmylib.so.1.0.0 libmylib.so.1<span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/software/">
-                        <span class="chip bg-color">software</span>
-                    </a>
-                    
                     <a href="/tags/network-security/">
                         <span class="chip bg-color">network security</span>
                     </a>
@@ -907,6 +910,10 @@ $ <span class="token function">ln</span> -s libmylib.so.1.0.0 libmylib.so.1<span
                     
                     <a href="/tags/%E6%95%B8%E4%BD%8D%E6%86%91%E8%AD%89/">
                         <span class="chip bg-color">數位憑證</span>
+                    </a>
+                    
+                    <a href="/tags/software/">
+                        <span class="chip bg-color">software</span>
                     </a>
                     
                 </div>
@@ -1094,7 +1101,7 @@ $ <span class="token function">ln</span> -s libmylib.so.1.0.0 libmylib.so.1<span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">25.4k</span>
+                        class="white-color">26k</span>
             
             
             
