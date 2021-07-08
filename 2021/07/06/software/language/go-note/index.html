@@ -392,24 +392,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/software/">
-                                <span class="chip bg-color">software</span>
-                            </a>
-                        
                             <a href="/tags/go/">
                                 <span class="chip bg-color">go</span>
                             </a>
                         
-                            <a href="/tags/golang/">
-                                <span class="chip bg-color">golang</span>
-                            </a>
-                        
-                            <a href="/tags/coding/">
-                                <span class="chip bg-color">coding</span>
-                            </a>
-                        
                             <a href="/tags/programming/">
                                 <span class="chip bg-color">programming</span>
+                            </a>
+                        
+                            <a href="/tags/language/">
+                                <span class="chip bg-color">language</span>
                             </a>
                         
                     </div>
@@ -440,21 +432,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4.3k
+                    4.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    21 Min
+                    22 Min
                 </div>
                 
 
@@ -505,8 +497,8 @@
 <li>分號 <code>;</code> 只有 for 中會看到，或當你想要把多個 statements 放在同一行的時候。不是沒有，是 Go 自己會在 compile 時補上</li>
 <li>default zero value on variable init</li>
 <li>只有 <code>for</code> loop，但可以當 <code>while</code> 用。<code>if</code> 和 <code>for</code> 的 condition 都不需要小括號</li>
-<li>function 可以有複數個 return 值，但 <code>return</code> expression 是一定要寫的；另外 function signature 可以直接指定要 return 的變數如 <code>(n int, err error)</code></li>
 <li><code>range</code> 用來 iterate <code>array</code>, <code>slice</code>, <code>string</code>, or <code>map</code>, or reading from a <code>channel</code>。<code>range</code> 的 return 值是彈性接收的，如果只用一個變數去接就是代表只接回傳值中的第一個，也可用 <code>_</code> (blank identifier) 跳掉不接的部分。（如果是要產生 index 來 iterate 就像 C 一樣用 <code>for</code>）</li>
+<li>function 可以有複數個 return 值，但 <code>return</code> expression 是一定要寫的；另外 function signature 可以直接指定要 return 的變數如 <code>(n int, err error)</code></li>
 <li>Object 要 implement 哪個 <code>interface</code> 只需要直接 implement 該 interface 規範的方法，不需要用 interface name 綁定</li>
 </ul>
 <hr>
@@ -581,6 +573,8 @@ x <span class="token operator">=</span> <span class="token function">append</spa
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>compiler 會把 … 的東西理解為一串參數<br>比如 caller 要傳一串參數 <code>a, b, c, d, e</code> 給某 function，function 就是用 <code>...</code> 來接，而他跟 slice 其實有個內部轉換的關係，所以同時也可以透過 <code>...</code> 將 slice 還原為一串參數</p>
+<hr>
+<h2 id="Basic-Data-Type"><a href="#Basic-Data-Type" class="headerlink" title="Basic Data Type"></a>Basic Data Type</h2><p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
 <hr>
 <h2 id="Type-assertions-switches"><a href="#Type-assertions-switches" class="headerlink" title="Type assertions/switches"></a>Type assertions/switches</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
@@ -1028,7 +1022,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/06/software/go-note/">https://chungchris.github.io/2021/07/06/software/go-note/</a>
+                    <a href="https://chungchris.github.io/2021/07/06/software/language/go-note/">https://chungchris.github.io/2021/07/06/software/language/go-note/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1066,24 +1060,16 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/software/">
-                                    <span class="chip bg-color">software</span>
-                                </a>
-                            
                                 <a href="/tags/go/">
                                     <span class="chip bg-color">go</span>
                                 </a>
                             
-                                <a href="/tags/golang/">
-                                    <span class="chip bg-color">golang</span>
-                                </a>
-                            
-                                <a href="/tags/coding/">
-                                    <span class="chip bg-color">coding</span>
-                                </a>
-                            
                                 <a href="/tags/programming/">
                                     <span class="chip bg-color">programming</span>
+                                </a>
+                            
+                                <a href="/tags/language/">
+                                    <span class="chip bg-color">language</span>
                                 </a>
                             
                         </div>
@@ -1123,8 +1109,8 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/06/software/go-note/';
-        this.page.identifier = '/2021/07/06/software/go-note/';
+        this.page.url = 'https://chungchris.github.io/2021/07/06/software/language/go-note/';
+        this.page.identifier = '/2021/07/06/software/language/go-note/';
         this.page.title = 'Go 筆記';
     };
     let disqus_shortname = 'chungchris-ghp';
@@ -1171,7 +1157,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Longest Substring Without Repeating Characters
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1208,7 +1194,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/30/software/rust-note/">
+                <a href="/2021/06/30/software/language/rust-note/">
                     <div class="card-image">
                         
                         <img src="https://drive.google.com/uc?export=view&id=1bmeIr1XQxPCSWgI67fw4v9ubbKu-NlaQ" class="responsive-img" alt="Rust 筆記">
@@ -1241,16 +1227,12 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/software/">
-                        <span class="chip bg-color">software</span>
-                    </a>
-                    
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
-                    </a>
-                    
                     <a href="/tags/programming/">
                         <span class="chip bg-color">programming</span>
+                    </a>
+                    
+                    <a href="/tags/language/">
+                        <span class="chip bg-color">language</span>
                     </a>
                     
                     <a href="/tags/rust/">
@@ -1442,7 +1424,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26k</span>
+                        class="white-color">26.5k</span>
             
             
             

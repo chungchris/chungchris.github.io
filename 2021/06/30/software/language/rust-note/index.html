@@ -392,16 +392,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/software/">
-                                <span class="chip bg-color">software</span>
-                            </a>
-                        
-                            <a href="/tags/coding/">
-                                <span class="chip bg-color">coding</span>
-                            </a>
-                        
                             <a href="/tags/programming/">
                                 <span class="chip bg-color">programming</span>
+                            </a>
+                        
+                            <a href="/tags/language/">
+                                <span class="chip bg-color">language</span>
                             </a>
                         
                             <a href="/tags/rust/">
@@ -436,7 +432,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-06
+                    2021-07-08
                 </div>
                 
 
@@ -674,6 +670,14 @@ a,b,c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><code>string</code> 的 <code>chars()</code> 方法將 string 分離為各個有意義的 character，並放入空間一律為 4 bytes 的 <code>char</code> 型別中，串成一個 <code>Vec</code> 回傳。</p>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">for</span> c <span class="token keyword">in</span> my_str<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment">// do something with `c`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token keyword">in</span> my_str<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something with character `c` and index `i`</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <h2 id="Collections-Vector"><a href="#Collections-Vector" class="headerlink" title="Collections- Vector"></a>Collections- Vector</h2><ul>
 <li>can only store values of the same type</li>
@@ -1456,7 +1460,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/06/30/software/rust-note/">https://chungchris.github.io/2021/06/30/software/rust-note/</a>
+                    <a href="https://chungchris.github.io/2021/06/30/software/language/rust-note/">https://chungchris.github.io/2021/06/30/software/language/rust-note/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1494,16 +1498,12 @@ match_args {{increase|decrease}} &lt;integer&gt;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/software/">
-                                    <span class="chip bg-color">software</span>
-                                </a>
-                            
-                                <a href="/tags/coding/">
-                                    <span class="chip bg-color">coding</span>
-                                </a>
-                            
                                 <a href="/tags/programming/">
                                     <span class="chip bg-color">programming</span>
+                                </a>
+                            
+                                <a href="/tags/language/">
+                                    <span class="chip bg-color">language</span>
                                 </a>
                             
                                 <a href="/tags/rust/">
@@ -1547,8 +1547,8 @@ match_args {{increase|decrease}} &lt;integer&gt;
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/06/30/software/rust-note/';
-        this.page.identifier = '/2021/06/30/software/rust-note/';
+        this.page.url = 'https://chungchris.github.io/2021/06/30/software/language/rust-note/';
+        this.page.identifier = '/2021/06/30/software/language/rust-note/';
         this.page.title = 'Rust 筆記';
     };
     let disqus_shortname = 'chungchris-ghp';
@@ -1583,7 +1583,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/06/software/go-note/">
+                <a href="/2021/07/06/software/language/go-note/">
                     <div class="card-image">
                         
                         <img src="https://drive.google.com/uc?export=view&id=1cviZ_5SNqD4q0VzzCoJ9eSRqicirTDsU" class="responsive-img" alt="Go 筆記">
@@ -1616,24 +1616,16 @@ match_args {{increase|decrease}} &lt;integer&gt;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/software/">
-                        <span class="chip bg-color">software</span>
-                    </a>
-                    
                     <a href="/tags/go/">
                         <span class="chip bg-color">go</span>
                     </a>
                     
-                    <a href="/tags/golang/">
-                        <span class="chip bg-color">golang</span>
-                    </a>
-                    
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
-                    </a>
-                    
                     <a href="/tags/programming/">
                         <span class="chip bg-color">programming</span>
+                    </a>
+                    
+                    <a href="/tags/language/">
+                        <span class="chip bg-color">language</span>
                     </a>
                     
                 </div>
@@ -1897,7 +1889,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26k</span>
+                        class="white-color">26.5k</span>
             
             
             

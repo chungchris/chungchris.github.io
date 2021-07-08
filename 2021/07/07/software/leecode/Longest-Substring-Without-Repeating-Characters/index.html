@@ -424,21 +424,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    849
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    5 Min
                 </div>
                 
 
@@ -535,33 +535,123 @@
         ans <span class="token operator">=</span> <span class="token number">0</span>
 
         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">not</span> <span class="token keyword">in</span> d<span class="token punctuation">:</span>
-                d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> p<span class="token punctuation">:</span> <span class="token comment"># though the char has been found before, it's located in don't care part.</span>
-                    <span class="token comment"># take it as first time seen.</span>
-                    d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    l <span class="token operator">=</span> i <span class="token operator">-</span> p
-                    ans <span class="token operator">=</span> l <span class="token keyword">if</span> l <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
-                    p <span class="token operator">=</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span>
-                    d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> d \
+                    <span class="token keyword">and</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span> p<span class="token punctuation">:</span>
+                <span class="token comment"># if the char has been found before, but it's located in don't care part, take it as first time seen.</span>
+                l <span class="token operator">=</span> i <span class="token operator">-</span> p
+                ans <span class="token operator">=</span> l <span class="token keyword">if</span> l <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+                p <span class="token operator">=</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span>
+            d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
 
-        <span class="token comment"># handle the tail case. i.e. edge case (a)</span>
+        <span class="token comment"># handle the tail case. i.e. edge case (a), (b)</span>
         l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> p
         ans <span class="token operator">=</span> l <span class="token keyword">if</span> l<span class="token operator">&gt;</span>ans <span class="token keyword">else</span> ans
 
-        <span class="token comment"># handle the case there is no repeated char at all. i.e. edge case (b)</span>
-        <span class="token keyword">if</span> p <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            ans <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>d</code> 用來記憶目前看過的 char 的最後出現位置</li>
 <li><code>p</code> 用來標記尚未取得最佳解的 substring 的起點，一開始整個 string 都尚未取得最佳解，所以初始值是 0。**<code>p</code> 意義，其運用和更新就是本題的關鍵**</li>
-<li>其中有一個優化是對於 <code>想法</code> <code>步驟 4-(2)</code> 中要刪除不再關注的部分的記憶的做法，這直覺上會在第 19 行更新 <code>p</code> 時，也去把 <code>d</code> 當中該刪的東西刪掉。但這樣就會變成要跑一個 <code>d.items()</code> 的 for loop。所以把他優化成在第 12 行，當有必要時再進行忽略更新即可</li>
+<li>其中有一個優化是對於 <code>想法</code> <code>步驟 4-(2)</code> 中要刪除不再關注的部分的記憶的做法，這直覺上會在第 15 行更新 <code>p</code> 時，也去把 <code>d</code> 當中該刪的東西刪掉。但這樣就會變成要跑一個 <code>d.items()</code> 的 for loop。所以把他優化成在第 10 行，當有必要時再進行忽略更新即可</li>
 <li>時間複雜度為 <code>O(n)</code> 因為只有第 7 行的 for loop</li>
+</ul>
+<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
+    ans <span class="token operator">:=</span> <span class="token number">0</span>
+    p <span class="token operator">:=</span> <span class="token number">0</span>
+    d <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token comment">// Go 沒有 char，有的是 byte 和 rune. rune is synonym of int32 and also represent Unicode code points</span>
+    
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span>c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span> <span class="token comment">// Go 對於 `array`, `slice`, `string`, `map`, `channel` 都是用這樣 iterate</span>
+        x<span class="token punctuation">,</span> exist <span class="token operator">:=</span> d<span class="token punctuation">[</span>c<span class="token punctuation">]</span>
+        <span class="token keyword">if</span> exist <span class="token operator">&amp;&amp;</span> x <span class="token operator">&gt;=</span> p <span class="token punctuation">{</span>
+            l <span class="token operator">:=</span> i <span class="token operator">-</span> p
+            <span class="token keyword">if</span> l <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> <span class="token comment">// Go 沒有三元運算符</span>
+                ans <span class="token operator">=</span> l
+            <span class="token punctuation">}</span>
+            p <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+        d<span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> i
+    <span class="token punctuation">}</span>
+
+    l <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> l<span class="token operator">-</span>p <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> l<span class="token operator">-</span>p <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span>
+        ans <span class="token operator">=</span> l<span class="token operator">-</span>p
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">length_of_longest_substring</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+        <span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>collections<span class="token punctuation">::</span></span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> p<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> d <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// rust 對於有實作 Iterator trait 的物件可以用 for ... in ... 來 </span>
+            <span class="token keyword">match</span> d<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// rust 是強型別語言</span>
+                    <span class="token keyword">if</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">&gt;=</span> p <span class="token punctuation">{</span>
+                        p <span class="token operator">=</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token class-name">None</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            d<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        
+        ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> s<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        
+        ans
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<br>
+
+<p>最後也可以看一下三種語言的 performance（因為 LeeCode 不一定每次跑時間都一樣所以我分別跑兩次）</p>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th>Memory</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>52 ms</td>
+<td>14.4 MB</td>
+<td>python3</td>
+</tr>
+<tr>
+<td>52 ms</td>
+<td>14.4 MB</td>
+<td>python3</td>
+</tr>
+<tr>
+<td>4 ms</td>
+<td>3.2 MB</td>
+<td>golang</td>
+</tr>
+<tr>
+<td>8 ms</td>
+<td>3.2 MB</td>
+<td>golang</td>
+</tr>
+<tr>
+<td>4 ms</td>
+<td>2.1 MB</td>
+<td>rust</td>
+</tr>
+<tr>
+<td>4 ms</td>
+<td>2.1 MB</td>
+<td>rust</td>
+</tr>
+</tbody></table>
+<ul>
+<li>python 是 runtime 直譯器語言，且語法也很高階，所以非常慢</li>
+<li>rust 比 go 更稍底層一些，理論上會比 go 更快。但我猜因為這一題 string iteration 正好是 rust performance 比較差的部分，因為 rust 的 string 是由可變長度的 unicode 組成，所以 string 的 indexing 不是 O(1)</li>
+<li>以記憶體來說，Rust 的確是最強這是符合預期的。但若以語法的角度來看，go 寫起來是比 rust 快的</li>
 </ul>
 
                 
@@ -717,7 +807,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Longest Substring Without Repeating Characters
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -755,7 +845,7 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/06/software/go-note/">
+                <a href="/2021/07/06/software/language/go-note/">
                     <div class="card-image">
                         
                         <img src="https://drive.google.com/uc?export=view&id=1cviZ_5SNqD4q0VzzCoJ9eSRqicirTDsU" class="responsive-img" alt="Go 筆記">
@@ -788,24 +878,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/software/">
-                        <span class="chip bg-color">software</span>
-                    </a>
-                    
                     <a href="/tags/go/">
                         <span class="chip bg-color">go</span>
                     </a>
                     
-                    <a href="/tags/golang/">
-                        <span class="chip bg-color">golang</span>
-                    </a>
-                    
-                    <a href="/tags/coding/">
-                        <span class="chip bg-color">coding</span>
-                    </a>
-                    
                     <a href="/tags/programming/">
                         <span class="chip bg-color">programming</span>
+                    </a>
+                    
+                    <a href="/tags/language/">
+                        <span class="chip bg-color">language</span>
                     </a>
                     
                 </div>
@@ -993,7 +1075,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26k</span>
+                        class="white-color">26.5k</span>
             
             
             
