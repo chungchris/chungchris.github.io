@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,string">
+    <meta name="keywords" content="leecode">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #3 Longest Substring Without Repeating Characters | A Po</title>
+    <title>[LeeCode] #11 Container With Most Water | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #3 Longest Substring Without Repeating Characters</h1>
+                    <h1 class="description center-align post-title">[LeeCode] #11 Container With Most Water</h1>
                 </div>
             </div>
         </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-08
                 </div>
                 
 
@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    897
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    3 Min
                 </div>
                 
 
@@ -466,198 +466,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>找一個給定 string 當中，不出現重複 char 的 substring 的最大可能長度</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" alt="選兩個柱子使可以裝最多的水"></p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/container-with-most-water/">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 暴力解很容易，進階解不一定想到到，但看過就會，我個人不是很喜歡這種看過就會顯得太刻意的題目所以兩顆星</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p><em>string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住</em></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>index</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>…</td>
-</tr>
-<tr>
-<td>char</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>d</td>
-<td>e</td>
-<td>f</td>
-<td>c</td>
-<td>g</td>
-<td>h</td>
-<td>e</td>
-<td>…</td>
-</tr>
-</tbody></table>
-<ol>
-<li>從 index 0 開始往右走，遇到過什麼 char 就把他記住，記住的方法用 HashTable，因為 HashTable 的未來取用基本上可以當作 <code>O(1)</code></li>
-<li>如果一直沒掃到曾經出現過的就一直往右掃，直到掃到 index 6 的時候發現了第一個重複的 char <code>c</code>，我們的 HashTable 記得 <code>c</code> 上次出現在 index 2</li>
-<li>這時候會產生兩個<strong>有重疊的</strong> substring 有可能是最終解，第一個是從 <code>s[0:6]</code>，第二個是 <code>s[3:end]</code>，所以目前我們就可以先將答案更新為 <code>s[0:6]</code> 的長度 6</li>
-<li>接下來的問題就是，我們會不會在 s[3:end] 發現一個比 6 更好的答案？所以從現在開始 s[3:end] 就是我們面對的新 string。<br> (1) 在這個新 string 中，<code>c</code> 出現的點是 index 6，所以要更新 HashTable 的記憶<br> (2) 如果原本 HashTable 的記憶中，有任何 char 出現的點是在 index 3 以前的，我們現在都要當作沒看過（也就是要從 HashTable 中刪除），因為他們已經不在我們現在關注的 string 範圍內</li>
-<li>重複上述步驟一路走到整個 string 結束</li>
-</ol>
-<p>有了基本的想法後就可以開始寫 code</p>
-<blockquote>
-<p>最後記得檢視一些 edge case 看能不能 cover<br>   a. 當答案的 substring 存在整個 string 的尾巴<br>   b. 如果從頭到尾都沒有重複的 char<br>   c. 如果 string 長度為 0<br>   d. 如果 string 長度為 1<br>   e. 如果 string 只存在同一個 char 一直重複</p>
-</blockquote>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-        d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment"># { char: int } memorize the index of last time specific char showing up</span>
-        p <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># save the head of the valid unchecked string</span>
+<hr>
+<h2 id="暴力解-也是最直觀的解法"><a href="#暴力解-也是最直觀的解法" class="headerlink" title="暴力解 也是最直觀的解法"></a>暴力解 也是最直觀的解法</h2><h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>選兩條柱子，就全部可能的 pair 都拿來算一下面積，取最大的，時間複雜度自然是 <code>O(n^2)</code></p>
+<h3 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span>
         ans <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                t <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                ans <span class="token operator">=</span> t <span class="token keyword">if</span> t <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">in</span> d \
-                    <span class="token keyword">and</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span> p<span class="token punctuation">:</span>
-                <span class="token comment"># if the char has been found before, but it's located in don't care part, take it as first time seen.</span>
-                l <span class="token operator">=</span> i <span class="token operator">-</span> p
-                ans <span class="token operator">=</span> l <span class="token keyword">if</span> l <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
-                p <span class="token operator">=</span> d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span>
-            d<span class="token punctuation">[</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+<hr>
+<h2 id="進階解"><a href="#進階解" class="headerlink" title="進階解"></a>進階解</h2><h3 id="想法-1"><a href="#想法-1" class="headerlink" title="想法"></a>想法</h3><p>我們已經有 <code>O(n^2)</code> 的解法，那要進階，代表不能有<em>挑兩次</em>的動作，要想辦法提升我們的挑選策略</p>
+<p>最大面積由柱子的水平距離和高度較低者構成，所以挑選自然是從挑高的，或挑遠的兩個方向著手<br>從高度來看：除非我們做過 sort，不然我們也不知道出起手式怎樣挑是最佳解。即使我們做過 sort，就有了 <code>O(n logn)</code> 的基本包袱，不是不可能，但我們先放著<br>從距離來看：我們希望兩根柱子水平距離越遠越好，所以最好是最左和最右就是最佳解，我們可以從這個選擇出發，這是本題的第一個癥結點</p>
+<p>然後，當我們選了最左和最右出發，接下來我們會想嘗試把選擇往中間移動<br>但要選擇先把左側的選擇往內選一個呢？還是先把右側的選擇往內選一個？這裏就必須意識到，也是本題的第二個癥結點，進一步移動原本的選擇當中較高的那一邊其實對事情沒有幫助，因為水槽的高度已經被較低的那一邊給限制住，如果改變原本的選擇當中較高的那一邊，只是讓水池水平距離往內縮，水池高度不變，面積只會縮小<br>所以我們下一步的選擇是針對比較低的那一邊，換成選往中間靠的下一個，期待取得更大的面積；當然，很簡單可以察覺到，選擇到比原本高的才有意義，如果比原本低那面積只會縮小。當選到一個比原本高的，這時候就需要乘乘看才知道是不是比原本面積大了了，因為水平距離已經內縮了一到數單位</p>
+<h3 id="Source-Code-Python-1"><a href="#Source-Code-Python-1" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>    
+        ans <span class="token operator">=</span> <span class="token number">0</span>
+        i <span class="token operator">=</span> <span class="token number">0</span>
+        j <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">:</span>
+            t <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            ans <span class="token operator">=</span> t <span class="token keyword">if</span> t <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+            <span class="token keyword">if</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token triple-quoted-string string">'''t = height[i]
+                while height[i] &lt;= t:
+                    i = i + 1
+                    if i &gt;= j:
+                        return ans'''</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token triple-quoted-string string">'''t = height[j]
+                while height[j] &lt;= t:
+                    j = j - 1
+                    if i &gt;= j:
+                        return ans'''</span>
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token comment"># handle the tail case. i.e. edge case (a), (b)</span>
-        l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> p
-        ans <span class="token operator">=</span> l <span class="token keyword">if</span> l<span class="token operator">&gt;</span>ans <span class="token keyword">else</span> ans
-
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><code>d</code> 用來記憶目前看過的 char 的最後出現位置</li>
-<li><code>p</code> 用來標記尚未取得最佳解的 substring 的起點，一開始整個 string 都尚未取得最佳解，所以初始值是 0。**<code>p</code> 意義，其運用和更新就是本題的關鍵**</li>
-<li>其中有一個優化是對於 <code>想法</code> <code>步驟 4-(2)</code> 中要刪除不再關注的部分的記憶的做法，這直覺上會在第 15 行更新 <code>p</code> 時，也去把 <code>d</code> 當中該刪的東西刪掉。但這樣就會變成要跑一個 <code>d.items()</code> 的 for loop。所以把他優化成在第 10 行，當有必要時再進行忽略更新即可</li>
-<li>時間複雜度為 <code>O(n)</code> 因為只有第 7 行的 for loop</li>
-</ul>
-<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">int</span> <span class="token punctuation">{</span>
-    ans <span class="token operator">:=</span> <span class="token number">0</span>
-    p <span class="token operator">:=</span> <span class="token number">0</span>
-    d <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token comment">// Go 沒有 char，有的是 byte 和 rune. rune is synonym of int32 and also represent Unicode code points</span>
-    
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span>c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span> <span class="token comment">// Go 對於 `array`, `slice`, `string`, `map`, `channel` 都是用這樣 iterate</span>
-        x<span class="token punctuation">,</span> exist <span class="token operator">:=</span> d<span class="token punctuation">[</span>c<span class="token punctuation">]</span>
-        <span class="token keyword">if</span> exist <span class="token operator">&amp;&amp;</span> x <span class="token operator">&gt;=</span> p <span class="token punctuation">{</span>
-            l <span class="token operator">:=</span> i <span class="token operator">-</span> p
-            <span class="token keyword">if</span> l <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> <span class="token comment">// Go 沒有三元運算符</span>
-                ans <span class="token operator">=</span> l
-            <span class="token punctuation">}</span>
-            p <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
-        <span class="token punctuation">}</span>
-        d<span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> i
-    <span class="token punctuation">}</span>
-
-    l <span class="token operator">:=</span> <span class="token function">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> l<span class="token operator">-</span>p <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> l<span class="token operator">-</span>p <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span>
-        ans <span class="token operator">=</span> l<span class="token operator">-</span>p
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> ans
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">length_of_longest_substring</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
-        <span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>collections<span class="token punctuation">::</span></span><span class="token class-name">HashMap</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> p<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> d <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// rust 對於有實作 Iterator trait 的物件可以用 for ... in ... 來 </span>
-            <span class="token keyword">match</span> d<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// rust 是強型別語言</span>
-                    <span class="token keyword">if</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">&gt;=</span> p <span class="token punctuation">{</span>
-                        p <span class="token operator">=</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                <span class="token class-name">None</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            d<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        
-        ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> s<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span>
-        
-        ans
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<br>
-
-<p>最後也可以看一下三種語言的 performance（因為 LeeCode 不一定每次跑時間都一樣所以我分別跑兩次）</p>
-<table>
-<thead>
-<tr>
-<th>Runtime</th>
-<th>Memory</th>
-<th>Language</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>52 ms</td>
-<td>14.4 MB</td>
-<td>python3</td>
-</tr>
-<tr>
-<td>52 ms</td>
-<td>14.4 MB</td>
-<td>python3</td>
-</tr>
-<tr>
-<td>4 ms</td>
-<td>3.2 MB</td>
-<td>golang</td>
-</tr>
-<tr>
-<td>8 ms</td>
-<td>3.2 MB</td>
-<td>golang</td>
-</tr>
-<tr>
-<td>4 ms</td>
-<td>2.1 MB</td>
-<td>rust</td>
-</tr>
-<tr>
-<td>4 ms</td>
-<td>2.1 MB</td>
-<td>rust</td>
-</tr>
-</tbody></table>
-<ul>
-<li>python 是 runtime 直譯器語言，且語法也很高階，所以非常慢</li>
-<li>rust 比 go 更稍底層一些，理論上會比 go 更快。但我猜因為這一題 string iteration 正好是 rust performance 比較差的部分，因為 rust 的 string 是由可變長度的 unicode 組成，所以 string 的 indexing 不是 O(1)</li>
-<li>以記憶體來說，Rust 的確是最強這是符合預期的。但若以語法的角度來看，go 寫起來是比 rust 快的</li>
-</ul>
+<p>可以觀察到這個解法只需要 <code>O(n)</code>，已經優於 <code>O(n logn)</code> 所以我們不用再去想先挑高度出發的方法<br>註解起來的部分可有可無，有的話可以減少數次執行第 7,8 行的時間，但並不影響 time complexity</p>
 
                 
             </div>
@@ -684,7 +540,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/">https://chungchris.github.io/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/</a>
+                    <a href="https://chungchris.github.io/2021/07/08/software/leecode/Container-With-Most-Water/">https://chungchris.github.io/2021/07/08/software/leecode/Container-With-Most-Water/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -763,9 +619,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/';
-        this.page.identifier = '/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/';
-        this.page.title = '[LeeCode] #3 Longest Substring Without Repeating Characters';
+        this.page.url = 'https://chungchris.github.io/2021/07/08/software/leecode/Container-With-Most-Water/';
+        this.page.identifier = '/2021/07/08/software/leecode/Container-With-Most-Water/';
+        this.page.title = '[LeeCode] #11 Container With Most Water';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -795,29 +651,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/08/software/leecode/Expand-Around-Center/">
+                <a href="/2021/07/08/software/leecode/Container-With-Most-Water/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="[LeeCode] #5 Longest Palindromic Substring">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="[LeeCode] #11 Container With Most Water">
                         
-                        <span class="card-title">[LeeCode] #5 Longest Palindromic Substring</span>
+                        <span class="card-title">[LeeCode] #11 Container With Most Water</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            找一個給定 string 當中，找最長 palindromic(回文) 的 substring
+                            選兩個柱子使可以裝最多的水
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -830,6 +687,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -848,30 +706,30 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/06/software/language/go-note/">
+                <a href="/2021/07/08/taiwan/mazu/">
                     <div class="card-image">
                         
-                        <img src="https://drive.google.com/uc?export=view&id=1cviZ_5SNqD4q0VzzCoJ9eSRqicirTDsU" class="responsive-img" alt="Go 筆記">
+                        <img src="https://drive.google.com/uc?export=view&id=1iLKCaNXhk72fZXyezU2uqzRk3XubYt2w" class="responsive-img" alt="馬祖 - 碉堡！碉堡，碉堡。碉堡...">
                         
-                        <span class="card-title">Go 筆記</span>
+                        <span class="card-title">馬祖 - 碉堡！碉堡，碉堡。碉堡...</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一些 Go 的學習資源整理和個人筆記
+                            2021 年 5 月 勞動連假的五天四夜馬祖自助行
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software/" class="post-category">
-                                    software
+                            <a href="/categories/taiwan/" class="post-category">
+                                    taiwan
                                 </a>
                             
                             
@@ -881,16 +739,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/programming/">
-                        <span class="chip bg-color">programming</span>
+                    <a href="/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">台灣旅遊</span>
                     </a>
                     
-                    <a href="/tags/language/">
-                        <span class="chip bg-color">language</span>
+                    <a href="/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">離島旅遊</span>
                     </a>
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
+                    <a href="/tags/%E9%A6%AC%E7%A5%96/">
+                        <span class="chip bg-color">馬祖</span>
                     </a>
                     
                 </div>
