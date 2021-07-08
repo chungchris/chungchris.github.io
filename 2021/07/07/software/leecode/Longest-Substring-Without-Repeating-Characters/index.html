@@ -431,7 +431,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -469,9 +469,12 @@
                 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>找一個給定 string 當中，不出現重複 char 的 substring 的最大可能長度</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Link</a></li>
-<li>等級：Medium</li>
-<li>推薦：3/5</li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]</li>
 </ul>
+<blockquote>
+<p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他還是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
+</blockquote>
 <h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p><em>string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住</em></p>
 <table>
 <thead>
@@ -527,7 +530,9 @@
 <li>重複上述步驟一路走到整個 string 結束</li>
 </ol>
 <p>有了基本的想法後就可以開始寫 code</p>
-<p>最後來檢視一些 edge case 看能不能 cover<br>    a. 當答案的 substring 存在整個 string 的尾巴<br>    b. 如果從頭到尾都沒有重複的 char<br>    c. 如果 string 長度為 0<br>    d. 如果 string 長度為 1<br>    e. 如果 string 只存在同一個 char 一直重複</p>
+<blockquote>
+<p>最後記得檢視一些 edge case 看能不能 cover<br>   a. 當答案的 substring 存在整個 string 的尾巴<br>   b. 如果從頭到尾都沒有重複的 char<br>   c. 如果 string 長度為 0<br>   d. 如果 string 長度為 1<br>   e. 如果 string 只存在同一個 char 一直重複</p>
+</blockquote>
 <h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
         d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment"># { char: int } memorize the index of last time specific char showing up</span>
@@ -790,18 +795,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/">
+                <a href="/2021/07/08/software/leecode/Expand-Around-Center/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[LeeCode] #3 Longest Substring Without Repeating Characters">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeeCode">
                         
-                        <span class="card-title">[LeeCode] #3 Longest Substring Without Repeating Characters</span>
+                        <span class="card-title">LeeCode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -811,9 +815,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -826,7 +830,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1075,7 +1078,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">27.1k</span>
             
             
             

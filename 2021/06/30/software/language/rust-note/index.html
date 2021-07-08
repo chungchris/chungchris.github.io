@@ -492,7 +492,9 @@
 <h2 id="Chest-sheet"><a href="#Chest-sheet" class="headerlink" title="Chest sheet"></a>Chest sheet</h2><p><a target="_blank" rel="noopener" href="https://cheats.rs/">Chest sheet</a></p>
 <p><a target="_blank" rel="noopener" href="https://doc.rust-lang.org/std/">Official std</a></p>
 <hr>
-<p>以下是我自己補充 Chest sheet 中沒有的，或者一些比較難懂的概念</p>
+<blockquote>
+<p>往下是我自己補充 Chest sheet 中沒有的，或者一些比較難懂的概念</p>
+</blockquote>
 <h2 id="Borrowing"><a href="#Borrowing" class="headerlink" title="Borrowing"></a>Borrowing</h2><p>Rust 的 <code>*</code> 和 <code>&amp;</code> 在一開始不建議直接用 C 的方式來理解，而建議理解為 <code>&amp;</code> 表達的是 <code>借用</code>，而不是 <code>取址</code>。<br>雖然其實基礎上就都是 reference，所以以底層來說實際上跟 C 差異不大，只是語法上如果直接想成跟 C 一樣，那會有好些 compile error 無法順利理解。</p>
 <pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">struct</span> <span class="token type-definition class-name">Foo</span> <span class="token punctuation">{</span>
     x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span>
@@ -1889,7 +1891,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">27.1k</span>
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="A Po">
+    <meta name="keywords" content="leecode,string">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>A Po</title>
+    <title>LeeCode | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">LeeCode</h1>
                 </div>
             </div>
         </div>
@@ -390,12 +390,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/leecode/">
+                                <span class="chip bg-color">leecode</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/software-leecode/" class="post-category">
+                                software/leecode
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -404,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-07
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    106
+                    482
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -453,36 +466,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Backup"><a href="#Backup" class="headerlink" title="Backup"></a>Backup</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># backup to the same repo as github pages but on `backup` branch (specified in _config.yml `backup` section)</span>
-hexo backup<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>找一個給定 string 當中，找最長 palindromic(回文) 的 substring</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Link</a></li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 不算難，但可以作為 DP 的題目，或者是進階演算法有興趣的可以藉此研究 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm">Manacher’s algorithm</a></li>
+</ul>
+<blockquote>
+<p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他還是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
+</blockquote>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>有不同解法，但對我來說最直覺的是一個 palindromic(回文) 的 string 同時代表有<strong>從中間鏡像</strong>的特性，也就是你可以找到一個中間點，往左右輻射，兩邊的字串相同。有了這個想法之後實作並不難，所以僅給 2/5 推薦指數的原因</p>
+<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><p>所以只要把每個 index 都當成中心點，都去跑跑看左右輻射，最後取結果最長的就行了。唯一要注意的可能就是中心點的選擇可以是一個或兩個，比如 <code>aba</code> 中心點就是 <code>b</code>，但 <code>abba</code> 中心點是 <code>bb</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">longestPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        slen <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 
-<h1 id="Recover"><a href="#Recover" class="headerlink" title="Recover"></a>Recover</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
-<span class="token comment"># create workspace</span>
-<span class="token function">mkdir</span> github_pages
-<span class="token builtin class-name">cd</span> github_pages
-hexo init
+        <span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> y <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                y <span class="token operator">=</span> x
 
-<span class="token comment"># download source backup</span>
-<span class="token function">git</span> clone git@github.com:chungchris/chungchris.github.io.git ./backup
-<span class="token builtin class-name">cd</span> backup
-<span class="token function">git</span> checkout origin/backup
-<span class="token function">cp</span> -r ./<span class="token punctuation">{</span>_config.yml,scaffolds,source,themes<span class="token punctuation">}</span> <span class="token punctuation">..</span>/
-<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+            <span class="token keyword">while</span> x <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> y <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> s<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> s<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    ans <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+                    x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">1</span>
+                    y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
 
-<span class="token comment"># remove files</span>
-<span class="token function">rm</span> source/_posts/hello-world.md
-<span class="token function">rm</span> -rf backup
+            <span class="token keyword">return</span> ans
 
-<span class="token comment"># install necessary plugins</span>
-<span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
-<span class="token function">npm</span> <span class="token function">install</span> hexo-wordcount --save
-<span class="token function">npm</span> <span class="token function">install</span> hexo-git-backup --save
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save
-<span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis --save
+        ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> slen<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                ans <span class="token operator">=</span> ret
+            <span class="token keyword">if</span> i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
+                ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    ans <span class="token operator">=</span> ret
 
-<span class="token comment"># try build</span>
-hexo g
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第 21 行的 for loop 跑 n 輪，每輪要進 <code>check()</code> 兩次；<code>check()</code> 裡面跑的 <code>while</code> 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2<em>n</em>n，也就是 <code>O(n^2)</code></p>
 
                 
             </div>
@@ -509,7 +538,7 @@ hexo g
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/README.html">https://chungchris.github.io/README.html</a>
+                    <a href="https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/">https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,7 +575,11 @@ hexo g
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/leecode/">
+                                    <span class="chip bg-color">leecode</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -584,9 +617,9 @@ hexo g
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/README.html';
-        this.page.identifier = '/README.html';
-        this.page.title = '';
+        this.page.url = 'https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/';
+        this.page.identifier = '/2021/07/08/software/leecode/Expand-Around-Center/';
+        this.page.title = 'LeeCode';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -621,13 +654,13 @@ hexo g
                 <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/README.html">
+                <a href="/2021/07/08/software/leecode/Expand-Around-Center/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="LeeCode">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">LeeCode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -638,17 +671,29 @@ hexo g
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Chris Chung
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software-leecode/" class="post-category">
+                                    software/leecode
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leecode/">
+                        <span class="chip bg-color">leecode</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -656,16 +701,16 @@ hexo g
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/README.html">
+                <a href="/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[LeeCode] #3 Longest Substring Without Repeating Characters">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">[LeeCode] #3 Longest Substring Without Repeating Characters</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -680,13 +725,24 @@ hexo g
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Chris Chung
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software-leecode/" class="post-category">
+                                    software/leecode
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leecode/">
+                        <span class="chip bg-color">leecode</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

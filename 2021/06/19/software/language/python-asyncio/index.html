@@ -483,10 +483,12 @@
 <p>基本上並不建議混用 <code>threading</code> 和 <code>asyncio</code>，但依然會有本篇的需求原因是，即使單一 app/module 沒有混用 <code>threading</code> 和 <code>asyncio</code>，也會有需要和其他 app/module 互動的狀況。<br>身為一個採用 asyncio 設計的應用程式，如何安全的使用其他應用提供的接口，以及如何提供安全的接口給其他應用使用，是本篇的撰寫動機。</p>
 <p>之所以會有這篇整理是因為，若我們要用 <code>asyncio</code> 用來取代 multithread，會有一個關鍵差異是，multithread 仰賴於 CPU 分時，所以當各項任務跑在各個 thread，基本上如果哪個任務佔住了 CPU（就比如 time.sleep()），其實他終究無法真正獨佔住 CPU 那麼長時間，因為還有底層的 CPU 分時和 multicore 在運作，這不是他能控制的。但 asyncio 就不一樣了，他跑在單一 thread，在一個 event loop 上輪流執行多項任務，所以如果某個任務卡住了 event loop，那 loop 中排程的其他任務也就都被卡著無法執行了。所以，從不影響其他任務的角度來說，我們在使用 <code>asyncio</code> 時，要儘量避免有 blocking 的狀況，要改以 aysncio style 的 blocking，也就是說該 flow 是 block 住了，但事實上不會佔住 event loop 不釋放，讓其他 task 得以繼續在 event loop 上被執行。</p>
 <p>（本篇假設為 Pyhton 3.5 以後，所以不會看到 yield）</p>
-<br>
-
+<blockquote>
 <p>使用 asyncio 會有以下三種情境</p>
-<h2 id="三種情境"><a href="#三種情境" class="headerlink" title="三種情境"></a>三種情境</h2><p>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)<br>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果<br>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</p>
+<p>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</p>
+<p>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</p>
+<p>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</p>
+</blockquote>
 <br>
 
 <hr>
@@ -726,17 +728,19 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
 
 <hr>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>使用 asyncio 所會遇到的三種情境，若只有應用程式內部使用</p>
+<blockquote>
 <p><strong>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</strong></p>
 <p>就是用 <code>await</code> 和 <code>ensure_future()</code>。<code>await</code> 用於該 flow 需要等 callee 的結果才能繼續走，<code>ensure_future()</code> 用於只是要觸發 callee，不需要等其結果，直接可以繼續走。</p>
-<br>
-
+</blockquote>
 <p>而對於需與其他應用程式交互的情境，分為提供 API 給其他人使用，以及呼叫其他人提供的 API。</p>
+<blockquote>
 <p><strong>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</strong></p>
 <p>當呼叫其他人提供的 API 時，我們不希望等待其結果的這段時間，會卡住我們的 event loop 無法運作。這種情境又會分為兩種狀況，取決於我們 call 外部 API 時，我們所需要取得的結果是透過 return 回傳還是透過 callback 回傳。若是透過 return 回傳，就使用 <code>run_in_executor()</code>；若是透過 callback 回傳，就需要用到 <code>create_future()</code> 創造 <code>future</code> 物件，<code>await</code> 該物件，然後在 callback 中<code>set_result()</code> 告知該 future 已有結果。</p>
-<br>
-
+</blockquote>
+<blockquote>
 <p><strong>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</strong></p>
 <p>當提供 API 給其他人使用時，我們想將其他人交付的工作排程入 event loop，就是用 <code>run_coroutine_threadsafe()</code>。</p>
+</blockquote>
 <br>
 
 <h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>本篇並沒有對各 API 舉詳細的範例及各種用法，不過相信以該 API 為關鍵字 Google 一下就有許多例子了。我想解決的痛點只是 <code>asyncio</code> 好像有好幾個名字都很像的 API 不知道什麼時候該使用哪個。</p>
@@ -1184,7 +1188,7 @@ my_task_a: <span class="token number">9</span><span aria-hidden="true" class="li
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">27.1k</span>
             
             
             

@@ -492,6 +492,7 @@
 <p>(Official docs are collected <a target="_blank" rel="noopener" href="https://golang.org/doc/">here</a>)</p>
 <hr>
 <p>一些特性及 coding style</p>
+<blockquote>
 <ul>
 <li>名稱大寫開頭是 exported，小寫是 private</li>
 <li>分號 <code>;</code> 只有 for 中會看到，或當你想要把多個 statements 放在同一行的時候。不是沒有，是 Go 自己會在 compile 時補上</li>
@@ -501,13 +502,16 @@
 <li>function 可以有複數個 return 值，但 <code>return</code> expression 是一定要寫的；另外 function signature 可以直接指定要 return 的變數如 <code>(n int, err error)</code></li>
 <li>Object 要 implement 哪個 <code>interface</code> 只需要直接 implement 該 interface 規範的方法，不需要用 interface name 綁定</li>
 </ul>
+</blockquote>
 <hr>
 <h2 id="Print"><a href="#Print" class="headerlink" title="Print"></a>Print</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go">fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"Hello %d\n"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span>
 fmt<span class="token punctuation">.</span><span class="token function">Fprint</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>Stdout<span class="token punctuation">,</span> <span class="token string">"Hello "</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>fmt<span class="token punctuation">.</span><span class="token function">Sprint</span><span class="token punctuation">(</span><span class="token string">"Hello "</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>(<code>%v</code> can print any value, even arrays, slices, structs, and maps.)</p>
+<blockquote>
+<p><code>%v</code> can print any value, even arrays, slices, structs, and maps.</p>
+</blockquote>
 <p>If you want to control the default format for a custom type, define a method with the signature <code>String() string</code> on the type. i.e. implement the <code>Stringer</code> interface.</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>T<span class="token punctuation">)</span> <span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> fmt<span class="token punctuation">.</span><span class="token function">Sprintf</span><span class="token punctuation">(</span><span class="token string">"%d/%g/%q"</span><span class="token punctuation">,</span> t<span class="token punctuation">.</span>a<span class="token punctuation">,</span> t<span class="token punctuation">.</span>b<span class="token punctuation">,</span> t<span class="token punctuation">.</span>c<span class="token punctuation">)</span>
@@ -574,7 +578,9 @@ fmt<span class="token punctuation">.</span><span class="token function">Println<
 
 <p>compiler 會把 … 的東西理解為一串參數<br>比如 caller 要傳一串參數 <code>a, b, c, d, e</code> 給某 function，function 就是用 <code>...</code> 來接，而他跟 slice 其實有個內部轉換的關係，所以同時也可以透過 <code>...</code> 將 slice 還原為一串參數</p>
 <hr>
-<h2 id="Basic-Data-Type"><a href="#Basic-Data-Type" class="headerlink" title="Basic Data Type"></a>Basic Data Type</h2><p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
+<h2 id="Basic-Data-Type"><a href="#Basic-Data-Type" class="headerlink" title="Basic Data Type"></a>Basic Data Type</h2><blockquote>
+<p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>        Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
+</blockquote>
 <hr>
 <h2 id="Type-assertions-switches"><a href="#Type-assertions-switches" class="headerlink" title="Type assertions/switches"></a>Type assertions/switches</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
@@ -681,7 +687,9 @@ p <span class="token operator">:=</span> <span class="token function">new</span>
     <span class="token comment">// return &amp;File{fd: fd, name: name} // with the missing ones left as their respective zero values.</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<blockquote>
 <p>值得一提的是 Go 是採取 garbage collection 的記憶體回收機制，所以 return 一個 local variable 的 address 並在後續使用是沒有問題的</p>
+</blockquote>
 <p>The expressions <code>new(File)</code> and <code>&amp;File{}</code> are equivalent. 都是給定 zero values</p>
 <h3 id="make"><a href="#make" class="headerlink" title="make"></a>make</h3><p><code>make(T, args)</code> serves a purpose different from <code>new(T)</code>. It creates <strong>slices, maps, and channels</strong> only, and it returns an initialized (not zeroed) value of type T (not *T). The reason for the distinction is that these three types represent, under the covers, references to data structures that must be initialized before use.</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go">v <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token comment">// the slice v now refers to a new array of 100 ints</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -766,7 +774,9 @@ leaving: b<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>一個有實作 <code>ServeHTTP</code> method 的物件就能成為 <code>Handler</code> 這種 interface。我們今天自己有一個 singnature 長這樣 <code>func(ResponseWriter, *Request)</code> 的 function，我們為他實作了 <code>ServeHTTP</code> 這個方法，從此我們的 <code>HandlerFunc</code> 的實體也可以用來餵給任何要接收 <code>Handler</code> 的地方。</p>
+<blockquote>
 <p>其實如果用 struct 來想本來很好理解：比如我們寫了某個 struct <code>MyHandler</code>，我們為 <code>MyHandler</code> 實作了 <code>ServeHTTP</code> 方法，因此他就成為了一個合法的 <code>Handler</code>，我們就可以把 <code>MyHandler</code> 餵給任何可以接收 <code>Handler</code> 的地方。<br>現在只是把 struct 換成 function，這其實也是 functional programming 的應用需求，用 struct object 和用 function object 的差別就是 struct 會有 internal state 而 function 完全是看當下給的參數。</p>
+</blockquote>
 <p>這種用法就像一個 adapter，可以把有 <code>func(ResponseWriter, *Request)</code> 這種 signature 的方法，轉成 <code>Handler</code> interface。為什麼說「轉」？因為符合 <code>func(ResponseWriter, *Request)</code> 這個 signature 的那些方法，本身是沒有個別實作 <code>ServeHTTP()</code> 的喔，<code>ServeHTTP()</code> 的導入是倚靠我們將他實作在 type <code>HandlerFunc</code></p>
 <p>另外也可以注意到，<code>type HandlerFunc</code> 是規範 signature，也就是 function name 本身是可以 anonymous 的，只要 signature 長的一樣就會給過，所以就有了我們在 <a target="_blank" rel="noopener" href="https://golang.org/doc/articles/wiki/">Writing Web Applications</a> 看到的用法</p>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">viewHandler</span><span class="token punctuation">(</span>w http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> r <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> title <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1424,7 +1434,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">26.5k</span>
+                        class="white-color">27.1k</span>
             
             
             
