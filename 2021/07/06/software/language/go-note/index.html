@@ -392,16 +392,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/go/">
+                                <span class="chip bg-color">go</span>
+                            </a>
+                        
                             <a href="/tags/programming/">
                                 <span class="chip bg-color">programming</span>
                             </a>
                         
                             <a href="/tags/language/">
                                 <span class="chip bg-color">language</span>
-                            </a>
-                        
-                            <a href="/tags/go/">
-                                <span class="chip bg-color">go</span>
                             </a>
                         
                     </div>
@@ -500,17 +500,18 @@
 <p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>        Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
 </blockquote>
 <h4 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h4><ul>
-<li><p><a href="">slice</a></p>
+<li><p><a href="https://chungchris.github.io/2021/07/06/software/language/go-note/#toc-heading-10">slice</a></p>
 </li>
-<li><p>string</p>
+<li><p><a target="_blank" rel="noopener" href="https://quickref.me/golang">string</a></p>
+</li>
+<li><p><strong>map</strong></p>
 </li>
 </ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li><strong>map</strong></li>
-</ul>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go">pair <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">rune</span> <span class="token punctuation">{</span>
+        <span class="token string">')'</span><span class="token punctuation">:</span> <span class="token string">'('</span><span class="token punctuation">,</span>
+        <span class="token string">']'</span><span class="token punctuation">:</span> <span class="token string">'['</span><span class="token punctuation">,</span>
+        <span class="token string">'}'</span><span class="token punctuation">:</span> <span class="token string">'{'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="Idiomatic"><a href="#Idiomatic" class="headerlink" title="Idiomatic"></a>Idiomatic</h3><blockquote>
 <ul>
@@ -553,6 +554,11 @@ fmt<span class="token punctuation">.</span><span class="token function">Printf</
 <li>The size of an array is part of its type. The types <code>[10]int</code> and <code>[20]int</code> are distinct.</li>
 </ul>
 <p>因為這樣的特性，所以 Slice 才是在 Go 中更常見的用法</p>
+<h3 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h3><p>Slices wrap arrays to give a more general, powerful, and convenient interface to sequences of data. Slices hold references to an underlying array, and if you assign one slice to another, both refer to the same array. If a function takes a slice argument, changes it makes to the elements of the slice will be visible to the caller.</p>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go">s <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// cap is 0</span>
+s <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">)</span> <span class="token comment">// auto reallocate</span>
+s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"a"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <pre class="line-numbers language-go" data-language="go"><code class="language-go">a <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span> <span class="token comment">// a 是 array</span>
 s <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">int</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span>    <span class="token comment">// s 是 slices</span>
 
@@ -574,9 +580,7 @@ as<span class="token punctuation">[</span><span class="token number">2</span><sp
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"as:"</span><span class="token punctuation">,</span> as<span class="token punctuation">)</span> <span class="token comment">// as: [1 2 12 4 5 6]</span>
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"a:"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>   <span class="token comment">// a:  [1 2 9 4]  // as 因爲被擴充過，所以已經不是綁定於 a，所以改 as 不再會改到 a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h3><p>Slices wrap arrays to give a more general, powerful, and convenient interface to sequences of data. Slices hold references to an underlying array, and if you assign one slice to another, both refer to the same array. If a function takes a slice argument, changes it makes to the elements of the slice will be visible to the caller.</p>
-<p>Two-dimensional slices </p>
-<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> LinesOfText <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>     <span class="token comment">// A slice of byte slices.</span>
+<h4 id="Two-dimensional-slices"><a href="#Two-dimensional-slices" class="headerlink" title="Two-dimensional slices"></a>Two-dimensional slices</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> LinesOfText <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>     <span class="token comment">// A slice of byte slices.</span>
 
 text <span class="token operator">:=</span> LinesOfText<span class="token punctuation">{</span>
 	<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"Now is the time"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -1087,16 +1091,16 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/go/">
+                                    <span class="chip bg-color">go</span>
+                                </a>
+                            
                                 <a href="/tags/programming/">
                                     <span class="chip bg-color">programming</span>
                                 </a>
                             
                                 <a href="/tags/language/">
                                     <span class="chip bg-color">language</span>
-                                </a>
-                            
-                                <a href="/tags/go/">
-                                    <span class="chip bg-color">go</span>
                                 </a>
                             
                         </div>
@@ -1451,7 +1455,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">34.9k</span>
+                        class="white-color">35k</span>
             
             
             
