@@ -432,14 +432,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-07-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7.1k
+                    7.2k
                 </div>
                 
 
@@ -542,6 +542,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意 <code>let bar = *f</code> 是讓 bar 得到 f 的值的複製品，前提是 f 的型別有 Copy 屬性。</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Borrow checker 其實是個大魔王，他非常嚴格，可以寫寫這一題例子就會更有感覺<br><a href="">[LeeCode] #19 Remove Nth Node From End of List</a></p>
 <hr>
 <h2 id="Lifetime"><a href="#Lifetime" class="headerlink" title="Lifetime"></a>Lifetime</h2><p>Lifetime 就是為了 borrow checker 而存在，確保一個 reference 一定不會 refer 到一塊已經死掉的實體。大部分的狀況都 Elision，編譯器會幫忙補上，但編譯器無法判斷的狀況自然就要自己寫</p>
 <pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token comment">// `print_refs` takes two references to `i32` which have different</span>
@@ -1155,6 +1156,23 @@ fn cook(chopped: Option&lt;Chopped&gt;) -&gt; Option&lt;Cooked&gt; {
     <span class="token comment">//   becauset his will return Option&lt;Option&lt;Food&gt;&gt;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="as-ref-as-mut"><a href="#as-ref-as-mut" class="headerlink" title="as_ref(), as_mut()"></a>as_ref(), as_mut()</h4><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">const</span> <span class="token keyword">fn</span> <span class="token function-definition function">as_ref</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token operator">&amp;</span><span class="token class-name">T</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Converts from <code>&amp;Option&lt;T&gt;</code> to <code>Option&lt;&amp;T&gt;</code>.</p>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">as_mut</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">T</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Converts from <code>&amp;mut Option&lt;T&gt;</code> to <code>Option&lt;&amp;mut T&gt;</code>.</p>
+<p>注意轉換過之後都還是包在 <code>Option</code> 裡面</p>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">let</span> <span class="token keyword">mut</span> x <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">match</span> x<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">*</span>v <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">,</span>
+    <span class="token class-name">None</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token macro property">assert_eq!</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><code>Option</code>, <code>Box</code>, <code>Result</code> 三種類型才有支持預設，其他要實作 <code>AsRef</code> trait</p>
+</blockquote>
 <h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p>對於一個 module 而言，最完整的 erro propagation 做法為</p>
 <ol>
 <li>定義自己的 error 型別，比如 <code>enum MyError {}</code>，列舉各種可能產生的 error，同時也包含當使用到其他 module 時，各個其他 moduel 的 error 歸類到 MyError 中的其中一個可能值</li>
@@ -1618,16 +1636,16 @@ match_args {{increase|decrease}} &lt;integer&gt;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
-                    </a>
-                    
                     <a href="/tags/programming/">
                         <span class="chip bg-color">programming</span>
                     </a>
                     
                     <a href="/tags/language/">
                         <span class="chip bg-color">language</span>
+                    </a>
+                    
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
                     </a>
                     
                 </div>
@@ -1891,7 +1909,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">31.1k</span>
+                        class="white-color">34.1k</span>
             
             
             
