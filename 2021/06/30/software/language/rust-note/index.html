@@ -498,7 +498,7 @@
 <h3 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h4><ul>
 <li><p>integer</p>
 <blockquote>
-<p>Length    Signed    Unsigned<br>8-bit    <code>i8</code>    <code>u8</code><br>16-bit    <code>i16</code>    <code>u16</code><br>32-bit    <code>i32</code>(default)    <code>u32</code><br>64-bit    <code>i64</code>    <code>u64</code><br>128-bit    <code>i128</code>    <code>u128</code><br>arch    <code>isize</code>    <code>usize</code></p>
+<p>Length    Signed    Unsigned<br>8-bit        <code>i8</code>    <code>u8</code><br>16-bit    <code>i16</code>    <code>u16</code><br>32-bit    <code>i32</code>(default)    <code>u32</code><br>64-bit    <code>i64</code>    <code>u64</code><br>128-bit    <code>i128</code>    <code>u128</code><br>arch    <code>isize</code>    <code>usize</code></p>
 </blockquote>
 </li>
 <li><p>float: <code>f32</code>, <code>f64</code>(default)</p>
@@ -743,7 +743,7 @@ a,b,c<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
     <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Collected (0..10) into: {:?}"</span><span class="token punctuation">,</span> collected_iterator<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// The `vec!` macro can be used to initialize a vector</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> xs <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1i32</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> xs <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"Initial vector: {:?}"</span><span class="token punctuation">,</span> xs<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// Insert new element at the end of the vector</span>
@@ -1725,16 +1725,16 @@ match_args {{increase|decrease}} &lt;integer&gt;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
-                    </a>
-                    
                     <a href="/tags/programming/">
                         <span class="chip bg-color">programming</span>
                     </a>
                     
                     <a href="/tags/language/">
                         <span class="chip bg-color">language</span>
+                    </a>
+                    
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
                     </a>
                     
                 </div>
@@ -1998,7 +1998,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">35k</span>
+                        class="white-color">35.1k</span>
             
             
             
