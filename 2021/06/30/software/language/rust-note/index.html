@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7.2k
+                    7.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    35 Min
+                    37 Min
                 </div>
                 
 
@@ -542,7 +542,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意 <code>let bar = *f</code> 是讓 bar 得到 f 的值的複製品，前提是 f 的型別有 Copy 屬性。</p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Borrow checker 其實是個大魔王，他非常嚴格，可以寫寫這一題例子就會更有感覺<br><a href="">[LeeCode] #19 Remove Nth Node From End of List</a></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Borrow checker 其實是個大魔王，他非常嚴格，可以寫寫這一題例子就會更有感覺<br><a href="https://chungchris.github.io/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/#toc-heading-5">[LeeCode] #19 Remove Nth Node From End of List</a></p>
 <hr>
 <h2 id="Lifetime"><a href="#Lifetime" class="headerlink" title="Lifetime"></a>Lifetime</h2><p>Lifetime 就是為了 borrow checker 而存在，確保一個 reference 一定不會 refer 到一塊已經死掉的實體。大部分的狀況都 Elision，編譯器會幫忙補上，但編譯器無法判斷的狀況自然就要自己寫</p>
 <pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token comment">// `print_refs` takes two references to `i32` which have different</span>
@@ -1159,10 +1159,10 @@ fn cook(chopped: Option&lt;Chopped&gt;) -&gt; Option&lt;Cooked&gt; {
 <h4 id="as-ref-as-mut"><a href="#as-ref-as-mut" class="headerlink" title="as_ref(), as_mut()"></a>as_ref(), as_mut()</h4><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">const</span> <span class="token keyword">fn</span> <span class="token function-definition function">as_ref</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token operator">&amp;</span><span class="token class-name">T</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Converts from <code>&amp;Option&lt;T&gt;</code> to <code>Option&lt;&amp;T&gt;</code>.</p>
+<p>這東西的重要性在於可以產生一個被包在 Option 裡面的東西的 reference 而不用 take ownership</p>
 <pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">as_mut</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">T</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Converts from <code>&amp;mut Option&lt;T&gt;</code> to <code>Option&lt;&amp;mut T&gt;</code>.</p>
-<p>注意轉換過之後都還是包在 <code>Option</code> 裡面</p>
 <pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">let</span> <span class="token keyword">mut</span> x <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">match</span> x<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token class-name">Some</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">*</span>v <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">,</span>
@@ -1170,9 +1170,47 @@ fn cook(chopped: Option&lt;Chopped&gt;) -&gt; Option&lt;Cooked&gt; {
 <span class="token punctuation">}</span>
 <span class="token macro property">assert_eq!</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>注意轉換過之後都還是包在 <code>Option</code> 裡面</p>
 <blockquote>
 <p><code>Option</code>, <code>Box</code>, <code>Result</code> 三種類型才有支持預設，其他要實作 <code>AsRef</code> trait</p>
 </blockquote>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token keyword">mut</span> a <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> p1 <span class="token operator">=</span> a<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// p 沒有 take ownership 喔. 5 的 ownership 還是在 a</span>
+
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{:?}"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{:?}"</span><span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">let</span> p11 <span class="token operator">=</span> p1<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"p11:{:?}"</span><span class="token punctuation">,</span> p11<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 可以透過 p11 拿到 5</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"a:{:?}"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 以下是犯一些如果不使用 as_ref()，會遇到的 ownership 問題</span>
+    
+    <span class="token keyword">let</span> p2 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> a<span class="token punctuation">;</span>
+    <span class="token comment">//let p22 = p2.unwrap(); // cannot move out of `*p2` which is behind a shared reference</span>
+
+    <span class="token comment">/*let p22 = match *p2 { // cannot move out of `p2.0` which is behind a mutable reference
+        Some(v) =&gt; *v, // v: data moved here
+        None =&gt; 0
+    };*/</span>
+    
+    <span class="token keyword">let</span> p22 <span class="token operator">=</span> <span class="token keyword">match</span> <span class="token operator">*</span>p2 <span class="token punctuation">{</span>
+        <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token keyword">ref</span> v<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">*</span><span class="token operator">*</span>v<span class="token punctuation">,</span> <span class="token comment">// 處理上面錯誤的方法就是用 ref 來接</span>
+        <span class="token class-name">None</span> <span class="token operator">=&gt;</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"p22:{:?} {:p}"</span><span class="token punctuation">,</span> p22<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p22<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//println!("a:{:?}", a); // cannot borrow `a` as immutable because it is also borrowed as mutable</span>
+    <span class="token comment">// 這個時候 5 的 ownership 都還是在 a，所以當這裡要用 a 就會有這個衝突</span>
+
+    <span class="token keyword">let</span> p23 <span class="token operator">=</span> <span class="token keyword">match</span> p2<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 或者要把原本 a 的 ownership take 過來到 p2，p2 才有權把裡面的東西移去 v</span>
+        <span class="token class-name">Some</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token operator">*</span>v<span class="token punctuation">,</span>
+        <span class="token class-name">None</span> <span class="token operator">=&gt;</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"p23:{:?} {:p}"</span><span class="token punctuation">,</span> p23<span class="token punctuation">,</span> <span class="token operator">&amp;</span>p23<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"a:{:?}"</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 因為原本 a 的 ownership 已經被轉移去 p2，所以 a 已經變 None 自然也不再有衝突</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p>對於一個 module 而言，最完整的 erro propagation 做法為</p>
 <ol>
 <li>定義自己的 error 型別，比如 <code>enum MyError {}</code>，列舉各種可能產生的 error，同時也包含當使用到其他 module 時，各個其他 moduel 的 error 歸類到 MyError 中的其中一個可能值</li>
@@ -1909,7 +1947,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">34.1k</span>
+                        class="white-color">34.5k</span>
             
             
             
