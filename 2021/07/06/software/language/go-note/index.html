@@ -432,7 +432,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-07-10
                 </div>
                 
 
@@ -491,8 +491,28 @@
 </ul>
 <p>(Official docs are collected <a target="_blank" rel="noopener" href="https://golang.org/doc/">here</a>)</p>
 <hr>
-<p>一些特性及 coding style</p>
-<blockquote>
+<h2 id="Chest-sheet"><a href="#Chest-sheet" class="headerlink" title="Chest sheet"></a>Chest sheet</h2><p><a target="_blank" rel="noopener" href="https://quickref.me/golang">Chest sheet</a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://gobyexample.com/">Go by Example</a></li>
+<li><a target="_blank" rel="noopener" href="https://pkg.go.dev/">godoc</a></li>
+</ul>
+<h3 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h4><blockquote>
+<p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>        Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
+</blockquote>
+<h4 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h4><ul>
+<li><p><a href="">slice</a></p>
+</li>
+<li><p>string</p>
+</li>
+</ul>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>map</strong></li>
+</ul>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="Idiomatic"><a href="#Idiomatic" class="headerlink" title="Idiomatic"></a>Idiomatic</h3><blockquote>
 <ul>
 <li>名稱大寫開頭是 exported，小寫是 private</li>
 <li>分號 <code>;</code> 只有 for 中會看到，或當你想要把多個 statements 放在同一行的時候。不是沒有，是 Go 自己會在 compile 時補上</li>
@@ -501,6 +521,7 @@
 <li><code>range</code> 用來 iterate <code>array</code>, <code>slice</code>, <code>string</code>, or <code>map</code>, or reading from a <code>channel</code>。<code>range</code> 的 return 值是彈性接收的，如果只用一個變數去接就是代表只接回傳值中的第一個，也可用 <code>_</code> (blank identifier) 跳掉不接的部分。（如果是要產生 index 來 iterate 就像 C 一樣用 <code>for</code>）</li>
 <li>function 可以有複數個 return 值，但 <code>return</code> expression 是一定要寫的；另外 function signature 可以直接指定要 return 的變數如 <code>(n int, err error)</code></li>
 <li>Object 要 implement 哪個 <code>interface</code> 只需要直接 implement 該 interface 規範的方法，不需要用 interface name 綁定</li>
+<li><code>%v</code> can print any value, even arrays, slices, structs, and maps.</li>
 </ul>
 </blockquote>
 <hr>
@@ -577,10 +598,6 @@ x <span class="token operator">=</span> <span class="token function">append</spa
 fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>compiler 會把 … 的東西理解為一串參數<br>比如 caller 要傳一串參數 <code>a, b, c, d, e</code> 給某 function，function 就是用 <code>...</code> 來接，而他跟 slice 其實有個內部轉換的關係，所以同時也可以透過 <code>...</code> 將 slice 還原為一串參數</p>
-<hr>
-<h2 id="Basic-Data-Type"><a href="#Basic-Data-Type" class="headerlink" title="Basic Data Type"></a>Basic Data Type</h2><blockquote>
-<p><code>int8</code>    8-bit signed integer<br><code>int16</code>    16-bit signed integer<br><code>int32</code>    32-bit signed integer<br><code>int64</code>    64-bit signed integer<br><code>uint8</code>    8-bit unsigned integer<br><code>uint16</code> 16-bit unsigned integer<br><code>uint32</code> 32-bit unsigned integer<br><code>uint64</code> 64-bit unsigned integer<br><code>int</code>        Both in and uint contain same size, either 32 or 64 bit.<br><code>uint</code>    Both in and uint contain same size, either 32 or 64 bit.<br><code>rune</code>    It is a synonym of int32 and also represent Unicode code points.<br><code>byte</code>    It is a synonym of int8.<br><code>uintptr</code> It is an unsigned integer type. Its width is not defined, but its can hold all the bits of a pointer value.</p>
-</blockquote>
 <hr>
 <h2 id="Type-assertions-switches"><a href="#Type-assertions-switches" class="headerlink" title="Type assertions/switches"></a>Type assertions/switches</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
@@ -1434,7 +1451,7 @@ v <span class="token operator">:=</span> <span class="token operator">&lt;-</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">34.5k</span>
+                        class="white-color">34.9k</span>
             
             
             

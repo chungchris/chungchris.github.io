@@ -439,14 +439,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7.5k
+                    7.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    37 Min
+                    38 Min
                 </div>
                 
 
@@ -490,7 +490,58 @@
 </ol>
 <hr>
 <h2 id="Chest-sheet"><a href="#Chest-sheet" class="headerlink" title="Chest sheet"></a>Chest sheet</h2><p><a target="_blank" rel="noopener" href="https://cheats.rs/">Chest sheet</a></p>
-<p><a target="_blank" rel="noopener" href="https://doc.rust-lang.org/std/">Official std</a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://doc.rust-lang.org/stable/rust-by-example/index.html">Rust by Example</a></li>
+<li><a target="_blank" rel="noopener" href="https://rust-lang-nursery.github.io/rust-cookbook/">Rust cookbook</a> </li>
+<li><a target="_blank" rel="noopener" href="https://doc.rust-lang.org/std/">Official std</a></li>
+</ul>
+<h3 id="Data-Type"><a href="#Data-Type" class="headerlink" title="Data Type"></a>Data Type</h3><h4 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h4><ul>
+<li><p>integer</p>
+<blockquote>
+<p>Length    Signed    Unsigned<br>8-bit    <code>i8</code>    <code>u8</code><br>16-bit    <code>i16</code>    <code>u16</code><br>32-bit    <code>i32</code>(default)    <code>u32</code><br>64-bit    <code>i64</code>    <code>u64</code><br>128-bit    <code>i128</code>    <code>u128</code><br>arch    <code>isize</code>    <code>usize</code></p>
+</blockquote>
+</li>
+<li><p>float: <code>f32</code>, <code>f64</code>(default)</p>
+</li>
+<li><p><code>bool</code></p>
+</li>
+<li><p><code>char</code>: Fixed 4 bytes in size and represents a Unicode Scalar Value</p>
+</li>
+</ul>
+<h4 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h4><ul>
+<li><strong>Tuple</strong>: <code>()</code> Fixed length. Group different types.</li>
+</ul>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> tup<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">f64</span><span class="token punctuation">,</span> <span class="token keyword">u8</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">6.4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">let</span> tup <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">6.4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token operator">=</span> tup<span class="token punctuation">;</span> <span class="token comment">// it's copying, not moving because it's on stack</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">let</span> x<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token keyword">i32</span><span class="token punctuation">,</span> <span class="token keyword">f64</span><span class="token punctuation">,</span> <span class="token keyword">u8</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">6.4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> five_hundred <span class="token operator">=</span> x<span class="token number">.0</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> six_point_four <span class="token operator">=</span> x<span class="token number">.1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>Array</strong>: <code>[]</code> Same type. Fixed length</li>
+</ul>
+<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> a<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">;</span> <span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">;</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//[3 ,3 ,3, 3, ,3]</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> first <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> second <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p><a href="https://chungchris.github.io/2021/06/30/software/language/rust-note/#toc-heading-14">Vector</a></p>
+</li>
+<li><p><a href="https://chungchris.github.io/2021/06/30/software/language/rust-note/#toc-heading-8">string</a></p>
+</li>
+<li><p><a href="https://chungchris.github.io/2021/06/30/software/language/rust-note/#toc-heading-15">HashMap</a></p>
+</li>
+</ul>
 <hr>
 <blockquote>
 <p>往下是我自己補充 Chest sheet 中沒有的，或者一些比較難懂的概念</p>
@@ -1947,7 +1998,7 @@ match_args {{increase|decrease}} &lt;integer&gt;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">34.5k</span>
+                        class="white-color">34.9k</span>
             
             
             
