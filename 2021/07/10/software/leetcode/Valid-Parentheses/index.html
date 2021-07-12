@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,merge,linked list,sort">
+    <meta name="keywords" content="leetcode,parentheses">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #21 Merge Two Sorted Lists | A Po</title>
+    <title>[LeetCode] #20 Valid Parentheses | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #21 Merge Two Sorted Lists</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #20 Valid Parentheses</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode/">
-                                <span class="chip bg-color">leecode</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software-leecode/" class="post-category">
-                                software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -417,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-11
+                    2021-07-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-11
+                    2021-07-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    385
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    1 Min
                 </div>
                 
 
@@ -466,161 +466,106 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>融合兩個排序過的單向串列</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Parse 大/中/小 括號對看是否合法</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-two-sorted-lists/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">Link</a></li>
 <li>等級：<strong>Easy</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 很容易，但 Python 的 List 太強大，用久了可能會忘了在有限制的單向串列狀況下怎麼處理這個問題。同時這也是一題可以觀察 Rust 語言特性的題目</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 經典題，很容易，但如果沒有做過還是可能會漏一些東西</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>就是從兩個串列的頭一個一個挑比較小的那個</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
-<span class="token comment"># class ListNode:</span>
-<span class="token comment">#     def __init__(self, val=0, next=None):</span>
-<span class="token comment">#         self.val = val</span>
-<span class="token comment">#         self.next = next</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> l1<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> l2<span class="token punctuation">:</span> ListNode<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        D <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token comment"># 常用技巧：創一個 dummy 的點當作 head</span>
+<hr>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>Parse 括號的特性就是與 stack add/pop 的特性 100% 相符</p>
+<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
+        left <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">'([{'</span><span class="token punctuation">)</span>
+        pair <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">')'</span><span class="token punctuation">:</span><span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">:</span><span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span><span class="token string">'{'</span><span class="token punctuation">}</span>
 
-        cur <span class="token operator">=</span> D <span class="token comment"># python 沒有明確 pointer 的感覺，要自己想清楚這個 cur 是什麼意思</span>
-        <span class="token keyword">while</span> l1 <span class="token keyword">and</span> l2<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> l1<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> l2<span class="token punctuation">.</span>val<span class="token punctuation">:</span>
-                cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> l1
-                l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token builtin">next</span>
+        stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> c <span class="token keyword">in</span> left<span class="token punctuation">:</span>
+                 stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">False</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
-                cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> l2
-                l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token builtin">next</span>
-            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+                <span class="token keyword">if</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">!=</span> stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token boolean">False</span>
+                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-        <span class="token keyword">if</span> l1<span class="token punctuation">:</span>
-            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> l1
-        <span class="token keyword">if</span> l2<span class="token punctuation">:</span>
-            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> l2
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token keyword">return</span> D<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */</span>
-<span class="token keyword">func</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>l1 <span class="token operator">*</span>ListNode<span class="token punctuation">,</span> l2 <span class="token operator">*</span>ListNode<span class="token punctuation">)</span> <span class="token operator">*</span>ListNode <span class="token punctuation">{</span>
-    D <span class="token operator">:=</span> ListNode <span class="token punctuation">{</span> Val<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> Next<span class="token punctuation">:</span> <span class="token boolean">nil</span> <span class="token punctuation">}</span>
-
-    cur <span class="token operator">:=</span> <span class="token operator">&amp;</span>D
-    <span class="token keyword">for</span> l1 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token operator">&amp;&amp;</span> l2 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> l1<span class="token punctuation">.</span>Val <span class="token operator">&lt;=</span> l2<span class="token punctuation">.</span>Val <span class="token punctuation">{</span> <span class="token comment">// auto deref. we are not using (*l1).Val</span>
-            cur<span class="token punctuation">.</span>Next <span class="token operator">=</span> l1
-            l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span>Next
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            cur<span class="token punctuation">.</span>Next <span class="token operator">=</span> l2
-            l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span>Next
-        <span class="token punctuation">}</span>
-        cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>Next
+<p>都用 if == 來比較 char 我是覺得也沒什麼問題啦，只是說用 <code>set</code> 和 <code>dict</code> 因為他們是 hash search，所以理論上會快一些，但對這題來說真差別有限 </p>
+<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">isValid</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
+    pair <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">rune</span> <span class="token punctuation">{</span>
+        <span class="token string">')'</span><span class="token punctuation">:</span> <span class="token string">'('</span><span class="token punctuation">,</span>
+        <span class="token string">']'</span><span class="token punctuation">:</span> <span class="token string">'['</span><span class="token punctuation">,</span>
+        <span class="token string">'}'</span><span class="token punctuation">:</span> <span class="token string">'{'</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">if</span> l1 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        cur<span class="token punctuation">.</span>Next <span class="token operator">=</span> l1
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> l2 <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        cur<span class="token punctuation">.</span>Next <span class="token operator">=</span> l2
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> D<span class="token punctuation">.</span>Next
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token comment">// Definition for singly-linked list.</span>
-<span class="token comment">// #[derive(PartialEq, Eq, Clone, Debug)]</span>
-<span class="token comment">// pub struct ListNode {</span>
-<span class="token comment">//   pub val: i32,</span>
-<span class="token comment">//   pub next: Option&lt;Box&lt;ListNode&gt;&gt;</span>
-<span class="token comment">// }</span>
-<span class="token comment">// </span>
-<span class="token comment">// impl ListNode {</span>
-<span class="token comment">//   #[inline]</span>
-<span class="token comment">//   fn new(val: i32) -&gt; Self {</span>
-<span class="token comment">//     ListNode {</span>
-<span class="token comment">//       next: None,</span>
-<span class="token comment">//       val</span>
-<span class="token comment">//     }</span>
-<span class="token comment">//   }</span>
-<span class="token comment">// }</span>
-<span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">merge_two_lists</span><span class="token punctuation">(</span><span class="token keyword">mut</span> l1<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">,</span> <span class="token keyword">mut</span> l2<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> <span class="token class-name">D</span> <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> cur <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token class-name">D</span><span class="token punctuation">;</span>
-        <span class="token keyword">loop</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> l1<span class="token punctuation">.</span><span class="token function">is_none</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> l2<span class="token punctuation">.</span><span class="token function">is_none</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
+    stack <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> c <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'{'</span><span class="token punctuation">:</span>
+            stack <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token string">')'</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span>
             <span class="token punctuation">}</span>
-            <span class="token keyword">if</span> l1<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> l2<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>val <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> <span class="token keyword">mut</span> t <span class="token operator">=</span> l1<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// move out</span>
-                l1 <span class="token operator">=</span> t<span class="token punctuation">.</span>next<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// cut its next, move to l1</span>
-                cur<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// append the remaining to cur</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> <span class="token keyword">mut</span> t <span class="token operator">=</span> l2<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                l2 <span class="token operator">=</span> t<span class="token punctuation">.</span>next<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                cur<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            c <span class="token operator">=</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span>
+            <span class="token keyword">if</span> stack<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> c <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span>
             <span class="token punctuation">}</span>
-            cur <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            stack <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
         <span class="token punctuation">}</span>
-
-        <span class="token keyword">if</span> l1<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            cur<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next <span class="token operator">=</span> l1<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> l2<span class="token punctuation">.</span><span class="token function">is_some</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            cur<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next <span class="token operator">=</span> l2<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        
-        <span class="token class-name">D</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>上面的想法概念上講白了就是 3 個 pointer，一個是產生我們的最終答案的串列的 pointer <code>cur</code>，一個是 <code>l1</code> 的 pointer，一個是 <code>l2</code> 的 pointer，藉由不斷移動這些 pointers 來完成</p>
-<p>Rust 有嚴格的 ownership 機制，所以當遇到 pointer 問題的時候就會有點煩，因為 Rust 不像其他語言可以那麼自由的使用 pointer reference，每當你創造一個 reference 你就要處理他所指的資料的 ownership 問題<br>上面的 code 中存在 <code>as_ref()</code>, <code>as_mut()</code>, <code>take()</code>, <code>unwrap()</code>, <code>Some()</code> 都有 ownership 處理的考量在裡面</p>
-<p>所以我們能不能不用 pointer 的想法來處理這題</p>
-<p>今天我們要 merge <code>l1</code> 和 <code>l2</code> 兩串粽子成為一串 <code>m</code></p>
-<ol>
-<li>挑 <code>l1</code> 和 <code>l2</code> 中值比較小的那一個，假設為 <code>l1</code>，把他抓出來變成 <code>m</code> 的頭，把他的尾巴截掉成為 <code>l1'</code></li>
-<li>此時我們就進了一步，知道最終的解 <code>m</code> 就是剛剛已經取得的那個值，串上 <code>l1'</code> 和 <code>l2</code> 合併後的串列</li>
-<li>再從 <code>l1'</code> 和 <code>l2</code> 中選較小得那一個，把他抓出來，把他的尾巴截掉，再去更另一個串列合併，如此重複</li>
-</ol>
-<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">merge_two_lists</span><span class="token punctuation">(</span><span class="token keyword">mut</span> l1<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">,</span> <span class="token keyword">mut</span> l2<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">match</span> <span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token punctuation">(</span><span class="token class-name">Some</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// take ownership</span>
-                <span class="token keyword">if</span> n1<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> n2<span class="token punctuation">.</span>val <span class="token punctuation">{</span>
-                    <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> <span class="token punctuation">{</span>
-                        next<span class="token punctuation">:</span> <span class="token class-name">Solution</span><span class="token punctuation">::</span><span class="token function">merge_two_lists</span><span class="token punctuation">(</span>n1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>n2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                        val<span class="token punctuation">:</span> n1<span class="token punctuation">.</span>val
-                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    <span class="token class-name">Some</span><span class="token punctuation">(</span><span class="token class-name">Box</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> <span class="token punctuation">{</span>
-                        next<span class="token punctuation">:</span> <span class="token class-name">Solution</span><span class="token punctuation">::</span><span class="token function">merge_two_lists</span><span class="token punctuation">(</span><span class="token class-name">Some</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">,</span> n2<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">,</span>
-                        val<span class="token punctuation">:</span> n2<span class="token punctuation">.</span>val
-                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">is_valid</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token keyword">bool</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token keyword">mut</span> stack <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">match</span> c <span class="token punctuation">{</span>
+                <span class="token char string">'('</span> <span class="token operator">|</span> <span class="token char string">'['</span> <span class="token operator">|</span> <span class="token char string">'{'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    <span class="token keyword">match</span> c <span class="token punctuation">{</span>
+                        <span class="token char string">')'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'('</span> <span class="token punctuation">{</span>
+                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token char string">']'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'['</span> <span class="token punctuation">{</span>
+                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token char string">'}'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'{'</span> <span class="token punctuation">{</span>
+                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
                 <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token punctuation">(</span><span class="token class-name">None</span><span class="token punctuation">,</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token class-name">Some</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">None</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token class-name">Some</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token punctuation">(</span><span class="token class-name">None</span><span class="token punctuation">,</span> <span class="token class-name">None</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token class-name">None</span>
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Recursion 在純 functional programming 以外的語言其實都不太被鼓勵，因為有 stack 不段重複堆疊的問題。很多語言也都對這件事情有多多少少優化<br>大部分有效的優化都是 <strong>TCE</strong> (Tail Call Elimination)，他基於 <strong>Tail Call</strong></p>
-<blockquote>
-<p>function is tail recursive if the recursive call is the last thing executed by the function. </p>
-</blockquote>
-<p>這種狀況 compiler 才能做 TCE</p>
-<p>Rust 的編譯器採用 LLVM (Low Level Virtual Machine)，Rust 編譯會先把原始碼編譯成 IR，接著才是 從 IR 產生 Assembly 組合語言</p>
-<blockquote>
-<p>Apple 的 Swift 语言使用 LLVM 作为编译器框架<br>Rust 使用 LLVM 作为工具链的核心组件<br>例如，Clang 这个 C/C++ 编译器本身就是一个以 LLVM 为准绳的项目<br>Kotlin，它名义上是一种 JVM 语言，使用称为 Kotlin Native 的语言开发，该语言也使用了 LLVM 编译机器原生代码。<br><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/what-is-llvm-the-power-behind-swift-rust-clang-and-more">LLVM：Swift、Rust、Clang 等语言的强大后盾- Serdar Yegulalp, 盖磊</a></p>
-</blockquote>
-<p>而 LLVM 對於非 tail recursive 的狀況也有做優化，叫做 <strong>TCO</strong> (<a target="_blank" rel="noopener" href="https://llvm.org/docs/CodeGenerator.html#tail-call-optimization">Tail call optimization</a>)，但這並不是保證的一件事情，還是有可能有 stack overhead<br>所以比較好的狀況還是想辦法把你的 recursion 搞成 tail recursive</p>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -647,7 +592,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/">https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/</a>
+                    <a href="https://chungchris.github.io/2021/07/10/software/leetcode/Valid-Parentheses/">https://chungchris.github.io/2021/07/10/software/leetcode/Valid-Parentheses/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -685,8 +630,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode/">
-                                    <span class="chip bg-color">leecode</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -726,9 +671,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/';
-        this.page.identifier = '/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/';
-        this.page.title = '[LeeCode] #21 Merge Two Sorted Lists';
+        this.page.url = 'https://chungchris.github.io/2021/07/10/software/leetcode/Valid-Parentheses/';
+        this.page.identifier = '/2021/07/10/software/leetcode/Valid-Parentheses/';
+        this.page.title = '[LeetCode] #20 Valid Parentheses';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -762,19 +707,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/11/software/leecode/Merge-k-Sorted-Lists/">
+                <a href="/2021/07/11/software/leetcode/Merge-Two-Sorted-Lists/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="[LeeCode] #23 Merge k Sorted Lists">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="[LeetCode] #21 Merge Two Sorted Lists">
                         
-                        <span class="card-title">[LeeCode] #23 Merge k Sorted Lists</span>
+                        <span class="card-title">[LeetCode] #21 Merge Two Sorted Lists</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合 k 個排序過的單向串列
+                            融合兩個排序過的單向串列
                         
                     </div>
                     <div class="publish-info">
@@ -785,8 +730,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -796,8 +741,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -811,31 +756,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/10/software/leecode/Valid-Parentheses/">
+                <a href="/2021/07/09/software/leetcode/Remove-Nth-Node-From-End-of-List/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="[LeeCode] #20 Valid Parentheses">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="[LeetCode] #19 Remove Nth Node From End of List">
                         
-                        <span class="card-title">[LeeCode] #20 Valid Parentheses</span>
+                        <span class="card-title">[LeetCode] #19 Remove Nth Node From End of List</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Parse 大/中/小 括號對看是否合法
+                            移除一個單向 linked list 中倒數的 node
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -845,8 +790,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -1034,7 +979,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">39.7k</span>
+                        class="white-color">39.8k</span>
             
             
             

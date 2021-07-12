@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,search,binary search,sort">
+    <meta name="keywords" content="leetcode,sum">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #33 Search in Rotated Sorted Array | A Po</title>
+    <title>[LeetCode] #15 3sum | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #33 Search in Rotated Sorted Array</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #15 3sum</h1>
                 </div>
             </div>
         </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software-leecode/" class="post-category">
-                                software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-12
+                    2021-07-09
                 </div>
                 
 
@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.4k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    4 Min
                 </div>
                 
 
@@ -466,47 +466,102 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>在一個被 rotate 過的 sorted array 做 binary search</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>取三數總和為 0</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/3sum/">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 需要一點觀察，有可能會走錯方向，另外大於小於其實也有點煩</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 暴力解很容易，進階解不一定想到到，但看過就會</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>題目規定時間要 <code>O(log n)</code>，所以我們知道一定是 binary search</p>
-<p>那就先想一下差別在哪裡<br>binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>如果 list 是存在一個 indexing array，那我們通常會維護一個 (left, right) 的變數來記錄我們接著要搜尋的區間</p>
-<p>但現在這題因為 list 有被 rotate 過，所以我們面臨兩個可能的方向<br>第一步肯定還是對半切<br>如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 (left, right) 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？</p>
-<p>我先想了第一個方向，嘗試了幾種作法，但最後都走不下去，所以就往第二個方向，持續使用要取左半還是取右半這種判斷模式</p>
-<br>
-
-<p>Binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>但現在因為 list 有被 rotate 過，所以要取作左半還是右半，會根據 list 是否被 rotate 過來進一判斷</p>
-<p>所以我們要先找出有被 rotate 過的 list 的特徵<br>一般來說左側的值一定都小於自己，但如果一個 list 有被 rotate 過，那左側就會出現比自己大的值<br>所以我們就產生了一個判斷方法，看最左側的值，如果他比自己大，那就是有 roatate 過</p>
-<p>例如：<code>7 8 9 0 [1] 2 3 4 5</code><br>我們發現 7 比 1 大，所以當今天 target 是 0，他一定是存在於 1 的左半，因為左半勢必是已經列舉完所有比 1 小的值，才有可能出現比 1 大的值<br>但如果今天的 target 比 1 大，他就有可能存在 1 的左半或右半。進一步判斷的方式就是看 target 是不是比最左側的還 7 大，如果比 7 還大，那他就是在左半，反之是在右半</p>
-<p>又例如：<code>3 4 5 [6] 7 0 1 2</code>，我們發現最左的 3 比 6 小，如果 target 比 6 大，我們知道他一定在右半。因為所有比 6 大的值都不可能出現在左半，如果有任何比 6 大的值出現在左半，那最左側的值不能比 6 小<br>若 target 比 6 小，他就有可能存在 6 的左半或右半。進一步判斷的方式就是看 target 是不是比最左側的還 3 大，如果比 3 還大，那他就是在左半，反之是在右半</p>
-<p>同樣的邏輯，抓最右的數來判斷也可以，如果我們發現最右側的數居然比目前的值小，那我們就知道目前的數列是有 rotate 過</p>
-<p>大概就是醬，基於這個觀察，我們把他應用在幫助我們每次決定要取左側還是去右側的這個問題，我們整理成邏輯：</p>
-<p>如果現在 target 比目前的值小，代表我們要往值更小的未來移動，但該選左還是選右？<br>    選左半的條件是<br>        最左側出現了比目前大的值（因為這代表所有比目前值小的部分都會在左半部列舉完畢，所以為了找到 target 肯定是選左半。例如 <code>7 8 0 1 [2] 3 4 5 6</code> target 為 0）<br>            或者<br>        最左側的值比 target 還小（這代表三者目前呈現的關係由小到大為 left &lt; target &lt; current，所以為了找到 target 肯定是選左半。例如 <code>3 4 5 [6] 0 1 2</code> target 為 4）<br>    否則選右半<br>如果現在 target 比目前的值大，代表我們要往值更大的未來移動，但該選左還是選右？<br>    選右半的條件是<br>        最右側出現了比目前小的值（因為這代表所有比目前值大的部分都會在右半部列舉完畢，所以為了找到 target 肯定是選右半。例如 <code>2 3 4 [5] 6 0 1</code> target 為 6）<br>            或者<br>        最右側的值比 target 還大（這代表三者目前呈現的關係由小到大為 current &lt; target &lt; right，所以為了找到 target 肯定是選右半。例如 <code>7 8 0 1 [2] 3 4 5 6</code> target 為 5）<br>    否則選左半</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>挑 3 個數，自然知道暴力解就是 <code>O(n^3)</code>，所以有想想看有沒有比 <code>O(n^3)</code> 快的方法，掃一次是一定需要的，所以至少有 n，重點在於掃一次取得第一個數後，怎麼挑另外兩個數</p>
+<blockquote>
+<p>這題其實跟 <a href="https://chungchris.github.io/2021/07/08/software/leecode/Container-With-Most-Water/">Container With Most Water</a> 相似，都是從兩個方向往結果更好的選擇逼近</p>
+</blockquote>
+<p>這時候出現第一個癥結點，在挑選另外兩個數的時候，如果我們要產生 <code>O(n)</code> 的策略，那一定要 sort 過，不然挑選上根本無從憑據</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>value</td>
+<td>-7</td>
+<td>-5</td>
+<td>-2</td>
+<td>-1</td>
+<td>0</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<ol>
+<li>對於一個已經 sort 過的數列，我們今天要挑出 a, b, c 3 個數</li>
+<li>挑 a 時無從下策略，所以就遍歷</li>
+<li>挑 b,c 時，目標是要讓他們跟 a 的和為 0，我們試著先挑最大和最小，這算是一種蠻直覺的策略。例如，當目前 a = n[0] = -7，b 挑最小就是 a 的右邊一個 b = n[1] = -5，c 挑最大就是尾端 c = n[-1] = n[7] = 5</li>
+<li>此時 a + b + c = (-7) + (-5) + (5) = -7，距離我的目標 0，我們要嘗試讓 b, c 變成更大的值才行，因為我們在上一步挑的 c 已經是最大，所以現在唯一該替換的就是 b，若 b 的挑選往右跳，他就會越來越大</li>
+</ol>
+<p>時間複雜度就是第 1 步的 n，疊上 3,4 步的 n 所以是 <code>O(n^2)</code>，如果 sort 的部分算 <code>O(n logn)</code>，那目前就是 <code>n logn + n^2 </code></p>
+<p>另外還有一個問題是重複性，如果檢查重複用暴力解，那就是比如有 x 個解，要比 3 個數，那就是 3x，因為 x 也是 n 的相關數，所以還是 <code>O(n)</code> 所以對於時間複雜度的影響不大。但實際上執行起來還是可以藉由一個想法省些時間，關鍵就在於我們的數列已經排序過，所以如果找到一個解，只要該解跟上一個找到的解沒有重複，那他就是一個重複的解</p>
+<ol>
+<li>假設在某一輪遍歷選擇到某 a0</li>
+<li>在該輪 b,c 的選擇經過上述規則不斷遞遺，找到 b0,c0 使 a0 + b0 + c0 = 0</li>
+<li>b,c 的選擇繼續走，找找看還有沒有其他的 b,c 能和 a0 和為 0。假設又找到 b1,c1 達成 a0 + b1 + c1 = 0</li>
+<li>根據我們選擇 b,c 的邏輯，我們知道一定 b1 &gt;= b0，因為選 b 的時候我們是不斷往右移；一定 c1 &lt;= c0，因為選 c 的時候我們是不斷往左移。所以如果 [b1, c1] != [b0, c0]，那就算還另外存在 b2,c2 使得 a0 + b2 + c2 = 0，[b2, c2] 也不可能等於 [b0, c0]</li>
+<li>當 a 進到下一輪，如果與前一個 a 值相同，那可以直接跳過，因為於他右側的數列中選擇出的 b 和 c，一定會跟前一輪選出來的相同，甚至更少</li>
+</ol>
+<hr>
 <h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        <span class="token keyword">while</span> right <span class="token operator">&gt;</span> left<span class="token punctuation">:</span>
-            i <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span> <span class="token comment"># effectiveness same as i = left + int((right - left)/2) </span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> i
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> target<span class="token punctuation">:</span>  <span class="token comment"># find smaller                    </span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&gt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">or</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> target<span class="token punctuation">:</span>
-                    right <span class="token operator">=</span> i
+    <span class="token keyword">def</span> <span class="token function">threeSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        nums<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>l<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> i <span class="token operator">&gt;=</span> <span class="token number">1</span> <span class="token keyword">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
+
+            x <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
+            y <span class="token operator">=</span> l<span class="token operator">-</span><span class="token number">1</span>
+            ans_temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">while</span> x<span class="token operator">&lt;</span>y<span class="token punctuation">:</span>
+                s <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>y<span class="token punctuation">]</span>
+                <span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>ans_temp<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword">and</span> nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">==</span> ans_temp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">and</span> nums<span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">==</span> ans_temp<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        ans_temp <span class="token operator">=</span> ans_temp <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+                    y <span class="token operator">=</span> y <span class="token operator">-</span> <span class="token number">1</span>
+                    x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
+                <span class="token keyword">elif</span> s <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    y <span class="token operator">=</span> y <span class="token operator">-</span> <span class="token number">1</span>
                 <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    left <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>                   <span class="token comment"># find larger</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>right<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">or</span> nums<span class="token punctuation">[</span>right<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span> target<span class="token punctuation">:</span>
-                    left <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    right <span class="token operator">=</span> i
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                    x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
+
+            <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ans_temp<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                ans <span class="token operator">=</span> ans <span class="token operator">+</span> ans_temp
+
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -533,7 +588,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/">https://chungchris.github.io/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/</a>
+                    <a href="https://chungchris.github.io/2021/07/09/software/leetcode/3sum/">https://chungchris.github.io/2021/07/09/software/leetcode/3sum/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,9 +667,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/';
-        this.page.identifier = '/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/';
-        this.page.title = '[LeeCode] #33 Search in Rotated Sorted Array';
+        this.page.url = 'https://chungchris.github.io/2021/07/09/software/leetcode/3sum/';
+        this.page.identifier = '/2021/07/09/software/leetcode/3sum/';
+        this.page.title = '[LeetCode] #15 3sum';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -648,31 +703,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/12/software/leecode/Combination-Sum/">
+                <a href="/2021/07/09/software/leetcode/Remove-Nth-Node-From-End-of-List/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="[LeeCode] #39 Combination Sum">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="[LeetCode] #19 Remove Nth Node From End of List">
                         
-                        <span class="card-title">[LeeCode] #39 Combination Sum</span>
+                        <span class="card-title">[LeetCode] #19 Remove Nth Node From End of List</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            給定一些整數，找和為 t 的所有可能
+                            移除一個單向 linked list 中倒數的 node
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -682,8 +737,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -697,31 +752,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/11/software/leecode/Merge-k-Sorted-Lists/">
+                <a href="/2021/07/08/software/leetcode/Container-With-Most-Water/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="[LeeCode] #23 Merge k Sorted Lists">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="[LeetCode] #11 Container With Most Water">
                         
-                        <span class="card-title">[LeeCode] #23 Merge k Sorted Lists</span>
+                        <span class="card-title">[LeetCode] #11 Container With Most Water</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合 k 個排序過的單向串列
+                            選兩個柱子使可以裝最多的水
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -731,8 +786,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -920,7 +975,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">39.7k</span>
+                        class="white-color">39.8k</span>
             
             
             

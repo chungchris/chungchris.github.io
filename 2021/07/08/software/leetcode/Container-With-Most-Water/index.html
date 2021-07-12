@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,parentheses">
+    <meta name="keywords" content="leetcode">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #20 Valid Parentheses | A Po</title>
+    <title>[LeetCode] #11 Container With Most Water | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #20 Valid Parentheses</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #11 Container With Most Water</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode/">
-                                <span class="chip bg-color">leecode</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software-leecode/" class="post-category">
-                                software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -417,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-10
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-10
+                    2021-07-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    385
+                    870
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 
@@ -466,106 +466,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Parse 大/中/小 括號對看是否合法</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><img src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" alt="選兩個柱子使可以裝最多的水"></p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">Link</a></li>
-<li>等級：<strong>Easy</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 經典題，很容易，但如果沒有做過還是可能會漏一些東西</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/container-with-most-water/">Link</a></li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 暴力解很容易，進階解不一定想到到，但看過就會</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
 <hr>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>Parse 括號的特性就是與 stack add/pop 的特性 100% 相符</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">'([{'</span><span class="token punctuation">)</span>
-        pair <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">')'</span><span class="token punctuation">:</span><span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">:</span><span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span><span class="token string">'{'</span><span class="token punctuation">}</span>
+<h2 id="暴力解-也是最直觀的解法"><a href="#暴力解-也是最直觀的解法" class="headerlink" title="暴力解 也是最直觀的解法"></a>暴力解 也是最直觀的解法</h2><h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>選兩條柱子，就全部可能的 pair 都拿來算一下面積，取最大的，時間複雜度自然是 <code>O(n^2)</code></p>
+<h3 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span>
+        ans <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> l<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                t <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                ans <span class="token operator">=</span> t <span class="token keyword">if</span> t <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> c <span class="token keyword">in</span> left<span class="token punctuation">:</span>
-                 stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-            <span class="token keyword">elif</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
+<hr>
+<h2 id="進階解"><a href="#進階解" class="headerlink" title="進階解"></a>進階解</h2><h3 id="想法-1"><a href="#想法-1" class="headerlink" title="想法"></a>想法</h3><p>我們已經有 <code>O(n^2)</code> 的解法，那要進階，代表不能有<em>挑兩次</em>的動作，要想辦法提升我們的挑選策略</p>
+<p>最大面積由柱子的水平距離和高度較低者構成，所以挑選自然是從挑高的，或挑遠的兩個方向著手<br>從高度來看：除非我們做過 sort，不然我們也不知道出起手式怎樣挑是最佳解。即使我們做過 sort，就有了 <code>O(n logn)</code> 的基本包袱，不是不可能，但我們先放著<br>從距離來看：我們希望兩根柱子水平距離越遠越好，所以最好是最左和最右就是最佳解，我們可以從這個選擇出發，這是本題的第一個癥結點</p>
+<p>然後，當我們選了最左和最右出發，接下來我們會想嘗試把選擇往中間移動<br>但要選擇先把左側的選擇往內選一個呢？還是先把右側的選擇往內選一個？這裏就必須意識到，也是本題的第二個癥結點，進一步移動原本的選擇當中較高的那一邊其實對事情沒有幫助，因為水槽的高度已經被較低的那一邊給限制住，如果改變原本的選擇當中較高的那一邊，只是讓水池水平距離往內縮，水池高度不變，面積只會縮小<br>所以我們下一步的選擇是針對比較低的那一邊，換成選往中間靠的下一個，期待取得更大的面積；當然，很簡單可以察覺到，選擇到比原本高的才有意義，如果比原本低那面積只會縮小。當選到一個比原本高的，這時候就需要乘乘看才知道是不是比原本面積大了了，因為水平距離已經內縮了一到數單位</p>
+<h3 id="Source-Code-Python-1"><a href="#Source-Code-Python-1" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>    
+        ans <span class="token operator">=</span> <span class="token number">0</span>
+        i <span class="token operator">=</span> <span class="token number">0</span>
+        j <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">:</span>
+            t <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            ans <span class="token operator">=</span> t <span class="token keyword">if</span> t <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+            <span class="token keyword">if</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token triple-quoted-string string">'''t = height[i]
+                while height[i] &lt;= t:
+                    i = i + 1
+                    if i &gt;= j:
+                        return ans'''</span>
             <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">!=</span> stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">False</span>
-                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token triple-quoted-string string">'''t = height[j]
+                while height[j] &lt;= t:
+                    j = j - 1
+                    if i &gt;= j:
+                        return ans'''</span>
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">False</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>都用 if == 來比較 char 我是覺得也沒什麼問題啦，只是說用 <code>set</code> 和 <code>dict</code> 因為他們是 hash search，所以理論上會快一些，但對這題來說真差別有限 </p>
-<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">isValid</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-    pair <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">rune</span> <span class="token punctuation">{</span>
-        <span class="token string">')'</span><span class="token punctuation">:</span> <span class="token string">'('</span><span class="token punctuation">,</span>
-        <span class="token string">']'</span><span class="token punctuation">:</span> <span class="token string">'['</span><span class="token punctuation">,</span>
-        <span class="token string">'}'</span><span class="token punctuation">:</span> <span class="token string">'{'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
-
-    stack <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> c <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'{'</span><span class="token punctuation">:</span>
-            stack <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
-        <span class="token keyword">case</span> <span class="token string">')'</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span>
-            <span class="token punctuation">}</span>
-            c <span class="token operator">=</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span>
-            <span class="token keyword">if</span> stack<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> c <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span>
-            <span class="token punctuation">}</span>
-            stack <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">is_valid</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token keyword">bool</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> stack <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">match</span> c <span class="token punctuation">{</span>
-                <span class="token char string">'('</span> <span class="token operator">|</span> <span class="token char string">'['</span> <span class="token operator">|</span> <span class="token char string">'{'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-                        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    <span class="token keyword">match</span> c <span class="token punctuation">{</span>
-                        <span class="token char string">')'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'('</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        <span class="token char string">']'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'['</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        <span class="token char string">'}'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'{'</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以觀察到這個解法只需要 <code>O(n)</code>，已經優於 <code>O(n logn)</code> 所以我們不用再去想先挑高度出發的方法<br>註解起來的部分可有可無，有的話可以減少數次執行第 7,8 行的時間，但並不影響 time complexity</p>
 
                 
             </div>
@@ -592,7 +540,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/10/software/leecode/Valid-Parentheses/">https://chungchris.github.io/2021/07/10/software/leecode/Valid-Parentheses/</a>
+                    <a href="https://chungchris.github.io/2021/07/08/software/leetcode/Container-With-Most-Water/">https://chungchris.github.io/2021/07/08/software/leetcode/Container-With-Most-Water/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +578,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode/">
-                                    <span class="chip bg-color">leecode</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -671,9 +619,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/10/software/leecode/Valid-Parentheses/';
-        this.page.identifier = '/2021/07/10/software/leecode/Valid-Parentheses/';
-        this.page.title = '[LeeCode] #20 Valid Parentheses';
+        this.page.url = 'https://chungchris.github.io/2021/07/08/software/leetcode/Container-With-Most-Water/';
+        this.page.identifier = '/2021/07/08/software/leetcode/Container-With-Most-Water/';
+        this.page.title = '[LeetCode] #11 Container With Most Water';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -707,31 +655,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/">
+                <a href="/2021/07/09/software/leetcode/3sum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="[LeeCode] #21 Merge Two Sorted Lists">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="[LeetCode] #15 3sum">
                         
-                        <span class="card-title">[LeeCode] #21 Merge Two Sorted Lists</span>
+                        <span class="card-title">[LeetCode] #15 3sum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合兩個排序過的單向串列
+                            取三數總和為 0
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -756,31 +704,30 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/">
+                <a href="/2021/07/08/taiwan/mazu/">
                     <div class="card-image">
                         
+                        <img src="https://drive.google.com/uc?export=view&id=1iLKCaNXhk72fZXyezU2uqzRk3XubYt2w" class="responsive-img" alt="馬祖 - 碉堡！碉堡，碉堡。碉堡...">
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="[LeeCode] #19 Remove Nth Node From End of List">
-                        
-                        <span class="card-title">[LeeCode] #19 Remove Nth Node From End of List</span>
+                        <span class="card-title">馬祖 - 碉堡！碉堡，碉堡。碉堡...</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            移除一個單向 linked list 中倒數的 node
+                            2021 年 5 月 勞動連假的五天四夜馬祖自助行
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/taiwan/" class="post-category">
+                                    taiwan
                                 </a>
                             
                             
@@ -790,8 +737,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">台灣旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">離島旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A6%AC%E7%A5%96/">
+                        <span class="chip bg-color">馬祖</span>
                     </a>
                     
                 </div>
@@ -979,7 +934,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">39.7k</span>
+                        class="white-color">39.8k</span>
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,linked list">
+    <meta name="keywords" content="leetcode,string">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #19 Remove Nth Node From End of List | A Po</title>
+    <title>[LeetCode] #5 Longest Palindromic Substring | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -276,7 +276,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #19 Remove Nth Node From End of List</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #5 Longest Palindromic Substring</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode/">
-                                <span class="chip bg-color">leecode</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software-leecode/" class="post-category">
-                                software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -417,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-09
+                    2021-07-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-10
+                    2021-07-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.6k
+                    483
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    2 Min
                 </div>
                 
 
@@ -466,163 +466,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>移除一個單向 linked list 中倒數的 node</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>找一個給定 string 當中，找最長 palindromic(回文) 的 substring</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 暴力解很容易，進階解不一定想到到，但看過就會。如果對 Rust 有興趣的可以就本題了解一些 Rust 的限制</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 不算難，但可以作為 DP 的題目，或者是進階演算法有興趣的可以藉此研究 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm">Manacher’s algorithm</a></li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<hr>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>既然要倒數，那肯定要知道長度（或者說是知道尾巴），這無法省<br>所以關鍵變成是能不能在一知道長度的當下，就知道要刪除哪個節點，這樣才會最快。如果知道了長度之後還要再做一次 iterate 才能刪除某個節點，那可能慢了</p>
-<blockquote>
-<p>當然我們不提把一個單向的 linked list 擴充成雙向或者有 index 的這種做法，這樣 space double 應用在本題算是單純的情境有些小題大作</p>
-</blockquote>
-<p>有了這個想法之後其實離解題就不遠<br>我們要維護一個 pointer，不斷指向最有可能、或者說最接近目標刪除節點節點。我們的目標刪除節點是誰？就是距離尾巴 n 的節點，也就是說我們從 head 開始跑，每多跑到一個點，我們都當作他是尾巴，把 pointer 不斷維持在距離這個尾巴 n 的位置<br>如此當我們真的走到尾巴，pointer 指的的那個節點就是要刪除的點</p>
-<p>當然還有兩個小轉折：第一個是，我們其實要維護 pointer 指向的其實不是要刪除的那個節點，而應該是要刪除的那個節點的前一個節點，這樣才有辦法做刪除。因此也就有了第二個小轉折，我們可以在頭部新增一個 dummy 的節點，用來處理如果要刪除的節點是就 head 的狀況；這不是必要，但有的話會比較好思考而且 code 好看一些</p>
-<blockquote>
-<p>因為本題的 input 限制有說不會給 len 為 0 的數列，也不會給超出範圍的 n，所以其他 corner case 就不用考慮了</p>
-</blockquote>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
-<span class="token comment"># class ListNode:</span>
-<span class="token comment">#     def __init__(self, val=0, next=None):</span>
-<span class="token comment">#         self.val = val</span>
-<span class="token comment">#         self.next = next</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">removeNthFromEnd</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> ListNode<span class="token punctuation">,</span> n<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        D <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> head<span class="token punctuation">)</span>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>有不同解法，但對我來說最直覺的是一個 palindromic(回文) 的 string 同時代表有<strong>從中間鏡像</strong>的特性，也就是你可以找到一個中間點，往左右輻射，兩邊的字串相同。有了這個想法之後實作並不難，所以僅給 2/5 推薦指數的原因</p>
+<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><p>所以只要把每個 index 都當成中心點，都去跑跑看左右輻射，最後取結果最長的就行了。唯一要注意的可能就是中心點的選擇可以是一個或兩個，比如 <code>aba</code> 中心點就是 <code>b</code>，但 <code>abba</code> 中心點是 <code>bb</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">longestPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        slen <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 
-        p <span class="token operator">=</span> D
-        node <span class="token operator">=</span> head
-        <span class="token keyword">while</span> node <span class="token operator">!=</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                p <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token builtin">next</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                n <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span> <span class="token comment"># n 的運用就可以不用另外維護一個用來數 list 長度的變數</span>
-            node <span class="token operator">=</span> node<span class="token punctuation">.</span><span class="token builtin">next</span>
+        <span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> y <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                y <span class="token operator">=</span> x
 
-        <span class="token keyword">if</span> p <span class="token operator">==</span> D<span class="token punctuation">:</span> <span class="token comment"># 刪除 head 節點的狀況</span>
-            head <span class="token operator">=</span> head<span class="token punctuation">.</span><span class="token builtin">next</span>
+            <span class="token keyword">while</span> x <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> y <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> s<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> s<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    ans <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+                    x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">1</span>
+                    y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
+
+            <span class="token keyword">return</span> ans
+
+        ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> slen<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                ans <span class="token operator">=</span> ret
+            <span class="token keyword">if</span> i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
+                ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    ans <span class="token operator">=</span> ret
+
+        <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
         <span class="token keyword">else</span><span class="token punctuation">:</span>
-            p<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span><span class="token builtin">next</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-        <span class="token keyword">return</span> head<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token comment">/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */</span>
-<span class="token keyword">func</span> <span class="token function">removeNthFromEnd</span><span class="token punctuation">(</span>head <span class="token operator">*</span>ListNode<span class="token punctuation">,</span> n <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">*</span>ListNode <span class="token punctuation">{</span>
-    D <span class="token operator">:=</span> ListNode<span class="token punctuation">{</span> Val<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> Next<span class="token punctuation">:</span> head<span class="token punctuation">}</span>
-    
-    p <span class="token operator">:=</span> <span class="token operator">&amp;</span>D
-    node <span class="token operator">:=</span> head
-    <span class="token keyword">for</span> node <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-            p <span class="token operator">=</span> p<span class="token punctuation">.</span>Next
-        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-            n<span class="token operator">--</span>
-        <span class="token punctuation">}</span>
-        node <span class="token operator">=</span> node<span class="token punctuation">.</span>Next
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">if</span> <span class="token operator">*</span>p <span class="token operator">==</span> D <span class="token punctuation">{</span>
-        head <span class="token operator">=</span> head<span class="token punctuation">.</span>Next
-    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        p<span class="token punctuation">.</span>Next <span class="token operator">=</span> p<span class="token punctuation">.</span>Next<span class="token punctuation">.</span>Next
-    <span class="token punctuation">}</span>
-    
-    <span class="token keyword">return</span> head
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><p>上面 Python 和 Go 的寫法可以叫做 one-pass solution 因為只有一個 loop<br>但其實該 loop 裡面同時做兩件事，一個是倒數 <code>n</code>，一個是移動 <code>p</code> 和 <code>node</code> 兩個 pointer</p>
-<p>如果我們改成先移動 node 從頭移到尾，因此的知了整個 list 長度，減去 <code>n</code> 就知道要刪除的是第幾個節點，然後再從頭跑一次。因為這樣會有兩個 iteration，所以叫做 two-pass solution<br>two-pass solution 是要兩個 loop 沒錯，但首先，這兩個 loop 並不是 nest，所以時間複雜度還是算 <code>O(n)</code>；而且，從移動 pointer 的『次數』的角度來看，one-pass 和 two-pass 其實是一樣的，因為在 one-pass solution 中，<code>p</code> 被移動 (len - n) 次，<code>node</code> 被移動 len 次</p>
-<p>但為什麼現在要把原本比較間簡潔的 one-pass 改成 two-pass？因為 one-pass 如果要用 Rust 實作是做不出來的（除非用 unsafe）<br>注意到 one-pass 之所以可以在同一個 loop 裡處理，就是因為同一個 loop 裡同時操作了兩個 pointer- <code>node</code> 和 <code>p</code><br>而這個是會違反 Rust 的 borrow checker 的：Rust 的 borrow checker 禁止同時存在兩個 mutable reference，也禁止一個變數同時被 mutable/unmutable borrowed</p>
-<p>這樣不行因為 <code>p1</code> 和 <code>p2</code> 的生命有重疊且同時為 mutable reference</p>
-<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> p1 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> p2 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> a<span class="token punctuation">;</span>
-    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>這樣不行因為 <code>p1</code> 和 <code>p2</code> 的生命有重疊且一個為 mutable 一個為 unmutable</p>
-<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> p1 <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">let</span> <span class="token keyword">mut</span> p2 <span class="token operator">=</span> <span class="token operator">&amp;</span> a<span class="token punctuation">;</span>
-    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token macro property">println!</span><span class="token punctuation">(</span><span class="token string">"{}"</span><span class="token punctuation">,</span> p2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>所以在這一題我們無法同時有兩個 reference- <code>p</code> 和 <code>node</code> 指向的都是同一個 linked list 串列<br>你可能會說實際上 <code>p</code> 和 <code>node</code> 可能沒有同時指到 linked list 中的同一個節點啊，為什麼這樣還不能過？但問題就是 compiler 不會知道 runtime 時的事情的，只要你是透過相同變數去 access 這個 linked list（比如透過 head），那就是會被 borrow checker 湊在一起檢查，borrow checker 只看 identifier 的 liveness scope</p>
-<p>如果無法體會，那你嘗試自己用 Rust implement 一次 one-pass solution 就會知道了… 怎麼修都修不過</p>
-<p>所以在 Rust 我們就要改成 two-pass 作法，先得知 list 長度 len，再從頭來過移動 (len - n) 步</p>
-<pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token comment">// Definition for singly-linked list.</span>
-<span class="token comment">// #[derive(PartialEq, Eq, Clone, Debug)]</span>
-<span class="token comment">// pub struct ListNode {</span>
-<span class="token comment">//   pub val: i32,</span>
-<span class="token comment">//   pub next: Option&lt;Box&lt;ListNode&gt;&gt;</span>
-<span class="token comment">// }</span>
-<span class="token comment">// </span>
-<span class="token comment">// impl ListNode {</span>
-<span class="token comment">//   #[inline]</span>
-<span class="token comment">//   fn new(val: i32) -&gt; Self {</span>
-<span class="token comment">//     ListNode {</span>
-<span class="token comment">//       next: None,</span>
-<span class="token comment">//       val</span>
-<span class="token comment">//     }</span>
-<span class="token comment">//   }</span>
-<span class="token comment">// }</span>
-<span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">remove_nth_from_end</span><span class="token punctuation">(</span><span class="token keyword">mut</span> head<span class="token punctuation">:</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span><span class="token punctuation">,</span> <span class="token keyword">mut</span> n<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token class-name">Box</span><span class="token operator">&lt;</span><span class="token class-name">ListNode</span><span class="token operator">&gt;&gt;</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> <span class="token keyword">mut</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>head<span class="token punctuation">;</span>
-            <span class="token keyword">loop</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> p<span class="token punctuation">.</span><span class="token function">is_none</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token keyword">break</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                len <span class="token operator">=</span> len <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                p <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">as_ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token keyword">if</span> len <span class="token operator">==</span> n <span class="token punctuation">{</span> <span class="token comment">// corner case that the head node is the one to be removed</span>
-            <span class="token keyword">return</span> head<span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        len <span class="token operator">=</span> len <span class="token operator">-</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> <span class="token keyword">mut</span> t <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> head<span class="token punctuation">;</span>
-            <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">..</span>len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                t <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">let</span> n <span class="token operator">=</span> t<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// n is &amp;ListNode</span>
-            n<span class="token punctuation">.</span>next <span class="token operator">=</span> n<span class="token punctuation">.</span>next<span class="token punctuation">.</span><span class="token function">as_mut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>next<span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token comment">//       n is &amp;ListNode</span>
-            <span class="token comment">//        .next is Option&lt;Box&lt;ListNode&gt;&gt; because n is auto deref</span>
-            <span class="token comment">//             .as_mut() is Option&lt;&amp;Box&lt;ListNode&gt;&gt;</span>
-            <span class="token comment">//                      .unwrap() is &amp;Box&lt;ListNode&gt;. We can do unwrap because we know it's impossible being None here.</span>
-            <span class="token comment">//                               .next is Option&lt;Box&lt;ListNode&gt;&gt;</span>
-            <span class="token comment">//                                    .take() is necessary because we want to take ownership of Option&lt;Box&lt;ListNode&gt;&gt; and move it into `n.next`</span>
-        <span class="token punctuation">}</span>
-        
-        head
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<br>
-
-<blockquote>
-<p>最後也來看一下三種語言的 performance<br>| Runtime | Memory | Language |<br>|-|-|-|<br>| 28 ms | 14.3 MB | python3 |<br>| 0 ms | 2.3 MB | golang |<br>| 0 ms | 2 MB | rust |</p>
-</blockquote>
+<p>第 21 行的 for loop 跑 n 輪，每輪要進 <code>check()</code> 兩次；<code>check()</code> 裡面跑的 <code>while</code> 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2<em>n</em>n，也就是 <code>O(n^2)</code></p>
 
                 
             </div>
@@ -649,7 +538,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/">https://chungchris.github.io/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/</a>
+                    <a href="https://chungchris.github.io/2021/07/08/software/leetcode/Expand-Around-Center/">https://chungchris.github.io/2021/07/08/software/leetcode/Expand-Around-Center/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -687,8 +576,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode/">
-                                    <span class="chip bg-color">leecode</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -728,9 +617,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/';
-        this.page.identifier = '/2021/07/09/software/leecode/Remove-Nth-Node-From-End-of-List/';
-        this.page.title = '[LeeCode] #19 Remove Nth Node From End of List';
+        this.page.url = 'https://chungchris.github.io/2021/07/08/software/leetcode/Expand-Around-Center/';
+        this.page.identifier = '/2021/07/08/software/leetcode/Expand-Around-Center/';
+        this.page.title = '[LeetCode] #5 Longest Palindromic Substring';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -764,31 +653,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/07/10/software/leecode/Valid-Parentheses/">
+                <a href="/2021/07/08/taiwan/mazu/">
                     <div class="card-image">
                         
+                        <img src="https://drive.google.com/uc?export=view&id=1iLKCaNXhk72fZXyezU2uqzRk3XubYt2w" class="responsive-img" alt="馬祖 - 碉堡！碉堡，碉堡。碉堡...">
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="[LeeCode] #20 Valid Parentheses">
-                        
-                        <span class="card-title">[LeeCode] #20 Valid Parentheses</span>
+                        <span class="card-title">馬祖 - 碉堡！碉堡，碉堡。碉堡...</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Parse 大/中/小 括號對看是否合法
+                            2021 年 5 月 勞動連假的五天四夜馬祖自助行
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/taiwan/" class="post-category">
+                                    taiwan
                                 </a>
                             
                             
@@ -798,8 +686,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">台灣旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">離島旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A6%AC%E7%A5%96/">
+                        <span class="chip bg-color">馬祖</span>
                     </a>
                     
                 </div>
@@ -813,31 +709,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/09/software/leecode/3sum/">
+                <a href="/2021/07/07/software/leetcode/Longest-Substring-Without-Repeating-Characters/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="[LeeCode] #15 3sum">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="[LeetCode] #3 Longest Substring Without Repeating Characters">
                         
-                        <span class="card-title">[LeeCode] #15 3sum</span>
+                        <span class="card-title">[LeetCode] #3 Longest Substring Without Repeating Characters</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            取三數總和為 0
+                            找一個給定 string 當中，不出現重複 char 的 substring 的最大可能長度
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -847,8 +743,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -1036,7 +932,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">39.7k</span>
+                        class="white-color">39.8k</span>
             
             
             

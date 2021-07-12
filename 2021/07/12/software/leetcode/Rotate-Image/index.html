@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,string">
+    <meta name="keywords" content="leetcode,2D,rotate">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #5 Longest Palindromic Substring | A Po</title>
+    <title>[LeetCode] #48 Rotate Image | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #5 Longest Palindromic Substring</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #48 Rotate Image</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode/">
-                                <span class="chip bg-color">leecode</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -404,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software-leecode/" class="post-category">
-                                software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -417,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-07-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-07-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    483
+                    115
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    1 Min
                 </div>
                 
 
@@ -466,53 +466,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>找一個給定 string 當中，找最長 palindromic(回文) 的 substring</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個二維方形矩陣，將其旋轉 90 度</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/rotate-image/">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 不算難，但可以作為 DP 的題目，或者是進階演算法有興趣的可以藉此研究 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm">Manacher’s algorithm</a></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>有不同解法，但對我來說最直覺的是一個 palindromic(回文) 的 string 同時代表有<strong>從中間鏡像</strong>的特性，也就是你可以找到一個中間點，往左右輻射，兩邊的字串相同。有了這個想法之後實作並不難，所以僅給 2/5 推薦指數的原因</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><p>所以只要把每個 index 都當成中心點，都去跑跑看左右輻射，最後取結果最長的就行了。唯一要注意的可能就是中心點的選擇可以是一個或兩個，比如 <code>aba</code> 中心點就是 <code>b</code>，但 <code>abba</code> 中心點是 <code>bb</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">longestPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
-        slen <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-
-        <span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span> y <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                y <span class="token operator">=</span> x
-
-            <span class="token keyword">while</span> x <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> y <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> s<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> s<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    ans <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-                    x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">1</span>
-                    y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
-
-            <span class="token keyword">return</span> ans
-
-        ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> slen<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-            <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                ans <span class="token operator">=</span> ret
-            <span class="token keyword">if</span> i<span class="token operator">+</span><span class="token number">1</span> <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
-                ret <span class="token operator">=</span> check<span class="token punctuation">(</span>i<span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
-                <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    ans <span class="token operator">=</span> ret
-
-        <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>第 21 行的 for loop 跑 n 輪，每輪要進 <code>check()</code> 兩次；<code>check()</code> 裡面跑的 <code>while</code> 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2<em>n</em>n，也就是 <code>O(n^2)</code></p>
-
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2>
                 
             </div>
             <hr/>
@@ -538,7 +501,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/">https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/</a>
+                    <a href="https://chungchris.github.io/2021/07/12/software/leetcode/Rotate-Image/">https://chungchris.github.io/2021/07/12/software/leetcode/Rotate-Image/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +539,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode/">
-                                    <span class="chip bg-color">leecode</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -617,9 +580,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/08/software/leecode/Expand-Around-Center/';
-        this.page.identifier = '/2021/07/08/software/leecode/Expand-Around-Center/';
-        this.page.title = '[LeeCode] #5 Longest Palindromic Substring';
+        this.page.url = 'https://chungchris.github.io/2021/07/12/software/leetcode/Rotate-Image/';
+        this.page.identifier = '/2021/07/12/software/leetcode/Rotate-Image/';
+        this.page.title = '[LeetCode] #48 Rotate Image';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -649,53 +612,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/08/taiwan/mazu/">
+                <a href="/2021/07/12/software/leetcode/Rotate-Image/">
                     <div class="card-image">
                         
-                        <img src="https://drive.google.com/uc?export=view&id=1iLKCaNXhk72fZXyezU2uqzRk3XubYt2w" class="responsive-img" alt="馬祖 - 碉堡！碉堡，碉堡。碉堡...">
                         
-                        <span class="card-title">馬祖 - 碉堡！碉堡，碉堡。碉堡...</span>
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="[LeetCode] #48 Rotate Image">
+                        
+                        <span class="card-title">[LeetCode] #48 Rotate Image</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2021 年 5 月 勞動連假的五天四夜馬祖自助行
+                            給一個二維方形矩陣，將其旋轉 90 度
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/taiwan/" class="post-category">
-                                    taiwan
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/">
-                        <span class="chip bg-color">台灣旅遊</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/">
-                        <span class="chip bg-color">離島旅遊</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%A6%AC%E7%A5%96/">
-                        <span class="chip bg-color">馬祖</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -709,31 +667,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/07/software/leecode/Longest-Substring-Without-Repeating-Characters/">
+                <a href="/2021/07/12/software/leetcode/Combination-Sum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[LeeCode] #3 Longest Substring Without Repeating Characters">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="[LeetCode] #39 Combination Sum">
                         
-                        <span class="card-title">[LeeCode] #3 Longest Substring Without Repeating Characters</span>
+                        <span class="card-title">[LeetCode] #39 Combination Sum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            找一個給定 string 當中，不出現重複 char 的 substring 的最大可能長度
+                            給定一些整數，找和為 t 的所有可能
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leecode/" class="post-category">
-                                    software/leecode
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -743,8 +701,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode/">
-                        <span class="chip bg-color">leecode</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
@@ -932,7 +890,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">39.7k</span>
+                        class="white-color">39.8k</span>
             
             
             
