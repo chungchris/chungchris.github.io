@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="leecode,merge,linked list,sort,heap sort">
+    <meta name="keywords" content="leecode,sum">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeeCode] #23 Merge k Sorted Lists | A Po</title>
+    <title>[LeeCode] #39 Combination Sum | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeeCode] #23 Merge k Sorted Lists</h1>
+                    <h1 class="description center-align post-title">[LeeCode] #39 Combination Sum</h1>
                 </div>
             </div>
         </div>
@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-07-11
+                    2021-07-12
                 </div>
                 
 
@@ -431,14 +431,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1k
+                    408
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 
@@ -466,119 +466,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>融合 k 個排序過的單向串列</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定一些整數，找和為 t 的所有可能</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-k-sorted-lists/">Link</a></li>
-<li>等級：<strong>Hard</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 其實應該不到 Hard，尤其是如果已經做過 [<a href="https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/">#21 Merge Two Sorted Lists</a>]。把 merge 2 個轉換成 merge k 個並沒有額外需要什麼高明想法</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/combination-sum/">Link</a></li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>跟 [<a href="https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/">#21 Merge Two Sorted Lists</a>] 一樣，就是從所有 list 的頭裡面挑最小的那個拉出來<br>只是說當只有 2 個 list 的時候，挑小的那個只要一次 compare 就可以完成；今天可能多至有 k 個 list，怎麼從 k 個裡面挑最小的可能就會存在優化空間，不過基本想法終究沒有不同</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><h3 id="Recurisive"><a href="#Recurisive" class="headerlink" title="Recurisive"></a>Recurisive</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
-<span class="token comment"># class ListNode:</span>
-<span class="token comment">#     def __init__(self, val=0, next=None):</span>
-<span class="token comment">#         self.val = val</span>
-<span class="token comment">#         self.next = next</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">mergeKLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lists<span class="token punctuation">:</span> List<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">,</span> skip_process <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">process</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            new_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-            <span class="token keyword">for</span> n <span class="token keyword">in</span> lists<span class="token punctuation">:</span> <span class="token comment"># 這裏 O(k)</span>
-                <span class="token keyword">if</span> n <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                    new_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>new_list<span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token keyword">lambda</span> n<span class="token punctuation">:</span> n<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token comment"># python 的 sort 可以當作他 O(klogk)</span>
-
-        <span class="token keyword">if</span> <span class="token keyword">not</span> skip_process<span class="token punctuation">:</span>
-            lists <span class="token operator">=</span> process<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> <span class="token keyword">not</span> lists<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">None</span>
-
-        h <span class="token operator">=</span> lists<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> h<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
-            i <span class="token operator">=</span> <span class="token number">0</span>
-            <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>lists<span class="token punctuation">)</span> <span class="token keyword">and</span> h<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span>val <span class="token operator">&gt;</span> lists<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span> <span class="token comment"># 這裏是用 Insertion(sort) 期望值就是 O(n/k)</span>
-                i <span class="token operator">+=</span> <span class="token number">1</span>
-            lists<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>i<span class="token punctuation">,</span> h<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
-
-        h<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>mergeKLists<span class="token punctuation">(</span>lists<span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">return</span> h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>假設有 <code>k</code> 個 list，一開始要做一次 sort 去排序每個 list 的頭，花了 <code>O(k + klogk)</code><br>24 行是要將 <code>n.next</code> 插入合適的位置，有很多種插法，這裏就用最白癡的從頭開始找。但因為 lists 原本就已經排序過，所以其實也只要跑一輪就行，期望值就是每一個 list 的一半長度，假設總共有 <code>N</code> 個節點，大概就是 <code>O(N/k)</code><br>而 <code>mergeKLists()</code> 每次只會疊一個節點，所以總共要跑 <code>N</code> 次，合起來就是 <code>O(N^2/k)</code>；再加上一開始做的 sort，就是 <code>O(k + klogk + N^2/k)</code></p>
-<h3 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">mergeKLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lists<span class="token punctuation">:</span> List<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        new_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> n <span class="token keyword">in</span> lists<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> n <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                new_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-        new_list<span class="token punctuation">.</span>sort<span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> n<span class="token punctuation">:</span> n<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
-        
-        D <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        cur <span class="token operator">=</span> D
-        <span class="token keyword">while</span> new_list<span class="token punctuation">:</span>
-            n <span class="token operator">=</span> new_list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> n
-            <span class="token keyword">if</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
-                i <span class="token operator">=</span> <span class="token number">0</span>
-                <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>new_list<span class="token punctuation">)</span> <span class="token keyword">and</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span>val <span class="token operator">&gt;</span> new_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>val<span class="token punctuation">:</span>
-                    i <span class="token operator">+=</span> <span class="token number">1</span>
-                new_list<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>i<span class="token punctuation">,</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
-            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
-
-        <span class="token keyword">return</span> D<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>時間複雜度跟 recurisive 沒有不同<br>我們可以嘗試 improve，將一開始的 sort() 和後來的 Insertion(sort)，都用一個 heap 來維護</p>
-<h3 id="Heap-sort"><a href="#Heap-sort" class="headerlink" title="Heap sort"></a>Heap sort</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">mergeKLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lists<span class="token punctuation">:</span> List<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        <span class="token keyword">import</span> heapq
-
-        trick_order <span class="token operator">=</span> <span class="token number">0</span>
-        new_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> n <span class="token keyword">in</span> lists<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> n <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>new_list<span class="token punctuation">,</span> <span class="token punctuation">(</span>n<span class="token punctuation">.</span>val<span class="token punctuation">,</span> trick_order<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                trick_order <span class="token operator">+=</span> <span class="token number">1</span>
-        
-        D <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        cur <span class="token operator">=</span> D
-        <span class="token keyword">while</span> new_list<span class="token punctuation">:</span>
-            n <span class="token operator">=</span> heapq<span class="token punctuation">.</span>heappop<span class="token punctuation">(</span>new_list<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
-            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> n
-            <span class="token keyword">if</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
-                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>new_list<span class="token punctuation">,</span> <span class="token punctuation">(</span>n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span>val<span class="token punctuation">,</span> trick_order<span class="token punctuation">,</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-                trick_order <span class="token operator">+=</span> <span class="token number">1</span>
-            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
-
-        <span class="token keyword">return</span> D<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>python 有提供 <code>heapq</code> 這個 lib 可以直接用<br><code>trick_order</code> 的使用就是個 trick… 因為 <code>heapq</code> 的 <code>heappush()</code> 沒有辦法像 <code>sort()</code>/<code>sorted()</code> 一樣直接指定 key 值；他提供的替代方案是可以餵一個 tuple，但問題是，如果 tuple 比較第一個值相等，他還是會接著比較到後面的值，因此造成 <code>ListNode</code> instance 在某些時候就會被拿來比較而產生 exception<br>所以我們的 trick 就是在 <code>ListNode</code> 之前的順位插入一個 unique 的整數 <code>trick_order</code>，這樣往後的比較發生的時候，比較到第二級就一定會有結果，不會需要比較到第三級 <code>ListNode</code> 因而觸發 exception</p>
-<p>不過還是有更乾淨一點的寫法就是實作 <strong>lt</strong> 方法啦，每當 python 有需要比較的時候其實就是去找該物件的的 <code>__eq__</code>, <code>__lt__</code> 方法來知道怎麼比較</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">mergeKLists</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> lists<span class="token punctuation">:</span> List<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> ListNode<span class="token punctuation">:</span>
-        <span class="token keyword">import</span> heapq
-        ListNode<span class="token punctuation">.</span>__lt__ <span class="token operator">=</span> <span class="token keyword">lambda</span> self<span class="token punctuation">,</span> other<span class="token punctuation">:</span> self<span class="token punctuation">.</span>val <span class="token operator">&lt;</span> other<span class="token punctuation">.</span>val
-
-        new_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> n <span class="token keyword">in</span> lists<span class="token punctuation">:</span> <span class="token comment"># O(k)</span>
-            <span class="token keyword">if</span> n <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>new_list<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token comment"># O(logk)</span>
-
-        D <span class="token operator">=</span> ListNode<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        cur <span class="token operator">=</span> D
-        <span class="token keyword">while</span> new_list<span class="token punctuation">:</span> <span class="token comment"># O(N)</span>
-            n <span class="token operator">=</span> heapq<span class="token punctuation">.</span>heappop<span class="token punctuation">(</span>new_list<span class="token punctuation">)</span> <span class="token comment"># O(1)</span>
-            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> n
-            <span class="token keyword">if</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
-                heapq<span class="token punctuation">.</span>heappush<span class="token punctuation">(</span>new_list<span class="token punctuation">,</span> n<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span> <span class="token comment"># O(logk)</span>
-            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
-
-        <span class="token keyword">return</span> D<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>時間複雜度變成 <code>O(klogk + Nlogk)</code></p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>只要注意到<strong>數字可以被重複使用</strong>，那這題蠻直觀的其實<br>就是給定一群整數當作你可以使用的 candidate，用這些數去加出目標 t<br>當開始實作就知道，加法問題會變減法，因為當我們採納了第一個數 n，自然會問那現在離目標 t 還有多遠，就是 t-n<br>假設今天有一群數字 <code>candidates[0 ,1, 2, ...]</code><br>如果存在解 <code>t</code> = <code>candidates[0]</code> + <code>t'</code>，那 <code>t'</code> = <code>t</code> - <code>candidates[0]</code>，並且 <code>t'</code> 也能由 <code>candidates[0 ,1, 2, ...]</code> 組出來</p>
+<p>所以假設今天有 function <code>combinationSum(candidates, t)</code> 會找出所有用 candidates 組成 t 的組合<br>那 <code>combinationSum(candidates, t)</code> = [<br>        …,<br>        [ <code>candidates[i]</code>, iterate <code>combinationSum(candidates, t-candidates[i])</code> ],<br>        …,<br>    ]</p>
+<p>減法的導入這是第一個癥結，有了這個之後命題就就可以變 recursive</p>
+<p>另外只要在注意一下不要產生重複的組合就行</p>
+<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">combinationSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> candidates<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>        
+        ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>candidates<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            n <span class="token operator">=</span> candidates<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            <span class="token keyword">if</span> target <span class="token operator">==</span> n<span class="token punctuation">:</span>
+                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> target <span class="token operator">&gt;</span> n<span class="token punctuation">:</span>
+                r <span class="token operator">=</span> self<span class="token punctuation">.</span>combinationSum<span class="token punctuation">(</span>candidates<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token operator">-</span>n<span class="token punctuation">)</span> <span class="token comment"># candidates[i:] 這就是用來避去使用已經處理過的數字</span>
+                <span class="token keyword">for</span> c <span class="token keyword">in</span> r<span class="token punctuation">:</span>
+                    ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">+</span> c<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -605,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/07/11/software/leecode/Merge-k-Sorted-Lists/">https://chungchris.github.io/2021/07/11/software/leecode/Merge-k-Sorted-Lists/</a>
+                    <a href="https://chungchris.github.io/2021/07/12/software/leecode/Combination-Sum/">https://chungchris.github.io/2021/07/12/software/leecode/Combination-Sum/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -684,9 +596,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/07/11/software/leecode/Merge-k-Sorted-Lists/';
-        this.page.identifier = '/2021/07/11/software/leecode/Merge-k-Sorted-Lists/';
-        this.page.title = '[LeeCode] #23 Merge k Sorted Lists';
+        this.page.url = 'https://chungchris.github.io/2021/07/12/software/leecode/Combination-Sum/';
+        this.page.identifier = '/2021/07/12/software/leecode/Combination-Sum/';
+        this.page.title = '[LeeCode] #39 Combination Sum';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -716,29 +628,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/">
+                <a href="/2021/07/12/software/leecode/Combination-Sum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="[LeeCode] #33 Search in Rotated Sorted Array">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="[LeeCode] #39 Combination Sum">
                         
-                        <span class="card-title">[LeeCode] #33 Search in Rotated Sorted Array</span>
+                        <span class="card-title">[LeeCode] #39 Combination Sum</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在一個被 rotate 過的 sorted array 做 binary search
+                            給定一些整數，找和為 t 的所有可能
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -751,6 +664,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -769,24 +683,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/">
+                <a href="/2021/07/12/software/leecode/Search-in-Rotated-Sorted-Array/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="[LeeCode] #21 Merge Two Sorted Lists">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="[LeeCode] #33 Search in Rotated Sorted Array">
                         
-                        <span class="card-title">[LeeCode] #21 Merge Two Sorted Lists</span>
+                        <span class="card-title">[LeeCode] #33 Search in Rotated Sorted Array</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合兩個排序過的單向串列
+                            在一個被 rotate 過的 sorted array 做 binary search
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-12
                             </span>
                         <span class="publish-author">
                             
