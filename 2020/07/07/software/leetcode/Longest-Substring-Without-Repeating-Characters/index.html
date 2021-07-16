@@ -424,21 +424,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.3k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    7 Min
                 </div>
                 
 
@@ -592,11 +592,11 @@
         <span class="token keyword">let</span> <span class="token keyword">mut</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">let</span> <span class="token keyword">mut</span> p<span class="token punctuation">:</span> <span class="token keyword">i32</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
         <span class="token keyword">let</span> <span class="token keyword">mut</span> d <span class="token operator">=</span> <span class="token class-name">HashMap</span><span class="token punctuation">::</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// rust 對於有實作 Iterator trait 的物件可以用 for ... in ... 來 </span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">enumerate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// rust 對於有實作 Iterator trait 的物件可以用 for ... in ... 來 iterate</span>
             <span class="token keyword">match</span> d<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token class-name">Some</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// rust 是強型別語言</span>
                     <span class="token keyword">if</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">&gt;=</span> p <span class="token punctuation">{</span>
+                        ans <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans <span class="token punctuation">{</span> i <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">-</span> p <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> ans <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// rust 是強型別語言</span>
                         p <span class="token operator">=</span> <span class="token operator">*</span>x <span class="token keyword">as</span> <span class="token keyword">i32</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
                     <span class="token punctuation">}</span>
                 <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -610,6 +610,68 @@
         ans
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Source-Code-C"><a href="#Source-Code-C" class="headerlink" title="Source Code (C)"></a>Source Code (C)</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">_ht</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> key<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+    UT_hash_handle hh<span class="token punctuation">;</span>   <span class="token comment">/* makes this structure hashable */</span>
+<span class="token punctuation">}</span> HT<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    HT <span class="token operator">*</span>d <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> p <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        HT <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">HASH_FIND_INT</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> <span class="token operator">&amp;</span>k<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>t <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token operator">-&gt;</span>value <span class="token operator">&gt;=</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">-</span>p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    ans <span class="token operator">=</span> <span class="token punctuation">(</span>i<span class="token operator">-</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                p <span class="token operator">=</span> t<span class="token operator">-&gt;</span>value <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            t <span class="token operator">=</span> <span class="token punctuation">(</span>HT<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>HT<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            t<span class="token operator">-&gt;</span>key <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token function">HASH_ADD_INT</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span> key<span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        t<span class="token operator">-&gt;</span>value <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token operator">-</span>p<span class="token punctuation">)</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ans <span class="token operator">=</span> len<span class="token operator">-</span>p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面是以 <a target="_blank" rel="noopener" href="https://troydhanson.github.io/uthash/userguide.html">uthash</a> 來實作 hash table 紀錄看過的 character，所以會比較耗記憶體<br>如果對於題目的這個 constraint- “s consists of English letters, digits, symbols and spaces”，我們知道他代表少於 128 的可能性的話（ASCII 就是 0~127），可以直接用一個 size 128 的 array 來當 hash table 就好</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> d<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token constant">NULL</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// preknowledge 128 is enough for given constraint "s consists of English letters, digits, symbols and spaces"</span>
+    <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>c <span class="token operator">=</span> s<span class="token punctuation">;</span> <span class="token comment">// will iterate the s</span>
+    <span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> s<span class="token punctuation">;</span> <span class="token comment">// valid window</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>d<span class="token punctuation">[</span><span class="token operator">*</span>c<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// char can be considered as integer directly for indexing. No problem even if d[*c] is NULL. </span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token operator">-</span>p <span class="token operator">&gt;</span> ans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                ans <span class="token operator">=</span> c<span class="token operator">-</span>p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            p <span class="token operator">=</span> d<span class="token punctuation">[</span><span class="token operator">*</span>c<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        d<span class="token punctuation">[</span><span class="token operator">*</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        c<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>c<span class="token operator">-</span>p <span class="token operator">&gt;</span> ans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ans <span class="token operator">=</span> c<span class="token operator">-</span>p<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>最後也可以看一下三種語言的 performance（因為 LeeCode 不一定每次跑時間都一樣所以我分別跑兩次）</p>
@@ -627,17 +689,7 @@
 <td>python3</td>
 </tr>
 <tr>
-<td>52 ms</td>
-<td>14.4 MB</td>
-<td>python3</td>
-</tr>
-<tr>
 <td>4 ms</td>
-<td>3.2 MB</td>
-<td>golang</td>
-</tr>
-<tr>
-<td>8 ms</td>
 <td>3.2 MB</td>
 <td>golang</td>
 </tr>
@@ -648,14 +700,21 @@
 </tr>
 <tr>
 <td>4 ms</td>
-<td>2.1 MB</td>
-<td>rust</td>
+<td>8.9 MB</td>
+<td>c</td>
+</tr>
+<tr>
+<td>0 ms</td>
+<td>5.8 MB</td>
+<td>c</td>
 </tr>
 </tbody></table>
 <ul>
 <li>python 是 runtime 直譯器語言，且語法也很高階，所以非常慢</li>
 <li>rust 比 go 更稍底層一些，理論上會比 go 更快。但我猜因為這一題 string iteration 正好是 rust performance 比較差的部分，因為 rust 的 string 是由可變長度的 unicode 組成，所以 string 的 indexing 不是 O(1)</li>
 <li>以記憶體來說，Rust 的確是最強這是符合預期的。但若以語法的角度來看，go 寫起來是比 rust 快的</li>
+<li>c 就是要一切靠自己了… 4ms 是採用 uthash 作為 hash table 實作，若改為簡單用 size 128 array 就是 0ms</li>
+<li>所以可以看到 golang 和 rust 提供的 hash table 其實是蠻不錯的，當然如果把他們也都換成用 size 128 array 來當 hash table 速度也會再提升啦</li>
 </ul>
 </blockquote>
 
@@ -1072,7 +1131,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">42.1k</span>
+                        class="white-color">42.6k</span>
             
             
             
