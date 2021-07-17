@@ -424,7 +424,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-17
                 </div>
                 
 
@@ -621,6 +621,7 @@
 <p>Apple 的 Swift 语言使用 LLVM 作为编译器框架<br>Rust 使用 LLVM 作为工具链的核心组件<br>例如，Clang 这个 C/C++ 编译器本身就是一个以 LLVM 为准绳的项目<br>Kotlin，它名义上是一种 JVM 语言，使用称为 Kotlin Native 的语言开发，该语言也使用了 LLVM 编译机器原生代码。<br><a target="_blank" rel="noopener" href="https://www.infoq.cn/article/what-is-llvm-the-power-behind-swift-rust-clang-and-more">LLVM：Swift、Rust、Clang 等语言的强大后盾- Serdar Yegulalp, 盖磊</a></p>
 </blockquote>
 <p>而 LLVM 對於非 tail recursive 的狀況也有做優化，叫做 <strong>TCO</strong> (<a target="_blank" rel="noopener" href="https://llvm.org/docs/CodeGenerator.html#tail-call-optimization">Tail call optimization</a>)，但這並不是保證的一件事情，還是有可能有 stack overhead<br>所以比較好的狀況還是想辦法把你的 recursion 搞成 tail recursive</p>
+<h2 id="Source-Code-C"><a href="#Source-Code-C" class="headerlink" title="Source Code (C)"></a>Source Code (C)</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
