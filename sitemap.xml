@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chungchris.github.io/2020/07/19/software/leetcode/Maximum-Subarray/</loc>
+    
+    <lastmod>2021-07-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chungchris.github.io/2020/07/10/software/leetcode/Valid-Parentheses/</loc>
     
     <lastmod>2021-07-20</lastmod>
@@ -38,13 +45,6 @@
   
   <url>
     <loc>https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/</loc>
-    
-    <lastmod>2021-07-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chungchris.github.io/2020/07/19/software/leetcode/Maximum-Subarray/</loc>
     
     <lastmod>2021-07-20</lastmod>
     
