@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[LeetCode] #55 Jump Game, A Po">
+    <meta name="keywords" content="[HackerRank] Permutations of Strings, A Po">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode] #55 Jump Game | A Po</title>
+    <title>[HackerRank] Permutations of Strings | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeetCode] #55 Jump Game</h1>
+                    <h1 class="description center-align post-title">[HackerRank] Permutations of Strings</h1>
                 </div>
             </div>
         </div>
@@ -392,8 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode-sum/">
-                                <span class="chip bg-color">leecode:sum</span>
+                            <a href="/tags/leetcode-string/">
+                                <span class="chip bg-color">leetcode:string</span>
                             </a>
                         
                     </div>
@@ -417,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-20
+                    2020-07-31
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-21
+                    2021-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.1k
+                    881
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    5 Min
+                    3 Min
                 </div>
                 
 
@@ -466,106 +466,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>取三數總和為 0</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定一些 strings，產生所有不同順序的排列組合，且依據 lexicographical order 輸出</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/jump-game/">Link</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/permutations-of-strings/problem">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 培養認出適合用 Greedy 演算法的問題類型</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 產生所有排列組合的其中一種演算法，有自動跳掉相同外表的排列的效果</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="DP-解法"><a href="#DP-解法" class="headerlink" title="DP 解法"></a>DP 解法</h2><p>DP (dynamic programming) 和 Greedy 都是算處理本題蠻直觀的想法，但先想到哪一個就有可能導致造盲區而想不到另一個<br>以本題來說，Greedy 演算法是比 DP 更快，所以如果先想到 DP，就有可能反而想不到 Greedy</p>
-<p>DP 的想法是<br>如果給定一個陣列 <code>a[0:n]</code>，存在解 <code>f(a, 0) = True</code> 代表從 <code>a</code> 的 index <code>0</code> 出發有辦法到達 <code>a</code> 的 index <code>n-1</code><br>那有兩種可能</p>
-<ul>
-<li>第一種：可以從 0 直接跳到終點，也就是 <code>0 + a[0] &gt;= n - 1</code></li>
-<li>第二種：至少存在一個點 index <code>i</code>，<code>0 &lt; i &lt; n</code>，使得 <code>f(a, i) = True</code></li>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>演算法要描述在<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order">這裡</a></p>
+<p>思路上我們可以直接隨便寫個例子，再來觀察我們自己是怎麼找出所有排列組合</p>
+<p>比如現在給一個數列 [1, 2, 3, 4, 5]<br>他的下一個排列組合為 [1, 2, 3, 5, 4]<br>他的下一個排列組合為 [1, 2, 4, 3, 5]<br>他的下一個排列組合為 [1, 2, 4, 5, 3]<br>他的下一個排列組合為 [1, 2, 5, 3, 4]<br>他的下一個排列組合為 [1, 2, 5, 4, 3]<br>他的下一個排列組合為 [1, 3, 2, 4, 5]<br>他的下一個排列組合為 [1, 3, 2, 5, 4]<br>他的下一個排列組合為 [1, 3, 4, 2, 5]<br>他的下一個排列組合為 [1, 3, 4, 5, 2]<br>他的下一個排列組合為 [1, 3, 5, 2, 4]<br>…</p>
+<p>我們其時很容易可以寫出來答案，但要整理成邏輯反而有點困難</p>
+<ol>
+<li>找到最大可能的 index <code>k</code> 使 <code>a[k] &lt; a[k+1]</code>。如果找不到，代表已窮盡所有排列組合<ul>
+<li>因為整個數列一定已經變成從大排到小，才會找不到任何 index <code>k</code> 使得 <code>a[k] &lt; a[k+1]</code></li>
 </ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">canJump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-        length <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        failed <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token boolean">False</span> <span class="token punctuation">]</span> <span class="token operator">*</span> length
-        
-        <span class="token keyword">def</span> <span class="token function">_canJump</span><span class="token punctuation">(</span>start<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> start <span class="token operator">==</span> length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>
-            <span class="token keyword">if</span> failed<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
+</li>
+<li>在 <code>k</code> 的右側，找到最大可能的 index <code>m</code>，使得 <code>a[m] &gt; a[k]</code>，把 <code>a[m]</code> <code>a[k]</code> 位置互換<ul>
+<li>當我們在步驟 1 中找到 <code>k</code>，同時代表 <code>k</code> 的右側數列已經是由大到小排序完畢</li>
+<li>所以本步驟要找到最大可能的 index <code>m</code>，使得 <code>a[m] &gt; a[k]</code>，其實就是從左往右找，找到第一個大於 a[k] 的即是 <code>m</code></li>
+<li>把 <code>a[m]</code> <code>a[k]</code> 位置互換，<code>k</code> 的右側數列依然會維持大到小排序</li>
+</ul>
+</li>
+<li>把 <code>k</code> 右側的數列反向排序<ul>
+<li>這樣正會得到以 <code>k</code> 為開頭的數列的最小 order 的排列。因為在步驟 2 後，<code>k</code> 的右側數列是大到小排序，所以 reverse 後就是由小到大</li>
+</ul>
+</li>
+</ol>
+<h2 id="Source-Code-C"><a href="#Source-Code-C" class="headerlink" title="Source Code (C)"></a>Source Code (C)</h2><p>要注意到本題 *Given an array of strings sorted in lexicographical order, print all of its permutations in strict lexicographical order.*，代表他的 input 本身已經是排序好的</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h&gt;</span></span>
 
-            <span class="token keyword">if</span> start <span class="token operator">+</span> nums<span class="token punctuation">[</span>start<span class="token punctuation">]</span> <span class="token operator">&gt;=</span> length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">True</span>
-            <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">reversed</span><span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span>start<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> start<span class="token operator">+</span>nums<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> _canJump<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">True</span>
+<span class="token keyword">int</span> <span class="token function">next_permutation</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>s<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">/**
+	* Complete this method
+	* Return 0 when there is no next permutation and 1 otherwise
+	* Modify array s to its next permutation
+	*/</span>
+    <span class="token keyword">int</span> k <span class="token operator">=</span> n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>k <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        k<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-            failed<span class="token punctuation">[</span>start<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
-            <span class="token keyword">return</span> <span class="token boolean">False</span>
-        
-        <span class="token keyword">if</span> _canJump<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">True</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<h2 id="Greedy-解法"><a href="#Greedy-解法" class="headerlink" title="Greedy 解法"></a>Greedy 解法</h2><p>關鍵點是我們不是只能跳每一個 integer 指定的步數，而是小於該 integer 的步數都可以<br>這造成，當我們有辦法抵達某一個 index <code>i</code>，根據該 index 提供的 integer <code>a[i]</code>，我們能夠到達更遠的地方也就是 index <code>i + a[i]</code>，而且，不是只能到達 index <code>i + a[i]</code> 而已，而是 index <code>i + a[i]</code> 以前的所有點我們都可以到達<br>同時，index <code>i + a[i]</code> 以前的所有點的 integer，都能夠成為擴展我們的可到達區域的潛在武器。也就是說，我們目前的可到達區域，變成是 <code>Max( k + a[k] )</code>，其中 <code>0 &lt;= k &lt;= i</code></p>
-<p>如果今天 <code>Max( k + a[k] )</code> 可以覆蓋到 index <code>n-1</code>，那就代表我們能夠抵達終點</p>
-<p>一開始我們的 k 只有 <code>0</code>，因為一開始我們能抵達的點只有 index <code>0</code><br>但藉由 <code>a[0]</code> 提供的值，我們就可以儘量大的擴展出去，找到做大的那個可能變成新的 <code>k</code></p>
-<p>我們把 <code>k</code> 的概念命名為 <code>reached</code> 實作如下</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">canJump</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-        length <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        reached <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> i <span class="token operator">&lt;=</span> reached<span class="token punctuation">:</span>
-                reached <span class="token operator">=</span> i <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">if</span> i <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> reached <span class="token keyword">else</span> reached
-                <span class="token keyword">if</span> reached <span class="token operator">&gt;=</span> length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">True</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
-        <span class="token keyword">return</span> <span class="token boolean">False</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">int</span> m <span class="token operator">=</span> n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>m <span class="token operator">&gt;</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        m<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">char</span> <span class="token operator">*</span>temp <span class="token operator">=</span> s<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">[</span>m<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    
+    <span class="token keyword">int</span> i <span class="token operator">=</span> k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> j <span class="token operator">=</span> n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        temp <span class="token operator">=</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        s<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+        j<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<p>為什麼 Greedy 比較省時間，因為 Greedy 只關心『是否可能有解』；反過來說，他能夠有效率的判斷出『無解』的狀況，也就是第 11,12 行的作用<br>如果採用 DP，他需要要把所有有辦法踩到的點都踩完，才能夠下『無解』的結論，看下面這個例子就很明顯</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>index</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-</tr>
-<tr>
-<td>value</td>
-<td>7</td>
-<td>6</td>
-<td>5</td>
-<td>4</td>
-<td>3</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>x</td>
-</tr>
-</tbody></table>
-<p>如果採用 Greedy，for loop 跑完 9 輪就知道無解，<code>reached</code> 一直無法突破 7 到達 8</p>
-<p>但如果用 DP，總共嘗試的路徑用 index 表示就會是<br>    0 -&gt; 7 return False, failed[7]=True<br>    0 -&gt; 6 -&gt; 7 return False, failed[6]=True<br>    0 -&gt; 6 return False,<br>    0 -&gt; 5 -&gt; 7 return False<br>    0 -&gt; 5 -&gt; 6 return False, failed[5]=True<br>    0 -&gt; 5 return False,<br>    0 -&gt; 4 -&gt; 7 return False<br>    0 -&gt; 4 -&gt; 6 return False<br>    0 -&gt; 4 -&gt; 5 return False, failed[4]=True<br>    0 -&gt; 4 return False,<br>    0 -&gt; 3 -&gt; 7 return False<br>    0 -&gt; 3 -&gt; 6 return False<br>    0 -&gt; 3 -&gt; 5 return False<br>    0 -&gt; 3 -&gt; 4 return False, failed[3]=True<br>    0 -&gt; 3 return False,<br>    0 -&gt; 2 -&gt; 7 return False<br>    0 -&gt; 2 -&gt; 6 return False<br>    0 -&gt; 2 -&gt; 5 return False<br>    0 -&gt; 2 -&gt; 4 return False<br>    0 -&gt; 2 -&gt; 3 return False, failed[2]=True<br>    0 -&gt; 2 return False,<br>    0 -&gt; 1 -&gt; 7 return False<br>    0 -&gt; 1 -&gt; 6 return False<br>    0 -&gt; 1 -&gt; 5 return False<br>    0 -&gt; 1 -&gt; 4 return False<br>    0 -&gt; 1 -&gt; 3 return False<br>    0 -&gt; 1 -&gt; 2 return False<br>    0 -&gt; 1 -&gt; 6 return False, failed[1]=True<br>    0 -&gt; 1 return False,<br>    return False</p>
-<p>上面所嘗試的路徑數量已經超過 9 不少<br>也就是說 DP 解所關心的『路徑』解，在本題用不到，本題只關心能不能到達，所以用 Greedy 比較快</p>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>s<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	s <span class="token operator">=</span> <span class="token function">calloc</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">calloc</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">do</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+			<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s%c"</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i <span class="token operator">==</span> n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">?</span> <span class="token string">'\n'</span> <span class="token operator">:</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">next_permutation</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token function">free</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">free</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -592,7 +591,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/">https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/</a>
+                    <a href="https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/">https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +629,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode-sum/">
-                                    <span class="chip bg-color">leecode:sum</span>
+                                <a href="/tags/leetcode-string/">
+                                    <span class="chip bg-color">leetcode:string</span>
                                 </a>
                             
                         </div>
@@ -671,9 +670,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/';
-        this.page.identifier = '/2020/07/20/software/leetcode/Jump-Game/';
-        this.page.title = '[LeetCode] #55 Jump Game';
+        this.page.url = 'https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/';
+        this.page.identifier = '/2020/07/31/software/leetcode/Permutations-of-Strings/';
+        this.page.title = '[HackerRank] Permutations of Strings';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -707,25 +706,85 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/07/21/software/leetcode/Merge-Intervals/">
+                <a href="/2021/06/19/software/language/python-asyncio/">
                     <div class="card-image">
                         
+                        <img src="https://drive.google.com/uc?export=view&id=1F0iUOrLUW3LUjUblbZ32iyuE6sqTpoaT" class="responsive-img" alt="Python Asyncio">
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[LeetCode] #56 Merge Intervals">
-                        
-                        <span class="card-title">[LeetCode] #56 Merge Intervals</span>
+                        <span class="card-title">Python Asyncio</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Merge Intervals
+                            本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/programming/">
+                        <span class="chip bg-color">programming</span>
+                    </a>
+                    
+                    <a href="/tags/language/">
+                        <span class="chip bg-color">language</span>
+                    </a>
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/multithread/">
+                        <span class="chip bg-color">multithread</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/21/software/leetcode/Insert-Interval/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="[LeetCode] #57 Insert Interval">
+                        
+                        <span class="card-title">[LeetCode] #57 Insert Interval</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Insert Interval
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -743,55 +802,6 @@
                     
                     <a href="/tags/leecode-interval/">
                         <span class="chip bg-color">leecode:interval</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/19/software/leetcode/Maximum-Subarray/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="[LeetCode] #53 Maximum Subarray">
-                        
-                        <span class="card-title">[LeetCode] #53 Maximum Subarray</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            找和為最小的子陣列
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/software-leetcode/" class="post-category">
-                                    software/leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/leecode-sum/">
-                        <span class="chip bg-color">leecode:sum</span>
                     </a>
                     
                 </div>
