@@ -519,6 +519,8 @@
 </tr>
 </tbody></table>
 <p>我們持續維護一個 queue <code>q</code>，來記錄有用的 <strong>index</strong></p>
+<br>
+
 <p>首先把第一個 slide window 生出來</p>
 <table>
 <thead>
@@ -536,7 +538,7 @@
 <td>10</td>
 </tr>
 </tbody></table>
-<p><code>q</code> = [0]</p>
+<p><code>q = [0]</code></p>
 <br>
 
 <table>
@@ -558,7 +560,7 @@
 <td>30</td>
 </tr>
 </tbody></table>
-<p>我們新發現 <code>a[1]</code> = 30，30 比目前 <code>q</code> 中記的 index 0 的值（也就是 <code>a[0]</code>）還大，所以 0 應該被丟棄，他不會再有用，所以 <code>q</code> 就變成<br><code>q</code> = [1]</p>
+<p>我們新發現 <code>a[1]</code> = 30，30 比目前 <code>q</code> 中記的 index 0 的值（也就是 <code>a[0]</code>）還大，所以 0 應該被丟棄，他不會再有用，所以 <code>q</code> 就變成<br><code>q = [1]</code></p>
 <br>
 
 <table>
@@ -583,7 +585,7 @@
 <td>20</td>
 </tr>
 </tbody></table>
-<p>我們新發現 <code>a[2]</code> = 20，20 比目前 <code>q</code> 中記的 index 1（也就是 <code>a[1]</code>=30）還小，代表他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q</code> = [1, 2]</p>
+<p>我們新發現 <code>a[2]</code> = 20，20 比目前 <code>q</code> 中記的 index 1（也就是 <code>a[1]</code>=30）還小，代表他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q = [1, 2]</code></p>
 <p>到這裡我們就看完了第一個長度為 <code>k</code> 的 slide window，我們記在 <code>q</code> 中的最左測的那個 index，就會是目前 slide window 的最大值，也就是 <code>a[q[0]] = a[1] = 30</code></p>
 <br>
 
@@ -612,7 +614,7 @@
 <td>10</td>
 </tr>
 </tbody></table>
-<p>slide window 再往右滑一格，看到了 <code>a[3]</code> = 10，10 比 <code>q</code> 中記的最右側的 2（也就是 <code>a[2]</code>=20）還小，他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q</code> = [1, 2, 3]</p>
+<p>slide window 再往右滑一格，看到了 <code>a[3]</code> = 10，10 比 <code>q</code> 中記的最右側的 2（也就是 <code>a[2]</code>=20）還小，他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q = [1, 2, 3]</code></p>
 <p>同時這代表目前滑到 index 3 的 slide window，最大值會是 index 1（看 <code>q</code> 中最左側的記憶）</p>
 <br>
 
@@ -645,7 +647,7 @@
 </tr>
 </tbody></table>
 <p>slide window 再往右滑一格，看到了 <code>a[4]</code> = 40，40 比 <code>q</code> 中記的最右側的 3（也就是 <code>a[3]</code>=10）還大，此時 <code>q</code> 中比 40 還小的都會失去用處（因為我們的 slide window 已經滑到了一個 40 並且之後幾步 40 也都會一直存在，他會是目前的 <code>q</code> 裡最晚消失的）<br>所以我們要把 <code>q</code> 中從右端開始，把比 40 小的都移除：原本的 <code>q</code> = [1, 2, 3]<br><code>a[3]</code>=10 比 40 小，所以把 3 移除，<code>q</code> 變成 [1, 2]<br><code>a[2]</code>=20 還是比 40 小，所以把 2 移除，<code>q</code> 變成 [1]<br><code>a[1]</code>=30 還是比 40 小，所以把 1 移除，<code>q</code> 變成 []</p>
-<p>所以到了這一步，q 變成只有新發現的 4<br><code>q</code> = [4]</p>
+<p>所以到了這一步，q 變成只有新發現的 4<br><code>q = [4]</code></p>
 <p>同時也代表 <code>a[4]</code> 是目前 slide window 的最大值</p>
 <br>
 
@@ -681,7 +683,7 @@
 </tr>
 </tbody></table>
 <p>slide window 再往右滑一格，看到了 <code>a[5]</code> = 50，50 比 <code>q</code> 中記的 4（也就是 <code>a[4]</code>=40）還大，此時 <code>q</code> 中比 50 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 50 小的都移除：原本的 <code>q</code> = [4]，<code>a[4]</code>=40 比 50 小，所以把 4 移除，<code>q</code> 變成 []</p>
-<p>所以到了這一步，q 變成只有新發現的 5<br><code>q</code> = [5]</p>
+<p>所以到了這一步，q 變成只有新發現的 5<br><code>q = [5]</code></p>
 <p>同時也代表 <code>a[5]</code> 是目前 slide window 的最大值</p>
 <br>
 
@@ -719,7 +721,7 @@
 <td>20</td>
 </tr>
 </tbody></table>
-<p>slide window 再往右滑一格，看到了 <code>a[6]</code> = 20，20 比 <code>q</code> 中記的 5（也就是 <code>a[5]</code>=50）還小，代表他可能在未來有用處，要記住，所以 <code>q</code> 變成<br><code>q</code> = [5, 6]</p>
+<p>slide window 再往右滑一格，看到了 <code>a[6]</code> = 20，20 比 <code>q</code> 中記的 5（也就是 <code>a[5]</code>=50）還小，代表他可能在未來有用處，要記住，所以 <code>q</code> 變成<br><code>q = [5, 6]</code></p>
 <p>同時這代表目前滑到 index 6 的 slide window，最大值依然會是 index 5（看 <code>q</code> 中最左側的記憶）</p>
 <br>
 
@@ -761,7 +763,7 @@
 </tr>
 </tbody></table>
 <p>slide window 再往右滑一格，看到了 <code>a[7]</code> = 30，30 比 <code>q</code> 中最右側的記憶 6（也就是 <code>a[6]</code>=20）還大，此時 <code>q</code> 中比 30 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 30 小的都移除：原本的 <code>q</code> = [5, 6]，<code>a[6]</code>=20 比 30 小，所以把 6 移除，<code>q</code> 變成 [5]<br><code>a[5]</code>=50 比 30大，所以可以就留著</p>
-<p>所以到了這一步，q 變成有剩下的 5，加上新的 7<br><code>q</code> = [5, 7]</p>
+<p>所以到了這一步，q 變成有剩下的 5，加上新的 7<br><code>q = [5, 7]</code></p>
 <p>同時也代表 index 5 依舊是目前 slide window 的最大值</p>
 <br>
 
@@ -807,10 +809,9 @@
 </tbody></table>
 <p>slide window 再往右滑一格，看到了 <code>a[8]</code> = 60，60 比 <code>q</code> 中最右側的記憶 7（也就是 <code>a[7]</code>=30）還大，此時 <code>q</code> 中比 60 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 60 小的都移除：原本的 <code>q</code> = [5, 7]，<code>a[7]</code>=30 比 60 小，所以把 7 移除，<code>q</code> 變成 [5]</p>
 <p>這裏要另外注意，<code>q</code> 中的 5 已經超出了我們目前 slide window 的容許範圍，他其實已經不可能再有用，所以要將其移除，所以 <code>q</code> 就變成 []</p>
-<p>所以到了這一步，q 變成只有新加入的 8<br><code>q</code> = [8]</p>
+<p>所以到了這一步，q 變成只有新加入的 8<br><code>q = [8]</code></p>
 <p>同時也代表 <code>a[8]</code> 是目前 slide window 的最大值</p>
-<p>## Source Code (C++)</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<h2 id="Source-Code-C"><a href="#Source-Code-C" class="headerlink" title="Source Code (C++)"></a>Source Code (C++)</h2><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
 <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;deque&gt;</span> </span>
 <span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
 
@@ -853,8 +854,6 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>時間複雜度的部分，看似 <code>O(Nk)</code> 但其實不到<br>因為每一輪雖然都要 traverse <code>q</code>，但 <code>q</code> 的長度並非 <code>k</code><br>所以要換一個角度想，我們其實是在維護 <code>q</code>，而每一輪一個 index 會被加入 q，被加入的 index 為來有可能會被移出 q，所以總共頂多會有 2N 次的 add/pop operation，所以時間複雜度是 <code>O(N)</code><br>與暴力解的 <code>O(Nk)</code> 相比，可以發現當 k&gt;2，這會是比較快的解，代價是多一個 <code>q</code> 的 k 的空間</p>
-<br>
-
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/#disqus_thread">這裏</a> 還有提供 AVL tree 的 O(N * Log k) 解</p>
 </blockquote>
