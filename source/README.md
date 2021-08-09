@@ -1,6 +1,16 @@
 # Backup
 
 ``` bash
+git init
+git checkout -b backup
+git remote add origin https://github.com/chungchris/chungchris.github.io.git
+git add .
+git commit -m "commit_comments"
+git push -f origin backup
+```
+
+(Deprecated)
+``` bash
 # backup to the same repo as github pages but on `backup` branch (specified in _config.yml `backup` section)
 hexo backup
 ```
