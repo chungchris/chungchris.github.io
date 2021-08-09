@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>A Po</title>
+  
+  <subtitle>Giraffe Lover</subtitle>
+  <link href="https://chungchris.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://chungchris.github.io/"/>
+  <updated>2021-08-09T01:04:56.691Z</updated>
+  <id>https://chungchris.github.io/</id>
+  
+  <author>
+    <name>Chris Chung</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode 刷題筆記</title>
+    <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
+    <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
+    <published>2021-07-22T03:02:55.000Z</published>
+    <updated>2021-08-09T01:04:56.691Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因為我其實不太愛刷題，覺得意義不明… 可能主要因為我的 career path 並非演算法工程師，所以目的性上每個人不太一樣&lt;br&gt;我去找了別人推薦的清單，想說如果真的要刷就做一些比較有意義的題目，並且依據我自己的刷題目的和偏好星星&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>馬祖 - 碉堡！碉堡，碉堡。碉堡...</title>
+    <link href="https://chungchris.github.io/2021/07/08/taiwan/mazu/"/>
+    <id>https://chungchris.github.io/2021/07/08/taiwan/mazu/</id>
+    <published>2021-07-08T02:44:54.000Z</published>
+    <updated>2021-07-22T08:33:06.600Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“I’m not travelling alone. I’m travelling solo.”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Highlights&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="taiwan" scheme="https://chungchris.github.io/categories/taiwan/"/>
+    
+    
+    <category term="台灣旅遊" scheme="https://chungchris.github.io/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/"/>
+    
+    <category term="離島旅遊" scheme="https://chungchris.github.io/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/"/>
+    
+    <category term="馬祖" scheme="https://chungchris.github.io/tags/%E9%A6%AC%E7%A5%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go 筆記</title>
+    <link href="https://chungchris.github.io/2021/07/06/software/language/go-note/"/>
+    <id>https://chungchris.github.io/2021/07/06/software/language/go-note/</id>
+    <published>2021-07-06T03:58:22.000Z</published>
+    <updated>2021-08-02T06:07:14.736Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下是推薦的入門步驟&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://tour.golang.org/welcome/1&quot;&gt;A Tour of Go&lt;/a&gt;：covers basic syntax and data structures; methods</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="go" scheme="https://chungchris.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rust 筆記</title>
+    <link href="https://chungchris.github.io/2021/06/30/software/language/rust-note/"/>
+    <id>https://chungchris.github.io/2021/06/30/software/language/rust-note/</id>
+    <published>2021-06-30T08:36:53.000Z</published>
+    <updated>2021-08-02T06:08:40.920Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;學習順序&quot;&gt;&lt;a href=&quot;#學習順序&quot; class=&quot;headerlink&quot; title=&quot;學習順序&quot;&gt;&lt;/a&gt;學習順序&lt;/h2&gt;&lt;p&gt;Rust 是一個學習曲線比較陡峭的語言，即使有其他語言基礎，如果沒有先讀書，而是直接上，那在 compile</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="rust" scheme="https://chungchris.github.io/tags/rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基礎資料結構演算法筆記</title>
+    <link href="https://chungchris.github.io/2021/06/21/software/data-structure/"/>
+    <id>https://chungchris.github.io/2021/06/21/software/data-structure/</id>
+    <published>2021-06-20T21:11:28.000Z</published>
+    <updated>2021-07-22T08:52:18.437Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;簡單的就直接空白了…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;資料結構-Data-Structure&quot;&gt;&lt;a href=&quot;#資料結構-Data-Structure&quot; class=&quot;headerlink&quot; title=&quot;資料結構</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="sort" scheme="https://chungchris.github.io/tags/sort/"/>
+    
+    <category term="search" scheme="https://chungchris.github.io/tags/search/"/>
+    
+    <category term="演算法" scheme="https://chungchris.github.io/tags/%E6%BC%94%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="資料結構" scheme="https://chungchris.github.io/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Compile. gcc 編譯 static link, dynamic link, dynamic load</title>
+    <link href="https://chungchris.github.io/2021/06/20/software/compile/"/>
+    <id>https://chungchris.github.io/2021/06/20/software/compile/</id>
+    <published>2021-06-20T15:20:37.000Z</published>
+    <updated>2021-07-22T08:51:10.612Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Reference&lt;br&gt;PTT LinuxDev, 作者: cole945 (躂躂..) 看板: LinuxDev, 標題: [心得] 用gcc 自製Library, 時間: Sun Nov 5 04:15:45</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="compile" scheme="https://chungchris.github.io/tags/compile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Basic Network Security. 基礎網路安全筆記</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/basic-network-security/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/basic-network-security/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2021-07-22T08:54:10.239Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;傳輸數據時的-4-個安全性問題&quot;&gt;&lt;a href=&quot;#傳輸數據時的-4-個安全性問題&quot; class=&quot;headerlink&quot; title=&quot;傳輸數據時的 4 個安全性問題&quot;&gt;&lt;/a&gt;傳輸數據時的 4 個安全性問題&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;竊聽</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="rsa" scheme="https://chungchris.github.io/tags/rsa/"/>
+    
+    <category term="signature" scheme="https://chungchris.github.io/tags/signature/"/>
+    
+    <category term="SSL" scheme="https://chungchris.github.io/tags/SSL/"/>
+    
+    <category term="TLS" scheme="https://chungchris.github.io/tags/TLS/"/>
+    
+    <category term="加密" scheme="https://chungchris.github.io/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+    <category term="網路安全" scheme="https://chungchris.github.io/tags/%E7%B6%B2%E8%B7%AF%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="數位簽章" scheme="https://chungchris.github.io/tags/%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0/"/>
+    
+    <category term="數位憑證" scheme="https://chungchris.github.io/tags/%E6%95%B8%E4%BD%8D%E6%86%91%E8%AD%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Soft AP on Mac. 在 Mac 上啟動 Soft AP 及 CGI handler</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/soft-ap-on-mac/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/soft-ap-on-mac/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2021-07-22T08:51:47.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;啟動 Mac 的 Wifi 的 AP mode，其他裝置就可以發 request 到你的</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="mac" scheme="https://chungchris.github.io/tags/mac/"/>
+    
+    <category term="osx" scheme="https://chungchris.github.io/tags/osx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Basic. 基礎 Git 指令</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/basic-git/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/basic-git/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2021-07-22T08:50:40.882Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本篇介紹幾個 git 會用到的基本 command line 指令&lt;/p&gt;
+&lt;h2 id=&quot;安裝-on-Mac-OS&quot;&gt;&lt;a href=&quot;#安裝-on-Mac-OS&quot; class=&quot;headerlink&quot; title=&quot;安裝 on Mac OS&quot;&gt;&lt;/a&gt;安裝 on</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="git" scheme="https://chungchris.github.io/tags/git/"/>
+    
+    <category term="github" scheme="https://chungchris.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python Asyncio</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/language/python-asyncio/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/language/python-asyncio/</id>
+    <published>2021-06-18T23:34:20.000Z</published>
+    <updated>2021-08-02T06:07:27.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本篇對於 event</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="python" scheme="https://chungchris.github.io/tags/python/"/>
+    
+    <category term="multithread" scheme="https://chungchris.github.io/tags/multithread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[HackerRank] Deque-STL (Sliding Window Maximum)</title>
+    <link href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/"/>
+    <id>https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/</id>
+    <published>2020-08-08T23:19:40.000Z</published>
+    <updated>2021-08-09T01:07:45.372Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個數列，不斷找出滑動的區間的最大值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:2pointer" scheme="https://chungchris.github.io/tags/leetcode-2pointer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[HackerRank] Permutations of Strings</title>
+    <link href="https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/"/>
+    <id>https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/</id>
+    <published>2020-07-31T10:37:11.000Z</published>
+    <updated>2021-08-01T23:27:29.764Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給定一些 strings，產生所有不同順序的排列組合，且依據 lexicographical</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:string" scheme="https://chungchris.github.io/tags/leetcode-string/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #79 Word Search</title>
+    <link href="https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/"/>
+    <id>https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/</id>
+    <published>2020-07-23T03:50:44.000Z</published>
+    <updated>2021-08-01T23:50:41.170Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;二維陣列中某字串是否存在&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:2darray" scheme="https://chungchris.github.io/tags/leecode-2darray/"/>
+    
+    <category term="leecode:dfs" scheme="https://chungchris.github.io/tags/leecode-dfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #57 Insert Interval</title>
+    <link href="https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/"/>
+    <id>https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/</id>
+    <published>2020-07-21T03:21:30.000Z</published>
+    <updated>2021-07-21T03:32:27.765Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Insert Interval&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:interval" scheme="https://chungchris.github.io/tags/leecode-interval/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #56 Merge Intervals</title>
+    <link href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/"/>
+    <id>https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/</id>
+    <published>2020-07-21T01:48:21.000Z</published>
+    <updated>2021-07-21T03:32:18.884Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Merge Intervals&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:interval" scheme="https://chungchris.github.io/tags/leecode-interval/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #55 Jump Game</title>
+    <link href="https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/"/>
+    <id>https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/</id>
+    <published>2020-07-20T06:14:05.000Z</published>
+    <updated>2021-07-21T03:32:21.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;取三數總和為 0&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:sum" scheme="https://chungchris.github.io/tags/leecode-sum/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #53 Maximum Subarray</title>
+    <link href="https://chungchris.github.io/2020/07/19/software/leetcode/Maximum-Subarray/"/>
+    <id>https://chungchris.github.io/2020/07/19/software/leetcode/Maximum-Subarray/</id>
+    <published>2020-07-19T02:13:02.000Z</published>
+    <updated>2021-07-20T01:04:13.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;找和為最小的子陣列，子陣列至少包含一個數，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:sum" scheme="https://chungchris.github.io/tags/leecode-sum/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #49 Group Anagrams</title>
+    <link href="https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/"/>
+    <id>https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/</id>
+    <published>2020-07-13T00:17:35.000Z</published>
+    <updated>2021-07-20T00:45:01.143Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;找字元組成相同但順序不同的字串. a.k.a anagrams&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:string" scheme="https://chungchris.github.io/tags/leecode-string/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #48 Rotate Image</title>
+    <link href="https://chungchris.github.io/2020/07/12/software/leetcode/Rotate-Image/"/>
+    <id>https://chungchris.github.io/2020/07/12/software/leetcode/Rotate-Image/</id>
+    <published>2020-07-12T12:16:30.000Z</published>
+    <updated>2021-07-20T00:47:25.810Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個二維方形矩陣，將其旋轉 90 度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:2darray" scheme="https://chungchris.github.io/tags/leetcode-2darray/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #39 Combination Sum</title>
+    <link href="https://chungchris.github.io/2020/07/12/software/leetcode/Combination-Sum/"/>
+    <id>https://chungchris.github.io/2020/07/12/software/leetcode/Combination-Sum/</id>
+    <published>2020-07-12T07:54:12.000Z</published>
+    <updated>2021-07-22T04:01:59.149Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給定一些整數，找和為 t 的所有可能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:sum" scheme="https://chungchris.github.io/tags/leetcode-sum/"/>
+    
+  </entry>
+  
+</feed>
