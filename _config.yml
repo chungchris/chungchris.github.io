@@ -26,7 +26,8 @@ backup:
   type: git
   theme: hexo-theme-matery
   repository:
-    github: https://github.com/chungchris/chungchris.github.io.git,backup
+    #github: https://github.com/chungchris/chungchris.github.io.git,backup
+    github: git@github.com:chungchris/chungchris.github.io.git,backup
 
 # Directory
 source_dir: source
