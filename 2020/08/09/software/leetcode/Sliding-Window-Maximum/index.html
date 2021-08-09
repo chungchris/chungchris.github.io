@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="data structure,sort,search,排序,搜尋,演算法,資料結構">
+    <meta name="keywords" content="[HackerRank] Deque-STL (Sliding Window Maximum), A Po">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基礎資料結構演算法筆記 | A Po</title>
+    <title>[HackerRank] Deque-STL (Sliding Window Maximum) | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://drive.google.com/uc?export=view&id=1G-wi-CFGZuZzkAoz_iyVyeUZSXIlKlKm')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基礎資料結構演算法筆記</h1>
+                    <h1 class="description center-align post-title">[HackerRank] Deque-STL (Sliding Window Maximum)</h1>
                 </div>
             </div>
         </div>
@@ -392,20 +392,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/sort/">
-                                <span class="chip bg-color">sort</span>
-                            </a>
-                        
-                            <a href="/tags/search/">
-                                <span class="chip bg-color">search</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">演算法</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/">
-                                <span class="chip bg-color">資料結構</span>
+                            <a href="/tags/leetcode-2pointer/">
+                                <span class="chip bg-color">leetcode:2pointer</span>
                             </a>
                         
                     </div>
@@ -416,8 +404,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/software/" class="post-category">
-                                software
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
                             </a>
                         
                     </div>
@@ -429,28 +417,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-06-21
+                    2020-08-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-22
+                    2021-08-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.9k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    10 Min
+                    7 Min
                 </div>
                 
 
@@ -478,109 +466,398 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>簡單的就直接空白了…</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個數列，不斷找出滑動的區間的最大值</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/deque-stl/problem">Link</a></li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] Slide window. 暴力解很容易，但 O(n) 解沒做過不容易想到</li>
+</ul>
+<blockquote>
+<p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="資料結構-Data-Structure"><a href="#資料結構-Data-Structure" class="headerlink" title="資料結構 Data Structure"></a>資料結構 Data Structure</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Stack-LIFO"><a href="#Stack-LIFO" class="headerlink" title="Stack: LIFO"></a>Stack: LIFO</h3><h3 id="Queue-FIFO"><a href="#Queue-FIFO" class="headerlink" title="Queue: FIFO"></a>Queue: FIFO</h3><h3 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h3><h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><ul>
-<li>Priority queue</li>
-<li>保證父節點比子節點小，不保證左右的大小關係</li>
-<li>Balance. 所以當取出 root 或新增 node 時，都是以最右下角的位置為對象。新增 node 時是新增在最右下角的空位，再一路往上與父節點比較看是非需要調換；取出 root 時，把最右下角的 node 移到 root，比較兩個子節點，與 3 者中最小者調換</li>
-</ul>
-<h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><ul>
-<li>保證每一個 subtree 的右側一定大於左側</li>
-<li>非 balance</li>
-<li>新增一定都成為葉節點</li>
-<li>刪除時若該節點有子節點，則把從左子樹最大值取上來，左子樹最大值就是其最右下的葉節點</li>
-<li>因為非 balance，所以蒐尋時間不一定。若平衡，為 <code>O(log n)</code>；若極度不平衡成一條線，那就是 <code>O(n)</code>。</li>
-</ul>
-<h3 id="Self-balancing-Binary-Search-Tree"><a href="#Self-balancing-Binary-Search-Tree" class="headerlink" title="Self-balancing Binary Search Tree"></a>Self-balancing Binary Search Tree</h3><h4 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h4><ul>
-<li>不平衡時會做 rotation，維持在平衡的狀態，可避免 BST 退化為鏈狀。rotation 前後 in-order traversal 順序相同。</li>
-<li>每一個節點需要維持其高度資訊：先為樹補上所有 null 葉節點，null 節點高度為 -1，其他節點是其子節點較大者 +1</li>
-<li>每一個節點需要計算其 Balance Factor (BF) ：左子節點的高度減右以節點的高度。所以若 BF 為負，代表右子樹比較大棵。需要注意若只差 1 還是容許的平衡狀態。</li>
-<li>Rebalance<ul>
-<li>當新增一個節點，整條路上的節點的高度資訊要更新。然後，從新節點往根部方向走兩層，也就是走到新結點的爺爺節點，看爺爺的 BF 是否小於 -1 或大於 1，如果是，那就代表要 Rebalance。怎則做 Rebalance 取決於剛剛怎麼從新節點走到爺爺的路，如果一路走左分枝上來，就是 LL，一路走右分枝就是 RR，同理還有 LR 和 RL，四種形態有對應的旋轉方式。</li>
-<li>當刪除一個節點，不管是把其左子樹最大值補位上來，還是把右子樹最小值補位上來，都是要整棵樹檢查。整棵樹檢查方式是任意挑一個頁節點往上檢查即可，如果一路到根部，都沒有出現 BF 小於 -1 或大於 1，那就平衡。若一旦發現就要根據其路徑立即做 LL/RR/LR/RL 對應的旋轉方式。旋轉完成後再從頭檢查一次，直到某次一路檢查到根部，都沒有出現 BF 小於 -1 或大於 1。</li>
-</ul>
-</li>
-</ul>
-<h4 id="Red-Black-Tree"><a href="#Red-Black-Tree" class="headerlink" title="Red Black Tree"></a>Red Black Tree</h4><ul>
-<li>也是自平衡的 BST。AVL Tree，為了平衡會要經過好多次旋轉，而 RB Tree 的結構設計，使得任何不平衡都會在三次旋轉之內解決。</li>
-<li>然而嚴格上來說紅黑數只是幾乎平衡的 BST，因為他只保證「從 root 出發抵達葉節點的最長徑不會超過最短的兩倍」</li>
-<li>藉由以下 5 項特徵</li>
-</ul>
-<ol>
-<li>紅黑樹中的每一個節點不是黑色就是紅色</li>
-<li>根節點一定是黑色</li>
-<li>原本葉節點的 NULL 指標都另外新增補個葉節點給他，然後最終每一個葉節點一定是黑色</li>
-<li>如果某個節點是紅色，那麼其兩個子節點必定是黑色，不能有兩個紅色節點相連</li>
-<li>站在任何一個節點上，所有從該節點走到任意葉節點路經的黑色節點數必定相同</li>
-</ol>
-<ul>
-<li>根據上述特徵的第 4 點與第 5 點，紅黑樹中路徑可能的長度最小值一定是全部節點皆為黑色，而路徑可能的長度最大值一定是紅色黑色相間，如此便確保最長路徑不會超過最短路徑的兩倍的特性。</li>
-<li>新稱或刪除資料，都會根據節點位置有不同得對應方式，包含些修正一些節點的顏色，以及旋轉，但旋轉都是在三次以內，即可將其修正成符合紅黑數特徵。</li>
-</ul>
-<hr>
-<h2 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h2><h3 id="Bubble-sort"><a href="#Bubble-sort" class="headerlink" title="Bubble sort"></a>Bubble sort</h3><ul>
-<li>每次看相鄰 2 個數，確保左邊小於右邊，從最右側開始每次向左滑 1 單位，如此當回滑到最左側時，左手的值就是整串數列的最小值，這樣是一輪</li>
-<li>時間複雜度是 <code>O(n*n)</code>，因為預期比較動作就是進行 n!，但可以做的優化是如果有某一輪完全沒做 swap，那就可以終止。所以會得到 best case 是 <code>O(n)</code>，就是在原本就已經排好的狀況</li>
-</ul>
-<h3 id="Selection-sort"><a href="#Selection-sort" class="headerlink" title="Selection sort"></a>Selection sort</h3><ul>
-<li>一次把數張撲克牌攤開在手上，最直覺的排法就是，眼光從作掃到右，挑出其中最小的，移到最左邊</li>
-<li>時間複雜度是 <code>O(n*n)</code></li>
-</ul>
-<h3 id="Insertion-sort"><a href="#Insertion-sort" class="headerlink" title="Insertion sort"></a>Insertion sort</h3><ul>
-<li>一張一張把撲克牌拿起來，插到對的位置。如果用 array 來看，就是以最左邊為起點，往右一個一個加進來到對的位置</li>
-<li>時間複雜度是 <code>O(n*n)</code>，因為預期比較動作就是進行 n!。best case 是 <code>O(n)</code>，就是在原本就已經排好的狀況，每當多看一個數，都發現其大於左側已確定的數列中的最大值，也就是每一輪的第一次比較就發現本輪結束</li>
-</ul>
-<h3 id="Heap-sort"><a href="#Heap-sort" class="headerlink" title="Heap sort"></a>Heap sort</h3><ul>
-<li>創造 heap 需要 <code>O(n log n)</code>，因為有 n 個數，而插入每個數的預期時間與高度相關</li>
-<li>從 heap 取出每次都取 root，但 heap 要因此調整，時間是 <code>O(log n)</code>，所以全部取完是 <code>O(n log n)</code></li>
-</ul>
-<h3 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h3><ul>
-<li>把數列兩兩一組，完成排序後，再把兩組合併。合併方式為比較兩組當中最左側的值，將較小者取出。這樣為完成一輪</li>
-<li>時間是 <code>O(n log n)</code>，因爲每輪各組總共 n 次比較，而總共有 log n 輪</li>
-</ul>
-<h3 id="Quick-sort"><a href="#Quick-sort" class="headerlink" title="Quick sort"></a>Quick sort</h3><ul>
-<li>隨機選取 pivot，把比 pivot 小的放一邊大的放一邊。再對左右兩邊做相同處理</li>
-<li>如果運氣好 pivot 選得好，造成每次左右兩邊數量一樣，那時間就是 <code>O(n log n)</code>；如果運氣不好，造成每次的都只有的單邊，那時間就是 <code>O(n*n)</code></li>
-</ul>
-<hr>
-<h2 id="搜尋-Search"><a href="#搜尋-Search" class="headerlink" title="搜尋 Search"></a>搜尋 Search</h2><h3 id="Array-Linear-search"><a href="#Array-Linear-search" class="headerlink" title="[Array] Linear search"></a>[Array] Linear search</h3><p>從左到右，所以不管原本的數列是已排列或未排列</p>
-<h3 id="Array-Binary-search"><a href="#Array-Binary-search" class="headerlink" title="[Array] Binary search"></a>[Array] Binary search</h3><p>僅用於已排列，每次與中間位置比較，所以搜尋時間是 <code>O(log n)</code></p>
-<h3 id="Graph-BFS-廣度優先-Breadth-First-Traversal"><a href="#Graph-BFS-廣度優先-Breadth-First-Traversal" class="headerlink" title="[Graph] BFS 廣度優先 Breadth First Traversal"></a>[Graph] BFS 廣度優先 Breadth First Traversal</h3><ul>
-<li>原本 queue 裡只有 root，把他取出，如果不符合欲搜尋對象，就把其子節點他們全部推進 queue 裡，這樣為一輪。之後再從 queue 取出一個進行下一輪</li>
-<li>圖中有迴圈的情形也適用</li>
-<li>1 2 3 4 5</li>
-</ul>
-<p><img src="https://drive.google.com/uc?export=view&amp;id=1kAUUd4qOkt5eRkzpA8jB95r9_jGhyy2U" alt="範例"></p>
-<h3 id="Graph-DFS-深度優先"><a href="#Graph-DFS-深度優先" class="headerlink" title="[Graph] DFS 深度優先"></a>[Graph] DFS 深度優先</h3><ul>
-<li>換成搭配 stack</li>
-<li>Inorder traversal：造訪順序為 左 -&gt; 中 -&gt; 右 (4 2 5 1 3)</li>
-<li>Preorder traversal：造訪順序為 中-&gt; 左 -&gt; 右 (1 2 4 5 3)</li>
-<li>Postorder traversal：造訪順序為 左 -&gt; 右 -&gt; 中 (4 5 2 3 1)</li>
-</ul>
-<h3 id="Graph-Bellman-Ford-找出最短路徑"><a href="#Graph-Bellman-Ford-找出最短路徑" class="headerlink" title="[Graph] Bellman-Ford 找出最短路徑"></a>[Graph] Bellman-Ford 找出最短路徑</h3><ol>
-<li>把起點設為 0，其他點暫設為無限大</li>
-<li>工作對象是「所有的邊」，每一輪都是把所有的邊都看一次，看邊上的兩點，從 A 到 B 或從 B 到 A 的值，是否可以更小</li>
-<li>只要每一輪都還有更新任一點的值，都代表還要進行下一輪，直到某一輪完全沒有更新任何點上的值時結束，此時終點上的值就是最短路徑</li>
-</ol>
-<ul>
-<li>若有 <code>v</code> 個點，<code>e</code> 個邊，時間為 <code>O(ev)</code>。原因是每一輪都要檢查 e個邊，而最多能跑幾輪？<br>在第 1 輪結束後，得到的是起點最多經過一條邊到達其他點的最短距離；第 2 輪結束後，得到的是起點最多經過兩條邊到達其他點的最短距離；那要到底幾輪才會是到終點的最短距離呢？<br>圖中任兩點的最短距離，頂多經過 v-1 個邊，也就是從起點途經所有點才抵達終點的狀況。因為如果某一點造訪兩次，那代表有迴圈出現，這基本上純粹成本增加<br>如此說來，第 v-1 輪結束後，得到的是起點最多經過 v-1 條邊到達其他點的最短距離，有就是我們最多需要執行的輪數，所以總時間為 <code>O(ev)</code></li>
-<li>負數邊和圖中有迴圈皆可用，但若同時有負數邊和迴圈，則會出現迴圈一直跑就成本一直遞減的狀況，所以最短路徑其實不存在，也就是說當執行輪數到達 v 卻還有值能更新時，即可判斷為最短路徑不存在</li>
-</ul>
-<h3 id="Graph-Dijkstra’s-找出最短路徑"><a href="#Graph-Dijkstra’s-找出最短路徑" class="headerlink" title="[Graph] Dijkstra’s 找出最短路徑"></a>[Graph] Dijkstra’s 找出最短路徑</h3><ol>
-<li>把起點設為 0，其他點暫設為無限大</li>
-<li>工作對象從起點開始，更新起點的相鄰點上的值，如此為一輪</li>
-<li>從目前看過的點中，選擇值最小者，作為第二輪的開頭</li>
-<li>如此重複，直到選擇到終點為工作點為止</li>
-</ol>
-<ul>
-<li>若有 v 個點 e 個邊，時間為 <code>O(v\*v)</code>。原因是每一輪結束，都會確認下由起點到達某一點的最短路徑。總共可有 v-1 個點要確認，所以要進行 v-1 輪。而每一輪，要把當前工作點所一步能及的所有相鄰點做更新，每一點的相鄰點可為 v-1，所以總共是 <code>O(v*v)</code></li>
-<li>與 <code>Bellman-Ford</code> 比較：v 個點最多能有 v*(v-1)/2 個邊，且 v 大多數時候小於 e，所以 vv 大部份時候小於 ve，所以 <code>Dijkstra’s</code> 比較快，尤其是稀疏圖的 v 就是偏小的時候。而且若 <code>Dijkstra’s</code> 的實作使用 Fibonacci heap 存圖，則時間複雜度可提升到 <code>O(e + v log v)</code></li>
-<li>Greedy 在每一輪得到從起點到某一點的最短路徑，所以這也造成無法處理有負數邊的狀況。因為每一輪都只能看到目前所看過的點和邊，如果是還沒看到的邊而且為負數邊，那就會造成以為已經得到到從起點到某一點的最短路徑但其實不然，因為未來某負數邊的加入會改變這一結論。（無法處理負迴圈，但可以處理迴圈）</li>
-</ul>
-<h3 id="Graph-A-找出最短路徑"><a href="#Graph-A-找出最短路徑" class="headerlink" title="[Graph] A* 找出最短路徑"></a>[Graph] A* 找出最短路徑</h3><p><code>A*</code> 是 <code>Dijkstra’s</code> 的發展，<code>Dijkstra’s</code> 每一輪會決定出從起點到某一點的最短路徑，但該點以結論來說，有可能根本不在最短路徑上，所以最終來看就是一種浪費</p>
-<p><code>A*</code> 導入了試探權重 heuristic cost，僅是一種人為的、根據其他已知客觀條件所給的推測、建議性質參數，在選擇下個點時提供幫助。在每一輪，每一點的試探權重與當前由起點抵達該點的成本相加，取其中最小者作為下一點，如果試探權重很符合真實狀況，那就會更快探索到終點並結束，但這並不見得是最佳路徑，因為根本有些點還沒被探索到，你無法確定是不是如果經過那些點會得到一條更佳的路徑，所以目前的到的結果只能說是考慮進試探權重的最佳路徑</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>數列長度 <code>N</code>，window 長度 <code>k</code>，暴力解就是每次都重新 traverse 整個 <code>k</code> 找出最大的，那時間複雜度就是 <code>O(Nk)</code></p>
+<p>要照到 <code>O(N)</code> 解，要注意到一個規則：當 slide window 一直滑，假設右端從 <code>x</code> 滑到 <code>x+1</code>，一但我們發現一個更大的值，也就是當 <code>a[x+1]</code> 比 <code>a[x]</code> 大，那 <code>x+1</code> 的左邊都是無用的，都可以丟棄，因為最新加入的 <code>x+1</code> 不但最大，並且也會是最晚離開的，所以他的左側都不會再有用處；換句話說，如果我們新發現的值 <code>a[x+1]</code> 比 a[x] 還小，那 a[x+1] 不可能是目前 slide window 的解，但卻有可能是未來 slide window 的解<br>根據這個特性，如果 slide window 一直滑，一但遇到比較大的就把他左側比他小的的都丟棄，就會持續維持住一個最左側就是目前 slide window 最大值的數列</p>
+<p>例如以下數列 <code>a</code>，<code>k</code>=3</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+<td>50</td>
+<td>20</td>
+<td>30</td>
+<td>60</td>
+</tr>
+</tbody></table>
+<p>我們持續維護一個 queue <code>q</code>，來記錄有用的 <strong>index</strong></p>
+<p>首先把第一個 slide window 生出來</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p><code>q</code> = [0]</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+</tr>
+</tbody></table>
+<p>我們新發現 <code>a[1]</code> = 30，30 比目前 <code>q</code> 中記的 index 0 的值（也就是 <code>a[0]</code>）還大，所以 0 應該被丟棄，他不會再有用，所以 <code>q</code> 就變成<br><code>q</code> = [1]</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+</tr>
+</tbody></table>
+<p>我們新發現 <code>a[2]</code> = 20，20 比目前 <code>q</code> 中記的 index 1（也就是 <code>a[1]</code>=30）還小，代表他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q</code> = [1, 2]</p>
+<p>到這裡我們就看完了第一個長度為 <code>k</code> 的 slide window，我們記在 <code>q</code> 中的最左測的那個 index，就會是目前 slide window 的最大值，也就是 <code>a[q[0]] = a[1] = 30</code></p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[3]</code> = 10，10 比 <code>q</code> 中記的最右側的 2（也就是 <code>a[2]</code>=20）還小，他可能會在未來的 slide window 有用，我們需要把他記住，所以 <code>q</code> 就變成<br><code>q</code> = [1, 2, 3]</p>
+<p>同時這代表目前滑到 index 3 的 slide window，最大值會是 index 1（看 <code>q</code> 中最左側的記憶）</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[4]</code> = 40，40 比 <code>q</code> 中記的最右側的 3（也就是 <code>a[3]</code>=10）還大，此時 <code>q</code> 中比 40 還小的都會失去用處（因為我們的 slide window 已經滑到了一個 40 並且之後幾步 40 也都會一直存在，他會是目前的 <code>q</code> 裡最晚消失的）<br>所以我們要把 <code>q</code> 中從右端開始，把比 40 小的都移除：原本的 <code>q</code> = [1, 2, 3]<br><code>a[3]</code>=10 比 40 小，所以把 3 移除，<code>q</code> 變成 [1, 2]<br><code>a[2]</code>=20 還是比 40 小，所以把 2 移除，<code>q</code> 變成 [1]<br><code>a[1]</code>=30 還是比 40 小，所以把 1 移除，<code>q</code> 變成 []</p>
+<p>所以到了這一步，q 變成只有新發現的 4<br><code>q</code> = [4]</p>
+<p>同時也代表 <code>a[4]</code> 是目前 slide window 的最大值</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+<td>50</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[5]</code> = 50，50 比 <code>q</code> 中記的 4（也就是 <code>a[4]</code>=40）還大，此時 <code>q</code> 中比 50 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 50 小的都移除：原本的 <code>q</code> = [4]，<code>a[4]</code>=40 比 50 小，所以把 4 移除，<code>q</code> 變成 []</p>
+<p>所以到了這一步，q 變成只有新發現的 5<br><code>q</code> = [5]</p>
+<p>同時也代表 <code>a[5]</code> 是目前 slide window 的最大值</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+<td>50</td>
+<td>20</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[6]</code> = 20，20 比 <code>q</code> 中記的 5（也就是 <code>a[5]</code>=50）還小，代表他可能在未來有用處，要記住，所以 <code>q</code> 變成<br><code>q</code> = [5, 6]</p>
+<p>同時這代表目前滑到 index 6 的 slide window，最大值依然會是 index 5（看 <code>q</code> 中最左側的記憶）</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+<td>50</td>
+<td>20</td>
+<td>30</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[7]</code> = 30，30 比 <code>q</code> 中最右側的記憶 6（也就是 <code>a[6]</code>=20）還大，此時 <code>q</code> 中比 30 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 30 小的都移除：原本的 <code>q</code> = [5, 6]，<code>a[6]</code>=20 比 30 小，所以把 6 移除，<code>q</code> 變成 [5]<br><code>a[5]</code>=50 比 30大，所以可以就留著</p>
+<p>所以到了這一步，q 變成有剩下的 5，加上新的 7<br><code>q</code> = [5, 7]</p>
+<p>同時也代表 index 5 依舊是目前 slide window 的最大值</p>
+<br>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>value</td>
+<td>10</td>
+<td>30</td>
+<td>20</td>
+<td>10</td>
+<td>40</td>
+<td>50</td>
+<td>20</td>
+<td>30</td>
+<td>60</td>
+</tr>
+</tbody></table>
+<p>slide window 再往右滑一格，看到了 <code>a[8]</code> = 60，60 比 <code>q</code> 中最右側的記憶 7（也就是 <code>a[7]</code>=30）還大，此時 <code>q</code> 中比 60 還小的都會失去用處<br>所以我們要把 <code>q</code> 中從右端開始，把比 60 小的都移除：原本的 <code>q</code> = [5, 7]，<code>a[7]</code>=30 比 60 小，所以把 7 移除，<code>q</code> 變成 [5]</p>
+<p>這裏要另外注意，<code>q</code> 中的 5 已經超出了我們目前 slide window 的容許範圍，他其實已經不可能再有用，所以要將其移除，所以 <code>q</code> 就變成 []</p>
+<p>所以到了這一步，q 變成只有新加入的 8<br><code>q</code> = [8]</p>
+<p>同時也代表 <code>a[8]</code> 是目前 slide window 的最大值</p>
+<p>## Source Code (C++)</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;deque&gt;</span> </span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">printKMax</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token comment">//Write your code here.</span>
+    deque<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> q<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>q<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        q<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> arr<span class="token punctuation">[</span>q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span>k<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;=</span> i<span class="token operator">-</span>k<span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">pop_front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>q<span class="token punctuation">.</span><span class="token function">back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> q<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        q<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> arr<span class="token punctuation">[</span>q<span class="token punctuation">.</span><span class="token function">front</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    cout <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  
+	<span class="token keyword">int</span> t<span class="token punctuation">;</span>
+	cin <span class="token operator">&gt;&gt;</span> t<span class="token punctuation">;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>t<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">int</span> n<span class="token punctuation">,</span>k<span class="token punctuation">;</span>
+    	cin <span class="token operator">&gt;&gt;</span> n <span class="token operator">&gt;&gt;</span> k<span class="token punctuation">;</span>
+    	<span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    	<span class="token keyword">int</span> arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+      		cin <span class="token operator">&gt;&gt;</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    	<span class="token function">printKMax</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	t<span class="token operator">--</span><span class="token punctuation">;</span>
+  	<span class="token punctuation">}</span>
+  	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>時間複雜度的部分，看似 <code>O(Nk)</code> 但其實不到<br>因為每一輪雖然都要 traverse <code>q</code>，但 <code>q</code> 的長度並非 <code>k</code><br>所以要換一個角度想，我們其實是在維護 <code>q</code>，而每一輪一個 index 會被加入 q，被加入的 index 為來有可能會被移出 q，所以總共頂多會有 2N 次的 add/pop operation，所以時間複雜度是 <code>O(N)</code><br>與暴力解的 <code>O(Nk)</code> 相比，可以發現當 k&gt;2，這會是比較快的解，代價是多一個 <code>q</code> 的 k 的空間</p>
+<br>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/#disqus_thread">這裏</a> 還有提供 AVL tree 的 O(N * Log k) 解</p>
+</blockquote>
 
                 
             </div>
@@ -607,7 +884,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2021/06/21/software/data-structure/">https://chungchris.github.io/2021/06/21/software/data-structure/</a>
+                    <a href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/">https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,20 +922,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/sort/">
-                                    <span class="chip bg-color">sort</span>
-                                </a>
-                            
-                                <a href="/tags/search/">
-                                    <span class="chip bg-color">search</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">演算法</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/">
-                                    <span class="chip bg-color">資料結構</span>
+                                <a href="/tags/leetcode-2pointer/">
+                                    <span class="chip bg-color">leetcode:2pointer</span>
                                 </a>
                             
                         </div>
@@ -698,9 +963,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2021/06/21/software/data-structure/';
-        this.page.identifier = '/2021/06/21/software/data-structure/';
-        this.page.title = '基礎資料結構演算法筆記';
+        this.page.url = 'https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/';
+        this.page.identifier = '/2020/08/09/software/leetcode/Sliding-Window-Maximum/';
+        this.page.title = '[HackerRank] Deque-STL (Sliding Window Maximum)';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -734,23 +999,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/06/30/software/language/rust-note/">
+                <a href="/2021/06/19/software/language/python-asyncio/">
                     <div class="card-image">
                         
-                        <img src="https://drive.google.com/uc?export=view&id=1bmeIr1XQxPCSWgI67fw4v9ubbKu-NlaQ" class="responsive-img" alt="Rust 筆記">
+                        <img src="https://drive.google.com/uc?export=view&id=1F0iUOrLUW3LUjUblbZ32iyuE6sqTpoaT" class="responsive-img" alt="Python Asyncio">
                         
-                        <span class="card-title">Rust 筆記</span>
+                        <span class="card-title">Python Asyncio</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一些 Rust 的學習資源整理和個人筆記
+                            本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
                         </span>
                         <span class="publish-author">
                             
@@ -767,12 +1032,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/programming-language/">
-                        <span class="chip bg-color">programming language</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/rust/">
-                        <span class="chip bg-color">rust</span>
+                    <a href="/tags/multithread/">
+                        <span class="chip bg-color">multithread</span>
                     </a>
                     
                 </div>
@@ -786,30 +1051,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/20/software/compile/">
+                <a href="/2020/07/31/software/leetcode/Permutations-of-Strings/">
                     <div class="card-image">
                         
-                        <img src="https://drive.google.com/uc?export=view&id=1bceNhzHYef4DkW1iNGxt9TMuBRpu2eOS" class="responsive-img" alt="Compile. gcc 編譯 static link, dynamic link, dynamic load">
                         
-                        <span class="card-title">Compile. gcc 編譯 static link, dynamic link, dynamic load</span>
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="[HackerRank] Permutations of Strings">
+                        
+                        <span class="card-title">[HackerRank] Permutations of Strings</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            static link, dynamic link, dynamic load
+                            產生所有排列組合
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software/" class="post-category">
-                                    software
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
                                 </a>
                             
                             
@@ -819,8 +1085,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/compile/">
-                        <span class="chip bg-color">compile</span>
+                    <a href="/tags/leetcode-string/">
+                        <span class="chip bg-color">leetcode:string</span>
                     </a>
                     
                 </div>
