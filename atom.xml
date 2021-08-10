@@ -6,7 +6,7 @@
   <link href="https://chungchris.github.io/atom.xml" rel="self"/>
   
   <link href="https://chungchris.github.io/"/>
-  <updated>2021-08-09T01:04:56.691Z</updated>
+  <updated>2021-08-10T06:50:00.088Z</updated>
   <id>https://chungchris.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++ 語言筆記</title>
+    <link href="https://chungchris.github.io/2021/08/10/software/language/cpp-note/"/>
+    <id>https://chungchris.github.io/2021/08/10/software/language/cpp-note/</id>
+    <published>2021-08-10T06:45:45.000Z</published>
+    <updated>2021-08-10T06:50:00.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Cheat-Sheet&quot;&gt;&lt;a href=&quot;#Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;Cheat Sheet&quot;&gt;&lt;/a&gt;Cheat Sheet&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="cpp" scheme="https://chungchris.github.io/tags/cpp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C 語言筆記</title>
+    <link href="https://chungchris.github.io/2021/08/10/software/language/c-note/"/>
+    <id>https://chungchris.github.io/2021/08/10/software/language/c-note/</id>
+    <published>2021-08-10T06:45:41.000Z</published>
+    <updated>2021-08-10T06:50:04.126Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Cheat-Sheet&quot;&gt;&lt;a href=&quot;#Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;Cheat Sheet&quot;&gt;&lt;/a&gt;Cheat Sheet&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="c" scheme="https://chungchris.github.io/tags/c/"/>
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode 刷題筆記</title>
@@ -527,60 +582,6 @@
     
     
     <category term="leecode:string" scheme="https://chungchris.github.io/tags/leecode-string/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #48 Rotate Image</title>
-    <link href="https://chungchris.github.io/2020/07/12/software/leetcode/Rotate-Image/"/>
-    <id>https://chungchris.github.io/2020/07/12/software/leetcode/Rotate-Image/</id>
-    <published>2020-07-12T12:16:30.000Z</published>
-    <updated>2021-07-20T00:47:25.810Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個二維方形矩陣，將其旋轉 90 度&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:2darray" scheme="https://chungchris.github.io/tags/leetcode-2darray/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #39 Combination Sum</title>
-    <link href="https://chungchris.github.io/2020/07/12/software/leetcode/Combination-Sum/"/>
-    <id>https://chungchris.github.io/2020/07/12/software/leetcode/Combination-Sum/</id>
-    <published>2020-07-12T07:54:12.000Z</published>
-    <updated>2021-07-22T04:01:59.149Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給定一些整數，找和為 t 的所有可能&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:sum" scheme="https://chungchris.github.io/tags/leetcode-sum/"/>
     
   </entry>
   
