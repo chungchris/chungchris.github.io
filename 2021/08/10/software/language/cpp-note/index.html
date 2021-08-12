@@ -429,21 +429,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-10
+                    2021-08-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    7 Min
+                    8 Min
                 </div>
                 
 
@@ -475,6 +475,7 @@
 <hr>
 <h2 id="C-to-C"><a href="#C-to-C" class="headerlink" title="C to C++"></a>C to C++</h2><ul>
 <li>C 不直接支持 pass by reference 因為它 always pass by value，但可藉由傳遞 pointer 自己達成 pass by reference。而 C++ 只要 argument 加上 <code>&amp;</code> 就會是指定 pass by reference</li>
+<li><code>NULL</code> 在 C 是 <code>void*</code>，在 C++ <code>__cplusplus</code> macro 之下會變 <code>0</code>；C++ 導入 <code>nullptr</code>，取代 C <code>NULL</code> 功能，可以指向所有型別</li>
 <li>VLA (variable-length array)<ul>
 <li>array size 可以是變數（事實上是來自於 C99）</li>
 <li>memory 是在 stack 上，而不像使用 malloc 會是在 heap，也就是說他是 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%87%AA%E5%8A%A8%E5%8F%98%E9%87%8F">automatic variable</a>，在 scope 消滅（如 function return）後生命週期即消失</li>
@@ -491,6 +492,19 @@ stringstream <span class="token function">ss</span><span class="token punctuatio
 ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&gt;&gt;</span> ch <span class="token operator">&gt;&gt;</span> b <span class="token operator">&gt;&gt;</span> ch <span class="token operator">&gt;&gt;</span> c<span class="token punctuation">;</span>  <span class="token comment">// a = 23, b = 4, c = 56</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h3 id="class-static-member"><a href="#class-static-member" class="headerlink" title="class static member"></a>class static member</h3><ul>
+<li>No matter how many objects of the class are created, there is only one copy of the static member. A static member is shared by all objects of the class</li>
+<li>All static data is initialized to zero when the first object is created, if no other initialization is present<ul>
+<li>Can’t put it in the class definition but it can be initialized outside the class using <code>&lt;Class&gt;::&lt;static member&gt;=&lt;...&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="class-statuc-function"><a href="#class-statuc-function" class="headerlink" title="class statuc function"></a>class statuc function</h3><ul>
+<li>A static member function can be called even if no objects of the class exist</li>
+<li>The static functions are accessed using only the class name and the scope resolution operator <code>::</code></li>
+<li>A static member function can only access static data member, and other static member functions</li>
+<li>You could use a static member function help to determine whether some objects of the class have been created or not</li>
+</ul>
 <h2 id="virtual-override-final"><a href="#virtual-override-final" class="headerlink" title="virtual, override, final"></a>virtual, override, final</h2><h3 id="override"><a href="#override" class="headerlink" title="override"></a>override</h3><ul>
 <li>override 只用在 function signature 完全相同</li>
 <li>當有意 override，加上 override 宣告是好習慣，讓 compiler 幫忙檢查 signature 是否相同</li>
@@ -1095,7 +1109,7 @@ Matrix Matrix<span class="token operator">::</span><span class="token keyword">o
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">56.4k</span>
+                        class="white-color">56.9k</span>
             
             
             
