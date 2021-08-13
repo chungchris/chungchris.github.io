@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="binary search">
+    <meta name="keywords" content="[LeetCode] #41 First Missing Positive, A Po">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode] #33 Search in Rotated Sorted Array | A Po</title>
+    <title>[LeetCode] #41 First Missing Positive | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeetCode] #33 Search in Rotated Sorted Array</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #41 First Missing Positive</h1>
                 </div>
             </div>
         </div>
@@ -393,12 +393,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode-sort/">
-                                <span class="chip bg-color">leetcode:sort</span>
-                            </a>
-                        
-                            <a href="/tags/leetcode-search/">
-                                <span class="chip bg-color">leetcode:search</span>
+                            <a href="/tags/leetcode-array/">
+                                <span class="chip bg-color">leetcode:array</span>
                             </a>
                         
                     </div>
@@ -422,14 +418,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-12
+                    2020-08-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-13
                 </div>
                 
 
@@ -471,47 +467,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>在一個被 rotate 過的 sorted array 做 binary search</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個數列，找出一個最小的正整數，且該正整數不存在數列中</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Link</a></li>
-<li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 需要一點觀察，有可能會走錯方向，另外大於小於其實也有點煩</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/first-missing-positive/">Link</a></li>
+<li>等級：<strong>Hard</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 題目規範 O(n)，需要意識到數列長度是一個可以在 O(n) 取得的資訊，O(2n) 也是算 O(n)。一但長度也是已知資訊，要想出演算法不難，不過要實作出來可能會遇到鬼打牆的狀況，所以還是可以算是一題 Hard 等級的題目</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>題目規定時間要 <code>O(log n)</code>，所以我們知道一定是 binary search</p>
-<p>那就先想一下差別在哪裡<br>binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>如果 list 是存在一個 indexing array，那我們通常會維護一個 (left, right) 的變數來記錄我們接著要搜尋的區間</p>
-<p>但現在這題因為 list 有被 rotate 過，所以我們面臨兩個可能的方向<br>第一步肯定還是對半切<br>如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 (left, right) 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？</p>
-<p>我先想了第一個方向，嘗試了幾種作法，但最後都走不下去，所以就往第二個方向，持續使用要取左半還是取右半這種判斷模式</p>
-<br>
+<hr>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>題目規範 O(n)，且不要另外 allocate 到與 n 相關的空間<br>這代表我們要在有走完數列一輪之後就要知道答案，而且不能用一個跟數列等長數列去記憶</p>
+<p>可能會有的第一個直覺是 min, max<br>我們不能直接用 sort 去的到 min/max，因為那會是 O(nlogn)<br>不過反正有一輪還是終究能統計出 min/max，且只使用 min/max 兩個變數能符合題目的空間要求，所以現在問題就是知道了 min/max 是否就能得出答案？<br>再進一步想就會發現不行，因為答案樣找的解是有可能是被跳過的那個數，比如數列 [3,4,-1,1]，min 是 -1，max 是 4，但答案是 2，即使我們把 min 定義為 min_positive，min_positive 是 1，max 是 4，也無從得知答案是 2 還是 3</p>
+<p>當以上想法行不通，我們會注意到『跳過』是一個關鍵需要被解決的問題，所以我們要想辦法識別出『不連續』</p>
+<p>隨便在舉幾個例子就會發現，當數列中沒有出現 1，答案就會是 1，因為 1 就是天然最小正整數<br>如果有出現 1，那就看有沒有出現 2，如果沒有，那答案就是 2，以此類推</p>
+<p>以這個規則，一個長度 5 的數列，能產生的最大可能解就是 6，當數列內容是 [1, 2, 3, 4, 5] 的時候<br>也就是說，一個長度 5 的數列，我們頂多只會關心 1~5 有沒有出現，當數列中沒有出現 1，答案就會是 1；如果有出現 1，那就看有沒有出現 2，如果沒有，那答案就是 2<br>我們不關心 -1 有沒有出現，也不關心 7,8,9 有沒有出現，因為那個與最終答案無關</p>
+<p>到這裏我們大概就有感覺，可以搭配上 index 來幫忙記憶，因為一個長度 5 的數列，他的 index 是 0-4，符合我們關心的範圍</p>
+<p>這裏另外需要意識到『數列長度』是一個可以在 O(n) 取得的資訊，O(2n) 也是算 O(n)，所以即使題目給的 input 是一個典型的 single link list，先走一次來取得 n 的值也是合法的</p>
+<p>該怎麼用 index 幫忙記憶？我們可以把數字移動到他應該待的位置上，比如一個長度 5 的數列，如果他有出現 1，那他應該待在 index 0；如果他有出現 3，那他應該待在 index 2<br>所以我們可以花走一輪的時間就把該歸位的歸位</p>
+<p>然後再從頭走一次，第一個遇到的位置上沒有數字的就會是解</p>
+<p>比如 [3, 4, -1, 1]，他的長度是 4，所以我們關心 1~4 有沒有出現，透過的方法是：如果 1,2,3,4 有出現，就把他們移到 index 0,1,2,3 來作為記錄方式<br>我們從 index 0 開始走，首先遇到 3，3 在我們的關心範圍內，且他應該待在 index 2，所以我們把他移到 index 2 去；index 2 原本的數字是 -1，-1 不是我們關心的範圍，所以直接把它覆蓋掉沒差，所以數列變成了 [3, 4, 3, 1]<br>接著走到 index 1，遇到 4，4 也是在我們的關心範圍內，他應該待在 index 3，所以我們把他移到 index 3 去，index 3 原本的數字是 1，但 1 也是我們關心的範圍，所以 1 也要移走，他應該待在 index 0，所以現在數列變成 [1, 4, 3, 4] （這種連續的 swap 可能會是個實作上的關卡，待會直接看 code 會比較明白其實邏輯不複雜）<br>接著走到 index 2，值是 3，3 已經待在他該待的位置上，所以不需要做任何事<br>接著走到 index 3，值到 4，4 也已經待在他該待的位置上，也不需要做任何事</p>
+<p>所以現在數列就變成 [1, 4, 3, 4]<br>我們再從頭走，走到 index 的時候發現，這個位置應該要是 2，但卻出現 4，代表 2 就是一個錯失的數，並且是最小的可能，所以答案就是 2</p>
+<h3 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">firstMissingPositive</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+        i<span class="token punctuation">,</span> length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token number">0</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> length<span class="token punctuation">:</span>
+                move_to <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token number">1</span>
+                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>move_to<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token comment"># either move_to==i or there are dup integers</span>
+                    <span class="token keyword">break</span>
+                nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>move_to<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>move_to<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
 
-<p>Binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>但現在因為 list 有被 rotate 過，所以要取作左半還是右半，會根據 list 是否被 rotate 過來進一判斷</p>
-<p>所以我們要先找出有被 rotate 過的 list 的特徵<br>一般來說左側的值一定都小於自己，但如果一個 list 有被 rotate 過，那左側就會出現比自己大的值<br>所以我們就產生了一個判斷方法，看最左側的值，如果他比自己大，那就是有 roatate 過</p>
-<p>例如：<code>7 8 9 0 [1] 2 3 4 5</code><br>我們發現 7 比 1 大，所以當今天 target 是 0，他一定是存在於 1 的左半，因為左半勢必是已經列舉完所有比 1 小的值，才有可能出現比 1 大的值<br>但如果今天的 target 比 1 大，他就有可能存在 1 的左半或右半。進一步判斷的方式就是看 target 是不是比最左側的還 7 大，如果比 7 還大，那他就是在左半，反之是在右半</p>
-<p>又例如：<code>3 4 5 [6] 7 0 1 2</code>，我們發現最左的 3 比 6 小，如果 target 比 6 大，我們知道他一定在右半。因為所有比 6 大的值都不可能出現在左半，如果有任何比 6 大的值出現在左半，那最左側的值不能比 6 小<br>若 target 比 6 小，他就有可能存在 6 的左半或右半。進一步判斷的方式就是看 target 是不是比最左側的還 3 大，如果比 3 還大，那他就是在左半，反之是在右半</p>
-<p>同樣的邏輯，抓最右的數來判斷也可以，如果我們發現最右側的數居然比目前的值小，那我們就知道目前的數列是有 rotate 過</p>
-<p>大概就是醬，基於這個觀察，我們把他應用在幫助我們每次決定要取左側還是去右側的這個問題，我們整理成邏輯：</p>
-<p>如果現在 target 比目前的值小，代表我們要往值更小的未來移動，但該選左還是選右？<br>    選左半的條件是<br>        最左側出現了比目前大的值（因為這代表所有比目前值小的部分都會在左半部列舉完畢，所以為了找到 target 肯定是選左半。例如 <code>7 8 0 1 [2] 3 4 5 6</code> target 為 0）<br>            或者<br>        最左側的值比 target 還小（這代表三者目前呈現的關係由小到大為 left &lt; target &lt; current，所以為了找到 target 肯定是選左半。例如 <code>3 4 5 [6] 0 1 2</code> target 為 4）<br>    否則選右半<br>如果現在 target 比目前的值大，代表我們要往值更大的未來移動，但該選左還是選右？<br>    選右半的條件是<br>        最右側出現了比目前小的值（因為這代表所有比目前值大的部分都會在右半部列舉完畢，所以為了找到 target 肯定是選右半。例如 <code>2 3 4 [5] 6 0 1</code> target 為 6）<br>            或者<br>        最右側的值比 target 還大（這代表三者目前呈現的關係由小到大為 current &lt; target &lt; right，所以為了找到 target 肯定是選右半。例如 <code>7 8 0 1 [2] 3 4 5 6</code> target 為 5）<br>    否則選左半</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token number">0</span>
-        right <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        <span class="token keyword">while</span> right <span class="token operator">&gt;</span> left<span class="token punctuation">:</span>
-            i <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span> <span class="token comment"># effectiveness same as i = left + int((right - left)/2) </span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> i
-            <span class="token keyword">elif</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> target<span class="token punctuation">:</span>  <span class="token comment"># find smaller                    </span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&gt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">or</span> nums<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> target<span class="token punctuation">:</span>
-                    right <span class="token operator">=</span> i
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    left <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>                   <span class="token comment"># find larger</span>
-                <span class="token keyword">if</span> nums<span class="token punctuation">[</span>right<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token keyword">or</span> nums<span class="token punctuation">[</span>right<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;=</span> target<span class="token punctuation">:</span>
-                    left <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    right <span class="token operator">=</span> i
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> i<span class="token operator">+</span><span class="token number">1</span>
+        
+        <span class="token keyword">return</span> length<span class="token operator">+</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -538,7 +530,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/">https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/</a>
+                    <a href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/">https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,12 +568,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode-sort/">
-                                    <span class="chip bg-color">leetcode:sort</span>
-                                </a>
-                            
-                                <a href="/tags/leetcode-search/">
-                                    <span class="chip bg-color">leetcode:search</span>
+                                <a href="/tags/leetcode-array/">
+                                    <span class="chip bg-color">leetcode:array</span>
                                 </a>
                             
                         </div>
@@ -621,9 +609,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/';
-        this.page.identifier = '/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/';
-        this.page.title = '[LeetCode] #33 Search in Rotated Sorted Array';
+        this.page.url = 'https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/';
+        this.page.identifier = '/2020/08/13/software/leetcode/First-Missing-Positive/';
+        this.page.title = '[LeetCode] #41 First Missing Positive';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -657,31 +645,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/07/12/software/leetcode/Combination-Sum/">
+                <a href="/2021/06/19/software/language/python-asyncio/">
                     <div class="card-image">
                         
+                        <img src="https://drive.google.com/uc?export=view&id=1F0iUOrLUW3LUjUblbZ32iyuE6sqTpoaT" class="responsive-img" alt="Python Asyncio">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="[LeetCode] #39 Combination Sum">
-                        
-                        <span class="card-title">[LeetCode] #39 Combination Sum</span>
+                        <span class="card-title">Python Asyncio</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            給定一些整數，找和為 t 的所有可能
+                            本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leetcode/" class="post-category">
-                                    software/leetcode
+                            <a href="/categories/software/" class="post-category">
+                                    software
                                 </a>
                             
                             
@@ -691,8 +678,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode-sum/">
-                        <span class="chip bg-color">leetcode:sum</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/multithread/">
+                        <span class="chip bg-color">multithread</span>
                     </a>
                     
                 </div>
@@ -706,24 +697,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/11/software/leetcode/Merge-k-Sorted-Lists/">
+                <a href="/2020/08/09/software/leetcode/Sliding-Window-Maximum/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="[LeetCode] #23 Merge k Sorted Lists">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[HackerRank] Deque-STL (Sliding Window Maximum)">
                         
-                        <span class="card-title">[LeetCode] #23 Merge k Sorted Lists</span>
+                        <span class="card-title">[HackerRank] Deque-STL (Sliding Window Maximum)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合 k 個排序過的單向串列
+                            給一個數列，不斷找出滑動的區間的最大值
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-09
                             </span>
                         <span class="publish-author">
                             
@@ -740,12 +731,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode-ll/">
-                        <span class="chip bg-color">leetcode:ll</span>
-                    </a>
-                    
-                    <a href="/tags/leetcode-sort/">
-                        <span class="chip bg-color">leetcode:sort</span>
+                    <a href="/tags/leetcode-2pointer/">
+                        <span class="chip bg-color">leetcode:2pointer</span>
                     </a>
                     
                 </div>

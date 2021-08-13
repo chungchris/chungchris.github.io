@@ -76,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-12T01:04:44.547Z</updated>
+    <updated>2021-08-13T04:20:58.102Z</updated>
     
     
       
@@ -370,6 +370,33 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #41 First Missing Positive</title>
+    <link href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/"/>
+    <id>https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/</id>
+    <published>2020-08-13T03:39:04.000Z</published>
+    <updated>2021-08-13T04:21:00.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個數列，找出一個最小的正整數，且該正整數不存在數列中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:array" scheme="https://chungchris.github.io/tags/leetcode-array/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[HackerRank] Deque-STL (Sliding Window Maximum)</title>
     <link href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/"/>
     <id>https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/</id>
@@ -555,33 +582,6 @@
     
     
     <category term="leecode:sum" scheme="https://chungchris.github.io/tags/leecode-sum/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #49 Group Anagrams</title>
-    <link href="https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/"/>
-    <id>https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/</id>
-    <published>2020-07-13T00:17:35.000Z</published>
-    <updated>2021-08-11T01:17:39.627Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;找字元組成相同但順序不同的字串. a.k.a anagrams&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leecode:string" scheme="https://chungchris.github.io/tags/leecode-string/"/>
     
   </entry>
   
