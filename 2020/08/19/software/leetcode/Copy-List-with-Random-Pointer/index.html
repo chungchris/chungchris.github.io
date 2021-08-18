@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="parentheses">
+    <meta name="keywords" content="[LeetCode] #138 Copy List with Random Pointer, A Po">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode] #20 Valid Parentheses | A Po</title>
+    <title>[LeetCode] #138 Copy List with Random Pointer | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeetCode] #20 Valid Parentheses</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #138 Copy List with Random Pointer</h1>
                 </div>
             </div>
         </div>
@@ -393,8 +393,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode-string/">
-                                <span class="chip bg-color">leetcode:string</span>
+                            <a href="/tags/leetcode-ll/">
+                                <span class="chip bg-color">leetcode:ll</span>
                             </a>
                         
                     </div>
@@ -418,28 +418,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-08-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    468
+                    600
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    3 Min
                 </div>
                 
 
@@ -467,153 +467,128 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Parse 大/中/小 括號對看是否合法</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Deepcopy 一個有 random pointer 的 linked list</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">Link</a></li>
-<li>等級：<strong>Easy</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 經典題，很容易，但如果沒有做過還是可能會漏一些東西</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/copy-list-with-random-pointer/">Link</a></li>
+<li>等級：<strong>Medium</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 不使用額外空間的解法沒做過不容易想到</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<hr>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>Parse 括號的特性就是與 stack add/pop 的特性 100% 相符</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">isValid</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">bool</span><span class="token punctuation">:</span>
-        left <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string">'([{'</span><span class="token punctuation">)</span>
-        pair <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">')'</span><span class="token punctuation">:</span><span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">:</span><span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span><span class="token string">'{'</span><span class="token punctuation">}</span>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""</span>
 
-        stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">:</span>
-            <span class="token keyword">if</span> c <span class="token keyword">in</span> left<span class="token punctuation">:</span>
-                 stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
-            <span class="token keyword">elif</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                <span class="token keyword">return</span> <span class="token boolean">False</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token keyword">if</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span> <span class="token operator">!=</span> stack<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> <span class="token boolean">False</span>
-                stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">copyRandomList</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> <span class="token string">'Node'</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token string">'Node'</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">'''
+        * Each node will be linked by `next` only once
+        * Each node will be linked by `random` 0-multiple times
+        
+        We want each node cloned only once:
+            Are we going to allow clone node on reading `random`?
+                * YES: we are able to correctly assign `random` immediately
+                    =&gt; need to remember what nodes have already been cloned ... Solution copyRandomListA
+                * NO: we are not able to correctly assign `random` immediately
+                    =&gt; we have to handle assigning `random` later
+                       e.g. if A.randon is C, how can we make A'.random = C' later?
+                        =&gt; need to remember the mapping C-&gt;C'
+                            * use a map, i.e. dict. e.g. {C: C'}            ... Solution copyRandomListB
+                            * utilize original C. make C.next = C'          ... Solution copyRandomListC
+        '''</span>
+        
+        <span class="token comment">#return self.copyRandomListA(head)</span>
+        <span class="token comment">#return self.copyRandomListB(head)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>copyRandomListC<span class="token punctuation">(</span>head<span class="token punctuation">)</span>
 
-        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">False</span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>都用 if == 來比較 char 我是覺得也沒什麼問題啦，只是說用 <code>set</code> 和 <code>dict</code> 因為他們是 hash search，所以理論上會快一些，但對這題來說真差別有限 </p>
-<h2 id="Source-Code-Go"><a href="#Source-Code-Go" class="headerlink" title="Source Code (Go)"></a>Source Code (Go)</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">isValid</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">bool</span> <span class="token punctuation">{</span>
-    pair <span class="token operator">:=</span> <span class="token keyword">map</span><span class="token punctuation">[</span><span class="token builtin">rune</span><span class="token punctuation">]</span><span class="token builtin">rune</span> <span class="token punctuation">{</span>
-        <span class="token string">')'</span><span class="token punctuation">:</span> <span class="token string">'('</span><span class="token punctuation">,</span>
-        <span class="token string">']'</span><span class="token punctuation">:</span> <span class="token string">'['</span><span class="token punctuation">,</span>
-        <span class="token string">'}'</span><span class="token punctuation">:</span> <span class="token string">'{'</span><span class="token punctuation">,</span>
-    <span class="token punctuation">}</span>
+    <span class="token comment"># Solution A</span>
+    <span class="token comment">#   Allow clone node on reading `random`</span>
+    <span class="token comment">#   Need to remember what nodes have already been cloned</span>
+    <span class="token keyword">def</span> <span class="token function">copyRandomListA</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> <span class="token string">'Node'</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token string">'Node'</span><span class="token punctuation">:</span> 
+        mem <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token keyword">def</span> <span class="token function">_copyRandomList</span><span class="token punctuation">(</span>node<span class="token punctuation">:</span> <span class="token string">'Node'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> node <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">None</span>
+            <span class="token keyword">if</span> node <span class="token keyword">in</span> mem<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> mem<span class="token punctuation">[</span>node<span class="token punctuation">]</span>
+            mem<span class="token punctuation">[</span>node<span class="token punctuation">]</span> <span class="token operator">=</span> Node<span class="token punctuation">(</span>node<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            mem<span class="token punctuation">[</span>node<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> _copyRandomList<span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
+            mem<span class="token punctuation">[</span>node<span class="token punctuation">]</span><span class="token punctuation">.</span>random <span class="token operator">=</span> _copyRandomList<span class="token punctuation">(</span>node<span class="token punctuation">.</span>random<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> mem<span class="token punctuation">[</span>node<span class="token punctuation">]</span>
 
-    stack <span class="token operator">:=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">rune</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token keyword">for</span> <span class="token boolean">_</span><span class="token punctuation">,</span> c <span class="token operator">:=</span> <span class="token keyword">range</span> s <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> c <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> <span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">'{'</span><span class="token punctuation">:</span>
-            stack <span class="token operator">=</span> <span class="token function">append</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> c<span class="token punctuation">)</span>
-        <span class="token keyword">case</span> <span class="token string">')'</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">,</span> <span class="token string">'}'</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span>
-            <span class="token punctuation">}</span>
-            c <span class="token operator">=</span> pair<span class="token punctuation">[</span>c<span class="token punctuation">]</span>
-            <span class="token keyword">if</span> stack<span class="token punctuation">[</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">!=</span> c <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span>
-            <span class="token punctuation">}</span>
-            stack <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> <span class="token boolean">false</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token boolean">true</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> _copyRandomList<span class="token punctuation">(</span>head<span class="token punctuation">)</span>
 
-<h2 id="Source-Code-Rust"><a href="#Source-Code-Rust" class="headerlink" title="Source Code (Rust)"></a>Source Code (Rust)</h2><pre class="line-numbers language-rust" data-language="rust"><code class="language-rust"><span class="token keyword">impl</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">is_valid</span><span class="token punctuation">(</span>s<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">-&gt;</span> <span class="token keyword">bool</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> <span class="token keyword">mut</span> stack <span class="token operator">=</span> <span class="token macro property">vec!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> c <span class="token keyword">in</span> s<span class="token punctuation">.</span><span class="token function">chars</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">match</span> c <span class="token punctuation">{</span>
-                <span class="token char string">'('</span> <span class="token operator">|</span> <span class="token char string">'['</span> <span class="token operator">|</span> <span class="token char string">'{'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                    <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-                        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    <span class="token keyword">match</span> c <span class="token punctuation">{</span>
-                        <span class="token char string">')'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'('</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        <span class="token char string">']'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'['</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        <span class="token char string">'}'</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                            <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unwrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token char string">'{'</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                        _ <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> stack<span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Source-Code-C"><a href="#Source-Code-C" class="headerlink" title="Source Code (C)"></a>Source Code (C)</h2><pre class="line-numbers language-c" data-language="c"><code class="language-c">bool <span class="token function">isValid</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> <span class="token operator">*</span>stack <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token operator">*</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> last <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> <span class="token operator">*</span>c <span class="token operator">=</span> s<span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">*</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token operator">*</span>c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">case</span> <span class="token string">'('</span><span class="token operator">:</span>
-            <span class="token keyword">case</span> <span class="token string">'['</span><span class="token operator">:</span>
-            <span class="token keyword">case</span> <span class="token string">'{'</span><span class="token operator">:</span>
-                last<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>last <span class="token operator">==</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    len <span class="token operator">*=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-                    stack <span class="token operator">=</span> <span class="token function">realloc</span><span class="token punctuation">(</span>stack<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token operator">*</span>len<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                stack<span class="token punctuation">[</span>last<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">*</span>c<span class="token punctuation">;</span>                
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">')'</span><span class="token operator">:</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">[</span>last<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'('</span><span class="token punctuation">)</span>
-                    <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-                <span class="token keyword">else</span>
-                    last<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">']'</span><span class="token operator">:</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">[</span>last<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'['</span><span class="token punctuation">)</span>
-                    <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-                <span class="token keyword">else</span>
-                    last<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">case</span> <span class="token string">'}'</span><span class="token operator">:</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>stack<span class="token punctuation">[</span>last<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'{'</span><span class="token punctuation">)</span>
-                    <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-                <span class="token keyword">else</span>
-                    last<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-            <span class="token keyword">default</span><span class="token operator">:</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        c<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token comment"># Solution B</span>
+    <span class="token comment">#   Clone node on reading `next`</span>
+    <span class="token comment">#   Not allow clone node on reading `random`</span>
+    <span class="token comment">#   Leave `random` empty. Handle assigning `random` later</span>
+    <span class="token comment">#   Remember the address of clone node by a dict</span>
+    <span class="token keyword">def</span> <span class="token function">copyRandomListB</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> <span class="token string">'Node'</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token string">'Node'</span><span class="token punctuation">:</span> 
+        <span class="token keyword">if</span> head <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>last <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> true<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        cur <span class="token operator">=</span> head
+        mem <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        mem<span class="token punctuation">[</span>head<span class="token punctuation">]</span> <span class="token operator">=</span> Node<span class="token punctuation">(</span>head<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
+            mem<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> Node<span class="token punctuation">(</span>cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span>val<span class="token punctuation">)</span>
+            mem<span class="token punctuation">[</span>cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">]</span> <span class="token operator">=</span> mem<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">next</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+
+        cur <span class="token operator">=</span> head
+        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur<span class="token punctuation">.</span>random<span class="token punctuation">:</span>
+                mem<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">.</span>random <span class="token operator">=</span> mem<span class="token punctuation">[</span>cur<span class="token punctuation">.</span>random<span class="token punctuation">]</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+
+        <span class="token keyword">return</span> mem<span class="token punctuation">[</span>head<span class="token punctuation">]</span>
+
+
+    <span class="token comment"># Solution C</span>
+    <span class="token comment">#   Remember the address of clone node by utilizing the `next` field in the original list</span>
+    <span class="token keyword">def</span> <span class="token function">copyRandomListC</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> <span class="token string">'Node'</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token string">'Node'</span><span class="token punctuation">:</span> 
+        <span class="token keyword">if</span> head <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+
+        cur <span class="token operator">=</span> head
+        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+            cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> Node<span class="token punctuation">(</span>cur<span class="token punctuation">.</span>val<span class="token punctuation">,</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span><span class="token builtin">next</span>
+            
+        <span class="token comment"># if original list is A -&gt; B -&gt; C</span>
+        <span class="token comment"># here the list will become A -&gt; A' -&gt; B -&gt; B'</span>
+
+        <span class="token comment"># assign random</span>
+        cur <span class="token operator">=</span> head
+        <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur<span class="token punctuation">.</span>random<span class="token punctuation">:</span>
+                cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span>random <span class="token operator">=</span> cur<span class="token punctuation">.</span>random<span class="token punctuation">.</span><span class="token builtin">next</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span><span class="token builtin">next</span>
+
+        <span class="token comment"># split the list</span>
+        <span class="token comment">#   original list: A -&gt; A' -&gt; B -&gt; B' -&gt; C- &gt; C'</span>
+        <span class="token comment">#   split to</span>
+        <span class="token comment">#       A -&gt; B -&gt; C -&gt; None</span>
+        <span class="token comment">#       A' -&gt; B' -&gt; C' -&gt; None</span>
+        cur<span class="token punctuation">,</span> cur_clone <span class="token operator">=</span> head<span class="token punctuation">,</span> head<span class="token punctuation">.</span><span class="token builtin">next</span>
+        ret <span class="token operator">=</span> head<span class="token punctuation">.</span><span class="token builtin">next</span>
+        <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur_clone<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+                <span class="token keyword">break</span>
+            cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> cur_clone<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> cur_clone<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> cur_clone<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">.</span><span class="token builtin">next</span>
+            cur<span class="token punctuation">,</span> cur_clone <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> cur_clone<span class="token punctuation">.</span><span class="token builtin">next</span>
+                
+        <span class="token keyword">return</span> ret<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -639,7 +614,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2020/07/10/software/leetcode/Valid-Parentheses/">https://chungchris.github.io/2020/07/10/software/leetcode/Valid-Parentheses/</a>
+                    <a href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/">https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -677,8 +652,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode-string/">
-                                    <span class="chip bg-color">leetcode:string</span>
+                                <a href="/tags/leetcode-ll/">
+                                    <span class="chip bg-color">leetcode:ll</span>
                                 </a>
                             
                         </div>
@@ -718,9 +693,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2020/07/10/software/leetcode/Valid-Parentheses/';
-        this.page.identifier = '/2020/07/10/software/leetcode/Valid-Parentheses/';
-        this.page.title = '[LeetCode] #20 Valid Parentheses';
+        this.page.url = 'https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/';
+        this.page.identifier = '/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/';
+        this.page.title = '[LeetCode] #138 Copy List with Random Pointer';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -754,31 +729,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">
+                <a href="/2021/06/19/software/language/python-asyncio/">
                     <div class="card-image">
                         
+                        <img src="https://drive.google.com/uc?export=view&id=1F0iUOrLUW3LUjUblbZ32iyuE6sqTpoaT" class="responsive-img" alt="Python Asyncio">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="[LeetCode] #21 Merge Two Sorted Lists">
-                        
-                        <span class="card-title">[LeetCode] #21 Merge Two Sorted Lists</span>
+                        <span class="card-title">Python Asyncio</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            融合兩個排序過的單向串列
+                            本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/software-leetcode/" class="post-category">
-                                    software/leetcode
+                            <a href="/categories/software/" class="post-category">
+                                    software
                                 </a>
                             
                             
@@ -788,12 +762,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode-ll/">
-                        <span class="chip bg-color">leetcode:ll</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/leetcode-sort/">
-                        <span class="chip bg-color">leetcode:sort</span>
+                    <a href="/tags/multithread/">
+                        <span class="chip bg-color">multithread</span>
                     </a>
                     
                 </div>
@@ -807,24 +781,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/09/software/leetcode/Remove-Nth-Node-From-End-of-List/">
+                <a href="/2020/08/15/software/Reverse-Nodes-in-k-Group/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="[LeetCode] #19 Remove Nth Node From End of List">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="[LeetCode] #25 Reverse Nodes in k-Group">
                         
-                        <span class="card-title">[LeetCode] #19 Remove Nth Node From End of List</span>
+                        <span class="card-title">[LeetCode] #25 Reverse Nodes in k-Group</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            移除一個單向 linked list 中倒數的 node
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-15
                             </span>
                         <span class="publish-author">
                             

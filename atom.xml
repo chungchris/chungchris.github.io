@@ -76,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-18T03:30:41.214Z</updated>
+    <updated>2021-08-18T23:05:47.233Z</updated>
     
     
       
@@ -370,11 +370,36 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #138 Copy List with Random Pointer</title>
+    <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/"/>
+    <id>https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/</id>
+    <published>2020-08-18T22:59:54.000Z</published>
+    <updated>2021-08-18T23:05:57.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Deepcopy 一個有 random pointer 的 linked</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] #25 Reverse Nodes in k-Group</title>
     <link href="https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/"/>
     <id>https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/</id>
     <published>2020-08-14T22:11:29.000Z</published>
-    <updated>2021-08-18T03:29:11.015Z</updated>
+    <updated>2021-08-18T03:33:02.819Z</updated>
     
     
       
@@ -553,33 +578,6 @@
     
     
     <category term="leecode:interval" scheme="https://chungchris.github.io/tags/leecode-interval/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #55 Jump Game</title>
-    <link href="https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/"/>
-    <id>https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/</id>
-    <published>2020-07-20T06:14:05.000Z</published>
-    <updated>2021-07-21T03:32:21.793Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;取三數總和為 0&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leecode:sum" scheme="https://chungchris.github.io/tags/leecode-sum/"/>
     
   </entry>
   
