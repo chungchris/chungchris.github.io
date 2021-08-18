@@ -492,19 +492,10 @@
     node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
     <span class="token keyword">return</span> ret
 
-<span class="token comment"># usage: reverse_recursion(head, None)</span>
-
-<span class="token keyword">def</span> <span class="token function">reverse_iteration</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># usage: reverse_recursion(head, None)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Revert-k-nodes-linked-list"><a href="#Revert-k-nodes-linked-list" class="headerlink" title="Revert k nodes linked list"></a>Revert k nodes linked list</h2><p>上面已經能夠將一個 linked list 給反過來，接著我們進一步把它改成只針對前 k 個動作</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
-<span class="token comment"># class ListNode:</span>
-<span class="token comment">#     def __init__(self, val=0, next=None):</span>
-<span class="token comment">#         self.val = val</span>
-<span class="token comment">#         self.next = next</span>
-
-<span class="token keyword">def</span> <span class="token function">reverse_recursion</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverse_recursion</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
     <span class="token keyword">if</span> k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># termination. revert first 1 node means no revert operation</span>
         ret <span class="token operator">=</span> node
     <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># k&gt;1</span>
@@ -516,7 +507,7 @@
         node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
     <span class="token keyword">return</span> ret
 
-<span class="token comment"># usage: reverse_recursion(head, None, 4) to revert first 4 nodes.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># usage: reverse_recursion(head, None, 4) to revert first 4 nodes.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意到，如果不夠 <code>k</code> 個，我們藉由返還 <code>None</code> 的方式，因為第 16 行的 reassign 是在每個 recursion 的最尾端才做，所以即使是走到最後才發現不夠，<code>None</code> 會一路傳回去，所以就有能維持整個 list 沒有任何變動</p>
 <p>上面的 <code>reverse_recursion(head, None, 4)</code> 會返還一個 new_head，並且為長度 4 的 linked list</p>
@@ -538,7 +529,7 @@
 <span class="token comment"># usage: reverse_recursion(head, None, 3) to revert first 3 nodes.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>第 12 行就把 D 接上去了</p>
-<h2 id="Revert-grouped-k-nodes-linked-list"><a href="#Revert-grouped-k-nodes-linked-list" class="headerlink" title="Revert grouped k nodes linked list"></a>Revert grouped k nodes linked list</h2><p>接下來我們就要把 input 的 linked list 一批一批呼叫這個 <code>reverse()</code> 來把他們反轉<br>且因為我們的 <code>reverse()</code> 會 return new_head 和 next_node，所以我們總是知道要接下來要處理的下一批的頭是誰，也知道該怎麼把已經處理完的上一批的尾，跟已經處理完的下一批的頭連理來<br>一樣的常見技巧是我們創造一個 dummy node 當作頭，用來連到已經處理完的部分</p>
+<h2 id="Revert-grouped-k-nodes-linked-list"><a href="#Revert-grouped-k-nodes-linked-list" class="headerlink" title="Revert grouped k nodes linked list"></a>Revert grouped k nodes linked list</h2><p>接下來我們就要把 input 的 linked list 一批一批呼叫這個 <code>reverse()</code> 來把他們反轉<br>且因為我們的 <code>reverse()</code> 會 return new_head 和 next_node，所以我們總是知道要接下來要處理的下一批的頭是誰，也知道該怎麼把已經處理完的上一批的尾，跟已經處理完的下一批的頭連起來<br>一樣的常見技巧是我們創造一個 dummy node 當作頭，用來連到已經處理完的部分</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
 <span class="token comment"># class ListNode:</span>
 <span class="token comment">#     def __init__(self, val=0, next=None):</span>
@@ -604,8 +595,8 @@
 
         <span class="token keyword">return</span> dummy<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Revert-linked-list-Iteration"><a href="#Revert-linked-list-Iteration" class="headerlink" title="Revert linked list (Iteration)"></a>Revert linked list (Iteration)</h2><p>一開此有提到 revert linked list 有兩種作法，recursion 或 iteration，我們也試一下 Iteration</p>
-<h3 id="Revert-linked-list-1"><a href="#Revert-linked-list-1" class="headerlink" title="Revert linked list"></a>Revert linked list</h3><p>一次處理一個 node，用兩個指標 <code>tail</code> 和 <code>cur</code></p>
+<h2 id="Revert-linked-list-Iteration"><a href="#Revert-linked-list-Iteration" class="headerlink" title="Revert linked list (Iteration)"></a>Revert linked list (Iteration)</h2><p>一開始有提到 revert linked list 有兩種作法，recursion 或 iteration，我們也試一下 Iteration</p>
+<h3 id="Revert-linked-list-1"><a href="#Revert-linked-list-1" class="headerlink" title="Revert linked list"></a>Revert linked list</h3><p>一次處理一個 node，用兩個指標 <code>prev</code> 和 <code>cur</code></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"> <span class="token triple-quoted-string string">'''
      A -&gt; B -&gt; None
 prev cur
