@@ -6,7 +6,7 @@
   <link href="https://chungchris.github.io/atom.xml" rel="self"/>
   
   <link href="https://chungchris.github.io/"/>
-  <updated>2021-08-18T03:16:35.174Z</updated>
+  <updated>2021-08-11T23:20:01.081Z</updated>
   <id>https://chungchris.github.io/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>[LeetCode] #25 Reverse Nodes in k-Group</title>
-    <link href="https://chungchris.github.io/2021/08/15/software/Reverse-Nodes-in-k-Group/"/>
-    <id>https://chungchris.github.io/2021/08/15/software/Reverse-Nodes-in-k-Group/</id>
-    <published>2021-08-14T22:11:29.000Z</published>
-    <updated>2021-08-18T03:16:35.174Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個 linked lis，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
-    
-  </entry>
   
   <entry>
     <title>C++ 語言筆記</title>
@@ -101,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-18T03:17:55.048Z</updated>
+    <updated>2021-08-18T03:20:43.499Z</updated>
     
     
       
@@ -391,6 +366,31 @@
     <category term="python" scheme="https://chungchris.github.io/tags/python/"/>
     
     <category term="multithread" scheme="https://chungchris.github.io/tags/multithread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #25 Reverse Nodes in k-Group</title>
+    <link href="https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/"/>
+    <id>https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/</id>
+    <published>2020-08-14T22:11:29.000Z</published>
+    <updated>2021-08-18T03:20:17.893Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個 linked lis，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
     
   </entry>
   
