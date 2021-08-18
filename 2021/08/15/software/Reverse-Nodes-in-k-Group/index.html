@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[LeetCode] #57 Insert Interval, A Po">
+    <meta name="keywords" content="[LeetCode] #25 Reverse Nodes in k-Group, A Po">
     <meta name="description" content="A nontypical software engineer">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>[LeetCode] #57 Insert Interval | A Po</title>
+    <title>[LeetCode] #25 Reverse Nodes in k-Group | A Po</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -272,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[LeetCode] #57 Insert Interval</h1>
+                    <h1 class="description center-align post-title">[LeetCode] #25 Reverse Nodes in k-Group</h1>
                 </div>
             </div>
         </div>
@@ -393,8 +393,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leecode-interval/">
-                                <span class="chip bg-color">leecode:interval</span>
+                            <a href="/tags/leetcode-ll/">
+                                <span class="chip bg-color">leetcode:ll</span>
                             </a>
                         
                     </div>
@@ -418,28 +418,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-07-21
+                    2021-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-21
+                    2021-08-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    273
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    7 Min
                 </div>
                 
 
@@ -467,31 +467,228 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Insert Interval</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個 linked lis，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k 個的組，該組維持不變</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insert-interval/">Link</a></li>
-<li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 隨然說是 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">#56 Merge Intervals</a> 的延伸，但也不見得就做得出這題</li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Link</a></li>
+<li>等級：<strong>Hard</strong></li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] Revert linked list 升級版</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>解法看了就能懂，但我無法找到什麼太明確的思考方法可以引導到這個解法，就當作是一種類型吧…</p>
-<h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> intervals<span class="token punctuation">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> newInterval<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 跟 #56 一樣，採用『擴展』的作法是第一個重點</span>
-        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>intervals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> newInterval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newInterval<span class="token punctuation">)</span>
-                ans <span class="token operator">+=</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">:</span><span class="token punctuation">]</span>
-                <span class="token keyword">return</span> ans
-            <span class="token keyword">if</span> newInterval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># 第二個重點就是這裏去 update newInterval 的值的這種做法</span>
-                newInterval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>newInterval<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                newInterval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>newInterval<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> intervals<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newInterval<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="Revert-linked-list"><a href="#Revert-linked-list" class="headerlink" title="Revert linked list"></a>Revert linked list</h2><p>既然他是 revert linked list 的升級版，那我們就先把 revert linked list 做出來<br>revert linked list 有兩種作法，recursion 或 iteration，我們先用 recursion</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
+<span class="token comment"># class ListNode:</span>
+<span class="token comment">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment">#         self.val = val</span>
+<span class="token comment">#         self.next = next</span>
+
+<span class="token keyword">def</span> <span class="token function">reverse_recursion</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
+    <span class="token keyword">if</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
+        ret <span class="token operator">=</span> reverse_recursion<span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> node<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># termination</span>
+        ret <span class="token operator">=</span> node
+    node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
+    <span class="token keyword">return</span> ret
+
+<span class="token comment"># usage: reverse_recursion(head, None)</span>
+
+<span class="token keyword">def</span> <span class="token function">reverse_iteration</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Revert-k-nodes-linked-list"><a href="#Revert-k-nodes-linked-list" class="headerlink" title="Revert k nodes linked list"></a>Revert k nodes linked list</h2><p>上面已經能夠將一個 linked list 給反過來，接著我們進一步把它改成只針對前 k 個動作</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
+<span class="token comment"># class ListNode:</span>
+<span class="token comment">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment">#         self.val = val</span>
+<span class="token comment">#         self.next = next</span>
+
+<span class="token keyword">def</span> <span class="token function">reverse_recursion</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
+    <span class="token keyword">if</span> k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># termination. revert first 1 node means no revert operation</span>
+        ret <span class="token operator">=</span> node
+    <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># k&gt;1</span>
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> reverse_recursion<span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> node<span class="token punctuation">,</span> k<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">if</span> ret<span class="token punctuation">:</span>
+        node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
+    <span class="token keyword">return</span> ret
+
+<span class="token comment"># usage: reverse_recursion(head, None, 4) to revert first 4 nodes.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意到，如果不夠 <code>k</code> 個，我們藉由返還 <code>None</code> 的方式，因為第 16 行的 reassign 是在每個 recursion 的最尾端才做，所以即使是走到最後才發現不夠，<code>None</code> 會一路傳回去，所以就有能維持整個 list 沒有任何變動</p>
+<p>上面的 <code>reverse_recursion(head, None, 4)</code> 會返還一個 new_head，並且為長度 4 的 linked list</p>
+<p>但是，如果 linked list 還有剩下，我們其實應該也要想辦法把剩下的返還，因為雖然目前還用不到，但未來肯定會用到<br>比如 A -&gt; B -&gt; C -&gt; D -&gt; E -&gt; F，當 k 是 3<br>那上面的 <code>reverse_recursion</code> 答案會給出 C -&gt; B -&gt; A<br>但我們想要 C -&gt; B -&gt; A -&gt; D -&gt; E -&gt; F<br>因為 D 原本是連在 C 上面，但 Ｃ 後來要變成指向 B，我們也不能因此失去 D 的資訊吧，所以我們應該要將 D 接到 A 上，我們把 D 叫做 next_node<br>把 code 做點小改變，變成</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverse_recursion</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return (new_head, next_node)                </span>
+    <span class="token keyword">if</span> k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># termination</span>
+        ret <span class="token operator">=</span> <span class="token punctuation">(</span>node<span class="token punctuation">,</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># k&gt;1</span>
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> reverse_recursion<span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> node<span class="token punctuation">,</span> k<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            ret <span class="token operator">=</span> <span class="token boolean">None</span>
+    <span class="token keyword">if</span> ret<span class="token punctuation">:</span>
+        node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
+        <span class="token keyword">if</span> relink <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+            node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> ret
+
+<span class="token comment"># usage: reverse_recursion(head, None, 3) to revert first 3 nodes.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第 12 行就把 D 接上去了</p>
+<h2 id="Revert-grouped-k-nodes-linked-list"><a href="#Revert-grouped-k-nodes-linked-list" class="headerlink" title="Revert grouped k nodes linked list"></a>Revert grouped k nodes linked list</h2><p>接下來我們就要把 input 的 linked list 一批一批呼叫這個 <code>reverse()</code> 來把他們反轉<br>且因為我們的 <code>reverse()</code> 會 return new_head 和 next_node，所以我們總是知道要接下來要處理的下一批的頭是誰，也知道該怎麼把已經處理完的上一批的尾，跟已經處理完的下一批的頭連理來<br>一樣的常見技巧是我們創造一個 dummy node 當作頭，用來連到已經處理完的部分</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
+<span class="token comment"># class ListNode:</span>
+<span class="token comment">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment">#         self.val = val</span>
+<span class="token comment">#         self.next = next</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">reverse</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> relink<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return (new_head, next_node)                </span>
+            <span class="token keyword">if</span> k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># termination</span>
+                ret <span class="token operator">=</span> <span class="token punctuation">(</span>node<span class="token punctuation">,</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token comment"># k&gt;1</span>
+                <span class="token keyword">if</span> node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span>
+                    ret <span class="token operator">=</span> reverse<span class="token punctuation">(</span>node<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> node<span class="token punctuation">,</span> k<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    ret <span class="token operator">=</span> <span class="token boolean">None</span>
+            <span class="token keyword">if</span> ret<span class="token punctuation">:</span>
+                node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> relink
+                <span class="token keyword">if</span> relink <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                    node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">return</span> ret
+        
+        <span class="token comment">#return reverse(head, None, 3)[0]</span>
+
+        <span class="token triple-quoted-string string">''' k=3
+        [dummy] [0] [1] [2] [3] [4] [5] [6]
+                 |_______|         
+          tail
+            reverse([0]) -&gt; ([2], [3])
+                [2] [1] [0] [3] [4] [5] [6]
+            
+                tail.next = [2] # dummy.next = [2]
+                tail = [0]
+        
+        [dummy] [2] [1] [0] [3] [4] [5] [6]
+                             |_______|
+                        tail
+            reverse([3]) -&gt; ([5], [6])
+                            [5] [4] [3] [6]
+            
+                tail.next = [5] # [0].next = [5]
+                tail = [3]
+        
+    Temination case A: if the linked list length % k != 0
+        [dummy] [2] [1] [0] [5] [4] [3] [6]
+                                         |_|
+            reverse([6]) -&gt; None
+                                    tail
+                # do nothing and break loop
+        
+    Temination case B: if the linked list length % k == 0
+        [dummy] [2] [1] [0] [5] [4] [3]
+                                    tail
+                 # do nothing and break loop
+        '''</span>
+        dummy <span class="token operator">=</span> ListNode<span class="token punctuation">(</span>val<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">next</span><span class="token operator">=</span>head<span class="token punctuation">)</span>
+        tail <span class="token operator">=</span> dummy <span class="token comment"># point to the tail of the finish part. Initialize it as a dummy node.</span>
+        <span class="token keyword">while</span> tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span> <span class="token comment"># Temination case B</span>
+            res <span class="token operator">=</span> reverse<span class="token punctuation">(</span>tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> <span class="token boolean">None</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> res <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> tail <span class="token operator">=</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tail<span class="token punctuation">.</span><span class="token builtin">next</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span> <span class="token comment"># Temination case A</span>
+
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Revert-linked-list-Iteration"><a href="#Revert-linked-list-Iteration" class="headerlink" title="Revert linked list (Iteration)"></a>Revert linked list (Iteration)</h2><p>一開此有提到 revert linked list 有兩種作法，recursion 或 iteration，我們也試一下 Iteration</p>
+<h3 id="Revert-linked-list-1"><a href="#Revert-linked-list-1" class="headerlink" title="Revert linked list"></a>Revert linked list</h3><p>一次處理一個 node，用兩個指標 <code>tail</code> 和 <code>cur</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"> <span class="token triple-quoted-string string">'''
+     A -&gt; B -&gt; None
+prev cur
+
+     None &lt;- A, B -&gt; None
+           prev cur
+
+     None &lt;- A &lt;- B
+               prev cur
+ '''</span>
+ <span class="token keyword">def</span> <span class="token function">reverse_iteration</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return new head</span>
+     cur <span class="token operator">=</span> node
+     prev <span class="token operator">=</span> <span class="token boolean">None</span>
+     <span class="token keyword">while</span> cur<span class="token punctuation">:</span>
+         temp <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+         cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> prev
+         prev <span class="token operator">=</span> cur
+         cur <span class="token operator">=</span> temp
+     <span class="token keyword">return</span> prev
+ 
+ <span class="token comment">#usage: reverse_iteration(head)'''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Revert-k-nodes-linked-list-1"><a href="#Revert-k-nodes-linked-list-1" class="headerlink" title="Revert k nodes linked list"></a>Revert k nodes linked list</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">reverse_iteration</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return (new_head, next_node)</span>
+    cur <span class="token operator">=</span> node
+    prev <span class="token operator">=</span> <span class="token boolean">None</span>
+    count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span> <span class="token keyword">and</span> count <span class="token operator">&lt;</span> k<span class="token punctuation">:</span>
+        temp <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+        cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> prev
+        prev <span class="token operator">=</span> cur
+        cur <span class="token operator">=</span> temp
+        count <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token keyword">if</span> count <span class="token operator">!=</span> k<span class="token punctuation">:</span> <span class="token comment"># rollback</span>
+        reverse_iteration<span class="token punctuation">(</span>prev<span class="token punctuation">,</span> count<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+                
+    node<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> cur
+
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>prev<span class="token punctuation">,</span> cur<span class="token punctuation">)</span>
+
+<span class="token comment">#usage: reverse_iteration(head, 3)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因為是從頭開始走，一路直接就改了 link，所以如果到最後才發現不夠，那就要做 rollback 來恢復原狀</p>
+<p>另外一種方法是先直接走到最後，再一路改回來，也是可行，如果剩餘 linked list 長度夠，也就是 n &gt;= k，時間就是 2k，如果不夠，時間就是 n<br>如果是採用上面這段 code 的 rollback 方法，當剩餘 linked list 長度夠，時間就是 k，如果不夠，時間就是 2n<br>合理預期在跑一筆測資的時候，剩餘長度夠的狀況應該是比較頻繁的，也就是理論上都是先成功反轉了好幾組，到最後一組才有可能會發生不夠的情形，所以選擇 rollback 的方法應該更好</p>
+<h3 id="Revert-grouped-k-nodes-linked-list-1"><a href="#Revert-grouped-k-nodes-linked-list-1" class="headerlink" title="Revert grouped k nodes linked list"></a>Revert grouped k nodes linked list</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># Definition for singly-linked list.</span>
+<span class="token comment"># class ListNode:</span>
+<span class="token comment">#     def __init__(self, val=0, next=None):</span>
+<span class="token comment">#         self.val = val</span>
+<span class="token comment">#         self.next = next</span>
+<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Optional<span class="token punctuation">[</span>ListNode<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">reverse_iteration</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># return (new_head, next_node)</span>
+            cur <span class="token operator">=</span> node
+            prev <span class="token operator">=</span> <span class="token boolean">None</span>
+            count <span class="token operator">=</span> <span class="token number">0</span>
+            <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span> <span class="token keyword">and</span> count <span class="token operator">&lt;</span> k<span class="token punctuation">:</span>
+                temp <span class="token operator">=</span> cur<span class="token punctuation">.</span><span class="token builtin">next</span>
+                cur<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> prev
+                prev <span class="token operator">=</span> cur
+                cur <span class="token operator">=</span> temp
+                count <span class="token operator">+=</span> <span class="token number">1</span>
+
+            <span class="token keyword">if</span> count <span class="token operator">!=</span> k<span class="token punctuation">:</span> <span class="token comment"># rollback</span>
+                reverse_iteration<span class="token punctuation">(</span>prev<span class="token punctuation">,</span> count<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token boolean">None</span>                
+                
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>prev<span class="token punctuation">,</span> cur<span class="token punctuation">)</span>
+        
+        <span class="token comment">#return reverse_iteration(head, 3)[0]</span>
+        
+        dummy <span class="token operator">=</span> ListNode<span class="token punctuation">(</span>val<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">next</span><span class="token operator">=</span>head<span class="token punctuation">)</span>
+        tail <span class="token operator">=</span> dummy <span class="token comment"># point to the tail of the finish part. Initialize it as a dummy node.</span>
+        <span class="token keyword">while</span> tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">:</span> <span class="token comment"># Temination case B</span>
+            res <span class="token operator">=</span> reverse_iteration<span class="token punctuation">(</span>tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> k<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> res <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                tail<span class="token punctuation">.</span><span class="token builtin">next</span><span class="token punctuation">,</span> tail <span class="token operator">=</span> res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tail<span class="token punctuation">.</span><span class="token builtin">next</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span> <span class="token comment"># Temination case A</span>
+
+        <span class="token keyword">return</span> dummy<span class="token punctuation">.</span><span class="token builtin">next</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>因為我們的 <code>reverse_iteration</code> 和之前的 <code>reverse_recursion</code> 的功能完全相同，所以其他部分的邏輯完全不需要改變</p>
 
                 
             </div>
@@ -518,7 +715,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/">https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/</a>
+                    <a href="https://chungchris.github.io/2021/08/15/software/Reverse-Nodes-in-k-Group/">https://chungchris.github.io/2021/08/15/software/Reverse-Nodes-in-k-Group/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -556,8 +753,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leecode-interval/">
-                                    <span class="chip bg-color">leecode:interval</span>
+                                <a href="/tags/leetcode-ll/">
+                                    <span class="chip bg-color">leetcode:ll</span>
                                 </a>
                             
                         </div>
@@ -597,9 +794,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/';
-        this.page.identifier = '/2020/07/21/software/leetcode/Insert-Interval/';
-        this.page.title = '[LeetCode] #57 Insert Interval';
+        this.page.url = 'https://chungchris.github.io/2021/08/15/software/Reverse-Nodes-in-k-Group/';
+        this.page.identifier = '/2021/08/15/software/Reverse-Nodes-in-k-Group/';
+        this.page.title = '[LeetCode] #25 Reverse Nodes in k-Group';
     };
     let disqus_shortname = 'chungchris-ghp';
 
@@ -629,81 +826,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/07/23/software/leetcode/Word-Search/">
+                <a href="/2021/08/15/software/Reverse-Nodes-in-k-Group/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="[LeetCode] #79 Word Search">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="[LeetCode] #25 Reverse Nodes in k-Group">
                         
-                        <span class="card-title">[LeetCode] #79 Word Search</span>
+                        <span class="card-title">[LeetCode] #25 Reverse Nodes in k-Group</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二維陣列中某字串是否存在
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
-                        </span>
-                        <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/software-leetcode/" class="post-category">
-                                    software/leetcode
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/leecode-2darray/">
-                        <span class="chip bg-color">leecode:2darray</span>
-                    </a>
-                    
-                    <a href="/tags/leecode-dfs/">
-                        <span class="chip bg-color">leecode:dfs</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/21/software/leetcode/Merge-Intervals/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="[LeetCode] #56 Merge Intervals">
-                        
-                        <span class="card-title">[LeetCode] #56 Merge Intervals</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Merge Intervals
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
                             </span>
                         <span class="publish-author">
                             
@@ -717,11 +862,64 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leecode-interval/">
-                        <span class="chip bg-color">leecode:interval</span>
+                    <a href="/tags/leetcode-ll/">
+                        <span class="chip bg-color">leetcode:ll</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/10/software/language/cpp-note/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1Ie9p-qbOZ9nzja0ijVmEOFNlMTdVijWf" class="responsive-img" alt="C++ 語言筆記">
+                        
+                        <span class="card-title">C++ 語言筆記</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一些 C++ 的個人筆記
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/programming-language/">
+                        <span class="chip bg-color">programming language</span>
+                    </a>
+                    
+                    <a href="/tags/cpp/">
+                        <span class="chip bg-color">cpp</span>
                     </a>
                     
                 </div>
