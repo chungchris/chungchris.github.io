@@ -76,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-18T23:05:47.233Z</updated>
+    <updated>2021-08-19T04:35:51.534Z</updated>
     
     
       
@@ -370,6 +370,33 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #148 Sort List</title>
+    <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/"/>
+    <id>https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/</id>
+    <published>2020-08-19T01:16:12.000Z</published>
+    <updated>2021-08-19T01:27:12.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;將一個 linked list 排序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] #138 Copy List with Random Pointer</title>
     <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/"/>
     <id>https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/</id>
@@ -540,33 +567,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Insert Interval&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leecode:interval" scheme="https://chungchris.github.io/tags/leecode-interval/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #56 Merge Intervals</title>
-    <link href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/"/>
-    <id>https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/</id>
-    <published>2020-07-21T01:48:21.000Z</published>
-    <updated>2021-07-21T03:32:18.884Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Merge Intervals&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a</summary>
         
