@@ -425,14 +425,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-21
+                    2021-08-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    513
+                    560
                 </div>
                 
 
@@ -480,23 +480,32 @@
 <p>（這並不是 DP 解法，所以如果對 DP 有興趣的可能這題可以多加一些星星吧）</p>
 <h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><p>所以只要把每個 index 都當成中心點，都去跑跑看左右輻射，最後取結果最長的就行了。唯一要注意的可能就是中心點的選擇可以是一個或兩個，比如 <code>aba</code> 中心點就是 <code>b</code>，但 <code>abba</code> 中心點是 <code>bb</code></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    For a palindromic string, cut it from the middle, go left and go right shall read identically.
+    Choose all possible middle point. See how long each of then can expand. Just note the middle can be single char or in the middle of 2 chars.
+
+    Test cases:
+      normal: babad
+      normal: babbad
+      single char: a
+      all the same: aaa
+    '''</span>
     <span class="token keyword">def</span> <span class="token function">longestPalindrome</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
         slen <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 
         <span class="token keyword">def</span> <span class="token function">check</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
             <span class="token keyword">if</span> y <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-                y <span class="token operator">=</span> x
+                y <span class="token operator">=</span> x<span class="token operator">+</span><span class="token number">1</span>
+                x <span class="token operator">-=</span> <span class="token number">1</span>
 
             <span class="token keyword">while</span> x <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword">and</span> y <span class="token operator">&lt;</span> slen<span class="token punctuation">:</span>
                 <span class="token keyword">if</span> s<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">!=</span> s<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">:</span>
                     <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
                 <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    ans <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
-                    x <span class="token operator">=</span> x <span class="token operator">-</span> <span class="token number">1</span>
-                    y <span class="token operator">=</span> y <span class="token operator">+</span> <span class="token number">1</span>
+                    x <span class="token operator">-=</span> <span class="token number">1</span>
+                    y <span class="token operator">+=</span> <span class="token number">1</span>
 
-            <span class="token keyword">return</span> ans
+            <span class="token keyword">return</span> <span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
 
         ans <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> slen<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -508,12 +517,9 @@
                 <span class="token keyword">if</span> ret<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ret<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
                     ans <span class="token operator">=</span> ret
 
-        <span class="token keyword">if</span> ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> s<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> s<span class="token punctuation">[</span>ans<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>ans<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>第 21 行的 for loop 跑 n 輪，每輪要進 <code>check()</code> 兩次；<code>check()</code> 裡面跑的 <code>while</code> 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2<em>n</em>n，也就是 <code>O(n^2)</code></p>
+<p>第 20 行的 for loop 跑 n 輪，每輪要進 <code>check()</code> 兩次；<code>check()</code> 裡面跑的 <code>while</code> 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2<em>n</em>n，也就是 <code>O(n^2)</code></p>
 
                 
             </div>
@@ -927,7 +933,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">62.1k</span>
+                        class="white-color">62.8k</span>
             
             
             

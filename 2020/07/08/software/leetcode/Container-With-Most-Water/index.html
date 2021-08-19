@@ -425,21 +425,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    870
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    4 Min
                 </div>
                 
 
@@ -493,28 +493,45 @@
 <p>最大面積由柱子的水平距離和高度較低者構成，所以挑選自然是從挑高的，或挑遠的兩個方向著手<br>從高度來看：除非我們做過 sort，不然我們也不知道出起手式怎樣挑是最佳解。即使我們做過 sort，就有了 <code>O(n logn)</code> 的基本包袱，不是不可能，但我們先放著<br>從距離來看：我們希望兩根柱子水平距離越遠越好，所以最好是最左和最右就是最佳解，我們可以從這個選擇出發，這是本題的第一個癥結點</p>
 <p>然後，當我們選了最左和最右出發，接下來我們會想嘗試把選擇往中間移動<br>但要選擇先把左側的選擇往內選一個呢？還是先把右側的選擇往內選一個？這裏就必須意識到，也是本題的第二個癥結點，進一步移動原本的選擇當中較高的那一邊其實對事情沒有幫助，因為水槽的高度已經被較低的那一邊給限制住，如果改變原本的選擇當中較高的那一邊，只是讓水池水平距離往內縮，水池高度不變，面積只會縮小<br>所以我們下一步的選擇是針對比較低的那一邊，換成選往中間靠的下一個，期待取得更大的面積；當然，很簡單可以察覺到，選擇到比原本高的才有意義，如果比原本低那面積只會縮小。當選到一個比原本高的，這時候就需要乘乘看才知道是不是比原本面積大了了，因為水平距離已經內縮了一到數單位</p>
 <h3 id="Source-Code-Python-1"><a href="#Source-Code-Python-1" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    The vloume of water depends on container width and height
+        width: choose the left bar and the right bar will be the best case
+        height: the shorter one will dominates the vloume
+    
+    There are 2 direction to go: choose bars based on width first or based on height first.
+        height: have to sort the array. it takes at least O(n log n) time
+        width: just choose the left and right ends first
+    
+    So we can do it with width first. We choose the left and right ends first. Can we have better solution when we move inward the bars?
+        * Move the shorter one will help. Move the taller one won't because the overall height is still limited by the shorter one.
+        * Move the shoter one. If next one is even shorter, it won't help. Better keep moving to find a taller one.
+    
+    Test cases:
+      normal: [4,3,2,1,4]
+      special: [4,2,100,99,2,5], [4,2,99,100,2,5]
+    '''</span>
     <span class="token keyword">def</span> <span class="token function">maxArea</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> height<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>    
         ans <span class="token operator">=</span> <span class="token number">0</span>
         i <span class="token operator">=</span> <span class="token number">0</span>
         j <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>height<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
         <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">:</span>
-            t <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            ans <span class="token operator">=</span> t <span class="token keyword">if</span> t <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
+            area <span class="token operator">=</span> <span class="token punctuation">(</span>j<span class="token operator">-</span>i<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">min</span><span class="token punctuation">(</span>height<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            ans <span class="token operator">=</span> area <span class="token keyword">if</span> area <span class="token operator">&gt;</span> ans <span class="token keyword">else</span> ans
             <span class="token keyword">if</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
-                <span class="token triple-quoted-string string">'''t = height[i]
-                while height[i] &lt;= t:
-                    i = i + 1
-                    if i &gt;= j:
-                        return ans'''</span>
+                t <span class="token operator">=</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                <span class="token keyword">while</span> height<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> t<span class="token punctuation">:</span>
+                    i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+                    <span class="token keyword">if</span> i <span class="token operator">&gt;=</span> j<span class="token punctuation">:</span>
+                        <span class="token keyword">return</span> ans
             <span class="token keyword">else</span><span class="token punctuation">:</span>
-                <span class="token triple-quoted-string string">'''t = height[j]
-                while height[j] &lt;= t:
-                    j = j - 1
-                    if i &gt;= j:
-                        return ans'''</span>
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                t <span class="token operator">=</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                <span class="token keyword">while</span> height<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> t<span class="token punctuation">:</span>
+                    j <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">1</span>
+                    <span class="token keyword">if</span> i <span class="token operator">&gt;=</span> j<span class="token punctuation">:</span>
+                        <span class="token keyword">return</span> ans
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>可以觀察到這個解法只需要 <code>O(n)</code>，已經優於 <code>O(n logn)</code> 所以我們不用再去想先挑高度出發的方法<br>註解起來的部分可有可無，有的話可以減少數次執行第 7,8 行的時間，但並不影響 time complexity</p>
+<p>可以觀察到這個解法只需要 <code>O(n)</code>，已經優於 <code>O(n logn)</code> 所以我們不用再去想先挑高度出發的方法</p>
 
                 
             </div>
@@ -928,7 +945,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">62.1k</span>
+                        class="white-color">62.8k</span>
             
             
             

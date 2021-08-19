@@ -425,21 +425,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-11
+                    2021-08-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.7k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    8 Min
+                    10 Min
                 </div>
                 
 
@@ -476,7 +476,7 @@
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p><em>string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住</em></p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住</p>
 <table>
 <thead>
 <tr>
@@ -535,6 +535,52 @@
 <p>最後記得檢視一些 edge case 看能不能 cover<br>   a. 當答案的 substring 存在整個 string 的尾巴<br>   b. 如果從頭到尾都沒有重複的 char<br>   c. 如果 string 長度為 0<br>   d. 如果 string 長度為 1<br>   e. 如果 string 只存在同一個 char 一直重複</p>
 </blockquote>
 <h2 id="Source-Code-Python"><a href="#Source-Code-Python" class="headerlink" title="Source Code (Python)"></a>Source Code (Python)</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    * without repeating =&gt; we need to remember what we have seen
+    * longest =&gt; only need a number, instead of the exact string
+    * time cost =&gt; try to traverse only once
+
+    Example: "abcabcbb"
+    
+    Do it as a human:
+        abcabcbb
+        a =&gt; a
+         b =&gt; ab
+          c =&gt; abc
+           a =&gt; bca
+            b =&gt; cab
+             c =&gt; abc
+              b =&gt; cb
+               b =&gt; b
+    
+        abcabcbb
+        a =&gt; {a:0} valid string starts at index 0
+         b =&gt; {a:0, b:1}
+          c =&gt; {a:0, b:1, c:2}
+           a =&gt; seen `a` before at index 0, now we are seeing `a` again at index 3
+                it leads to 2 substrings: the first one is from 0 to 3-1, its length is 3; the second one is from 0+1 to afterward
+                update the memory {a:3, b:1, c:2}
+            b =&gt; seen `b` before at index 1, now we are seeing `b` again at index 4
+                 it leads to 2 substrings: the first one is from 1 to 4-1, its length is 3; the second one is from 1+1 to afterward
+                 update the memory {a:3, b:4, c:2}
+             c =&gt; seen `c` before at index 2, now we are seeing `c` again at index 5
+                  it leads to 2 substrings: the first one is from 2 to 5-1, its length is 3; the second one is from 2+1 to afterward
+                  update the memory {a:3, b:4, c:5}
+              b =&gt; seen `b` before at index 4, now we are seeing `b` again at index 6
+                  it leads to 2 substrings: the first one is from 3 to 6-1, its length is 3; the second one is from 4+1 to afterward
+                  update the memory {a:3, b:6, c:5}
+               b =&gt; seen `b` before at index 6, now we are seeing `b` again at index 7
+                  it leads to 2 substrings: the first one is from 5 to 7-1, its length is 2; the second one is from 6+1 to afterward
+                EOS =&gt; there is a last valide string, it's head is at index 7, so its length is 1
+    
+    Test cases:
+      answer locates at head part: abccc
+      answer locates at tail part: aaabc
+      all the same: aaa
+      all different: abc
+      empty: ""
+      single: a
+    '''</span>
     <span class="token keyword">def</span> <span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> s<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">int</span><span class="token punctuation">:</span>
         d <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment"># { char: int } memorize the index of last time specific char showing up</span>
         p <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># save the head of the valid unchecked string</span>
@@ -553,7 +599,7 @@
         l <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> p
         ans <span class="token operator">=</span> l <span class="token keyword">if</span> l<span class="token operator">&gt;</span>ans <span class="token keyword">else</span> ans
 
-        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>d</code> 用來記憶目前看過的 char 的最後出現位置</li>
@@ -1160,7 +1206,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">62.1k</span>
+                        class="white-color">62.8k</span>
             
             
             
