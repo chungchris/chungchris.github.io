@@ -37,9 +37,9 @@
     <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
     
     
-    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
-    
     <category term="cpp" scheme="https://chungchris.github.io/tags/cpp/"/>
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
     
   </entry>
   
@@ -65,9 +65,9 @@
     <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
     
     
-    <category term="c" scheme="https://chungchris.github.io/tags/c/"/>
-    
     <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="c" scheme="https://chungchris.github.io/tags/c/"/>
     
   </entry>
   
@@ -76,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-19T21:47:36.321Z</updated>
+    <updated>2021-08-27T03:15:16.399Z</updated>
     
     
       
@@ -370,11 +370,42 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #1239 Maximum Length of a Concatenated String with Unique Characters</title>
+    <link href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/"/>
+    <id>https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/</id>
+    <published>2020-08-27T03:13:39.000Z</published>
+    <updated>2021-08-27T07:59:31.656Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供一些字串，用其組合出不重複字元的字串，找出最大的可能長度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leetcode:string" scheme="https://chungchris.github.io/tags/leetcode-string/"/>
+    
+    <category term="leetcode:bit" scheme="https://chungchris.github.io/tags/leetcode-bit/"/>
+    
+    <category term="leetcode:p&amp;c" scheme="https://chungchris.github.io/tags/leetcode-p-c/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] #148 Sort List</title>
     <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/"/>
     <id>https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/</id>
     <published>2020-08-19T01:16:12.000Z</published>
-    <updated>2021-08-19T01:27:12.128Z</updated>
+    <updated>2021-08-26T00:42:10.628Z</updated>
     
     
       
@@ -401,7 +432,7 @@
     <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/"/>
     <id>https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/</id>
     <published>2020-08-18T22:59:54.000Z</published>
-    <updated>2021-08-18T23:05:57.006Z</updated>
+    <updated>2021-08-26T00:42:47.491Z</updated>
     
     
       
@@ -423,17 +454,17 @@
   
   <entry>
     <title>[LeetCode] #25 Reverse Nodes in k-Group</title>
-    <link href="https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/"/>
-    <id>https://chungchris.github.io/2020/08/15/software/Reverse-Nodes-in-k-Group/</id>
+    <link href="https://chungchris.github.io/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/"/>
+    <id>https://chungchris.github.io/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/</id>
     <published>2020-08-14T22:11:29.000Z</published>
-    <updated>2021-08-18T03:33:02.819Z</updated>
+    <updated>2021-08-26T00:40:51.638Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個 linked lis，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k</summary>
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個 linked list，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k</summary>
         
       
     
@@ -451,7 +482,7 @@
     <link href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/"/>
     <id>https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/</id>
     <published>2020-08-13T03:39:04.000Z</published>
-    <updated>2021-08-13T07:11:11.976Z</updated>
+    <updated>2021-08-26T01:09:31.298Z</updated>
     
     
       
@@ -478,7 +509,7 @@
     <link href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/"/>
     <id>https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/</id>
     <published>2020-08-08T23:19:40.000Z</published>
-    <updated>2021-08-09T01:07:45.372Z</updated>
+    <updated>2021-08-26T01:09:51.571Z</updated>
     
     
       
@@ -551,33 +582,6 @@
     <category term="leecode:2darray" scheme="https://chungchris.github.io/tags/leecode-2darray/"/>
     
     <category term="leecode:dfs" scheme="https://chungchris.github.io/tags/leecode-dfs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #57 Insert Interval</title>
-    <link href="https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/"/>
-    <id>https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/</id>
-    <published>2020-07-21T03:21:30.000Z</published>
-    <updated>2021-07-21T03:32:27.765Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Insert Interval&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leecode:interval" scheme="https://chungchris.github.io/tags/leecode-interval/"/>
     
   </entry>
   

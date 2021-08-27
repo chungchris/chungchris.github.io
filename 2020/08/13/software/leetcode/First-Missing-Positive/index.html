@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
 </head>
 
 
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-13
+                    2021-08-26
                 </div>
                 
 
@@ -477,13 +477,13 @@
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
 <hr>
-<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>題目規範 O(n)，且不要另外 allocate 到與 n 相關的空間<br>這代表我們要在有走完數列一輪之後就要知道答案，而且不能用一個跟數列等長數列去記憶</p>
-<p>可能會有的第一個直覺是 min, max<br>我們不能直接用 sort 去的到 min/max，因為那會是 O(nlogn)<br>不過反正有一輪還是終究能統計出 min/max，且只使用 min/max 兩個變數能符合題目的空間要求，所以現在問題就是知道了 min/max 是否就能得出答案？<br>再進一步想就會發現不行，因為答案樣找的解是有可能是被跳過的那個數，比如數列 [3,4,-1,1]，min 是 -1，max 是 4，但答案是 2，即使我們把 min 定義為 min_positive，min_positive 是 1，max 是 4，也無從得知答案是 2 還是 3</p>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><p>題目規範 <code>O(n)</code>，且不要另外 allocate 到與 <code>n</code> 相關的空間<br>這代表我們要在有走完數列一輪之後就要知道答案，而且不能用一個跟數列等長數列去記憶</p>
+<p>可能會有的第一個直覺是 min, max<br>我們不能直接用 sort 去的到 min/max，因為那會是 <code>O(nlogn)</code><br>不過反正有一輪還是終究能統計出 min/max，且只使用 min/max 兩個變數能符合題目的空間要求，所以現在問題就是知道了 min/max 是否就能得出答案？<br>再進一步想就會發現不行，因為答案樣找的解是有可能是被跳過的那個數，比如數列 [3,4,-1,1]，min 是 -1，max 是 4，但答案是 2，即使我們把 min 定義為 min_positive，min_positive 是 1，max 是 4，也無從得知答案是 2 還是 3</p>
 <p>當以上想法行不通，我們會注意到『跳過』是一個關鍵需要被解決的問題，所以我們要想辦法識別出『不連續』</p>
 <p>隨便在舉幾個例子就會發現，當數列中沒有出現 1，答案就會是 1，因為 1 就是天然最小正整數<br>如果有出現 1，那就看有沒有出現 2，如果沒有，那答案就是 2，以此類推</p>
 <p>以這個規則，一個長度 5 的數列，能產生的最大可能解就是 6，當數列內容是 [1, 2, 3, 4, 5] 的時候<br>也就是說，一個長度 5 的數列，我們頂多只會關心 1~5 有沒有出現，當數列中沒有出現 1，答案就會是 1；如果有出現 1，那就看有沒有出現 2，如果沒有，那答案就是 2<br>我們不關心 -1 有沒有出現，也不關心 7,8,9 有沒有出現，因為那個與最終答案無關</p>
 <p>到這裏我們大概就有感覺，可以搭配上 index 來幫忙記憶，因為一個長度 5 的數列，他的 index 是 0-4，符合我們關心的範圍</p>
-<p>這裏另外需要意識到『數列長度』是一個可以在 O(n) 取得的資訊，O(2n) 也是算 O(n)，所以即使題目給的 input 是一個典型的 single link list，先走一次來取得 n 的值也是合法的</p>
+<p>這裏另外需要意識到『數列長度』是一個可以在 <code>O(n)</code> 取得的資訊，<code>O(2n)</code> 也是算 <code>O(n)</code>，所以即使題目給的 input 是一個典型的 single link list，先走一次來取得 <code>n</code> 的值也是合法的</p>
 <p>該怎麼用 index 幫忙記憶？我們可以把數字移動到他應該待的位置上，比如一個長度 5 的數列，如果他有出現 1，那他應該待在 index 0；如果他有出現 3，那他應該待在 index 2<br>所以我們可以花走一輪的時間就把該歸位的歸位</p>
 <p>然後再從頭走一次，第一個遇到的位置上沒有數字的就會是解</p>
 <p>比如 <code>[3, 4, -1, 1]</code>，他的長度是 4，所以我們關心 1~4 有沒有出現，透過的方法是：如果 1,2,3,4 有出現，就把他們移到 index 0,1,2,3 來作為記錄方式<br>我們從 index 0 開始走，首先遇到 3，3 在我們的關心範圍內，且他應該待在 index 2，所以我們把他移到 index 2 去；index 2 原本的數字是 -1，-1 不是我們關心的範圍，所以直接把它覆蓋掉沒差，所以數列變成了 <code>[3, 4, 3, 1]</code><br>接著走到 index 1，遇到 4，4 也是在我們的關心範圍內，他應該待在 index 3，所以我們把他移到 index 3 去，index 3 原本的數字是 1，但 1 也是我們關心的範圍，所以 1 也要移走，他應該待在 index 0，所以現在數列變成 <code>[1, 4, 3, 4]</code> （這種連續的 swap 可能會是個實作上的關卡，待會直接看 code 會比較明白其實邏輯不複雜）<br>接著走到 index 2，值是 3，3 已經待在他該待的位置上，所以不需要做任何事<br>接著走到 index 3，值到 4，4 也已經待在他該待的位置上，也不需要做任何事</p>
@@ -647,7 +647,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/08/15/software/Reverse-Nodes-in-k-Group/">
+                <a href="/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/">
                     <div class="card-image">
                         
                         
@@ -919,7 +919,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">62.8k</span>
+                        class="white-color">64.7k</span>
             
             
             

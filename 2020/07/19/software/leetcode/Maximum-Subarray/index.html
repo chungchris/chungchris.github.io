@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
 </head>
 
 
@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-07-20
+                    2021-08-20
                 </div>
                 
 
@@ -439,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    5 Min
                 </div>
                 
 
@@ -587,7 +587,7 @@
 <ol>
 <li>我們其實不關心到底子陣列是從哪裡到哪裡，因為這題只需要找和的最大值</li>
 <li>『index 2 加上 index 1 以前的不定長度子陣列』這勢必包含 index 1</li>
-<li>我們在上一輪已經得到，含有 index 1 的可能和，就是 <code>(-2 + 1)</code> 和 <code>1</code>，而其中又以 <code>1</code> 是較大者<br>所以綜合起來，本種我們會得到新增兩個可能，<code>(-2 + 1) + (-3)</code>，和 <code>1 + (-3)</code><br>但其中，其實 <code>(-2 + 1) + (-3)</code> 我們可以早就不用管他，因為他一定比較小<br>綜合起來，本輪我們會得到新增 3 個可能，<code>-3</code>、<code>(-2 + 1) + (-3)</code>、<code>1 + (-3)</code>，但因為<code>(-2 + 1) + (-3)</code> 我們可以早就不用管他，所以其實是新增 2 個可能：<code>-3</code> 和 <code>1 + (-3)</code>，而兩者中又以 <code>1 + (-3)</code> 較優</li>
+<li>我們在上一輪已經得到，含有 index 1 的可能和，就是 <code>(-2 + 1)</code> 和 <code>1</code>，而其中又以 <code>1</code> 是較大者，所以會得到新增可能解為 <code>1 + (-3)</code>（<code>(-2 + 1) + (-3)</code> 可以不用管他，因為他一定比較小）<br>綜合起來，本輪我們會得到新增 2 個可能，<code>-3</code>、<code>1 + (-3)</code>，而兩者中又以 <code>1 + (-3) = -2</code> 較優</li>
 </ol>
 <p>到此我們可以歸納出來：<br>每一輪都會新增兩個可能解，來自於 <code>該輪新看到的 index 本身的值</code>，以及 <code>該輪新看到的 index 本身的值 + 前一輪新增的解中的較佳者</code></p>
 <br>
@@ -700,7 +700,7 @@
         <span class="token keyword">return</span> ans<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>以上就是一個 <code>O(n)</code> 的解</p>
-<h2 id="O-nlogn-解法"><a href="#O-nlogn-解法" class="headerlink" title="O(nlogn) 解法"></a>O(nlogn) 解法</h2><p>但題目又有另外說看有沒有 divide and conquer approach<br>我不太確定為什麼題目要提這件事… 因為這題用 divide and conquer 其實時間複雜度是比較差的，而且還因此用到 recursive。可能因為演算法課本在講 divide and conquer approach 時有用這個例子(?)</p>
+<h2 id="O-nlogn-解法"><a href="#O-nlogn-解法" class="headerlink" title="O(nlogn) 解法"></a>O(nlogn) 解法</h2><p>但題目又有另外說看有沒有 divide and conquer approach<br>不過這題用 divide and conquer 其實時間複雜度是比較差的，而且還因此用到 recursive。可能因為演算法課本在講 divide and conquer approach 時有用這個例子(?)，所以可能某方面來說 divide and conquer approach 會是更直覺的想法</p>
 <p>divide and conquer 就是顧名思義，先把大問題 devide 成小問題，分別求小問題的解，在合成出大問題的解</p>
 <p>假設一個陣列 <code>a[0:n]</code> 的本題最佳解我們表示為 <code>f(a, 0, n)</code><br>我們取 0, n 的中間值假設為 <code>mid</code><br>那本題最佳解 <code>f(a, 0, n)</code> 就存在於 3 種可能性的其中一種</p>
 <ol>
@@ -1123,7 +1123,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">62.8k</span>
+                        class="white-color">64.7k</span>
             
             
             
