@@ -76,7 +76,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-08-27T03:15:16.399Z</updated>
+    <updated>2021-08-28T03:11:16.046Z</updated>
     
     
       
@@ -370,6 +370,35 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #105 Construct Binary Tree from Preorder and Inorder Traversal</title>
+    <link href="https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/"/>
+    <id>https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/</id>
+    <published>2020-08-28T01:51:16.000Z</published>
+    <updated>2021-08-28T03:08:42.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供 Preorder 和 Inorder 順序，重建出整棵樹&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+    <category term="leecode:dfs" scheme="https://chungchris.github.io/tags/leecode-dfs/"/>
+    
+    <category term="leecode:tree" scheme="https://chungchris.github.io/tags/leecode-tree/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] #1239 Maximum Length of a Concatenated String with Unique Characters</title>
     <link href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/"/>
     <id>https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/</id>
@@ -553,35 +582,6 @@
     
     
     <category term="leetcode:string" scheme="https://chungchris.github.io/tags/leetcode-string/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #79 Word Search</title>
-    <link href="https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/"/>
-    <id>https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/</id>
-    <published>2020-07-23T03:50:44.000Z</published>
-    <updated>2021-08-01T23:50:41.170Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;二維陣列中某字串是否存在&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leecode:2darray" scheme="https://chungchris.github.io/tags/leecode-2darray/"/>
-    
-    <category term="leecode:dfs" scheme="https://chungchris.github.io/tags/leecode-dfs/"/>
     
   </entry>
   
