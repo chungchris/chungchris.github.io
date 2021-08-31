@@ -429,7 +429,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-12
+                    2021-08-31
                 </div>
                 
 
@@ -499,7 +499,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 </ul>
 </li>
 </ul>
-<h3 id="class-statuc-function"><a href="#class-statuc-function" class="headerlink" title="class statuc function"></a>class statuc function</h3><ul>
+<h3 id="class-static-function"><a href="#class-static-function" class="headerlink" title="class static function"></a>class static function</h3><ul>
 <li>A static member function can be called even if no objects of the class exist</li>
 <li>The static functions are accessed using only the class name and the scope resolution operator <code>::</code></li>
 <li>A static member function can only access static data member, and other static member functions</li>
@@ -529,9 +529,9 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 </ul>
 <h3 id="virtual"><a href="#virtual" class="headerlink" title="virtual"></a>virtual</h3><p><a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-virtual/">C++ virtual 的兩種用法</a></p>
 <ul>
-<li>pure virtual function 就像其他語言的 interface，用來規範某 class 需要實作某些 method。該定義 pure virtual function 的 class 為 abstract base class. Abstract base class can only be used as base classes. 無法被實體化</li>
+<li>pure virtual function 就像其他語言的 interface，用來規範某 class 需要實作某些 method。該定義 pure virtual function 的 class 即為 abstract base class。Abstract base class 只能用來當作 base class，無法被實體化</li>
 <li>virtual function 就是提供 default 實作的 pure virtual function，該 class 可以被實體化</li>
-<li>基本上只有 base 中定義時要加上 virtual，derived class 中如果要實作自己的版本，virtual 可寫可不寫，但 signature 相同才算有實作覆蓋到，所以可以加上 override 關鍵自讓 compiler 幫忙檢查 signature 是否相同</li>
+<li>基本上只有 base 中定義時要加上 virtual，derived class 中如果要實作自己的版本，virtual 可寫可不寫，但 signature 相同才算有實作覆蓋到，所以如果有意做 override，就加上 override 關鍵字讓 compiler 幫忙檢查 signature 是否相同</li>
 <li>virtual 的 binding 發生在 runtime，藉由查詢 virtual table 來 binding 到正確的實作版本。virtual table 是屬於 object instance</li>
 </ul>
 <h4 id="binding"><a href="#binding" class="headerlink" title="binding"></a>binding</h4><p>再抓出來看一次差別</p>
@@ -554,7 +554,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
         std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"foo(int) of B "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">float</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// B 中同時存在在 2 個 foo，但 signature 不同，這是多型 polymorphism</span>
+    <span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">float</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// B 中同時存在在 2 個 foo，但 signature 不同，這是多型 polymorphism 的 overloading</span>
         std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"foo(float) of B "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
@@ -580,7 +580,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 
     a<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of A</span>
     b<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of B 0 // override 在這裏發生作用，這是在 compile time 就已經決定的</span>
-    b<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(float) of B 1.5 // polymorphism 在這裡發生作用，這是在 compile time 就已經決定的</span>
+    b<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(float) of B 1.5 // polymorphism overloading 在這裡發生作用</span>
 
     A <span class="token operator">*</span>pA <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>
     B <span class="token operator">*</span>pB1 <span class="token operator">=</span> <span class="token operator">&amp;</span>b<span class="token punctuation">;</span>
@@ -588,7 +588,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 
     pA<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of A</span>
     pB1<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of B 0</span>
-    pB1<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(float) of B 1.5 // polymorphism 在這裡發生作用</span>
+    pB1<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(float) of B 1.5 // polymorphism overloading 在這裡發生作用</span>
 
     pB2<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of B 0</span>
     pB2<span class="token operator">-&gt;</span><span class="token function">foo</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// =&gt; foo(int) of B 1 // 這裡是 virtual 應用的關鍵，為什麼是 1？</span>
@@ -596,7 +596,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>第 57 行是 virtual 應用的關鍵：<code>pB2</code> 是 type <code>A</code>，所以在 runtime 去找 <code>A</code> 的 <code>foo</code> 要 binding 到哪個版本，也就是 <code>A</code> 的 <code>foo(int)</code> 要 binding 到哪個版本，而 <code>pB2</code> 是實際指向的 instance 是 <code>b</code>，<code>b</code> 的 virtual table 對於 <code>foo(int)</code> 的的 binding 是第 12 行的那個。所以這裏其實無關 polymorphism，1.5 變成 1 是 implicit conversion 的結果</p>
+<p>第 57 行是 virtual 應用的關鍵：<br><code>pB2</code> 是 type <code>A*</code>，所以在 runtime 去找 <code>A</code> 的 <code>foo</code> 要 binding 到哪個版本，也就是 <code>A</code> 的 <code>foo(int)</code> 要 binding 到哪個版本<br>而 <code>pB2</code> 是實際指向的 instance 是 <code>b</code>，<code>b</code> 的 virtual table 對於 <code>foo(int)</code> 的的 binding 是第 12 行的那個。所以這裏其實無關 polymorphism，1.5 變成 1 是 implicit conversion 的結果</p>
 <blockquote>
 <p>因為 virtual 是在 runtime 才做 binding，所以會比純 override 效能差一些<br>那為什麼不都用 override 就好，需要有 virtual 存在？因為很多場景我們是無法事先知道 type 的。比如上面的例子直接創了 <code>A a</code> 和 <code>B b</code> 兩個 instance，但這不符合大部分的 use case，B 繼承 A，很多時候我們可能是根據 runtime 的 input 才知道要創 A 還是 B 比較適合，也就是會用到 <code>new A()</code>, <code>new B()</code>，同時後續邏輯上又有統一的邏輯對於 A 這個大類別的物件都要 call <code>foo</code> 方法的時候，也就是下面這樣</p>
 </blockquote>
@@ -1109,7 +1109,7 @@ Matrix Matrix<span class="token operator">::</span><span class="token keyword">o
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">66.4k</span>
+                        class="white-color">66.9k</span>
             
             
             
