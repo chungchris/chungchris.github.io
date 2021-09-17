@@ -425,7 +425,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-26
+                    2021-09-01
                 </div>
                 
 
@@ -467,7 +467,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個數列，不斷找出滑動的區間的最大值</p>
+                <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給一個數列，不斷找出滑動的固定長度區間的最大值</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/deque-stl/problem">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
@@ -477,7 +477,7 @@
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
 <h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>數列長度 <code>N</code>，window 長度 <code>k</code>，暴力解就是每次都重新 traverse 整個 <code>k</code> 找出最大的，那時間複雜度就是 <code>O(Nk)</code></p>
-<p>要照到 <code>O(N)</code> 解，要注意到一個規則：當 slide window 一直滑，假設右端從 <code>x</code> 滑到 <code>x+1</code>，一但我們發現一個更大的值，也就是當 <code>a[x+1]</code> 比 <code>a[x]</code> 大，那 <code>x+1</code> 的左邊都是無用的，都可以丟棄，因為最新加入的 <code>x+1</code> 不但最大，並且也會是最晚離開的，所以他的左側都不會再有用處；換句話說，如果我們新發現的值 <code>a[x+1]</code> 比 a[x] 還小，那 a[x+1] 不可能是目前 slide window 的解，但卻有可能是未來 slide window 的解<br>根據這個特性，如果 slide window 一直滑，一但遇到比較大的就把他左側比他小的的都丟棄，就會持續維持住一個最左側就是目前 slide window 最大值的數列</p>
+<p>要找到 <code>O(N)</code> 解，要注意到一個規則：當 slide window 一直滑，假設右端從 <code>x</code> 滑到 <code>x+1</code>，一但我們發現一個更大的值，也就是當 <code>a[x+1]</code> 比 <code>a[x]</code> 大，那 <code>x+1</code> 的左邊都是無用的，都可以丟棄，因為最新加入的 <code>x+1</code> 不但最大，並且也會是最晚離開的，所以他的左側都不會再有用處；換句話說，如果我們新發現的值 <code>a[x+1]</code> 比 <code>a[x]</code> 還小，那 <code>a[x+1]</code> 不可能是目前 slide window 的解，但卻有可能是未來 slide window 的解<br>根據這個特性，如果 slide window 一直滑，一但遇到比較大的就把他左側比他小的的都丟棄，就會持續維持住一個最左側就是目前 slide window 最大值的數列</p>
 <p>例如以下數列 <code>a</code>，<code>k</code>=3</p>
 <table>
 <thead>
@@ -1271,7 +1271,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">66.9k</span>
+                        class="white-color">67k</span>
             
             
             
