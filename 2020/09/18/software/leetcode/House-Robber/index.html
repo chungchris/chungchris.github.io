@@ -425,21 +425,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-09-18
+                    2021-09-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    898
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    4 Min
                 </div>
                 
 
@@ -526,6 +526,8 @@
         <span class="token keyword">for</span> n <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
             prev<span class="token punctuation">,</span> curr <span class="token operator">=</span> curr<span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">(</span>n <span class="token operator">+</span> prev<span class="token punctuation">,</span> curr<span class="token punctuation">)</span>
         <span class="token keyword">return</span> curr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所以其實繞了一圈，我們回頭來看<br>從尾擴展：<code>f(i) = max( nums[i] + f(i+2), f(i+1) )</code>, <code>f(n) = 0</code>, <code>f(n-1) = nums[n-1]</code><br>從頭擴展：<code>g(x) = max( nums[x] + g(x-2), g(x-1) )</code>, <code>g(0) = nums[0]</code>, <code>g(-1) = 0</code><br>從尾擴展的想法會比較容易先走向 recursive function 作法，因為『本輪的解，會取決於下兩輪的解』<br>從頭擴展的想法會比較容易先走向 iteration 作法，因為『本輪的解，會取決於前兩輪的解』</p>
 
                 
             </div>
@@ -946,7 +948,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">68k</span>
+                        class="white-color">68.2k</span>
             
             
             
