@@ -429,7 +429,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-08-31
+                    2021-09-27
                 </div>
                 
 
@@ -493,17 +493,16 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 
 <hr>
 <h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><h3 id="class-static-member"><a href="#class-static-member" class="headerlink" title="class static member"></a>class static member</h3><ul>
-<li>No matter how many objects of the class are created, there is only one copy of the static member. A static member is shared by all objects of the class</li>
+<li>A static member is shared by all objects of the class. No matter how many objects of the class are created, there is only one copy of the static member.</li>
 <li>All static data is initialized to zero when the first object is created, if no other initialization is present<ul>
 <li>Can’t put it in the class definition but it can be initialized outside the class using <code>&lt;Class&gt;::&lt;static member&gt;=&lt;...&gt;</code></li>
 </ul>
 </li>
 </ul>
 <h3 id="class-static-function"><a href="#class-static-function" class="headerlink" title="class static function"></a>class static function</h3><ul>
-<li>A static member function can be called even if no objects of the class exist</li>
-<li>The static functions are accessed using only the class name and the scope resolution operator <code>::</code></li>
+<li>A static member function can be called even if no objects of the class exist. The static functions are accessed using only the class name and the scope resolution operator <code>::</code></li>
 <li>A static member function can only access static data member, and other static member functions</li>
-<li>You could use a static member function help to determine whether some objects of the class have been created or not</li>
+<li>Could use a static member function help to determine whether some objects of the class have been created or not</li>
 </ul>
 <h2 id="virtual-override-final"><a href="#virtual-override-final" class="headerlink" title="virtual, override, final"></a>virtual, override, final</h2><h3 id="override"><a href="#override" class="headerlink" title="override"></a>override</h3><ul>
 <li>override 只用在 function signature 完全相同</li>
@@ -518,20 +517,20 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
 
 <span class="token keyword">class</span> <span class="token class-name">Derived</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> <span class="token class-name">Base</span></span> <span class="token punctuation">{</span>
 <span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> override <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> override <span class="token punctuation">{</span>
         std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Derived class overridden behaviour\n"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li>override 的 binding 發生在 compile time，也就是 compile 時就知道是執行哪一個 class 中的實作版本</li>
+<li>override 的 binding 發生在 compile time，也就是 compile 時就知道是執行哪一個 class 中的實作版本。所以如果有意做 override，就加上 override 關鍵字讓 compiler 幫忙檢查 signature 是否相同</li>
 <li>當 override 存在，若要指定使用 parent 的版本，要加上如 <code>child_instance.BaseClass::foo()</code></li>
 </ul>
 <h3 id="virtual"><a href="#virtual" class="headerlink" title="virtual"></a>virtual</h3><p><a target="_blank" rel="noopener" href="https://shengyu7697.github.io/cpp-virtual/">C++ virtual 的兩種用法</a></p>
 <ul>
 <li>pure virtual function 就像其他語言的 interface，用來規範某 class 需要實作某些 method。該定義 pure virtual function 的 class 即為 abstract base class。Abstract base class 只能用來當作 base class，無法被實體化</li>
 <li>virtual function 就是提供 default 實作的 pure virtual function，該 class 可以被實體化</li>
-<li>基本上只有 base 中定義時要加上 virtual，derived class 中如果要實作自己的版本，virtual 可寫可不寫，但 signature 相同才算有實作覆蓋到，所以如果有意做 override，就加上 override 關鍵字讓 compiler 幫忙檢查 signature 是否相同</li>
+<li>基本上只有 base 中定義時要加上 virtual，derived class 中如果要實作自己的版本，virtual 可寫可不寫，但 signature 相同才算有實作到該 virtual</li>
 <li>virtual 的 binding 發生在 runtime，藉由查詢 virtual table 來 binding 到正確的實作版本。virtual table 是屬於 object instance</li>
 </ul>
 <h4 id="binding"><a href="#binding" class="headerlink" title="binding"></a>binding</h4><p>再抓出來看一次差別</p>
@@ -596,7 +595,7 @@ ss <span class="token operator">&gt;&gt;</span> a <span class="token operator">&
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>第 57 行是 virtual 應用的關鍵：<br><code>pB2</code> 是 type <code>A*</code>，所以在 runtime 去找 <code>A</code> 的 <code>foo</code> 要 binding 到哪個版本，也就是 <code>A</code> 的 <code>foo(int)</code> 要 binding 到哪個版本<br>而 <code>pB2</code> 是實際指向的 instance 是 <code>b</code>，<code>b</code> 的 virtual table 對於 <code>foo(int)</code> 的的 binding 是第 12 行的那個。所以這裏其實無關 polymorphism，1.5 變成 1 是 implicit conversion 的結果</p>
+<p>第 57 行是 virtual 應用的關鍵：<br><code>pB2</code> 是 type <code>A*</code>，所以在 runtime 去找 <code>A</code> 的 <code>foo</code> 要 binding 到哪個版本，也就是 <code>A</code> 的 <code>foo(int)</code> 要 binding 到哪個版本<br>而 <code>pB2</code> 是實際指向的 instance 是 <code>b</code>，<code>b</code> 的 virtual table 對於 <code>foo(int)</code> 的 binding 是第 12 行的那個。所以這裏其實無關 polymorphism，1.5 變成 1 是 implicit conversion 的結果</p>
 <blockquote>
 <p>因為 virtual 是在 runtime 才做 binding，所以會比純 override 效能差一些<br>那為什麼不都用 override 就好，需要有 virtual 存在？因為很多場景我們是無法事先知道 type 的。比如上面的例子直接創了 <code>A a</code> 和 <code>B b</code> 兩個 instance，但這不符合大部分的 use case，B 繼承 A，很多時候我們可能是根據 runtime 的 input 才知道要創 A 還是 B 比較適合，也就是會用到 <code>new A()</code>, <code>new B()</code>，同時後續邏輯上又有統一的邏輯對於 A 這個大類別的物件都要 call <code>foo</code> 方法的時候，也就是下面這樣</p>
 </blockquote>
@@ -825,29 +824,28 @@ Matrix Matrix<span class="token operator">::</span><span class="token keyword">o
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/08/10/software/language/cpp-note/">
+                <a href="/2021/10/07/software/block-google-search-result/">
                     <div class="card-image">
                         
-                        <img src="https://drive.google.com/uc?export=view&id=1Ie9p-qbOZ9nzja0ijVmEOFNlMTdVijWf" class="responsive-img" alt="C++ 語言筆記">
+                        <img src="https://drive.google.com/uc?export=view&id=1GVHMeSNqncKPd-ylk4cXOHMa3XaxcndU" class="responsive-img" alt="封鎖/隱藏 特定網站出現在 Google Search 結果當中">
                         
-                        <span class="card-title">C++ 語言筆記</span>
+                        <span class="card-title">封鎖/隱藏 特定網站出現在 Google Search 結果當中</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一些 C++ 的個人筆記
+                            讓 Google 搜尋結果當中永遠不要找到特定網站的內容，可以避免掉一些農場文和閱讀體驗很差的網站
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -860,16 +858,11 @@ Matrix Matrix<span class="token operator">::</span><span class="token keyword">o
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/programming-language/">
-                        <span class="chip bg-color">programming language</span>
-                    </a>
-                    
-                    <a href="/tags/cpp/">
-                        <span class="chip bg-color">cpp</span>
+                    <a href="/tags/productivity/">
+                        <span class="chip bg-color">productivity</span>
                     </a>
                     
                 </div>
@@ -1109,7 +1102,7 @@ Matrix Matrix<span class="token operator">::</span><span class="token keyword">o
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">68.2k</span>
+                        class="white-color">69k</span>
             
             
             

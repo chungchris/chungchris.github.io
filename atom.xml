@@ -6,7 +6,7 @@
   <link href="https://chungchris.github.io/atom.xml" rel="self"/>
   
   <link href="https://chungchris.github.io/"/>
-  <updated>2021-08-31T00:54:12.920Z</updated>
+  <updated>2021-10-07T02:35:22.181Z</updated>
   <id>https://chungchris.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>封鎖/隱藏 特定網站出現在 Google Search 結果當中</title>
+    <link href="https://chungchris.github.io/2021/10/07/software/block-google-search-result/"/>
+    <id>https://chungchris.github.io/2021/10/07/software/block-google-search-result/</id>
+    <published>2021-10-07T01:52:30.000Z</published>
+    <updated>2021-10-07T02:35:22.181Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我真的非常討厭 Pixnet 的閱讀體驗，又慢、版面又醜，廣告蓋板就算了，廣告 load 又慢，很多時候 X 還點不到，想關掉還直接會點進廣告，反正就是個垃圾&lt;br&gt;所以試了幾個 block 工具，最後選的這個，覺得簡單好用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="productivity" scheme="https://chungchris.github.io/tags/productivity/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++ 語言筆記</title>
     <link href="https://chungchris.github.io/2021/08/10/software/language/cpp-note/"/>
     <id>https://chungchris.github.io/2021/08/10/software/language/cpp-note/</id>
     <published>2021-08-10T06:45:45.000Z</published>
-    <updated>2021-08-31T00:54:12.920Z</updated>
+    <updated>2021-09-27T01:31:19.181Z</updated>
     
     
       
@@ -76,7 +103,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-09-20T03:55:18.969Z</updated>
+    <updated>2021-10-02T03:53:34.488Z</updated>
     
     
       
@@ -557,33 +584,6 @@
     
     
     <category term="leetcode:array" scheme="https://chungchris.github.io/tags/leetcode-array/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[HackerRank] Deque-STL (Sliding Window Maximum)</title>
-    <link href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/"/>
-    <id>https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/</id>
-    <published>2020-08-08T23:19:40.000Z</published>
-    <updated>2021-08-31T23:00:26.607Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個數列，不斷找出滑動的固定長度區間的最大值&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:2pointer" scheme="https://chungchris.github.io/tags/leetcode-2pointer/"/>
     
   </entry>
   
