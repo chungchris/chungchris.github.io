@@ -6,7 +6,7 @@
   <link href="https://chungchris.github.io/atom.xml" rel="self"/>
   
   <link href="https://chungchris.github.io/"/>
-  <updated>2021-10-07T02:35:22.181Z</updated>
+  <updated>2021-10-09T02:15:03.863Z</updated>
   <id>https://chungchris.github.io/</id>
   
   <author>
@@ -17,20 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>海外工作的台灣所得稅申報</title>
+    <link href="https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/"/>
+    <id>https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/</id>
+    <published>2021-10-09T01:46:49.000Z</published>
+    <updated>2021-10-09T02:15:03.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;先講結論，就是最好要申報，但最終很難因此實際需要多繳到稅&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我只是講我 survey 的結果和個人理解，不負責任的呦 &lt;span class=&quot;github-emoji&quot;&gt;&lt;span&gt;😛&lt;/span&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="sketch" scheme="https://chungchris.github.io/categories/sketch/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>封鎖/隱藏 特定網站出現在 Google Search 結果當中</title>
     <link href="https://chungchris.github.io/2021/10/07/software/block-google-search-result/"/>
     <id>https://chungchris.github.io/2021/10/07/software/block-google-search-result/</id>
     <published>2021-10-07T01:52:30.000Z</published>
-    <updated>2021-10-07T02:35:22.181Z</updated>
+    <updated>2021-10-07T02:46:38.610Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;我真的非常討厭 Pixnet 的閱讀體驗，又慢、版面又醜，廣告蓋板就算了，廣告 load 又慢，很多時候 X 還點不到，想關掉還直接會點進廣告，反正就是個垃圾&lt;br&gt;所以試了幾個 block 工具，最後選的這個，覺得簡單好用&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;我真的非常討厭 Pixnet 的閱讀體驗，又慢、版面又醜，廣告蓋板就算了，廣告 load 又慢，很多時候 &lt;code&gt;x&lt;/code&gt; 還點不到，想關掉還直接會點進廣告，反正就是個垃圾&lt;br&gt;所以試了幾個 block</summary>
         
       
     
@@ -103,7 +126,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-10-02T03:53:34.488Z</updated>
+    <updated>2021-10-08T02:15:17.444Z</updated>
     
     
       
@@ -557,33 +580,6 @@
     
     
     <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #41 First Missing Positive</title>
-    <link href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/"/>
-    <id>https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/</id>
-    <published>2020-08-13T03:39:04.000Z</published>
-    <updated>2021-08-26T01:09:31.298Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個數列，找出一個最小的正整數，且該正整數不存在數列中&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:array" scheme="https://chungchris.github.io/tags/leetcode-array/"/>
     
   </entry>
   
