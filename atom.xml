@@ -126,7 +126,7 @@
     <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
     <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
     <published>2021-07-22T03:02:55.000Z</published>
-    <updated>2021-10-08T02:15:17.444Z</updated>
+    <updated>2021-10-17T06:53:36.090Z</updated>
     
     
       
@@ -420,11 +420,34 @@
   </entry>
   
   <entry>
+    <title>[LeetCode] #300 Longest Increasing Subsequence</title>
+    <link href="https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/"/>
+    <id>https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/</id>
+    <published>2020-10-17T06:45:11.000Z</published>
+    <updated>2021-10-17T07:45:48.204Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>[LeetCode] #198 House Robber</title>
     <link href="https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/"/>
     <id>https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/</id>
     <published>2020-09-18T00:06:25.000Z</published>
-    <updated>2021-09-19T01:38:54.869Z</updated>
+    <updated>2021-10-17T06:55:00.813Z</updated>
     
     
       
@@ -442,8 +465,6 @@
     <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
     
     
-    <category term="leetcode:dp" scheme="https://chungchris.github.io/tags/leetcode-dp/"/>
-    
   </entry>
   
   <entry>
@@ -451,7 +472,7 @@
     <link href="https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/"/>
     <id>https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/</id>
     <published>2020-08-28T01:51:16.000Z</published>
-    <updated>2021-08-28T03:08:42.413Z</updated>
+    <updated>2021-10-17T06:54:35.093Z</updated>
     
     
       
@@ -469,10 +490,6 @@
     <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
     
     
-    <category term="leecode:tree" scheme="https://chungchris.github.io/tags/leecode-tree/"/>
-    
-    <category term="leecode:dfs" scheme="https://chungchris.github.io/tags/leecode-dfs/"/>
-    
   </entry>
   
   <entry>
@@ -480,7 +497,7 @@
     <link href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/"/>
     <id>https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/</id>
     <published>2020-08-27T03:13:39.000Z</published>
-    <updated>2021-08-27T07:59:31.656Z</updated>
+    <updated>2021-10-17T06:56:26.493Z</updated>
     
     
       
@@ -498,12 +515,6 @@
     <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
     
     
-    <category term="leetcode:string" scheme="https://chungchris.github.io/tags/leetcode-string/"/>
-    
-    <category term="leetcode:bit" scheme="https://chungchris.github.io/tags/leetcode-bit/"/>
-    
-    <category term="leetcode:p&amp;c" scheme="https://chungchris.github.io/tags/leetcode-p-c/"/>
-    
   </entry>
   
   <entry>
@@ -511,7 +522,7 @@
     <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/"/>
     <id>https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/</id>
     <published>2020-08-19T01:16:12.000Z</published>
-    <updated>2021-08-31T23:15:07.199Z</updated>
+    <updated>2021-10-17T06:57:34.584Z</updated>
     
     
       
@@ -529,8 +540,6 @@
     <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
     
     
-    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
-    
   </entry>
   
   <entry>
@@ -538,7 +547,7 @@
     <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/"/>
     <id>https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/</id>
     <published>2020-08-18T22:59:54.000Z</published>
-    <updated>2021-08-26T00:42:47.491Z</updated>
+    <updated>2021-10-17T06:54:44.932Z</updated>
     
     
       
@@ -553,33 +562,6 @@
     
     <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
     
-    
-    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #25 Reverse Nodes in k-Group</title>
-    <link href="https://chungchris.github.io/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/"/>
-    <id>https://chungchris.github.io/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/</id>
-    <published>2020-08-14T22:11:29.000Z</published>
-    <updated>2021-08-26T00:40:51.638Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個 linked list，以連續 k 個為一組，將每組都 revert，所最後出現不滿 k</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-    <category term="leetcode:ll" scheme="https://chungchris.github.io/tags/leetcode-ll/"/>
     
   </entry>
   
