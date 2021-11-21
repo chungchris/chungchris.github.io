@@ -421,7 +421,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-10-17
+                    2021-10-22
                 </div>
                 
 
@@ -473,8 +473,8 @@
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
 <h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>題目規定時間要 <code>O(log n)</code>，所以我們知道一定是 binary search</p>
-<p>那就先想一下差別在哪裡<br>binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>如果 list 是存在一個 indexing array，那我們通常會維護一個 (left, right) 的變數來記錄我們接著要搜尋的區間</p>
-<p>但現在這題因為 list 有被 rotate 過，所以我們面臨兩個可能的方向<br>第一步肯定還是對半切<br>如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 (left, right) 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？</p>
+<p>那就先想一下差別在哪裡<br>binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半<br>如果 list 是存在一個 indexing array，那我們通常會維護一個 <code>(left, right)</code> 的變數來記錄我們接著要搜尋的區間</p>
+<p>但現在這題因為 list 有被 rotate 過，所以我們面臨兩個可能的方向<br>第一步肯定還是對半切<br>如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 <code>(left, right)</code> 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？</p>
 <p>我先想了第一個方向，嘗試了幾種作法，但最後都走不下去，所以就往第二個方向，持續使用要取左半還是取右半這種判斷模式</p>
 <br>
 
@@ -897,7 +897,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">71.4k</span>
+                        class="white-color">72.8k</span>
             
             
             

@@ -421,21 +421,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-10-17
+                    2021-10-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2.1k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    10 Min
+                    11 Min
                 </div>
                 
 
@@ -467,7 +467,7 @@
 <ul>
 <li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Link</a></li>
 <li>等級：<strong>Medium</strong></li>
-<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>]</li>
+<li>推薦指數：[<span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>] 可與 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/5351347.html">#340 Longest Substring with At Most K Distinct Characters</a> 對照。因為本題是要求完全不重複，所以我們的 map 是記 char 出現過的 index，這讓我再發現重複的時候，可以直接調整 window 的 head 到新的位置；但 340 是容許 k 次重複，所以若我們的 map 改記得的是 char 出現的次數，那每當重複次數超過容許值因而要調整 head，就要一步一步調，當然如果 map 是把每個 char 出現的位置都記錄下來，自然也就可以一次調到位。有就是說 340 其實比較有 slide window 的感覺，但本題其實不需要明確有 window 的概念，而是比較像維護一個 valid head 的 index 就可以</li>
 </ul>
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
@@ -1182,7 +1182,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">71.4k</span>
+                        class="white-color">72.8k</span>
             
             
             

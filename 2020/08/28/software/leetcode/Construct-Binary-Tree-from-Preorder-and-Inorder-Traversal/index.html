@@ -421,14 +421,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-10-17
+                    2021-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    920
+                    895
                 </div>
                 
 
@@ -472,10 +472,8 @@
 <blockquote>
 <p><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷<br><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</p>
 </blockquote>
-<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>Inorder traversal 是 <code>左 -&gt; 中 -&gt; 右</code>，所以可以觀察到一個特性就是若，對於一個 Inorder traversal 的數列，若知道 root 是誰，那該點的左側就都是屬於其左子樹，該點的右側就都是屬於其右子樹<br>比如 <code>[1, 9, 2, 3, 15, 20, 7]</code><br>如果知道 <code>3</code> 是 root，那其左邊的 <code>[1, 9, 2]</code> 其實就是 3 這個 root 的左子樹的 Inorder traversal；其右邊的 <code>[15, 20, 7]</code> 就是右子樹的 Inorder traversal</p>
-<p>那接下來問題就是，我們怎麼知道一個 Inorder traversal 數列中的 root 是誰？這就要藉由 Preorder traversal 數列的幫助，我們可以發現 Preorder traversal 數列的第一個樹就是整棵樹的 root</p>
-<p>比如 Preorder traversal 是 <code>[3, 9, 1, 2, 20, 15, 7]</code><br>那我們就知道整顆樹的 root 是 <code>3</code>，然後其左子樹的 Inorder traversal 是 <code>[1, 9, 2]</code>；其右子樹邊的 Inorder traversal 是 <code>[15, 20, 7]</code></p>
-<p>這感覺可以是個 recursion，只要我們持續能知道每一段 Inorder traversal 的 root 是誰，就能夠用 recursion 來做，可能會長得像</p>
+<h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>inorder traversal 是 <code>左 -&gt; 中 -&gt; 右</code>，所以可以觀察到一個特性就是，對於一個 inorder traversal 的數列，若知道 root 是誰，那該點的左側就都是屬於其左子樹，該點的右側就都是屬於其右子樹<br>比如 <code>[1, 9, 2, 3, 15, 20, 7]</code>，如果知道 <code>3</code> 是 root，那其左邊的 <code>[1, 9, 2]</code> 其實就是 3 這個 root 的左子樹的 inorder traversal；其右邊的 <code>[15, 20, 7]</code> 就是右子樹的 inorder traversal<br>那接下來問題就是，我們怎麼知道一個 inorder traversal 數列中的 root 是誰？這就要藉由 preorder traversal 數列的幫助，我們可以發現 preorder traversal 數列的第一個數就是整棵樹的 root<br>比如若 preorder traversal 是 <code>[3, 9, 1, 2, 20, 15, 7]</code>，我們就知道整顆樹的 root 是 <code>3</code></p>
+<p>那這感覺可以是個 recursion，只要我們持續能知道每一段 Inorder traversal 的 root 是誰，就能夠用 recursion 來做，可能會長得像</p>
 <pre class="line-numbers language-none"><code class="language-none">buildTree(inorder_sequence):
     root = get_root(inorder_sequence)
     new_node = make_node(root)
@@ -483,9 +481,9 @@
     new_node.right = buildTree(inorder_sequence[root+1:])
     return new_node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>所以現在關鍵就在 <code>get_root</code>，這裏的做法就有些微妙<br>上面的 recursion，第 4 行是先 build 左子樹，第 5 行再 build 右子樹，所以若把這個 recursion 的整個 call stack 展開來，會發現所有可能的左子樹都會先被 build 出來，才會輪到右子樹<br>而以這個展開的順序，每次執行到 <code>get_root</code> 的時間點，我們會發現 <code>get_root</code> 需要回傳的答案，就會依照 Preorder traversal 的順序</p>
-<p>接續剛剛的例子，<code>3</code> 的左子樹的是 Inorder traversal 是 <code>[1, 9, 2]</code>，<code>9</code> 就會是他的 root，因為 Preorder traversal 的第二個數就是 <code>9</code><br>所以 <code>[1, 9, 2]</code> 又以 <code>9</code> 為 root 被分兩半進入 <code>buildTree</code>，左半是 <code>[1]</code>，右半是 <code>[2]</code><br>對於 <code>[1]</code>，他的 root 是 <code>[1]</code>，這是來自 Preorder traversal 的第三個數就是 <code>1</code><br>到這裡左邊就都走完了，<code>buildTree</code> 會來到處理 <code>[2]</code> 的部分，他的 root 是 <code>[2]</code>，這是來自 Preorder traversal 的第四個數就是 <code>2</code><br><code>buildTree</code> 接著來到處理 <code>[15, 20, 7]</code> 的部分，他的 root 是 <code>[20]</code>，這是來自 Preorder traversal 的第五個數就是 <code>20</code></p>
-<p>這大概就是本題關鍵的地方了<br>其實還是可以大概感覺一下，因為 Inorder traversal 是 <code>左 -&gt; 中 -&gt; 右</code>，Preorder traversal <code>中 -&gt; 左 -&gt; 右</code><br>我們的 recursion 的寫法會先一直極力往左走，而 Preorder traversal 其實也是，只要我們每次都把頭 pop 掉，他也是一直往左走</p>
+<p>所以現在關鍵就在 <code>get_root</code>，這裏的做法就有些微妙<br>上面的 recursion，第 4 行是先 build 左子樹，第 5 行再 build 右子樹，所以若把這個 recursion 的整個 call stack 展開來，會發現所有可能的左子樹都會先被 build 出來，才會輪到右子樹<br>而以這個展開的順序，每次執行到 <code>get_root</code> 的時間點，我們會發現 <code>get_root</code> 需要回傳的答案，就會依照 preorder traversal 的順序</p>
+<p>接續剛剛的例子，<code>3</code> 的左子樹的是 inorder traversal 是 <code>[1, 9, 2]</code>，<code>9</code> 就會是他的 root，因為 preorder traversal 的第二個數就是 <code>9</code><br>所以 <code>[1, 9, 2]</code> 又以 <code>9</code> 為 root 被分兩半進入 <code>buildTree</code>，左半是 <code>[1]</code>，右半是 <code>[2]</code><br>對於 <code>[1]</code>，他的 root 是 <code>[1]</code>，這是來自 preorder traversal 的第三個數就是 <code>1</code><br>到這裡左邊就都走完了，<code>buildTree</code> 會來到處理 <code>[2]</code> 的部分，他的 root 是 <code>[2]</code>，這是來自 preorder traversal 的第四個數就是 <code>2</code><br><code>buildTree</code> 接著來到處理 <code>[15, 20, 7]</code> 的部分，他的 root 是 <code>[20]</code>，這是來自 preorder traversal 的第五個數就是 <code>20</code></p>
+<p>這大概就是本題關鍵的地方了<br>其實還是可以大概感覺一下，因為 inorder traversal 是 <code>左 -&gt; 中 -&gt; 右</code>，preorder traversal <code>中 -&gt; 左 -&gt; 右</code><br>我們的 recursion 的寫法會先一直極力往左走，而 preorder traversal 其實也是，只要我們每次都把頭 pop 掉，他也是一直往左走</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -918,7 +916,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">71.4k</span>
+                        class="white-color">72.8k</span>
             
             
             
