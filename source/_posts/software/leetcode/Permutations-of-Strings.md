@@ -1,8 +1,6 @@
 ---
 title:
   - '[HackerRank] Permutations of Strings'
-tags:
-  - leetcode:string
 categories: software/leetcode
 hide: true
 summary: 產生所有排列組合
@@ -55,7 +53,7 @@ date: 2020-07-31 18:37:11
 
 ## Source Code (C)
 
-要注意到本題 *Given an array of strings sorted in lexicographical order, print all of its permutations in strict lexicographical order.*，代表他的 input 本身已經是排序好的
+要注意到本題 **Given an array of strings sorted in lexicographical order, print all of its permutations in strict lexicographical order.**，代表他的 input 本身已經是排序好的
 
 ``` c
 #include <stdio.h>

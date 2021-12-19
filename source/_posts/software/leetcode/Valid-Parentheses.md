@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #20 Valid Parentheses'
-tags:
-  - leetcode:string
 categories: software/leetcode
 keywords:
   - parentheses
@@ -35,6 +33,26 @@ Parse 括號的特性就是與 stack add/pop 的特性 100% 相符
 
 ``` python
 class Solution:
+    '''
+    As a human,
+        ...{...[...(...
+            when we see left bound, we just keep them in mind, but without taking any real action. 
+        ...{...[...(...)
+            only when we see the right bound, we go to find the latest left bound to make a pair, and then we can consume the content in the scope
+    
+    The key word is "latest". It will be LIFO. A stack can help us to do "keep them in mind".
+
+    Whenever encounter right bound, and if it's not able to pair, it's not valid.
+    When the traversal finishs, if there is any left bound remaining in the stack, it's not valid.
+
+    Test cases:
+        normal valid: "()[]"
+        normal valid: "[()]"
+        normal invalid: "([)]"
+        normal invalid: "[()"
+        special: "("
+        special: ")"
+    '''
     def isValid(self, s: str) -> bool:
         left = set('([{')
         pair = {')':'(', ']':'[', '}':'{'}
@@ -55,7 +73,7 @@ class Solution:
         return True
 ```
 
-都用 if == 來比較 char 我是覺得也沒什麼問題啦，只是說用 `set` 和 `dict` 因為他們是 hash search，所以理論上會快一些，但對這題來說真差別有限 
+都用 `if ==` 來比較 char 我是覺得也沒什麼問題啦，只是說用 `set` 和 `dict` 因為他們是 hash search，所以理論上會快一些，但對這題來說真差別有限 
 
 ## Source Code (Go)
 

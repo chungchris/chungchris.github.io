@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #39 Combination Sum'
-tags:
-  - leetcode:sum
 categories: software/leetcode
 hide: true
 summary: 給定一些整數，找和為 t 的所有可能
@@ -11,7 +9,7 @@ date: 2020-07-12 15:54:12
 
 ## Problem
 
-給定一些整數，找和為 t 的所有可能
+給定一些整數，找和為 t 的所有可能，數字可以被重複使用
 
 * [Link](https://leetcode.com/problems/combination-sum/)
 * 等級：**Medium**

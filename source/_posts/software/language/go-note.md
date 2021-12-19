@@ -35,22 +35,22 @@ reprintPolicy:
 
 * [Golang cheatsheet](https://quickref.me/golang)
 * [The Go Programming Language Specification](https://golang.org/ref/spec)：型別及語法定義
-* [std](https://golang.org/pkg/)：所有可以直接 import 的 std 提供的 library，都有提供範例，且網頁上這可以直接執行範例 code，[例如](https://golang.org/pkg/strings/#example_Map)
+* [std](https://golang.org/pkg/)：所有可以直接 import 的 std 提供的 library，都有提供範例，且[網頁上可以直接執行範例 code](https://golang.org/pkg/strings/#example_Map)
 * [Go by Example](https://gobyexample.com/)：許多典型 pattern 的範例，copy 去改
 * [godoc](https://pkg.go.dev/)：收集第三方的 package，可以 import 當 lib 來用
 
-(Official docs are collected [here](https://golang.org/doc/))
+(All official docs are collected [here](https://golang.org/doc/))
 
 ---
 
 ## Chest sheet
 
-[Chest sheet](https://quickref.me/golang)
-
-### Reference
+* [Chest sheet](https://quickref.me/golang)
 
 * [Go by Example](https://gobyexample.com/)
 * [godoc](https://pkg.go.dev/)
+
+---
 
 ### Data Type
 
@@ -72,7 +72,7 @@ reprintPolicy:
 
 #### Advanced
 
-* [slice](https://chungchris.github.io/2021/07/06/software/language/go-note/#toc-heading-10)
+* [slice](https://chungchris.github.io/2021/07/06/software/language/go-note/#toc-heading-9)
 
 * [string](https://quickref.me/golang)
 

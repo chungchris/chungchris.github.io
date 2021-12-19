@@ -1,9 +1,6 @@
 ---
 title:
   - '[LeetCode] #21 Merge Two Sorted Lists'
-tags:
-  - leetcode:ll
-  - leetcode:sort
 categories: software/leetcode
 keywords:
   - linked list

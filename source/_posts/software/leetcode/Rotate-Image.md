@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #48 Rotate Image'
-tags:
-  - leetcode:2darray
 categories: software/leetcode
 summary: 給一個二維方形矩陣，將其旋轉 90 度
 hide: true

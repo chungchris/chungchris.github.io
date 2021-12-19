@@ -1,21 +1,19 @@
 ---
 title:
   - '[LeetCode] #53 Maximum Subarray'
-tags:
-  - leecode:sum
 categories: software/leetcode
 hide: true
-summary: 找和為最小的子陣列
+summary: 找和為最大的子陣列
 date: 2020-07-19 10:13:02
 ---
 
 ## Problem
 
-找和為最小的子陣列，子陣列至少包含一個數，
+找和為最大的子陣列，子陣列至少包含一個數，
 
 * [Link](https://leetcode.com/problems/maximum-subarray/)
 * 等級：**Easy**
-* 推薦指數：[:star::star::star:] 我覺得這題可能也可以 Medium，`O(n)` 解很可能要做過才會，會被歸在 Easy 大概是因為他是一題經典的基本 DP (Dynamic Programming) 題吧，也就是存在 `f(i) = g(f(i-1))` 這樣的特性。另外有 `O(n log n)` 的 divide and conquer 解可能是直觀一點的解，也是一個典型的 divide and conquer 範例，所以可能也是另一個歸在 Easy 的原因吧。
+* 推薦指數：[:star::star::star:] 我覺得這題可能也可以 Medium。會被歸在 Easy 大概是因為 `O(n)` 解就是很典型的這類 array 題 greedy 的思路，他是一題經典的基本 DP (Dynamic Programming) 題，也就是存在 `f(i) = g(f(i-1))` 這樣的特性，本題的 `g` 就是 `max(f(i-1)+nums[i], nums[i])`。另外有 `O(n log n)` 的 divide and conquer 解可能是直觀一點的解，是一個典型的 divide and conquer 範例，所以可能也是另一個歸在 Easy 的原因吧
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -67,10 +65,8 @@ date: 2020-07-19 10:13:02
 第二種，index 2 加上 index 1 以前的不定長度子陣列
 1. 我們其實不關心到底子陣列是從哪裡到哪裡，因為這題只需要找和的最大值
 2. 『index 2 加上 index 1 以前的不定長度子陣列』這勢必包含 index 1
-3. 我們在上一輪已經得到，含有 index 1 的可能和，就是 `(-2 + 1)` 和 `1`，而其中又以 `1` 是較大者
-所以綜合起來，本種我們會得到新增兩個可能，`(-2 + 1) + (-3)`，和 `1 + (-3)`
-但其中，其實 `(-2 + 1) + (-3)` 我們可以早就不用管他，因為他一定比較小
-綜合起來，本輪我們會得到新增 3 個可能，`-3`、`(-2 + 1) + (-3)`、`1 + (-3)`，但因為`(-2 + 1) + (-3)` 我們可以早就不用管他，所以其實是新增 2 個可能：`-3` 和 `1 + (-3)`，而兩者中又以 `1 + (-3)` 較優
+3. 我們在上一輪已經得到，含有 index 1 的可能和，就是 `(-2 + 1)` 和 `1`，而其中又以 `1` 是較大者，所以會得到新增可能解為 `1 + (-3)`（`(-2 + 1) + (-3)` 可以不用管他，因為他一定比較小）
+綜合起來，本輪我們會得到新增 2 個可能，`-3`、`1 + (-3)`，而兩者中又以 `1 + (-3) = -2` 較優
 
 到此我們可以歸納出來：
 每一輪都會新增兩個可能解，來自於 `該輪新看到的 index 本身的值`，以及 `該輪新看到的 index 本身的值 + 前一輪新增的解中的較佳者`
@@ -122,7 +118,7 @@ class Solution:
 ## O(nlogn) 解法
 
 但題目又有另外說看有沒有 divide and conquer approach
-我不太確定為什麼題目要提這件事... 因為這題用 divide and conquer 其實時間複雜度是比較差的，而且還因此用到 recursive。可能因為演算法課本在講 divide and conquer approach 時有用這個例子(?)
+不過這題用 divide and conquer 其實時間複雜度是比較差的，而且還因此用到 recursive。可能因為演算法課本在講 divide and conquer approach 時有用這個例子(?)，所以可能某方面來說 divide and conquer approach 會是更直覺的想法
 
 divide and conquer 就是顧名思義，先把大問題 devide 成小問題，分別求小問題的解，在合成出大問題的解
 

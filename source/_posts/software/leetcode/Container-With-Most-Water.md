@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #11 Container With Most Water'
-tags:
-  - leetcode:2pointers
 categories: software/leetcode
 hide: true
 summary: 選兩個柱子使可以裝最多的水
@@ -24,7 +22,7 @@ reprintPolicy:
 
 * [Link](https://leetcode.com/problems/container-with-most-water/)
 * 等級：**Medium**
-* 推薦指數：[:star::star::star:] 暴力解很容易，進階解不一定想到到，但看過就會
+* 推薦指數：[:star::star::star:] 暴力解很容易，進階解不一定想到到。但只要先以左右兩側為第一個選擇，想辦法去提升容量，演算法就很容易出來 
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -74,27 +72,43 @@ class Solution:
 
 ``` python
 class Solution:
+    '''
+    The vloume of water depends on container width and height
+        width: choose the left bar and the right bar will be the best case
+        height: the shorter one will dominates the vloume
+    
+    There are 2 direction to go: choose bars based on width first or based on height first.
+        height: have to sort the array. it takes at least O(n log n) time
+        width: just choose the left and right ends first
+    
+    So we can do it with width first. We choose the left and right ends first. Can we have better solution when we move inward the bars?
+        * Move the shorter one will help. Move the taller one won't because the overall height is still limited by the shorter one.
+        * Move the shoter one. If next one is even shorter, it won't help. Better keep moving to find a taller one.
+    
+    Test cases:
+      normal: [4,3,2,1,4]
+      special: [4,2,100,99,2,5], [4,2,99,100,2,5]
+    '''
     def maxArea(self, height: List[int]) -> int:    
         ans = 0
         i = 0
         j = len(height) - 1
         while i < j:
-            t = (j-i) * min(height[i], height[j])
-            ans = t if t > ans else ans
+            area = (j-i) * min(height[i], height[j])
+            ans = area if area > ans else ans
             if height[i] < height[j]:
-                '''t = height[i]
+                t = height[i]
                 while height[i] <= t:
                     i = i + 1
                     if i >= j:
-                        return ans'''
+                        return ans
             else:
-                '''t = height[j]
+                t = height[j]
                 while height[j] <= t:
                     j = j - 1
                     if i >= j:
-                        return ans'''
+                        return ans
         return ans
 ```
 
 可以觀察到這個解法只需要 `O(n)`，已經優於 `O(n logn)` 所以我們不用再去想先挑高度出發的方法
-註解起來的部分可有可無，有的話可以減少數次執行第 7,8 行的時間，但並不影響 time complexity

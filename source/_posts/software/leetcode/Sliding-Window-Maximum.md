@@ -1,17 +1,15 @@
 ---
 title:
   - '[HackerRank] Deque-STL (Sliding Window Maximum)'
-tags:
-  - leetcode:2pointer
 categories: software/leetcode
 hide: true
-summary: 給一個數列，不斷找出滑動的區間的最大值
+summary: 給一個數列，不斷找出滑動的固定長度區間的最大值
 date: 2020-08-09 07:19:40
 ---
 
 ## Problem
 
-給一個數列，不斷找出滑動的區間的最大值
+給一個數列，不斷找出滑動的固定長度區間的最大值
 
 * [Link](https://www.hackerrank.com/challenges/deque-stl/problem)
 * 等級：**Medium**
@@ -27,7 +25,7 @@ date: 2020-08-09 07:19:40
 
 數列長度 `N`，window 長度 `k`，暴力解就是每次都重新 traverse 整個 `k` 找出最大的，那時間複雜度就是 `O(Nk)`
 
-要照到 `O(N)` 解，要注意到一個規則：當 slide window 一直滑，假設右端從 `x` 滑到 `x+1`，一但我們發現一個更大的值，也就是當 `a[x+1]` 比 `a[x]` 大，那 `x+1` 的左邊都是無用的，都可以丟棄，因為最新加入的 `x+1` 不但最大，並且也會是最晚離開的，所以他的左側都不會再有用處；換句話說，如果我們新發現的值 `a[x+1]` 比 a[x] 還小，那 a[x+1] 不可能是目前 slide window 的解，但卻有可能是未來 slide window 的解
+要找到 `O(N)` 解，要注意到一個規則：當 slide window 一直滑，假設右端從 `x` 滑到 `x+1`，一但我們發現一個更大的值，也就是當 `a[x+1]` 比 `a[x]` 大，那 `x+1` 的左邊都是無用的，都可以丟棄，因為最新加入的 `x+1` 不但最大，並且也會是最晚離開的，所以他的左側都不會再有用處；換句話說，如果我們新發現的值 `a[x+1]` 比 `a[x]` 還小，那 `a[x+1]` 不可能是目前 slide window 的解，但卻有可能是未來 slide window 的解
 根據這個特性，如果 slide window 一直滑，一但遇到比較大的就把他左側比他小的的都丟棄，就會持續維持住一個最左側就是目前 slide window 最大值的數列
 
 例如以下數列 `a`，`k`=3
@@ -212,7 +210,6 @@ int main(){
 因為每一輪雖然都要 traverse `q`，但 `q` 的長度並非 `k`
 所以要換一個角度想，我們其實是在維護 `q`，而每一輪一個 index 會被加入 q，被加入的 index 為來有可能會被移出 q，所以總共頂多會有 2N 次的 add/pop operation，所以時間複雜度是 `O(N)`
 與暴力解的 `O(Nk)` 相比，可以發現當 k>2，這會是比較快的解，代價是多一個 `q` 的 k 的空間
-
 
 > [這裏](https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/#disqus_thread) 還有提供 AVL tree 的 O(N * Log k) 解
 

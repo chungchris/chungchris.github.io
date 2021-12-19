@@ -1,21 +1,10 @@
 ---
 title:
   - '[LeetCode] #5 Longest Palindromic Substring'
-tags:
-  - leetcode:string
 categories: software/leetcode
 hide: true
 date: 2020-07-08 10:13:59
-img:
-top:
-cover:
-coverImg:
-author:
-password:
-toc:
-mathjax:
 summary: 找一個給定 string 當中，找最長 palindromic(回文) 的 substring
-reprintPolicy:
 ---
 
 ## Problem
@@ -44,23 +33,32 @@ reprintPolicy:
 
 ``` python
 class Solution:
+    '''
+    For a palindromic string, cut it from the middle, go left and go right shall read identically.
+    Choose all possible middle point. See how long each of then can expand. Just note the middle can be single char or in the middle of 2 chars.
+
+    Test cases:
+      normal: babad
+      normal: babbad
+      single char: a
+      all the same: aaa
+    '''
     def longestPalindrome(self, s: str) -> str:
         slen = len(s)
 
         def check(x, y=None):
-            ans = (0, 0)
             if y is None:
-                y = x
+                y = x+1
+                x -= 1
 
             while x >= 0 and y < slen:
                 if s[x] != s[y]:
                     return (x+1, y-1)
                 else:
-                    ans = (x, y)
-                    x = x - 1
-                    y = y + 1
+                    x -= 1
+                    y += 1
 
-            return ans
+            return (x+1, y-1)
 
         ans = (0, 0)
         for i in range(0, slen):
@@ -72,10 +70,7 @@ class Solution:
                 if ret[1] - ret[0] > ans[1] - ans[0]:
                     ans = ret
 
-        if ans[1] == ans[0]:
-            return s[0]
-        else:
-            return s[ans[0]:ans[1]+1]
+        return s[ans[0]:ans[1]+1]
 ```
 
-第 21 行的 for loop 跑 n 輪，每輪要進 `check()` 兩次；`check()` 裡面跑的 `while` 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 2*n*n，也就是 `O(n^2)`
+第 32 行的 for loop 跑 n 輪，每輪要進 `check()` 兩次；`check()` 裡面跑的 `while` 是 n 的相關數（實際上應該小於 n ）我們就算 ｎ，所以合起來是 `O(n^2)`

@@ -1,9 +1,6 @@
 ---
 title:
   - '[LeetCode] #23 Merge k Sorted Lists'
-tags:
-  - leetcode:ll
-  - leetcode:sort
 categories: software/leetcode
 keywords:
   - linked list
@@ -19,7 +16,7 @@ date: 2020-07-11 17:22:51
 
 * [Link](https://leetcode.com/problems/merge-k-sorted-lists/)
 * 等級：**Hard**
-* 推薦指數：[:star::star::star::star::star:] 其實應該不到 Hard，尤其是如果已經做過 [[#21 Merge Two Sorted Lists](https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/)]。把 merge 2 個轉換成 merge k 個並沒有額外需要什麼高明想法
+* 推薦指數：[:star::star::star::star::star:] 其實應該不到 Hard，尤其是如果已經做過 [[#21 Merge Two Sorted Lists](https://chungchris.github.io/2020/07/11/software/leecode/Merge-Two-Sorted-Lists/)]。把 merge 2 個轉換成 merge k 個並沒有額外需要什麼高明想法，唯一可能就是先把他們都排序好，這樣選下一個的時候就很好選。更高級一點就是用 heap 來維護這些 list 的順序
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -29,7 +26,7 @@ date: 2020-07-11 17:22:51
 
 ## 想法
 
-跟 [[#21 Merge Two Sorted Lists](https://chungchris.github.io/2021/07/11/software/leecode/Merge-Two-Sorted-Lists/)] 一樣，就是從所有 list 的頭裡面挑最小的那個拉出來
+跟 [[#21 Merge Two Sorted Lists](https://chungchris.github.io/2020/07/11/software/leecode/Merge-Two-Sorted-Lists/)] 一樣，就是從所有 list 的頭裡面挑最小的那個拉出來
 只是說當只有 2 個 list 的時候，挑小的那個只要一次 compare 就可以完成；今天可能多至有 k 個 list，怎麼從 k 個裡面挑最小的可能就會存在優化空間，不過基本想法終究沒有不同
 
 ## Source Code (Python)

@@ -1,14 +1,16 @@
 ---
 title: C 語言筆記
-categories: software
 tags:
   - c
   - programming language
+categories: software
 keywords:
   - c
   - coding
   - programming
-img:
+summary: 一些 C 的個人筆記
+date: 2021-08-10 14:45:41
+img: 'https://drive.google.com/uc?export=view&id=1aWKS0CtDghddpyvMtpcJSrDRUnula6KV'
 top:
 hide:
 cover:
@@ -17,7 +19,6 @@ author:
 password:
 toc:
 mathjax:
-summary: 一些 C 的個人筆記
 reprintPolicy:
 ---
 
@@ -36,30 +37,7 @@ reprintPolicy:
 * 其中 `*(array + 1)` 先做了一次 deref（取值），其值即為標示第二個 row 的一個 address
 * 再對其 +2 此時就是跳 2 個元素，得到第二個 row 的第三個元素的位址，再對其取值（deref）
 
-> 要注意 *(array + 5) 不見得會是 array[2][3]，應該交給 compiler 去做層層 deref 比較恰當，讓 compiler 去適當轉譯每一個 `+` 的意思
-
-### something trivial
-
-* `float (**def)[10];`
-
-float def[10]; // a is def
-float *pdef = def; // 
-
-**pdef = *def
-
-* `double *(*gh)[10];`
-
-
-* `double (*f[10])();`
-
-
-* `int *((*b)[10]);`
-
-
-* `long (*fun)(int);`
-
-
-* `int (*(*F)(int, int))(int);`
+> 要注意 `*(array + 5)` 不見得會是 `array[2][3]`，應該交給 compiler 去做層層 deref 比較恰當，讓 compiler 去適當轉譯每一個 `+` 的意思
 
 ---
 
@@ -101,6 +79,8 @@ int main() {
 * `int const * p`
     * ((int const) (*))
     * 跟 `const int * p` 是一樣的
+    * `p = (int*)p2` 可以
+    * `*p = b` 不行
 
 * `const int * const p`
     * ((const) (int (* const)))
@@ -150,9 +130,9 @@ void count(void) {
 
 一個 global 變數的作用域為**全部文檔**，只要其他文檔使用 extern 宣告外部連結性，那就可以看到
 
-但既然扯到了跨文檔，就要近一步提到 compile 和 link
+但既然扯到了跨文檔，就要進一步提到 compile 和 link
 實務上在我們文檔比如 `file1.c` 中會去用到其他文檔比如 `file2.c` 的 function，我們常常透過在 `file1.c ` 中 `include file2.h` 完成這件事
-並且實務上我們常常採取 [Dynamic link](https://chungchris.github.io/2021/06/20/software/compile/#toc-heading-2) 的方式，compile 階段時不將 library 加入程式碼，執行程式的時後 link 階段再將 library 載入程式碼
+我們常常採取 [Dynamic link](https://chungchris.github.io/2021/06/20/software/compile/#toc-heading-2) 的方式，compile 階段時不將 library 加入程式碼，執行程式的時後 link 階段再將 library 載入程式碼
 也就是說，在 compile 階段，只要 `file2.h` 中的確有我們所使用到的符合 signature 的 function，那 compile 階段就可以成功
 
 上述是對於 function 了連結，而同樣的道理也可以適用在變數身上

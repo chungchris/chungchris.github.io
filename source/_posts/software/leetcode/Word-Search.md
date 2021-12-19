@@ -1,9 +1,6 @@
 ---
 title:
   - '[LeetCode] #79 Word Search'
-tags:
-  - leecode:2darray
-  - leecode:dfs
 categories: software/leetcode
 hide: true
 summary: 二維陣列中某字串是否存在

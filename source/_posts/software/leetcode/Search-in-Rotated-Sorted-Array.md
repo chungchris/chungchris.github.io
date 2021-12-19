@@ -1,9 +1,6 @@
 ---
 title:
   - '[LeetCode] #33 Search in Rotated Sorted Array'
-tags:
-  - leetcode:sort
-  - leetcode:search
 categories: software/leetcode
 keywords:
   - binary search
@@ -32,11 +29,11 @@ date: 2020-07-12 13:52:25
 
 那就先想一下差別在哪裡
 binary search，對於一個已經 sort 過的 list，我們每次切中間，如果 target 更小，我們就知道接著要找左半，反之找右半
-如果 list 是存在一個 indexing array，那我們通常會維護一個 (left, right) 的變數來記錄我們接著要搜尋的區間
+如果 list 是存在一個 indexing array，那我們通常會維護一個 `(left, right)` 的變數來記錄我們接著要搜尋的區間
 
 但現在這題因為 list 有被 rotate 過，所以我們面臨兩個可能的方向
 第一步肯定還是對半切
-如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 (left, right) 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？
+如果 target 更小或更大，我們是應該去想複雜一點的算法算出新的 `(left, right)` 值？還是應該維持原本 binary search 的行為持續使用要取左半還是取右半這種判斷即可？
 
 我先想了第一個方向，嘗試了幾種作法，但最後都走不下去，所以就往第二個方向，持續使用要取左半還是取右半這種判斷模式
 

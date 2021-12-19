@@ -1,20 +1,9 @@
 ---
 title: '[LeetCode] #3 Longest Substring Without Repeating Characters'
-tags:
-  - leetcode:string
 categories: software/leetcode
 hide: true
 summary: 找一個給定 string 當中，不出現重複 char 的 substring 的最大可能長度
 date: 2020-07-07 17:43:38
-img:
-top:
-cover:
-coverImg:
-author:
-password:
-toc:
-mathjax:
-reprintPolicy:
 ---
 
 ## Problem
@@ -23,7 +12,7 @@ reprintPolicy:
 
 * [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 * 等級：**Medium**
-* 推薦指數：[:star::star::star:]
+* 推薦指數：[:star::star::star:] 可與 [#340 Longest Substring with At Most K Distinct Characters](https://www.cnblogs.com/grandyang/p/5351347.html) 對照。因為本題是要求完全不重複，所以我們的 map 是記 char 出現過的 index，這讓我再發現重複的時候，可以直接調整 window 的 head 到新的位置；但 340 是容許 k 次重複，所以若我們的 map 改記得的是 char 出現的次數，那每當重複次數超過容許值因而要調整 head，就要一步一步調，當然如果 map 是把每個 char 出現的位置都記錄下來，自然也就可以一次調到位。有就是說 340 其實比較有 slide window 的感覺，但本題其實不需要明確有 window 的概念，而是比較像維護一個 valid head 的 index 就可以
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -33,7 +22,7 @@ reprintPolicy:
 
 ## 想法
 
-*string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住*
+string 是一定要從頭掃的，但為了節省時間，儘量不要有掃過的地方又重疊掃一次的狀況，看要記住什麼可以避免未來再掃一次就把應該把該資訊記住
 
 |       |   |   |   |   |   |   |   |   |   |   |   |
 |-------|---|---|---|---|---|---|---|---|---|---|---|
@@ -61,6 +50,52 @@ reprintPolicy:
 
 ``` python
 class Solution:
+    '''
+    * without repeating => we need to remember what we have seen
+    * longest => only need a number, instead of the exact string
+    * time cost => try to traverse only once
+
+    Example: "abcabcbb"
+    
+    Do it as a human:
+        abcabcbb
+        a => a
+         b => ab
+          c => abc
+           a => bca
+            b => cab
+             c => abc
+              b => cb
+               b => b
+    
+        abcabcbb
+        a => {a:0} valid string starts at index 0
+         b => {a:0, b:1}
+          c => {a:0, b:1, c:2}
+           a => seen `a` before at index 0, now we are seeing `a` again at index 3
+                it leads to 2 substrings: the first one is from 0 to 3-1, its length is 3; the second one is from 0+1 to afterward
+                update the memory {a:3, b:1, c:2}
+            b => seen `b` before at index 1, now we are seeing `b` again at index 4
+                 it leads to 2 substrings: the first one is from 1 to 4-1, its length is 3; the second one is from 1+1 to afterward
+                 update the memory {a:3, b:4, c:2}
+             c => seen `c` before at index 2, now we are seeing `c` again at index 5
+                  it leads to 2 substrings: the first one is from 2 to 5-1, its length is 3; the second one is from 2+1 to afterward
+                  update the memory {a:3, b:4, c:5}
+              b => seen `b` before at index 4, now we are seeing `b` again at index 6
+                  it leads to 2 substrings: the first one is from 3 to 6-1, its length is 3; the second one is from 4+1 to afterward
+                  update the memory {a:3, b:6, c:5}
+               b => seen `b` before at index 6, now we are seeing `b` again at index 7
+                  it leads to 2 substrings: the first one is from 5 to 7-1, its length is 2; the second one is from 6+1 to afterward
+                EOS => there is a last valide string, it's head is at index 7, so its length is 1
+    
+    Test cases:
+      answer locates at head part: abccc
+      answer locates at tail part: aaabc
+      all the same: aaa
+      all different: abc
+      empty: ""
+      single: a
+    '''
     def lengthOfLongestSubstring(self, s: str) -> int:
         d = {} # { char: int } memorize the index of last time specific char showing up
         p = 0  # save the head of the valid unchecked string
@@ -216,7 +251,34 @@ int lengthOfLongestSubstring(char * s){
 }
 ```
 
-> 最後也可以看一下 4 種語言的 performance
+## Source Code (C++)
+
+``` cpp
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int ans=0, p=0;
+        unordered_map<int, int> m;
+        for (int i=0; i<s.size(); i++) {
+            if (m.find(s[i]) == m.end()) m[s[i]] = i;
+            else {
+                int t = m[s[i]];
+                if (t >= p) {
+                    if (i-p > ans) ans = i-p;
+                    p = t+1;
+                }
+            }
+            m[s[i]] = i;
+        }
+        
+        if (s.size() - p > ans) ans = s.size() - p;
+
+        return ans;
+    }
+};
+```
+
+> 最後也可以看一下 5 種語言的 performance
 >
 > | Runtime | Memory | Language |
 > |-|-|-|
@@ -225,6 +287,7 @@ int lengthOfLongestSubstring(char * s){
 > | 4 ms | 2.1 MB | rust |
 > | 4 ms | 8.9 MB | c |
 > | 0 ms | 5.8 MB | c |
+> | 12 ms | 8.3 MB | c++ |
 >
 > * python 是 runtime 直譯器語言，且語法也很高階，所以非常慢
 > * rust 比 go 更稍底層一些，理論上會比 go 更快。但我猜因為這一題 string iteration 正好是 rust performance 比較差的部分，因為 rust 的 string 是由可變長度的 unicode 組成，所以 string 的 indexing 不是 O(1)

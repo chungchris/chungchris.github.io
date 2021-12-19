@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #49 Group Anagrams'
-tags:
-  - leecode:string
 categories: software/leetcode
 hide: true
 summary: 找字元組成相同但順序不同的字串（anagrams）
@@ -15,7 +13,7 @@ date: 2020-07-13 08:17:35
 
 * [Link](https://leetcode.com/problems/group-anagrams/)
 * 等級：**Medium**
-* 推薦指數：[:star::star:] 土法煉鋼，沒什麼高深想法，稍有練習不同語言基本語法的作用
+* 推薦指數：[:star::star:] 土法煉鋼，沒什麼高深想法，稍有練習不同語言基本語法的作用。字元組成相同，代表每一個 char 使用的次數相同，所以問題就轉變為替每一種樣式創造一個 unique 的 identifier
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -46,7 +44,6 @@ class Solution:
             for n in count: # O(26)
                 id += (str(n)+",")'''
             id = tuple(count) # tuple is hashable. 這個轉換會比上面自己轉成 string 快一些
-
 
             if id in collect:
                 collect[id].append(s)
@@ -211,7 +208,33 @@ char *** groupAnagrams(char ** strs, int strsSize, int* returnSize, int** return
 }
 ```
 
-> 最後也來看一下 4 種語言的 performance
+## Source Code (C++)
+
+``` cpp
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        unordered_map<wstring, vector<string>> m;
+
+        for (string& s: strs) {
+            wstring id; // string class for wide characters
+            id.assign(26, 0);
+            for (int j=0; j<s.size(); j++) id[s[j] - 'a'] += 1;
+            m[id].push_back(s); // map is allocator-aware. needless to worry about vector allocation
+        }
+
+        vector<vector<string>> ans; 
+        for (auto& p: m) {
+            ans.push_back(p.second);
+        }
+
+        return ans;
+        // std::vector has move-semantics, which means the local vector declared in your function will be moved on return and in some cases even the move can be elided by the compiler.
+    }
+};
+```
+
+> 最後也來看一下 5 種語言的 performance
 >
 > | Runtime | Memory | Language |
 > |-|-|-|
@@ -219,3 +242,4 @@ char *** groupAnagrams(char ** strs, int strsSize, int* returnSize, int** return
 > | 20 ms | 9 MB | golang |
 > | 20 ms | 5.1 MB | rust |
 > | 60 ms | 19.2 MB | c |
+> | 32 ms | 26.3 MB | c++ |

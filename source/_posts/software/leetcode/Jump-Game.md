@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #55 Jump Game'
-tags:
-  - leecode:sum
 categories: software/leetcode
 hide: true
 summary: 能否跳到終點
@@ -11,11 +9,9 @@ date: 2020-07-20 14:14:05
 
 ## Problem
 
-取三數總和為 0
-
 * [Link](https://leetcode.com/problems/jump-game/)
 * 等級：**Medium**
-* 推薦指數：[:star::star::star::star:] 培養認出適合用 Greedy 演算法的問題類型
+* 推薦指數：[:star::star::star::star:] 培養認出適合用 Greedy 演算法的問題類型，DP (dynamic programming) 和 Greedy 都是算處理本題蠻直觀的想法，但先想到哪一個就有可能導致造盲區而想不到另一個
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -64,7 +60,7 @@ class Solution:
 
 關鍵點是我們不是只能跳每一個 integer 指定的步數，而是小於該 integer 的步數都可以
 這造成，當我們有辦法抵達某一個 index `i`，根據該 index 提供的 integer `a[i]`，我們能夠到達更遠的地方也就是 index `i + a[i]`，而且，不是只能到達 index `i + a[i]` 而已，而是 index `i + a[i]` 以前的所有點我們都可以到達
-同時，index `i + a[i]` 以前的所有點的 integer，都能夠成為擴展我們的可到達區域的潛在武器。也就是說，我們目前的可到達區域，變成是 `Max( k + a[k] )`，其中 `0 <= k <= i`
+同時，index `i + a[i]` 以前的所有點的 integer，都能夠成為擴展我們的可到達區域的潛在武器。也就是說，我們目前的可到達區域，變成是 `max(k + a[k])`，其中 `0 <= k <= i`
 
 如果今天 `Max( k + a[k] )` 可以覆蓋到 index `n-1`，那就代表我們能夠抵達終點
 
@@ -76,19 +72,37 @@ class Solution:
 ``` python
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        length = len(nums)
+        l = len(nums)
+        cur = 0
         reached = 0
-        for i in range(length):
-            if i <= reached:
-                reached = i + nums[i] if i + nums[i] > reached else reached
-                if reached >= length-1:
-                    return True
-            else:
-                return False
+        while cur <= reached:
+            reached = max(reached, cur+nums[cur])
+            if reached >= (l-1):
+                return True
+            cur += 1
         return False
 ```
 
-為什麼 Greedy 比較省時間，因為 Greedy 只關心『是否可能有解』；反過來說，他能夠有效率的判斷出『無解』的狀況，也就是第 11,12 行的作用
+``` cpp
+class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int goal = nums.size()-1;
+        int reached = 0;
+        
+        int i = 0;
+        while (i <= reached) {
+            reached = max(i+nums[i], reached);
+            if (reached >= goal) { return true; }
+            i++;
+        }
+        
+        return false;
+    }
+};
+```
+
+為什麼 Greedy 比較省時間，因為 Greedy 只關心『是否可能有解』；反過來說，他能夠有效率的判斷出『無解』的狀況
 如果採用 DP，他需要要把所有有辦法踩到的點都踩完，才能夠下『無解』的結論，看下面這個例子就很明顯
 
 |       |   |   |   |   |   |   |   |   |   |
@@ -96,7 +110,7 @@ class Solution:
 | index | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | value | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 | x |
 
-如果採用 Greedy，for loop 跑完 9 輪就知道無解，`reached` 一直無法突破 7 到達 8
+如果採用 Greedy，for loop 跑完 9 輪就知道無解，`reached` 一直無法突破 index 7 到達 index 8
 
 但如果用 DP，總共嘗試的路徑用 index 表示就會是
     0 -> 7 return False, failed[7]=True

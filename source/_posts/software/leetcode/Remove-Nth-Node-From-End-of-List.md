@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #19 Remove Nth Node From End of List'
-tags:
-  - leetcode:ll
 categories: software/leetcode
 keywords:
   - linked list
@@ -17,7 +15,7 @@ date: 2020-07-09 09:08:28
 
 * [Link](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 * 等級：**Medium**
-* 推薦指數：[:star::star::star:] 暴力解很容易，進階解不一定想到到，但看過就會。如果對 Rust 有興趣的可以就本題了解一些 Rust 的限制
+* 推薦指數：[:star::star::star:] 暴力解很容易，進階解要想一下，也是個典型 2-pointer 問題。如果對 Rust 有興趣的可以就本題了解一些 Rust 的限制。fast slow 是 2-pointer 問題中常見的技巧
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -50,6 +48,47 @@ date: 2020-07-09 09:08:28
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+class Solution:
+    '''
+    head = [0,1,2,3,4,5,6], n = 3
+
+    the index shall be remove is 4.
+    say we have a cursor starts traversal from head. we can have another pointer point to the node prior to cursor for 3 steps.
+    then when cursor reaches NULL, the pointer will point to the node to be removed
+
+    but actually what we really need is 3 instead of 4 because we are goint to modify the link of 3.
+    so the distance between the cursor and pointer shall be (n+1) steps
+
+    Test cases:
+        normal: [0,1,2,3,4,5,6], n=3
+        remove last node: [0,1,2], n=1
+        remove first node: [0,1,2], n=3
+        become empty: [0], n=1
+
+    '''
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        c = head
+        p = None
+        while n >= 0 and c:
+            c = c.next
+            n -= 1
+        
+        if c is None and n == 0: # remove head
+            return head.next
+        if n >= 0: # no node need to be removed
+            return head
+        
+        p = head
+        while c:
+            c = c.next
+            p = p.next
+        
+        p.next = p.next.next
+        
+        return head
+```
+
+``` python
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         D = ListNode(None, head)
@@ -234,6 +273,41 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
     
     return head;
 }
+```
+
+## Source Code (C++)
+
+``` cpp
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
+        struct ListNode dummy = ListNode(0, head);
+
+        struct ListNode *p = head;
+        while (n-- > 0) p = p->next;
+
+        struct ListNode *d = &dummy;
+        while (p != nullptr) {
+            p = p->next;
+            d = d->next;
+        }
+        
+        if (d == &dummy) return head->next;
+        
+        d->next = d->next->next;
+        return head;
+    }
+};
 ```
 
 > 最後也來看一下 4 種語言的 performance

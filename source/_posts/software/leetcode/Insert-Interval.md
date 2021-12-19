@@ -1,8 +1,6 @@
 ---
 title:
   - '[LeetCode] #57 Insert Interval'
-tags:
-  - leecode:interval
 categories: software/leetcode
 hide: true
 summary: Insert Interval
@@ -11,11 +9,9 @@ date: 2020-07-21 11:21:30
 
 ## Problem
 
-Insert Interval
-
 * [Link](https://leetcode.com/problems/insert-interval/)
 * 等級：**Medium**
-* 推薦指數：[:star::star::star:] 隨然說是 [#56 Merge Intervals](https://leetcode.com/problems/merge-intervals/) 的延伸，但也不見得就做得出這題
+* 推薦指數：[:star::star::star:] 隨然說是 [#56 Merge Intervals](https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/) 的延伸，但也不見得就做得出這題
 
 > :star: 有人推薦過的題目的我才會紀錄，所以即使我覺得只有一顆星他依舊是一題有其他人推薦的題目，只是我自己不覺得需要刷
 > :star::star: 代表我覺得有時間再看就好
@@ -30,6 +26,41 @@ Insert Interval
 ## Source Code (Python)
 
 ``` python
+'''
+  [  ]  [ ]   [      ]
+       [ ]
+       [    ]
+[]
+                 [      ]
+                       [  ]
+       [                    ]
+
+
+  [  ]  [ ]   [      ]
+       [ ]
+  [  ] [  ]
+
+  [  ]  [ ]   [      ]
+       [    ]
+  [  ] [    ]
+
+  [  ]  [ ]   [      ]
+[]
+[][  ]  [ ]   [      ]
+
+  [  ]  [ ]   [      ]
+                 [      ]
+  [  ]  [ ]   [         ]
+
+  [  ]  [ ]   [      ]
+                       [  ]
+  [  ]  [ ]   [      ] [  ]
+
+  [  ]  [ ]   [      ]
+       [                    ]
+  [  ] [                    ]
+
+'''
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         ans = [] # 跟 #56 一樣，採用『擴展』的作法是第一個重點
