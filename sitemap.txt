@@ -1,4 +1,5 @@
 https://chungchris.github.io/2022/10/21/travelling/seoul-2022-oct/
+https://chungchris.github.io/2021/07/08/taiwan/mazu/
 https://chungchris.github.io/404.html
 https://chungchris.github.io/google3527194fd03e4b79.html
 https://chungchris.github.io/categories/index.html
@@ -44,7 +45,6 @@ https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sort
 https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/
 https://chungchris.github.io/2021/06/20/software/compile/
 https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/
-https://chungchris.github.io/2021/07/08/taiwan/mazu/
 https://chungchris.github.io/README.html
 https://chungchris.github.io/
 https://chungchris.github.io/tags/%E9%9F%93%E5%9C%8B/

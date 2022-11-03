@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://chungchris.github.io/2021/07/08/taiwan/mazu/</loc>
+    
+    <lastmod>2022-11-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chungchris.github.io/404.html</loc>
     
     <lastmod>2022-10-21</lastmod>
@@ -408,15 +417,6 @@
   
   <url>
     <loc>https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/</loc>
-    
-    <lastmod>2022-10-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chungchris.github.io/2021/07/08/taiwan/mazu/</loc>
     
     <lastmod>2022-10-21</lastmod>
     
