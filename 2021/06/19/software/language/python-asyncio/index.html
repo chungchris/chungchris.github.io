@@ -1,0 +1,1374 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python,python3,asyncio,multithread">
+    <meta name="description" content="A nontypical software engineer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python Asyncio | A Po</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">A Po</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/software/" class="waves-effect waves-light">
+      
+      <i class="fas fa-laptop-code" style="zoom: 0.6;"></i>
+      
+      <span>Software</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/travel/" class="waves-effect waves-light">
+      
+      <i class="fas fa-plane" style="zoom: 0.6;"></i>
+      
+      <span>Travelling</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/taiwan/" class="waves-effect waves-light">
+      
+      <i class="fas fa-shoe-prints" style="zoom: 0.6;"></i>
+      
+      <span>Taiwan</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/sketch/" class="waves-effect waves-light">
+      
+      <i class="fas fa-pencil-alt" style="zoom: 0.6;"></i>
+      
+      <span>Sketch</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">A Po</div>
+        <div class="logo-desc">
+            
+            A nontypical software engineer
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/software/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-laptop-code"></i>
+			
+			Software
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/travel/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-plane"></i>
+			
+			Travelling
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/taiwan/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-shoe-prints"></i>
+			
+			Taiwan
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/sketch/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pencil-alt"></i>
+			
+			Sketch
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://drive.google.com/uc?export=view&id=1F0iUOrLUW3LUjUblbZ32iyuE6sqTpoaT')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python Asyncio</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/multithread/">
+                                <span class="chip bg-color">multithread</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/software/" class="post-category">
+                                software
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-06-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-10-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    17 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇對於 event loop 的假設皆為最典型的運用，即 main thread 上跑一個 asyncio event loop。</p>
+<p>基本上並不建議混用 <code>threading</code> 和 <code>asyncio</code>，但依然會有本篇的需求原因是，即使單一 app/module 沒有混用 <code>threading</code> 和 <code>asyncio</code>，也會有需要和其他 app/module 互動的狀況。<br>身為一個採用 asyncio 設計的應用程式，如何安全的使用其他應用提供的接口，以及如何提供安全的接口給其他應用使用，是本篇的撰寫動機。</p>
+<p>之所以會有這篇整理是因為，若我們要用 <code>asyncio</code> 用來取代 multithread，會有一個關鍵差異是，multithread 仰賴於 CPU 分時，所以當各項任務跑在各個 thread，基本上如果哪個任務佔住了 CPU（就比如 time.sleep()），其實他終究無法真正獨佔住 CPU 那麼長時間，因為還有底層的 CPU 分時和 multicore 在運作，這不是他能控制的。但 asyncio 就不一樣了，他跑在單一 thread，在一個 event loop 上輪流執行多項任務，所以如果某個任務卡住了 event loop，那 loop 中排程的其他任務也就都被卡著無法執行了。所以，從不影響其他任務的角度來說，我們在使用 <code>asyncio</code> 時，要儘量避免有 blocking 的狀況，要改以 aysncio style 的 blocking，也就是說該 flow 是 block 住了，但事實上不會佔住 event loop 不釋放，讓其他 task 得以繼續在 event loop 上被執行。</p>
+<p>（本篇假設為 Pyhton 3.5 以後，所以不會看到 yield）</p>
+<blockquote>
+<p>使用 asyncio 會有以下三種情境</p>
+<p>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</p>
+<p>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</p>
+<p>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</p>
+</blockquote>
+<br>
+
+<hr>
+<h2 id="A-在-event-loop-中跑某個-task-時，想要將另一件-task-也排程進-event-loop-被執行-沒有跨-thread"><a href="#A-在-event-loop-中跑某個-task-時，想要將另一件-task-也排程進-event-loop-被執行-沒有跨-thread" class="headerlink" title="A.在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)"></a>A.在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</h2><p>假設現在正在跑的程式段叫做主線任務，我們可以觸發一個支線任務，支線任務其實就是一個 function call。主線任務與支線任務的關係有兩種，一種是不需要等待支線任務結束，也就是說只要觸發就行了，主線任務可以直接繼續跑。一種是要等待支線任務結束，可能是為了執行順序上的需要，更多時候是為了取得支線任務的產出或結果。</p>
+<h3 id="await"><a href="#await" class="headerlink" title="await"></a>await</h3><p>對於需要等待其結果的，往往運用 <code>await</code> 就足夠。<code>await</code> 後面可接 awaitable objects: <code>Coroutines</code>, <code>Tasks</code>, 或 <code>Futures</code>。</p>
+<blockquote>
+<p>Coroutines<br>A coroutine function: an async def function</p>
+</blockquote>
+<blockquote>
+<p>Tasks<br>Tasks are used to schedule coroutines concurrently.<br>When a coroutine is wrapped into a Task with functions like asyncio.create_task() the coroutine is automatically scheduled to run soon</p>
+</blockquote>
+<blockquote>
+<p>Futures<br>A Future is a special low-level awaitable object that represents an eventual result of an asynchronous operation.</p>
+</blockquote>
+<p>本篇旨在建議如何運用，不涉及其差異的討論。只要知道 Python 裡面每個 function 如果前面加上 <code>async def</code>（此種 function 就叫做 coroutine function），那他就成為一個 <code>awaitable</code> object，可以被接在 <code>await</code> 的後面。<br><code>await</code> 是在 <code>Python 3.5</code> 導入，取代之前的 <code>yield</code>，讓語法變得更可讀，他背後其實就是用 <code>yield</code> 在實現暫停掛起函數的效果 ，「掛起」的意思就是將控制權交給事件循環 (event loop) 並等待返回。<br><code>await</code> 搭配 <code>async def</code> 在實務使用上真實意義，我們在另一篇描述。</p>
+<h3 id="ensure-future-x2F-call-soon"><a href="#ensure-future-x2F-call-soon" class="headerlink" title="ensure_future / call_soon"></a>ensure_future / call_soon</h3><p>對於不需要等待結果的，這裡有兩個選擇 <code>ensure_future()</code> 跟 <code>call_soon()</code>，設計上雖然有些不同，但說多數時候可以用 <code>call_soon</code> 的地方也可以換成 <code>ensure_future</code>，反之亦然。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loop<span class="token punctuation">.</span>call_soon<span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> context<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Schedule the <code>callback</code> to be called with args arguments at the next iteration of the event loop.<br>Callbacks are called in the order in which they are registered. Each callback will be called exactly once.<br>An optional keyword-only context argument allows specifying a custom <code>contextvars.Context</code> for the callback to run in. The current context is used when no context is provided.<br>An instance of  asyncio.Handle   is returned, which can be used later to cancel the callback.<br>This method is not thread-safe.</p>
+</blockquote>
+<p>從上面描述可以看到，<code>call_soon()</code> 主要是被設計來給 <code>callback</code> 使用，意思就是我要把一個 callback function 放進 event loop 排程被執行。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token punctuation">,</span> loop<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Return:</p>
+<ul>
+<li><p>obj argument as is, if obj is a <code>Future</code>, a <code>Task</code>, or a Future-like object (<code>isfuture()</code> is used for the test.)</p>
+</li>
+<li><p>a Task object wrapping obj, if obj is a coroutine (<code>iscoroutine()</code> is used for the test); in this case the coroutine will be scheduled by <code>ensure_future()</code>.</p>
+</li>
+<li><p>a Task object that would await on obj, if obj is an awaitable (inspect.<code>isawaitable()</code> is used for the test.)</p>
+</li>
+</ul>
+<p>If obj is neither of the above a <code>TypeError</code> is raised.<br>Important: See also the <code>create_task()</code> function which is the preferred way for creating new <code>Tasks</code>.</p>
+</blockquote>
+<p>從上面描述可以看到，<code>ensure_future()</code> 就是要把一個 <code>task</code> 放進 event loop，而 <code>task</code> 往往就是一個 function object 的形式，所以其實最後長得就跟 <code>call_soon()</code> 一樣，看起來都是把一個 function 排程進 event loop。<br>我自己都是用 <code>ensure_future()</code> 因為他可以直接把 arguments 寫在括號裡面，看起來比較直覺。<br>（這部分也可以看出他們設計本意上的不同，一個是 <code>callback</code>，所以有 context 考量，一個是傳遞一個 awaitable object，參數都在產生 object 時包含進去，本篇就不在這細節部分著墨）</p>
+<p>另外最後一句可以注意一下， <code>create_task()</code> 和 <code>ensure_future()</code> 的差別就在，<code>ensure_future()</code> 只是把 <code>task</code> 放進去等待被執行，需要 event loop 有在跑才行；而 <code>create_task()</code> 則是同時就會確保 event loop 有在跑，如果本來沒在跑，就會把他跑起來。實務上因為我們常常在 main thread 跑起來的開頭處就用了 <code>loop.run_forever()</code>，所以 loop 其實一直都在跑，這種狀況下只要用 <code>ensure_future()</code>，<code>task</code> 就都會被執行到。</p>
+<hr>
+<h2 id="B-在-event-loop-中跑某個-task-時，想要呼叫跑在其他-thread-的-API，或者說想要交付某個工作在其他-thread-執行，並等待其結果"><a href="#B-在-event-loop-中跑某個-task-時，想要呼叫跑在其他-thread-的-API，或者說想要交付某個工作在其他-thread-執行，並等待其結果" class="headerlink" title="B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果"></a>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</h2><p>當我們的程式採用 <code>async</code> 設計，但常常也有需要透過外部 API 拿到某個值後 flow 才能繼續走下去的狀況，但又不能 block 住在那邊傻等。因為如果該外部 API 是一個 IPC API，那對方若晚回應甚至沒回應，如果傻等，豈不是我們的 event loop 就卡在這邊等，但 event loop 上明明還有其他 task 可以在這段時間先跳去做。<br>有兩種做法，取決於外部 API 是怎麼返還我們在等的結果？是透過 return 還是透過 callback。也就是說，我們所關心的「結果值」，是透過 return 返還來的，還是說會透過我們提供過去的 callback function 傳過來。<br>如果是只關心 return 值的狀況，做法就是掛起當前的 task，然後起一個 thread 在上面去 call 外部 API 並等待 return，該 API return 後，再將結果值設回 event loop，相當於告知可以在接下來的排程繼續剛剛掛起的地方執行了，這種方法運用到的就是 <code>run_in_executor()</code></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">awaitable loop<span class="token punctuation">.</span>run_in_executor<span class="token punctuation">(</span>executor<span class="token punctuation">,</span> func<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">)</span>¶<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Arrange for func to be called in the specified executor.<br>The executor argument should be an <code>concurrent.futures.Executor</code> instance. The default executor is used if executor is <code>None</code>.</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> time
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">task_b</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b'</span></span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment"># simulate calling an external api</span>
+    <span class="token keyword">return</span> i <span class="token operator">+</span> <span class="token string">" world"</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_c: put a task to executor'</span></span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> <span class="token keyword">await</span> event_loop<span class="token punctuation">.</span>run_in_executor<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> task_b<span class="token punctuation">,</span> <span class="token string">"hello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_c: result: </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+event_loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>task_a<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>event_loop<span class="token punctuation">)</span>
+asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>task_c<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>event_loop<span class="token punctuation">)</span>
+event_loop<span class="token punctuation">.</span>run_forever<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>這段 code 我們假設 <code>task_b</code> 裡面包了一個 call external API，模擬該 API 花 4 秒時間才會返還。而我們的 main thread 上，有著 <code>task_a</code> 這項一直需要進行的工作，另外還有一個 <code>task_c</code>，會需要用到包在 <code>task_b()</code> 裡的 external API。我們預期 <code>task_c</code> 在等待 <code>task_b</code> 裡的 external API 有結果的同時，這個等待期間，main loop 應該還是能要繼續處理 <code>task_a</code> 的工作。所以執行結果就是</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">task_a: <span class="token number">0</span>
+task_c: put a task to executor
+task_b
+task_a: <span class="token number">1</span>
+task_a: <span class="token number">2</span>
+task_c: result: hello world
+task_a: <span class="token number">3</span>
+task_a: <span class="token number">4</span>
+task_a: <span class="token number">5</span>
+<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面是假設外部 API 是以 <code>return</code> 的方式來返還結果，如果是外部 API 會以 <code>callback</code> 的方式來返還結果，也就是說，他可能很快就 return 了，但 return 值可以能只是表示他有收到 request 了，而實際上我們需要的結果，可能在稍後才會透過 callback 傳給我們。<br>我們會需要掛起原本的 flow，然後在 callback function 裡面實作告知可以在剛剛掛起的地方繼續執行的邏輯，這種就需要運用到操作 <code>future</code> 物件，因為 <code>future</code> 就是一個可以讓 asyncio 知道什麼時候該掛起什麼時候可以繼續執行的物件。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loop<span class="token punctuation">.</span>create_future<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Create an asyncio.Future object attached to the event loop.<br>This is the preferred way to create Futures in asyncio. This lets third-party event loops provide alternative implementations of the Future object (with better performance or instrumentation).</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">set_result<span class="token punctuation">(</span>result<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Mark the <code>Future</code> as done and set its result.<br>Raises a <code>InvalidStateError</code> error if the <code>Future</code> is already done.</p>
+</blockquote>
+<p>看看這個例子</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> queue
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> threading
+
+<span class="token keyword">def</span> <span class="token function">my_thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'my_thread: started'</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        job <span class="token operator">=</span> q<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        value <span class="token operator">=</span> job<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">)</span>
+        callback <span class="token operator">=</span> job<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'callback'</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread: got job, with value </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+        callback<span class="token punctuation">(</span>value<span class="token operator">*</span>value<span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">task_b</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">callback</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'callback got result:</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">nonlocal</span> fut
+        fut<span class="token punctuation">.</span>set_result<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b'</span></span><span class="token punctuation">)</span>
+    fut <span class="token operator">=</span> event_loop<span class="token punctuation">.</span>create_future<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>put<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'value'</span><span class="token punctuation">:</span> i<span class="token punctuation">,</span> <span class="token string">'callback'</span><span class="token punctuation">:</span> callback<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> <span class="token keyword">await</span> fut
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'task_b got result:</span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> result
+
+q <span class="token operator">=</span> queue<span class="token punctuation">.</span>Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>my_thread<span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+event_loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>task_a<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>event_loop<span class="token punctuation">)</span>
+asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>task_b<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>event_loop<span class="token punctuation">)</span>
+event_loop<span class="token punctuation">.</span>run_forever<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>這裏起了個 thread 假裝是外部 module，我們會需要它提供的服務，而他的服務很簡單，就是把我們傳進去的值平方，但他要花 4 秒的時間。<br>第 29 行，我們很輕易的就能把 request 傳給外部 module，他稍後會透過 callback 把他的服務產出傳回來。<br>所以就會看到我們用 <code>create_future</code> 創造一個 <code>future</code> 物件，在 30 行 <code>await</code> 掛起，意思就是要 asyncio 等待此 future 完成的時候才繼續往下走，而讓此 future 轉變為完成狀態的方式就是透過 <code>set_result()</code>。所以我們在 callback function 的實作裡面，就把外部 API 傳來的結果傳到 <code>set_result</code>，這樣同時達到告知此 future 已完成的效果，且也有傳遞結果的功用。所以執行起來就是</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">my_thread: started
+task_a: <span class="token number">0</span>
+task_b
+my_thread: got job, with value <span class="token number">5</span>
+task_a: <span class="token number">1</span>
+task_a: <span class="token number">2</span>
+task_a: <span class="token number">3</span>
+callback got result:25
+task_b got result:25
+task_a: <span class="token number">4</span>
+task_a: <span class="token number">5</span>
+<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>關鍵就是注意到我們等待 external API 將結果透過 callback 回傳的那段時間，<code>task_a</code> 的工作還是能持續被 event loop 處理。</p>
+<hr>
+<h2 id="C-其他-thread-的工作想要呼叫跑在-event-loop-的-API，換句話說，其他-thread-想交付工作到-event-loop-裡執行"><a href="#C-其他-thread-的工作想要呼叫跑在-event-loop-的-API，換句話說，其他-thread-想交付工作到-event-loop-裡執行" class="headerlink" title="C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行"></a>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</h2><p>這裏會提兩個 API- <code>run_coroutine_threadsafe()</code> 和 <code>call_soon_threadsafe()</code>，<code>run_coroutine_threadsafe</code> 就是 <code>call_soon_threadsafe</code> 的升級版，所以基本上用 <code>run_coroutine_threadsafe</code> 即可。</p>
+<h3 id="call-soon-threadsafe"><a href="#call-soon-threadsafe" class="headerlink" title="call_soon_threadsafe()"></a>call_soon_threadsafe()</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">loop<span class="token punctuation">.</span>call_soon_threadsafe<span class="token punctuation">(</span>callback<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> context<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>A thread-safe variant of <code>call_soon()</code>. Must be used to schedule callbacks from another thread.</p>
+</blockquote>
+<p>用於兩個 thread 間的 context switch，比如 main thread 上跑了 event loop，如果從另外一個 thread call 了一個 API，該 API 的工作內容想要跑在 main thread event loop，那就可以使用此 <code>call_soon_threadsafe()</code>，在 API 的一開頭就將 thread 切到 main thread event loop。</p>
+<p>關於參數有一個注意事項是</p>
+<blockquote>
+<p>Most asyncio scheduling functions don’t allow passing keyword arguments. To do that, use <code>functools.partial()</code>:</p>
+</blockquote>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># will schedule "print("Hello", flush=True)"</span>
+loop<span class="token punctuation">.</span>call_soon<span class="token punctuation">(</span>
+    functools<span class="token punctuation">.</span>partial<span class="token punctuation">(</span><span class="token keyword">print</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> flush<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>Using partial objects is usually more convenient than using <code>lambdas</code>, as asyncio can render partial objects better in debug and error messages.</p>
+</blockquote>
+<p>也就是說因為沒辦直接像下面這樣用，所以要用 functools.partial 包裝</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loop<span class="token punctuation">.</span>call_soon<span class="token punctuation">(</span><span class="token keyword">print</span><span class="token punctuation">,</span> <span class="token string">"Hello"</span><span class="token punctuation">,</span> flush<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="run-coroutine-threadsafe"><a href="#run-coroutine-threadsafe" class="headerlink" title="run_coroutine_threadsafe()"></a>run_coroutine_threadsafe()</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">asyncio<span class="token punctuation">.</span>run_coroutine_threadsafe<span class="token punctuation">(</span>coro<span class="token punctuation">,</span> loop<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>Submit a coroutine to the given event loop. Thread-safe.<br>Return a <code>concurrent.futures.Future</code> to wait for the result from another OS thread.<br>This function is meant to be called from a different OS thread than the one where the event loop is running.</p>
+</blockquote>
+<p>用途上跟 <code>call_soon_threadsafe()</code> 看起來一樣，都是做 thread 間的工作傳遞，從其他 thread 將工作傳到 main thread event loop 來做。其實 <code>run_coroutine_threadsafe</code> 内部就是用了 <code>call_soon_threadsafe</code>，而差別就在：<br><code>call_soon_threadsafe</code>· 參數給一個 <code>callback</code>，將該 callback 加入 event loop 的排程，也就是未來會在 main thread event loop 上執行到該 callback 的意思。<br>而 <code>run_coroutine_threadsafe</code> 雖然意思看起來也是把某個 function 丟到 event loop 去做，但他更進一步提供了 return <code>Future</code> 物件的功能，透過 <code>Future.result</code> 就同時有取得 callback 的回傳值和更重要的是阻塞的效果。</p>
+<p>看下面這個簡單的例子，main thread 上跑 event loop，上面本來只跑著 <code>my_task_a()</code>，另外有個 <code>thread1</code> 將工作 <code>my_task_b</code> 交付到 main thread event loop 執行，等於與 <code>my_task_a</code> 分享 event loop 來執行，並且執行結果 return 給 <code>thread1</code>，值得注意的是第 11 行，<code>thread1</code> 透過 <code>Future.result</code> 即達成等待的效果。換句話說，如果是想射後不理，不在乎結果，那不用有 <code>Future.result</code> 即不會等待。這裡講的等待並不是指阻塞 event loop 運行，而是停住本段 code 繼續往下走，也就是事情還沒做完前不會 return。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> asyncio
+<span class="token keyword">import</span> threading
+<span class="token keyword">import</span> time
+
+<span class="token keyword">def</span> <span class="token function">my_thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'my_thread: started'</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'my_thread: ask to run my_task_b() on main thread event loop'</span><span class="token punctuation">)</span>
+    future <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>run_coroutine_threadsafe<span class="token punctuation">(</span>my_task_b<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'my_thread: request sent'</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span> future<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_thread result: </span><span class="token interpolation"><span class="token punctuation">{</span>result<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">my_task_a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_a: </span><span class="token interpolation"><span class="token punctuation">{</span>i<span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">my_task_b</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_b got job'</span></span><span class="token punctuation">)</span>
+    countdown <span class="token operator">=</span> value
+    <span class="token keyword">while</span> countdown<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'my_task_b is processing job'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        countdown <span class="token operator">=</span> countdown <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> value<span class="token operator">*</span>value
+
+threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>my_thread<span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+loop <span class="token operator">=</span> asyncio<span class="token punctuation">.</span>get_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+asyncio<span class="token punctuation">.</span>ensure_future<span class="token punctuation">(</span>my_task_a<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loop<span class="token operator">=</span>loop<span class="token punctuation">)</span>
+loop<span class="token punctuation">.</span>run_forever<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>執行結果為</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">my_thread: started
+my_task_a: <span class="token number">0</span>
+my_task_a: <span class="token number">1</span>
+my_thread: ask to run my_task_b<span class="token punctuation">(</span><span class="token punctuation">)</span> on main thread event loop
+my_task_a: <span class="token number">2</span>
+my_thread: request sent
+my_task_b got job
+my_task_b is processing job
+my_task_a: <span class="token number">3</span>
+my_task_b is processing job
+my_task_a: <span class="token number">4</span>
+my_task_b is processing job
+my_task_a: <span class="token number">5</span>
+my_task_b is processing job
+my_task_a: <span class="token number">6</span>
+my_task_b is processing job
+my_task_a: <span class="token number">7</span>
+my_thread result: <span class="token number">25</span>
+my_task_a: <span class="token number">8</span>
+my_task_a: <span class="token number">9</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>另外，既然有阻塞，那就需要擔心阻塞多久的問題，我們往往不希望其他 process/thread 的無能造成我們自己本身阻塞太久甚至永遠被阻塞，所以需要設個 timeout 值，這可以透過 result 直接設。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    result <span class="token operator">=</span> future<span class="token punctuation">.</span>result<span class="token punctuation">(</span>timeout<span class="token punctuation">)</span>
+<span class="token keyword">except</span> asyncio<span class="token punctuation">.</span>TimeoutError<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'The coroutine took too long, cancelling the task...'</span><span class="token punctuation">)</span>
+    future<span class="token punctuation">.</span>cancel<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>使用 asyncio 所會遇到的三種情境，若只有應用程式內部使用</p>
+<blockquote>
+<p><strong>A. 在 event loop 中跑某個 task 時，想要將另一件 task 也排程進 event loop 被執行 (沒有跨 thread)</strong></p>
+<p>就是用 <code>await</code> 和 <code>ensure_future()</code>。<code>await</code> 用於該 flow 需要等 callee 的結果才能繼續走，<code>ensure_future()</code> 用於只是要觸發 callee，不需要等其結果，直接可以繼續走。</p>
+</blockquote>
+<p>而對於需與其他應用程式交互的情境，分為提供 API 給其他人使用，以及呼叫其他人提供的 API。</p>
+<blockquote>
+<p><strong>B. 在 event loop 中跑某個 task 時，想要呼叫跑在其他 thread 的 API，或者說想要交付某個工作在其他 thread 執行，並等待其結果</strong></p>
+<p>當呼叫其他人提供的 API 時，我們不希望等待其結果的這段時間，會卡住我們的 event loop 無法運作。這種情境又會分為兩種狀況，取決於我們 call 外部 API 時，我們所需要取得的結果是透過 return 回傳還是透過 callback 回傳。若是透過 return 回傳，就使用 <code>run_in_executor()</code>；若是透過 callback 回傳，就需要用到 <code>create_future()</code> 創造 <code>future</code> 物件，<code>await</code> 該物件，然後在 callback 中<code>set_result()</code> 告知該 future 已有結果。</p>
+</blockquote>
+<blockquote>
+<p><strong>C. 其他 thread 的工作想要呼叫跑在 event loop 的 API，換句話說，其他 thread 想交付工作到 event loop 裡執行</strong></p>
+<p>當提供 API 給其他人使用時，我們想將其他人交付的工作排程入 event loop，就是用 <code>run_coroutine_threadsafe()</code>。</p>
+</blockquote>
+<br>
+
+<h2 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h2><p>本篇並沒有對各 API 舉詳細的範例及各種用法，不過相信以該 API 為關鍵字 Google 一下就有許多例子了。我想解決的痛點只是 <code>asyncio</code> 好像有好幾個名字都很像的 API 不知道什麼時候該使用哪個。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chris Chung</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://chungchris.github.io/2021/06/19/software/language/python-asyncio/">https://chungchris.github.io/2021/06/19/software/language/python-asyncio/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Chris Chung</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/multithread/">
+                                    <span class="chip bg-color">multithread</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://chungchris.github.io/2021/06/19/software/language/python-asyncio/';
+        this.page.identifier = '/2021/06/19/software/language/python-asyncio/';
+        this.page.title = 'Python Asyncio';
+    };
+    let disqus_shortname = 'chungchris-ghp';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/06/19/software/soft-ap-on-mac/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1XWjdURpRsMUQE2Kb8zivySl0JIUGW25F" class="responsive-img" alt="Soft AP on Mac. 在 Mac 上啟動 Soft AP 及 CGI handler">
+                        
+                        <span class="card-title">Soft AP on Mac. 在 Mac 上啟動 Soft AP 及 CGI handler</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            把 Mac 的 Wifi 當成 Soft AP 使用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mac/">
+                        <span class="chip bg-color">mac</span>
+                    </a>
+                    
+                    <a href="/tags/osx/">
+                        <span class="chip bg-color">osx</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="[LeetCode] #300 Longest Increasing Subsequence">
+                        
+                        <span class="card-title">[LeetCode] #300 Longest Increasing Subsequence</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            給定一個數列，取其中若干不連續從小到大排列的數字，求該數列最大可能長度
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                    software/leetcode
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: A Po<br />'
+            + 'Author: Chris Chung<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章成功權歸作者所有，形式的轉載都請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Chris Chung</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">76.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chungchris" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:imchungchris@@hotmail.com" class="tooltipped" target="_blank" data-tooltip="Wmail me" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="Subscribe RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js?ver=202106210516"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

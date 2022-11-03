@@ -1,0 +1,1231 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="data structure,sort,search,排序,搜尋,演算法,資料結構">
+    <meta name="description" content="A nontypical software engineer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>基礎資料結構演算法筆記 | A Po</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">A Po</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/software/" class="waves-effect waves-light">
+      
+      <i class="fas fa-laptop-code" style="zoom: 0.6;"></i>
+      
+      <span>Software</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/travel/" class="waves-effect waves-light">
+      
+      <i class="fas fa-plane" style="zoom: 0.6;"></i>
+      
+      <span>Travelling</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/taiwan/" class="waves-effect waves-light">
+      
+      <i class="fas fa-shoe-prints" style="zoom: 0.6;"></i>
+      
+      <span>Taiwan</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/sketch/" class="waves-effect waves-light">
+      
+      <i class="fas fa-pencil-alt" style="zoom: 0.6;"></i>
+      
+      <span>Sketch</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">A Po</div>
+        <div class="logo-desc">
+            
+            A nontypical software engineer
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/software/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-laptop-code"></i>
+			
+			Software
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/travel/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-plane"></i>
+			
+			Travelling
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/taiwan/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-shoe-prints"></i>
+			
+			Taiwan
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/sketch/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pencil-alt"></i>
+			
+			Sketch
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://drive.google.com/uc?export=view&id=1G-wi-CFGZuZzkAoz_iyVyeUZSXIlKlKm')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">基礎資料結構演算法筆記</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/sort/">
+                                <span class="chip bg-color">sort</span>
+                            </a>
+                        
+                            <a href="/tags/search/">
+                                <span class="chip bg-color">search</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">演算法</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/">
+                                <span class="chip bg-color">資料結構</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/software/" class="post-category">
+                                software
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-06-21
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-10-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    10 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>簡單的就直接空白了…</p>
+</blockquote>
+<h2 id="資料結構-Data-Structure"><a href="#資料結構-Data-Structure" class="headerlink" title="資料結構 Data Structure"></a>資料結構 Data Structure</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Stack-LIFO"><a href="#Stack-LIFO" class="headerlink" title="Stack: LIFO"></a>Stack: LIFO</h3><h3 id="Queue-FIFO"><a href="#Queue-FIFO" class="headerlink" title="Queue: FIFO"></a>Queue: FIFO</h3><h3 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h3><h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><ul>
+<li>Priority queue</li>
+<li>保證父節點比子節點小，不保證左右的大小關係</li>
+<li>Balance. 所以當取出 root 或新增 node 時，都是以最右下角的位置為對象。新增 node 時是新增在最右下角的空位，再一路往上與父節點比較看是非需要調換；取出 root 時，把最右下角的 node 移到 root，比較兩個子節點，與 3 者中最小者調換</li>
+</ul>
+<h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><ul>
+<li>保證每一個 subtree 的右側一定大於左側</li>
+<li>非 balance</li>
+<li>新增一定都成為葉節點</li>
+<li>刪除時若該節點有子節點，則把從左子樹最大值取上來，左子樹最大值就是其最右下的葉節點</li>
+<li>因為非 balance，所以蒐尋時間不一定。若平衡，為 <code>O(log n)</code>；若極度不平衡成一條線，那就是 <code>O(n)</code>。</li>
+</ul>
+<h3 id="Self-balancing-Binary-Search-Tree"><a href="#Self-balancing-Binary-Search-Tree" class="headerlink" title="Self-balancing Binary Search Tree"></a>Self-balancing Binary Search Tree</h3><h4 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h4><ul>
+<li>不平衡時會做 rotation，維持在平衡的狀態，可避免 BST 退化為鏈狀。rotation 前後 in-order traversal 順序相同。</li>
+<li>每一個節點需要維持其高度資訊：先為樹補上所有 null 葉節點，null 節點高度為 -1，其他節點是其子節點較大者 +1</li>
+<li>每一個節點需要計算其 Balance Factor (BF) ：左子節點的高度減右以節點的高度。所以若 BF 為負，代表右子樹比較大棵。需要注意若只差 1 還是容許的平衡狀態。</li>
+<li>Rebalance<ul>
+<li>當新增一個節點，整條路上的節點的高度資訊要更新。然後，從新節點往根部方向走兩層，也就是走到新結點的爺爺節點，看爺爺的 BF 是否小於 -1 或大於 1，如果是，那就代表要 Rebalance。怎則做 Rebalance 取決於剛剛怎麼從新節點走到爺爺的路，如果一路走左分枝上來，就是 LL，一路走右分枝就是 RR，同理還有 LR 和 RL，四種形態有對應的旋轉方式。</li>
+<li>當刪除一個節點，不管是把其左子樹最大值補位上來，還是把右子樹最小值補位上來，都是要整棵樹檢查。整棵樹檢查方式是任意挑一個頁節點往上檢查即可，如果一路到根部，都沒有出現 BF 小於 -1 或大於 1，那就平衡。若一旦發現就要根據其路徑立即做 LL/RR/LR/RL 對應的旋轉方式。旋轉完成後再從頭檢查一次，直到某次一路檢查到根部，都沒有出現 BF 小於 -1 或大於 1。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Red-Black-Tree"><a href="#Red-Black-Tree" class="headerlink" title="Red Black Tree"></a>Red Black Tree</h4><ul>
+<li>也是自平衡的 BST。AVL Tree，為了平衡會要經過好多次旋轉，而 RB Tree 的結構設計，使得任何不平衡都會在三次旋轉之內解決。</li>
+<li>然而嚴格上來說紅黑數只是幾乎平衡的 BST，因為他只保證「從 root 出發抵達葉節點的最長徑不會超過最短的兩倍」</li>
+<li>藉由以下 5 項特徵</li>
+</ul>
+<ol>
+<li>紅黑樹中的每一個節點不是黑色就是紅色</li>
+<li>根節點一定是黑色</li>
+<li>原本葉節點的 NULL 指標都另外新增補個葉節點給他，然後最終每一個葉節點一定是黑色</li>
+<li>如果某個節點是紅色，那麼其兩個子節點必定是黑色，不能有兩個紅色節點相連</li>
+<li>站在任何一個節點上，所有從該節點走到任意葉節點路經的黑色節點數必定相同</li>
+</ol>
+<ul>
+<li>根據上述特徵的第 4 點與第 5 點，紅黑樹中路徑可能的長度最小值一定是全部節點皆為黑色，而路徑可能的長度最大值一定是紅色黑色相間，如此便確保最長路徑不會超過最短路徑的兩倍的特性。</li>
+<li>新稱或刪除資料，都會根據節點位置有不同得對應方式，包含些修正一些節點的顏色，以及旋轉，但旋轉都是在三次以內，即可將其修正成符合紅黑數特徵。</li>
+</ul>
+<hr>
+<h2 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h2><h3 id="Bubble-sort"><a href="#Bubble-sort" class="headerlink" title="Bubble sort"></a>Bubble sort</h3><ul>
+<li>每次看相鄰 2 個數，確保左邊小於右邊，從最右側開始每次向左滑 1 單位，如此當回滑到最左側時，左手的值就是整串數列的最小值，這樣是一輪</li>
+<li>時間複雜度是 <code>O(n*n)</code>，因為預期比較動作就是進行 n!，但可以做的優化是如果有某一輪完全沒做 swap，那就可以終止。所以會得到 best case 是 <code>O(n)</code>，就是在原本就已經排好的狀況</li>
+</ul>
+<h3 id="Selection-sort"><a href="#Selection-sort" class="headerlink" title="Selection sort"></a>Selection sort</h3><ul>
+<li>一次把數張撲克牌攤開在手上，最直覺的排法就是，眼光從作掃到右，挑出其中最小的，移到最左邊</li>
+<li>時間複雜度是 <code>O(n*n)</code></li>
+</ul>
+<h3 id="Insertion-sort"><a href="#Insertion-sort" class="headerlink" title="Insertion sort"></a>Insertion sort</h3><ul>
+<li>一張一張把撲克牌拿起來，插到對的位置。如果用 array 來看，就是以最左邊為起點，往右一個一個加進來到對的位置</li>
+<li>時間複雜度是 <code>O(n*n)</code>，因為預期比較動作就是進行 n!。best case 是 <code>O(n)</code>，就是在原本就已經排好的狀況，每當多看一個數，都發現其大於左側已確定的數列中的最大值，也就是每一輪的第一次比較就發現本輪結束</li>
+</ul>
+<h3 id="Heap-sort"><a href="#Heap-sort" class="headerlink" title="Heap sort"></a>Heap sort</h3><ul>
+<li>創造 heap 需要 <code>O(n log n)</code>，因為有 n 個數，而插入每個數的預期時間與高度相關</li>
+<li>從 heap 取出每次都取 root，但 heap 要因此調整，時間是 <code>O(log n)</code>，所以全部取完是 <code>O(n log n)</code></li>
+</ul>
+<h3 id="Merge-sort"><a href="#Merge-sort" class="headerlink" title="Merge sort"></a>Merge sort</h3><ul>
+<li>把數列兩兩一組，完成排序後，再把兩組合併。合併方式為比較兩組當中最左側的值，將較小者取出。這樣為完成一輪</li>
+<li>時間是 <code>O(n log n)</code>，因爲每輪各組總共 n 次比較，而總共有 log n 輪</li>
+</ul>
+<h3 id="Quick-sort"><a href="#Quick-sort" class="headerlink" title="Quick sort"></a>Quick sort</h3><ul>
+<li>隨機選取 pivot，把比 pivot 小的放一邊大的放一邊。再對左右兩邊做相同處理</li>
+<li>如果運氣好 pivot 選得好，造成每次左右兩邊數量一樣，那時間就是 <code>O(n log n)</code>；如果運氣不好，造成每次的都只有的單邊，那時間就是 <code>O(n*n)</code></li>
+</ul>
+<hr>
+<h2 id="搜尋-Search"><a href="#搜尋-Search" class="headerlink" title="搜尋 Search"></a>搜尋 Search</h2><h3 id="Array-Linear-search"><a href="#Array-Linear-search" class="headerlink" title="[Array] Linear search"></a>[Array] Linear search</h3><p>從左到右，所以不管原本的數列是已排列或未排列</p>
+<h3 id="Array-Binary-search"><a href="#Array-Binary-search" class="headerlink" title="[Array] Binary search"></a>[Array] Binary search</h3><p>僅用於已排列，每次與中間位置比較，所以搜尋時間是 <code>O(log n)</code></p>
+<h3 id="Graph-BFS-廣度優先-Breadth-First-Traversal"><a href="#Graph-BFS-廣度優先-Breadth-First-Traversal" class="headerlink" title="[Graph] BFS 廣度優先 Breadth First Traversal"></a>[Graph] BFS 廣度優先 Breadth First Traversal</h3><ul>
+<li>原本 queue 裡只有 root，把他取出，如果不符合欲搜尋對象，就把其子節點他們全部推進 queue 裡，這樣為一輪。之後再從 queue 取出一個進行下一輪</li>
+<li>圖中有迴圈的情形也適用</li>
+<li>1 2 3 4 5</li>
+</ul>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1kAUUd4qOkt5eRkzpA8jB95r9_jGhyy2U" alt="範例"></p>
+<h3 id="Graph-DFS-深度優先"><a href="#Graph-DFS-深度優先" class="headerlink" title="[Graph] DFS 深度優先"></a>[Graph] DFS 深度優先</h3><ul>
+<li>換成搭配 stack</li>
+<li>Inorder traversal：造訪順序為 左 -&gt; 中 -&gt; 右 (4 2 5 1 3)</li>
+<li>Preorder traversal：造訪順序為 中-&gt; 左 -&gt; 右 (1 2 4 5 3)</li>
+<li>Postorder traversal：造訪順序為 左 -&gt; 右 -&gt; 中 (4 5 2 3 1)</li>
+</ul>
+<h3 id="Graph-Bellman-Ford-找出最短路徑"><a href="#Graph-Bellman-Ford-找出最短路徑" class="headerlink" title="[Graph] Bellman-Ford 找出最短路徑"></a>[Graph] Bellman-Ford 找出最短路徑</h3><ol>
+<li>把起點設為 0，其他點暫設為無限大</li>
+<li>工作對象是「所有的邊」，每一輪都是把所有的邊都看一次，看邊上的兩點，從 A 到 B 或從 B 到 A 的值，是否可以更小</li>
+<li>只要每一輪都還有更新任一點的值，都代表還要進行下一輪，直到某一輪完全沒有更新任何點上的值時結束，此時終點上的值就是最短路徑</li>
+</ol>
+<ul>
+<li>若有 <code>v</code> 個點，<code>e</code> 個邊，時間為 <code>O(ev)</code>。原因是每一輪都要檢查 e個邊，而最多能跑幾輪？<br>在第 1 輪結束後，得到的是起點最多經過一條邊到達其他點的最短距離；第 2 輪結束後，得到的是起點最多經過兩條邊到達其他點的最短距離；那要到底幾輪才會是到終點的最短距離呢？<br>圖中任兩點的最短距離，頂多經過 v-1 個邊，也就是從起點途經所有點才抵達終點的狀況。因為如果某一點造訪兩次，那代表有迴圈出現，這基本上純粹成本增加<br>如此說來，第 v-1 輪結束後，得到的是起點最多經過 v-1 條邊到達其他點的最短距離，有就是我們最多需要執行的輪數，所以總時間為 <code>O(ev)</code></li>
+<li>負數邊和圖中有迴圈皆可用，但若同時有負數邊和迴圈，則會出現迴圈一直跑就成本一直遞減的狀況，所以最短路徑其實不存在，也就是說當執行輪數到達 v 卻還有值能更新時，即可判斷為最短路徑不存在</li>
+</ul>
+<h3 id="Graph-Dijkstra’s-找出最短路徑"><a href="#Graph-Dijkstra’s-找出最短路徑" class="headerlink" title="[Graph] Dijkstra’s 找出最短路徑"></a>[Graph] Dijkstra’s 找出最短路徑</h3><ol>
+<li>把起點設為 0，其他點暫設為無限大</li>
+<li>工作對象從起點開始，更新起點的相鄰點上的值，如此為一輪</li>
+<li>從目前看過的點中，選擇值最小者，作為第二輪的開頭</li>
+<li>如此重複，直到選擇到終點為工作點為止</li>
+</ol>
+<ul>
+<li>若有 v 個點 e 個邊，時間為 <code>O(v\*v)</code>。原因是每一輪結束，都會確認下由起點到達某一點的最短路徑。總共可有 v-1 個點要確認，所以要進行 v-1 輪。而每一輪，要把當前工作點所一步能及的所有相鄰點做更新，每一點的相鄰點可為 v-1，所以總共是 <code>O(v*v)</code></li>
+<li>與 <code>Bellman-Ford</code> 比較：v 個點最多能有 v*(v-1)/2 個邊，且 v 大多數時候小於 e，所以 vv 大部份時候小於 ve，所以 <code>Dijkstra’s</code> 比較快，尤其是稀疏圖的 v 就是偏小的時候。而且若 <code>Dijkstra’s</code> 的實作使用 Fibonacci heap 存圖，則時間複雜度可提升到 <code>O(e + v log v)</code></li>
+<li>Greedy 在每一輪得到從起點到某一點的最短路徑，所以這也造成無法處理有負數邊的狀況。因為每一輪都只能看到目前所看過的點和邊，如果是還沒看到的邊而且為負數邊，那就會造成以為已經得到到從起點到某一點的最短路徑但其實不然，因為未來某負數邊的加入會改變這一結論。（無法處理負迴圈，但可以處理迴圈）</li>
+</ul>
+<h3 id="Graph-A-找出最短路徑"><a href="#Graph-A-找出最短路徑" class="headerlink" title="[Graph] A* 找出最短路徑"></a>[Graph] A* 找出最短路徑</h3><p><code>A*</code> 是 <code>Dijkstra’s</code> 的發展，<code>Dijkstra’s</code> 每一輪會決定出從起點到某一點的最短路徑，但該點以結論來說，有可能根本不在最短路徑上，所以最終來看就是一種浪費</p>
+<p><code>A*</code> 導入了試探權重 heuristic cost，僅是一種人為的、根據其他已知客觀條件所給的推測、建議性質參數，在選擇下個點時提供幫助。在每一輪，每一點的試探權重與當前由起點抵達該點的成本相加，取其中最小者作為下一點，如果試探權重很符合真實狀況，那就會更快探索到終點並結束，但這並不見得是最佳路徑，因為根本有些點還沒被探索到，你無法確定是不是如果經過那些點會得到一條更佳的路徑，所以目前的到的結果只能說是考慮進試探權重的最佳路徑</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chris Chung</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://chungchris.github.io/2021/06/21/software/data-structure/">https://chungchris.github.io/2021/06/21/software/data-structure/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Chris Chung</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/sort/">
+                                    <span class="chip bg-color">sort</span>
+                                </a>
+                            
+                                <a href="/tags/search/">
+                                    <span class="chip bg-color">search</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%BC%94%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">演算法</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/">
+                                    <span class="chip bg-color">資料結構</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://chungchris.github.io/2021/06/21/software/data-structure/';
+        this.page.identifier = '/2021/06/21/software/data-structure/';
+        this.page.title = '基礎資料結構演算法筆記';
+    };
+    let disqus_shortname = 'chungchris-ghp';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/06/30/software/language/rust-note/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1bmeIr1XQxPCSWgI67fw4v9ubbKu-NlaQ" class="responsive-img" alt="Rust 筆記">
+                        
+                        <span class="card-title">Rust 筆記</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一些 Rust 的學習資源整理和個人筆記
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/programming-language/">
+                        <span class="chip bg-color">programming language</span>
+                    </a>
+                    
+                    <a href="/tags/rust/">
+                        <span class="chip bg-color">rust</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/20/software/compile/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1bceNhzHYef4DkW1iNGxt9TMuBRpu2eOS" class="responsive-img" alt="Compile. gcc 編譯 static link, dynamic link, dynamic load">
+                        
+                        <span class="card-title">Compile. gcc 編譯 static link, dynamic link, dynamic load</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            static link, dynamic link, dynamic load
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/compile/">
+                        <span class="chip bg-color">compile</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: A Po<br />'
+            + 'Author: Chris Chung<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章成功權歸作者所有，形式的轉載都請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Chris Chung</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">76.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chungchris" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:imchungchris@@hotmail.com" class="tooltipped" target="_blank" data-tooltip="Wmail me" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="Subscribe RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js?ver=202106210516"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

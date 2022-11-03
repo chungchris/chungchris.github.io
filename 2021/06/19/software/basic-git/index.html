@@ -1,0 +1,1450 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="git,github">
+    <meta name="description" content="A nontypical software engineer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Git Basic. 基礎 Git 指令 | A Po</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">A Po</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/software/" class="waves-effect waves-light">
+      
+      <i class="fas fa-laptop-code" style="zoom: 0.6;"></i>
+      
+      <span>Software</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/travel/" class="waves-effect waves-light">
+      
+      <i class="fas fa-plane" style="zoom: 0.6;"></i>
+      
+      <span>Travelling</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/taiwan/" class="waves-effect waves-light">
+      
+      <i class="fas fa-shoe-prints" style="zoom: 0.6;"></i>
+      
+      <span>Taiwan</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/sketch/" class="waves-effect waves-light">
+      
+      <i class="fas fa-pencil-alt" style="zoom: 0.6;"></i>
+      
+      <span>Sketch</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">A Po</div>
+        <div class="logo-desc">
+            
+            A nontypical software engineer
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/software/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-laptop-code"></i>
+			
+			Software
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/travel/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-plane"></i>
+			
+			Travelling
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/taiwan/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-shoe-prints"></i>
+			
+			Taiwan
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/sketch/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pencil-alt"></i>
+			
+			Sketch
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://drive.google.com/uc?export=view&id=1wvmhnSy5zH5k3Kyphf8lOJk8tWdXtSyA')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git Basic. 基礎 Git 指令</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/software/" class="post-category">
+                                software
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-06-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-10-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    15 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本篇介紹幾個 git 會用到的基本 command line 指令</p>
+<h2 id="安裝-on-Mac-OS"><a href="#安裝-on-Mac-OS" class="headerlink" title="安裝 on Mac OS"></a>安裝 on Mac OS</h2><p>[tested on macOS Catalina 10.15.1]</p>
+<p><em>可以用 Brew 安裝，若尚未安裝 Brew: <a target="_blank" rel="noopener" href="https://brew.sh/index_zh-tw">https://brew.sh/index_zh-tw</a></em></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ brew <span class="token function">install</span> <span class="token function">git</span>
+$ <span class="token function">git</span> --version**
+<span class="token function">git</span> version <span class="token number">2.21</span>.0 <span class="token punctuation">(</span>Apple Git-122.2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>github 官網就有提供 GUI 的應用，想用 GUI 的直接去下載安裝就行了，也有簡單明瞭的教學，非常容易。另外也有好幾個第三方的好用 GUI 介面，Google 一下比較一下選自己喜歡的也行。</p>
+<p>不過以下還是用 command line 的方法來操作，因為這還是最 general 到哪都可以用的基本方法。因為實務上，比如 code 都放在公司的 server，你可能也是都要 ssh 到 sever 上去改 code，改完之後要上傳到 github。而公司的 server 就是一台 Linux 環境，很可能是沒有提供 GUI 讓你使用的，所以你就只能用 command line 的方式完成 git 的上傳。</p>
+<h2 id="Create-Repo"><a href="#Create-Repo" class="headerlink" title="Create Repo"></a>Create Repo</h2><p>去本地一個你想要放置 git 專案的地方，比如我想把我之後的 git code 都放在我 Mac local 的 <code>/Users/chungchris/git</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">cd</span> /Users/chungchris/git
+$ <span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>就會看到在此 <em>git</em> 目錄下產生一個隱藏的 <code>.git</code> 資料夾，這樣就完成了：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
+total <span class="token number">0</span>
+drwxr-xr-x  <span class="token number">3</span>   chungchris staff <span class="token number">96</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">11</span>:01 <span class="token builtin class-name">.</span>
+drwxr-xr-x+ <span class="token number">53</span>  chungchris staff <span class="token number">1696</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">10</span>:45 <span class="token punctuation">..</span>
+drwxr-xr-x  <span class="token number">9</span>   chungchris staff <span class="token number">288</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">11</span>:01 .git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所以如果之後想要把他刪掉，其實就是把 .git 刪掉就行了：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">rm</span> <span class="token parameter variable">-rf</span> .git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然而，一般來說，<code>/Users/chungchris/git</code> 下面我會想要放很多 projects，而不是只有單一 project。而剛剛做的 <code>$ git init</code> 其實就是在本地新增一個 <code>repo</code> 的意思，而一個 project 可能會包含一個到數個 <code>repo</code>。<br>所以我們更想做的應該是要在 <code>/Users/chungchris/git</code> 下面創一個 project 專屬的資料夾，然後把這個資料夾 init 為一個 git 的 repo，或者甚至是在 project 的資料夾下創造多個 repo。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token builtin class-name">pwd</span>
+/Users/chungchris/git
+
+$ <span class="token function">mkdir</span> project20191121
+
+$ <span class="token builtin class-name">cd</span> project20191121/
+
+$ <span class="token function">git</span> init
+Initialized empty Git repository <span class="token keyword">in</span> /Users/chungchris/git/project20191121/.git/
+
+$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
+total <span class="token number">0</span>
+drwxr-xr-x <span class="token number">3</span> chungchris staff <span class="token number">96</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">11</span>:25 <span class="token builtin class-name">.</span>
+drwxr-xr-x <span class="token number">4</span> chungchris staff <span class="token number">128</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">11</span>:25 <span class="token punctuation">..</span>
+drwxr-xr-x <span class="token number">9</span> chungchris staff <span class="token number">288</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">11</span>:25 .git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>比如我上面就創了一個名為 <code>project20191121</code> 的 folder，並將他做 <code>$ git init</code>，於是這個 folder 的 path 就從此成為了一個 git repo，如果你將來不希望他是一個 git repo，而只是一個普通的 folder，那就將 <code>.git</code> 刪掉就可以了。</p>
+<p>接下來我們設置身份，這在之後上傳雲端 git 的時候需要用到。首先他必須符合我們的 github 帳號，比如我的 github 帳號是 <code>chungchris</code>，那我就在本地這樣設置，注意大小寫要一樣才行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name “chungchris”
+
+$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email “imchungchris@hotmail.com”
+
+$ <span class="token function">git</span> config <span class="token parameter variable">--get</span> <span class="token parameter variable">--global</span> user.name
+chungchris
+
+$ <span class="token function">git</span> config <span class="token parameter variable">--get</span> <span class="token parameter variable">--global</span> user.email
+imchungchris@hotmail.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Creste-File"><a href="#Creste-File" class="headerlink" title="Creste File"></a>Creste File</h2><p>接著我們試著在此 repo 下新增一個檔案：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">touch</span> first_try.txt
+
+$ <span class="token function">git</span> status
+On branch master
+No commits yet
+Untracked files:
+<span class="token punctuation">(</span>use “git <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to include <span class="token keyword">in</span> what will be committed<span class="token punctuation">)</span>
+first_try.txt
+nothing added to commit but untracked files present <span class="token punctuation">(</span>use “git add” to track<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>比如上面我就新增了一個名為 <code>first_try.txt</code> 的文檔，然後我就可以透過 <code>$ git status</code> 來看一下我目前這個 repo 下的狀態，<code>$ git status</code> 在往後都會是一個非常基本且常用的指令。<br>我們會看到 git 告訴我們在 <code>master</code> 這個 branch 上面，多出了一個尚未被 track/commit 的檔案 <code>first_try.txt</code>，並建議用 <code>$ git add</code> 指令將其納入 track。（branch 的概念我們往後再敘述，現在姑且都先在 <code>master</code> 上操作）</p>
+<h2 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h2><p>於是我們就依照他的建議做 add：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">add</span> first_try.txt
+
+$ <span class="token function">git</span> status
+On branch master
+No commits yet
+Changes to be committed:
+<span class="token punctuation">(</span>use “git <span class="token function">rm</span> — cached <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to unstage<span class="token punctuation">)</span>
+new file: first_try.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此時再看一下 <code>$ git status</code>，<code>first_try.txt</code> 就變成了綠色，也就是被納入 track 了。</p>
+<p>接著 git 建議我們將其 commit：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit first_try.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>就會出現 commit message 的編輯頁：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="token comment"># with ‘#’ will be ignored, and an empty message aborts the commit.</span>
+<span class="token comment">#</span>
+<span class="token comment"># On branch master</span>
+<span class="token comment">#</span>
+<span class="token comment"># Initial commit</span>
+<span class="token comment">#</span>
+<span class="token comment"># Changes to be committed:</span>
+<span class="token comment"># new file: first_try.txt</span>
+<span class="token comment">#</span>
+~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>你可以在此頁當中說明你 commit 這一筆 change 的原因，比如我們現在是新增了一個 file，那我們為什麼要新增這個 file，用途是什麼？未來如果我們做的事情是編輯了某個既有的 file，那原因可就要敘述為什麼做此改動，改動的方式是什麼之類的。這在實務上是非常重要的，因為其他在這個 project 上工作的人就可以透過這個 commit message 來快速知道 誰、在哪個時間點、因為什麼原因、做了什麼改動，如果描述得不清不楚，那就變得要實際去做 code change review，那就比較辛苦耗時了。</p>
+<p>這裏我們就編輯一下 commit message，理由寫上 “Just for test”，然後用 <code>ESC</code> 和 <code>:wq</code> 儲存完成編輯。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Just <span class="token keyword">for</span> <span class="token builtin class-name">test</span>
+<span class="token comment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="token comment"># with ‘#’ will be ignored, and an empty message aborts the commit.</span>
+<span class="token comment">#</span>
+<span class="token comment"># On branch master</span>
+<span class="token comment">#</span>
+<span class="token comment"># Initial commit</span>
+<span class="token comment">#</span>
+<span class="token comment"># Changes to be committed:</span>
+<span class="token comment"># new file: first_try.txt</span>
+<span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>（<code>#</code> 開頭的幾行在之後都是不會出現的）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit first_try.txt
+<span class="token punctuation">[</span>master <span class="token punctuation">(</span>root-commit<span class="token punctuation">)</span> b028b64<span class="token punctuation">]</span> Just <span class="token keyword">for</span> <span class="token builtin class-name">test</span>
+<span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">2</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+create mode <span class="token number">100644</span> first_try.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>到此 commit 就完成了，於是我們再看一次 git status：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> status
+On branch master
+nothing to commit, working tree clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>就告訴我們目前所做的更動都已經 commit 了。</p>
+<p>如果想要更改 commit msg 也是可以的：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit <span class="token parameter variable">--amend</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果想要做復原呢？比如我們剛剛在這個 repo 下做的事情就是新增了一個 <code>first_try.txt</code> 然後將其 commit 了，如果我要回到還沒有做這個動作的時候，我們可以用 reset 指令。但這時候我們可能會遇到一錯誤：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> reset HEAD^
+fatal: ambiguous argument ‘HEAD^’: unknown revision or path not <span class="token keyword">in</span> the working tree.
+Use ‘ --‘ to separate paths from revisions, like this:
+~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>這是因為我們剛剛做的事情是盤古開天第一件事，所以沒有 <code>HEAD</code>。所以我們嘗試再多做一點，比如現在我們再進一步對已經 commit 的 <code>first_try.txt</code> 做一次編輯，<code>$ git status</code> 就會看到 <code>first_try.txt</code> 又變為紅色，狀態顯示為 <code>modified</code>。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">vim</span> first_try.txt
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+Changes not staged <span class="token keyword">for</span> commit:
+<span class="token punctuation">(</span>use “git <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to update what will be committed<span class="token punctuation">)</span>
+<span class="token punctuation">(</span>use “git checkout — <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+modified: first_try.txt
+no changes added to commit <span class="token punctuation">(</span>use “git add” and/or “git commit -a”<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>這裏再介紹一個非常基本且常用的指令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span> <span class="token builtin class-name">.</span>
+<span class="token function">diff</span> — <span class="token function">git</span> a/first_try.txt b/first_try.txt
+index 0b1076d<span class="token punctuation">..</span>751d415 <span class="token number">100644</span>
+ — — a/first_try.txt
++++ b/first_try.txt
+@@ -1,2 +1,3 @@firstfirstfirst
++2222<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>透過這個指令，可以看到我們所做的更改是在 <code>first_try.txt</code> 這個檔案新增了一行 “2222” 的文字。</p>
+<p>於是我們跟剛剛一樣做 add 和 commit</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> <span class="token builtin class-name">.</span>
+
+$ <span class="token function">git</span> commit <span class="token parameter variable">-m</span> “make a small change”
+<span class="token punctuation">[</span>master ed597bd<span class="token punctuation">]</span> <span class="token function">make</span> a small change
+<span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+nothing to commit, working tree clean<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>$ git add -A .</code> 會將當前目錄下所有 untracked 都 add；</p>
+<p><code>$ git commit -m "..."</code> 在你的 commit message 只有短短幾個字的時候是很方便的，比如我現在想寫的 commit msg 只有 <code>make a small change</code>；</p>
+<p>也可以用 <code>$ git commit -a -m "..."</code> 進一步化兩行為一行。</p>
+<p>此時我們再看一下 <code>$ git status</code>，就又變為 clean 了。</p>
+<p>這個時候我們就可以嘗試做 reset，讓他變為還沒有新增 2222 那一行的狀態：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> reset HEAD^**
+Unstaged changes after reset:
+M first_try.txt
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+Changes not staged <span class="token keyword">for</span> commit:
+<span class="token punctuation">(</span>use “git <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to update what will be committed<span class="token punctuation">)</span>
+<span class="token punctuation">(</span>use “git checkout — <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+modified: first_try.txt
+no changes added to commit <span class="token punctuation">(</span>use “git add” and/or “git commit -a”<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>就可以看到做了 reset 之後，<code>first_try.txt</code> 又變回紅色的 <code>untracked</code> 狀態了，但此時 2222 還是在的喔，只是我們剛剛做的 add/commit 已經被復原了。</p>
+<p>reset HEAD 後面的上標三角是指次數，因為我現在只要回復一級，所以只有一個三角，若想要直接復原兩次 commit 那就給他兩個三角 <code>HEAD^^</code></p>
+<p>現在 <code>first_try.txt</code> 已經回到了 untracked 狀態，那要怎麼真的把 2222 那行刪掉呢？可以用 <code>checkout</code> 指令。</p>
+<p>這裡要用 git 的概念來理解，我們剛剛做過兩件事，第一件事是新增了 <code>first_try.txt</code>，第二件事是進一步再編輯了一次 <code>first_try.txt</code> 新增了 “2222” 這一行，而第一件事已經 commit 了，第二件事曾經 commit 過但又被 reset 了，所以現在等於是第二件事情編輯完而未 commit 的狀態。也就是說現在對 git 來說，他承認的官方狀態是我們做完第一件事的狀態，所以當我們使用了 <code>checkout</code> 這個指令，意思就是把當下 repo 承認的官方狀態給 checkout 出來，而這就覆蓋那個被我們就進一步編輯過的 <code>first_try.txt</code>，所以效果上就跟復原一樣。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token builtin class-name">.</span>
+Updated <span class="token number">1</span> path from the index
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+nothing to commit, working tree clean
+
+$ <span class="token function">cat</span> first_try.txt
+firstfirstfirst<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看到做完 checkout 後，repo 狀態又變為 clean 了，於是也可以理解所謂 clean 都是與 git 承認的官方狀態去做比較的。</p>
+<h2 id="Upload"><a href="#Upload" class="headerlink" title="Upload"></a>Upload</h2><p>我們在本地端有一個 repo，在雲端也給他個相應的 repo，名稱可以不同的，因為對於本地來說，他其實就可以被視為僅是一個有了 git 屬性的 folder，跟實際上 repo 的名字沒有必然直接關係。</p>
+<p>比如我透過 github 網頁創了一個 repo：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1kl90paRAKgE_UNWdq50HW8NV69qRE-gc" alt="<透過 github 網頁創了一個 repo>"></p>
+<p>上面可以看到一行有 remote 的指令，顧名思義如果我們在 local 執行了這行指令，那原本單純都只是在我們 local 操作的 git repo，就和這個剛剛在 github 上創造的名為 test 的 repo 產生了連結：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/chungchris/test.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接著我們便可以把 local 做的改動傳到雲端了，當然指的是已經 local commit 的改動。上傳的這個動作在 git 中叫做 <code>push</code>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> push origin master
+Username <span class="token keyword">for</span> ‘https://github.com<span class="token string">': chungchris
+Password for ‘https://chungchris@github.com'</span><span class="token builtin class-name">:</span>
+Enumerating objects: <span class="token number">3</span>, done.
+Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, done.
+Writing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, <span class="token number">240</span> bytes <span class="token operator">|</span> <span class="token number">240.00</span> KiB/s, done.
+Total <span class="token number">3</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+To https://github.com/chungchris/test.git
+* <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span> master -<span class="token operator">&gt;</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面可以看到他要求我輸入帳號密碼，這可以藉由 config 簡化，稍後再述。此時我們去網頁上看，就可以看到 <code>first_try.txt</code> 已經被上傳了：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1aAFnq05QK5qQE0n6_Upxx_E-dzuzyg_x" alt="<first_try.txt 已經被上傳>"></p>
+<p>並且它的內容是我們早先 local commit 版本：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1GPcptIR01OFGVdCn9gcE45dgiWI58h74" alt="<first_try.txt 的內容>"></p>
+<p>點進去就看到了我們的 commit msg 以及做過的改動：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1bWtctXBzSaYM1QxGI3iBBD0P8NHCz7RY" alt="<first_try.txt 的 commit msg 及做過的改動>"></p>
+<p>另外，多筆 commit 是可以一次 push 到 remote 的，只是上面例子當中只有一筆。</p>
+<p>回到剛剛的 <code>$ git push</code> 指令，我們下的是 <code>$ git push origin master</code>。</p>
+<p>第一個參數是指定 remote 對象是誰，因為我們更早下過<br><code>$ git remote add origin https://github.com/chungchris/test.git</code>，所以自然 git 就知道這裡的 <code>origin</code> 指的是 <code>https://github.com/chungchris/test.git</code></p>
+<p>第二個參數是 branch 名稱，一樣 branch 的概念我們之後再一次一起敘述。但這裡可以先提的是，我們本地的 repo 已經和 remote 的 repo 產生連結，實務上，我們基本上就認定在這個 folder 底下的工作就都 default 視為要傳到該特定 remote 的特定 branch 了，如果這個需求成立，我們可以做進一步的綁定</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout master
+Already on ‘master’
+
+$ <span class="token function">git</span> branch <span class="token parameter variable">-u</span> origin/master
+Branch ‘master’ <span class="token builtin class-name">set</span> up to track remote branch ‘master’ from ‘origin’.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>從此我們要在這個 local repo 底下工作，要 push 東西到 remote 時，就直接 <code>$ git push</code> 就可以了，不需再指定 remote 和 branch。</p>
+<p>上述也可以透過第一次做 push 時加上 -u 參數來完成，u 指的是 <code>upstream</code>。</p>
+<p>接下來我們嘗試在 local 再對 <code>first_try.txt</code> 做進一步編輯並 commit 後上傳：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">vim</span> first_try.txt
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+Your branch is up to <span class="token function">date</span> with ‘origin/master’.
+Changes not staged <span class="token keyword">for</span> commit:
+<span class="token punctuation">(</span>use “git <span class="token function">add</span> <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to update what will be committed<span class="token punctuation">)</span>
+<span class="token punctuation">(</span>use “git checkout — <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>” to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+modified: first_try.txt
+no changes added to commit <span class="token punctuation">(</span>use “git add” and/or “git commit -a”<span class="token punctuation">)</span>
+
+$ <span class="token function">git</span> commit <span class="token parameter variable">-a</span> <span class="token parameter variable">-m</span> “add one <span class="token function">more</span> line”
+<span class="token punctuation">[</span>master c89866e<span class="token punctuation">]</span> <span class="token function">add</span> one <span class="token function">more</span> line
+<span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+
+$ <span class="token function">git</span> status <span class="token builtin class-name">.</span>
+On branch master
+Your branch is ahead of ‘origin/master’ by <span class="token number">1</span> commit.
+<span class="token punctuation">(</span>use “git push” to publish your <span class="token builtin class-name">local</span> commits<span class="token punctuation">)</span>
+nothing to commit, working tree clean
+
+$ <span class="token function">git</span> push
+Enumerating objects: <span class="token number">5</span>, done.
+Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">5</span>/5<span class="token punctuation">)</span>, done.
+Delta compression using up to <span class="token number">8</span> threads
+Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">2</span>/2<span class="token punctuation">)</span>, done.
+Writing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, <span class="token number">293</span> bytes <span class="token operator">|</span> <span class="token number">293.00</span> KiB/s, done.
+Total <span class="token number">3</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+To https://github.com/chungchris/test.git
+7f2499f<span class="token punctuation">..</span>c89866e master -<span class="token operator">&gt;</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 github 上就又可以看到了</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=13PEE5YO0DBrZ3YwpAhvn3jw-U362e5Nn" alt="<first_try.txt>"></p>
+<h2 id="Pull"><a href="#Pull" class="headerlink" title="Pull"></a>Pull</h2><p>前面講的是本地創造然後上傳，接下來將的就是下載，這是一個更常用的情境，有可能是下載別人的 repo 做進一步更改再上傳回去做貢獻，或者是下載自己的 repo 做進一步的開發。</p>
+<p>我們一樣就用剛剛已經在 github 上創造的 <code>test</code> 這個 repo 為例，假設這個 repo 就是我今天要下載下來本地編輯的 repo：</p>
+<p>到 github 的該 repo，就會看到 clone/download 的選項：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1WzVey3TRY3vqW3qp-dk0g0IXU0C-ghXR" alt="<clone/download 選項>"></p>
+<p>這裏我在本地創了個新 folder 然後透過 git clone 把 code 抓下來：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">mkdir</span> repo_test
+
+$ <span class="token builtin class-name">cd</span> repo_test/
+
+$ <span class="token builtin class-name">pwd</span>
+/Users/chungchris/repo_test
+
+$ <span class="token function">git</span> clone https://github.com/chungchris/test.git
+Cloning into ‘test’…
+remote: Enumerating objects: <span class="token number">3</span>, done.
+remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">2</span>/2<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">6</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">3</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, pack-reused <span class="token number">3</span>
+Unpacking objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">6</span>/6<span class="token punctuation">)</span>, done.
+
+$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
+total <span class="token number">0</span>
+drwxr-xr-x  <span class="token number">3</span>   chungchris staff <span class="token number">96</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 <span class="token builtin class-name">.</span>
+drwxr-xr-x+ <span class="token number">54</span>  chungchris staff <span class="token number">1728</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:09 <span class="token punctuation">..</span>
+drwxr-xr-x  <span class="token number">4</span>   chungchris staff <span class="token number">128</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 <span class="token builtin class-name">test</span>
+
+$ <span class="token builtin class-name">cd</span> test/
+
+$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
+total <span class="token number">8</span>
+drwxr-xr-x <span class="token number">4</span> chungchris staff <span class="token number">128</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 <span class="token builtin class-name">.</span>
+drwxr-xr-x <span class="token number">3</span> chungchris staff <span class="token number">96</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 <span class="token punctuation">..</span>
+drwxr-xr-x <span class="token number">12</span> chungchris staff <span class="token number">384</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 .git
+-rw-r — r — <span class="token number">1</span> chungchris staff <span class="token number">52</span> <span class="token number">11</span> <span class="token number">21</span> <span class="token number">13</span>:12 first_try.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看到抓下來的 <code>test</code> 本身就已經維持是一個 git 的 repo 了。</p>
+<p>於是我們嘗試對 <code>first_try.txt</code> 做編輯，然後一樣 commit 後 push：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">vim</span> first_try.txt
+
+$ <span class="token function">git</span> commit <span class="token parameter variable">-a</span> <span class="token parameter variable">-m</span> “make a contribution”
+<span class="token punctuation">[</span>master 40b2085<span class="token punctuation">]</span> <span class="token function">make</span> a contribution
+<span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">3</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+
+$ <span class="token function">git</span> push
+Enumerating objects: <span class="token number">5</span>, done.
+Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">5</span>/5<span class="token punctuation">)</span>, done.
+Delta compression using up to <span class="token number">8</span> threads
+Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">2</span>/2<span class="token punctuation">)</span>, done.
+Writing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">3</span>/3<span class="token punctuation">)</span>, <span class="token number">294</span> bytes <span class="token operator">|</span> <span class="token number">294.00</span> KiB/s, done.
+Total <span class="token number">3</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+To https://github.com/chungchris/test.git
+c89866e<span class="token punctuation">..</span>40b2085 master -<span class="token operator">&gt;</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 github 上就又可以看到我們的改動了：</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=1LvztwFQQpZ-JYobG_gRsgXtNuImWJoJj" alt="<first_try.txt>"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chris Chung</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://chungchris.github.io/2021/06/19/software/basic-git/">https://chungchris.github.io/2021/06/19/software/basic-git/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Chris Chung</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://chungchris.github.io/2021/06/19/software/basic-git/';
+        this.page.identifier = '/2021/06/19/software/basic-git/';
+        this.page.title = 'Git Basic. 基礎 Git 指令';
+    };
+    let disqus_shortname = 'chungchris-ghp';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/06/20/software/compile/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1bceNhzHYef4DkW1iNGxt9TMuBRpu2eOS" class="responsive-img" alt="Compile. gcc 編譯 static link, dynamic link, dynamic load">
+                        
+                        <span class="card-title">Compile. gcc 編譯 static link, dynamic link, dynamic load</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            static link, dynamic link, dynamic load
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/compile/">
+                        <span class="chip bg-color">compile</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/19/software/basic-network-security/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1loldv9BvkDKcAf3qCvVFfO-v8_085YXV" class="responsive-img" alt="Basic Network Security. 基礎網路安全筆記">
+                        
+                        <span class="card-title">Basic Network Security. 基礎網路安全筆記</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            傳輸數據時的 4 個安全性問題- 竊聽、欺騙、竄改、抵賴
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rsa/">
+                        <span class="chip bg-color">rsa</span>
+                    </a>
+                    
+                    <a href="/tags/signature/">
+                        <span class="chip bg-color">signature</span>
+                    </a>
+                    
+                    <a href="/tags/SSL/">
+                        <span class="chip bg-color">SSL</span>
+                    </a>
+                    
+                    <a href="/tags/TLS/">
+                        <span class="chip bg-color">TLS</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8A%A0%E5%AF%86/">
+                        <span class="chip bg-color">加密</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B6%B2%E8%B7%AF%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">網路安全</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0/">
+                        <span class="chip bg-color">數位簽章</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B8%E4%BD%8D%E6%86%91%E8%AD%89/">
+                        <span class="chip bg-color">數位憑證</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: A Po<br />'
+            + 'Author: Chris Chung<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章成功權歸作者所有，形式的轉載都請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Chris Chung</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">76.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chungchris" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:imchungchris@@hotmail.com" class="tooltipped" target="_blank" data-tooltip="Wmail me" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="Subscribe RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js?ver=202106210516"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

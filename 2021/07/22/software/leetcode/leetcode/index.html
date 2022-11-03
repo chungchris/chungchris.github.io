@@ -1,0 +1,2908 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="leetcode,刷題">
+    <meta name="description" content="A nontypical software engineer">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Leetcode 刷題筆記 | A Po</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="A Po" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">A Po</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/software/" class="waves-effect waves-light">
+      
+      <i class="fas fa-laptop-code" style="zoom: 0.6;"></i>
+      
+      <span>Software</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/travel/" class="waves-effect waves-light">
+      
+      <i class="fas fa-plane" style="zoom: 0.6;"></i>
+      
+      <span>Travelling</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/taiwan/" class="waves-effect waves-light">
+      
+      <i class="fas fa-shoe-prints" style="zoom: 0.6;"></i>
+      
+      <span>Taiwan</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/sketch/" class="waves-effect waves-light">
+      
+      <i class="fas fa-pencil-alt" style="zoom: 0.6;"></i>
+      
+      <span>Sketch</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">A Po</div>
+        <div class="logo-desc">
+            
+            A nontypical software engineer
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/software/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-laptop-code"></i>
+			
+			Software
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/travel/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-plane"></i>
+			
+			Travelling
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/taiwan/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-shoe-prints"></i>
+			
+			Taiwan
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/sketch/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pencil-alt"></i>
+			
+			Sketch
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://drive.google.com/uc?export=view&id=1XMAkvD_9UQm05DcGldvzqQ5G4PBKaZoz')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Leetcode 刷題筆記</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/software-leetcode/" class="post-category">
+                                software/leetcode
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-07-22
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2022-10-21
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    6.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    26 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>因為我其實不太愛刷題，覺得意義不明… 可能主要因為我的 career path 並非演算法工程師，所以目的性上每個人不太一樣<br>不過刷題對我來說有另外一個意義是維持語言的手感，不然有時候久沒打一個語言就會失去感覺</p>
+<p>於是我去找了別人推薦的清單，想說如果真的要刷就做一些比較有意義的題目，並且做完後也依據我自己的刷題目的和偏好星星</p>
+<ul>
+<li><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 因為都已經是有人推薦的題目，所以即使我覺得只有一顆星他依舊是一題有人推的題目，只是我自己不覺得需要刷，有可能很簡單。也有可能是我覺得就算會了也意義不大</li>
+<li><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表我覺得有時間再看就好</li>
+<li><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表可以刷</li>
+<li><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表一定刷</li>
+<li><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span> 代表多刷幾次甚至把所有 solution 都弄懂</li>
+</ul>
+<p>所以以下就根據別人的推薦 list 來分別把題目都列一下</p>
+<hr>
+<h2 id="Blind-Curated-75"><a href="#Blind-Curated-75" class="headerlink" title="Blind Curated 75"></a>Blind Curated 75</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/list/xoqag3yj/">Link of the Original List</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">1</a></td>
+<td><strong>Two Sum</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>小暖身而已</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">3</a></td>
+<td><a href="https://chungchris.github.io/2020/07/07/software/leetcode/Longest-Substring-Without-Repeating-Characters/">Longest Substring Without Repeating Characters</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>可與 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/5351347.html">#340 Longest Substring with At Most K Distinct Characters</a> 對照。因為本題是要求完全不重複，所以我們的 map 是記 char 出現過的 index，這讓我再發現重複的時候，可以直接調整 window 的 head 到新的位置；但 340 是容許 k 次重複，所以若我們的 map 改記得的是 char 出現的次數，那每當重複次數超過容許值因而要調整 head，就要一步一步調，當然如果 map 是把每個 char 出現的位置都記錄下來，自然也就可以一次調到位。有就是說 340 其實比較有 slide window 的感覺，但本題其實不需要明確有 window 的概念，而是比較像維護一個 valid head 的 index 就可以</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">5</a></td>
+<td><a href="https://chungchris.github.io/2020/07/08/software/leetcode/Longest-Palindromic-Substring/">Longest Palindromic Substring</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>dp</code> <code>string</code></td>
+<td>不算難，但可以作為 DP 的題目，或者是進階演算法有興趣的可以藉此研究 Manacher’s algorithm</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/container-with-most-water/">11</a></td>
+<td><a href="https://chungchris.github.io/2020/07/08/software/leetcode/Container-With-Most-Water/">Container With Most Water</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2pointer</code></td>
+<td>暴力解很容易，進階解不一定想到到。但只要先以左右兩側為第一個選擇，想辦法去提升容量，演算法就很容易出來</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/3sum/">15</a></td>
+<td><a href="https://chungchris.github.io/2020/07/09/software/leetcode/3sum/">3Sum</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>暴力解就是 <code>O(n^3)</code>，進階解不一定想到到。想有比 <code>O(n^3)</code> 快的方法，掃一次是一定需要的，所以至少有 n，重點在於掃一次取得第一個數後，怎麼挑另外兩個數，並且不能是 <code>O(n^2)</code>，所以合理可以想到嘗試先 sort 過，那接下來就會變得跟 <a href="https://chungchris.github.io/2020/07/08/software/leecode/Container-With-Most-Water/">#11 Container With Most Water</a> 很像。但另外還有檢查重複的部分也需要一些琢磨</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">19</a></td>
+<td><a href="https://chungchris.github.io/2020/07/09/software/leetcode/Remove-Nth-Node-From-End-of-List/">Remove Nth Node From End of List</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>暴力解很容易，進階解要想一下，也是個典型 2-pointer 問題。如果對 Rust 有興趣的可以就本題了解一些 Rust 的限制。fast slow 是 2-pointer 問題中常見的技巧</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-parentheses/">20</a></td>
+<td><a href="https://chungchris.github.io/2020/07/10/software/leetcode/Valid-Parentheses/">Valid Parentheses</a></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>經典題，很容易，但如果沒有做過還是可能會漏一些東西</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-two-sorted-lists/">21</a></td>
+<td><a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">Merge Two Sorted Lists</a></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code> <code>sort</code></td>
+<td>很容易，但 Python 的 List 太強大，用久了可能會忘了在有限制的單向串列狀況下怎麼處理這個問題。同時這也是一題可以觀察 Rust 語言特性的題目</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-k-sorted-lists/">23</a></td>
+<td><a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-k-Sorted-Lists/">Merge k Sorted Lists</a></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code> <code>sort</code></td>
+<td>其實應該不到 Hard，尤其是如果已經做過 <a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">#21 Merge Two Sorted Lists</a>。把 merge 2 個轉換成 merge k 個並沒有額外需要什麼高明想法，唯一可能就是先把他們維持排序好，這樣選下一個的時候就很好選。更高級一點就是用 heap 來維護這些 list 的順序</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-in-rotated-sorted-array/">33</a></td>
+<td><a href="https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/">Search in Rotated Sorted Array</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>search</code></td>
+<td>需要一點觀察，有可能會走錯方向，另外大於小於其實也有點煩</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/combination-sum/">39</a></td>
+<td><a href="https://chungchris.github.io/2020/07/12/software/leetcode/Combination-Sum/">Combination Sum</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>sum</code></td>
+<td>只要注意到數字可以被重複使用，那這題蠻直觀的其實</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/rotate-image/">48</a></td>
+<td><a href="https://chungchris.github.io/2020/07/12/software/leetcode/Rotate-Image/">Rotate Image</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>兩種解法，一種很容易看到眼花，一種要做過才知道</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/group-anagrams/">49</a></td>
+<td><a href="https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/">Group Anagrams</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>土法煉鋼，沒什麼高深想法，稍有練習不同語言基本語法的作用。字元組成相同，代表每一個 char 使用的次數相同，所以問題就轉變為替每一種樣式創造一個 unique 的 identifier</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-subarray/">53</a></td>
+<td><a href="https://chungchris.github.io/2020/07/19/software/leetcode/Maximum-Subarray/">Maximum Subarray</a></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>sum</code></td>
+<td>我覺得這題可能也可以 Medium。會被歸在 Easy 大概是因為 <code>O(n)</code> 解就是很典型的這類 array 題 greedy 的思路，他是一題經典的基本 DP (Dynamic Programming) 題，也就是存在 <code>f(i) = g(f(i-1))</code> 這樣的特性，本題的 <code>g</code> 就是 <code>max(f(i-1)+nums[i], nums[i])</code>。另外有 <code>O(n log n)</code> 的 divide and conquer 解可能是直觀一點的解，是一個典型的 divide and conquer 範例，所以可能也是另一個歸在 Easy 的原因吧</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/spiral-matrix/">54</a></td>
+<td><strong>Spiral Matrix</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>就分四組細心處理完就好，沒什麼</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/jump-game/">55</a></td>
+<td><a href="https://chungchris.github.io/2020/07/20/software/leetcode/Jump-Game/">Jump Game</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>sum</code></td>
+<td>培養認出適合用 Greedy 演算法的問題類型，DP (dynamic programming) 和 Greedy 都是算處理本題蠻直觀的想法，但先想到哪一個就有可能導致造盲區而想不到另一個</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">56</a></td>
+<td><a href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/">Merge Intervals</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>interval</code></td>
+<td>想出解法容易，但可能會瑣碎，不一定能直接想到最簡潔的解法，讓其變簡潔的關鍵就是要先把 intervals 據其起點做 sort</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/insert-interval/">57</a></td>
+<td><a href="https://chungchris.github.io/2020/07/21/software/leetcode/Insert-Interval/">Insert Interval</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>interval</code></td>
+<td>隨然說是 <a href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/">#56 Merge Intervals</a> 的延伸，但也不見得就做得出這題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/unique-paths/">62</a></td>
+<td><strong>Unique Paths</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>p&amp;c</code></td>
+<td>基本排列組合數學題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/climbing-stairs/">70</a></td>
+<td><strong>Climbing Stairs</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>recursive</code></td>
+<td>recursive 的課本基礎範例</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/set-matrix-zeroes/">73</a></td>
+<td><strong>Set Matrix Zeroes</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>應該算 Easy，沒什麼特別的…</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-window-substring/">76</a></td>
+<td><strong>Minimum Window Substring</strong></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2pointer</code></td>
+<td>想法本身是 Medium 等級，因為題目有說要 <code>O(m + n)</code> 的解，這反而成了提示，所以想法本身不難。不過要實作因為有好些細節所以可以到 Hard</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-search/">79</a></td>
+<td><a href="https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/">Word Search</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code> <code>dfs</code></td>
+<td>想法不難，但要成功寫實作出來有可能會卡住</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/decode-ways/">91</a></td>
+<td><strong>Decode Ways</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>沒什麼特別的，幾乎算 Easy 吧</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/validate-binary-search-tree/">98</a></td>
+<td><strong>Validate Binary Search Tree</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code> <code>bst</code></td>
+<td>雖然星星多，但只是因為他是演算法基本功，這其實不應該是刷題了才會的東西，所以他應該要歸在 Easy。課本上判斷一個 BST 是否合法的方法就是用 DFS 的 in-order traversal 看數字是否遞增。頂多實作上需要注意的是 recursion 中 return 的效果，如果發現不合法應該就可以直接終止，不用全部走完</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/same-tree/">100</a></td>
+<td><strong>Same Tree</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code></td>
+<td>就…基本題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-level-order-traversal/">102</a></td>
+<td><strong>Binary Tree Level Order Traversal</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>bfs</code></td>
+<td>BFS order 使用 queue 來 traverse 是基本概念，但他要把同一 level 的都明確搜集在一起，這就需要另外有方法意識到當前的 level，所以歸在 medium</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">104</a></td>
+<td><strong>Maximum Depth of Binary Tree</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code></td>
+<td>就…基本題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">105</a></td>
+<td><a href="https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code></td>
+<td>算是經典題吧，解法沒做過不容易想到，要特別記一下</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">121</a></td>
+<td><strong>Best Time to Buy and Sell Stock</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>暴力解就是 <code>O(n^2)</code>，但再仔細想一下其實走一輪就可以有答案，強迫自己以人類的角度走一輪就要得出答案，演算法自然就出來了</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">124</a></td>
+<td>Binary Tree Maximum Path Sum</td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-palindrome/">125</a></td>
+<td><strong>Valid Palindrome</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code> <code>2pointer</code></td>
+<td>沒什麼…</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-consecutive-sequence/">128</a></td>
+<td><strong>Longest Consecutive Sequence</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>題目規定要 <code>O(n)</code>，如果不做 sort 那感覺一定大於 <code>O(n)</code>，如果做 sort 那至少 <code>O(nlogn)</code>，所以如果一定要 <code>O(n)</code>，就一定是需要額外記憶體，並且可能是 <code>O(2n)</code> 之類的。先將其轉成 set 或 hashmap，這可以在 O(n) 完成，然後在 traverse 一次就可以有解</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/clone-graph/">133</a></td>
+<td><strong>Clone Graph</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>graph</code></td>
+<td>沒什麼太特別的，注意不要無窮 recursion 就行了</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-break/">139</a></td>
+<td><strong>Word Break</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>用 DP 分解這很直覺，但 iteration 應該選用走 wordDict 會比走 s 省時間。並且還有兩個優化，一是先把 wordDict decending sort；二是記住嘗試過哪個 offset 開始是無解的</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/linked-list-cycle/">141</a></td>
+<td><strong>Linked List Cycle</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>沒什麼，是可以用額外的 set 來記有沒有走過某的 node，不過其實這種題典型應該是用 slow fast pointer，就不需要額外空間</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reorder-list/">143</a></td>
+<td><strong>Reorder List</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td><code>O(3n)</code> 也算 <code>O(n)</code>，分成三步做，1 找到中點切成兩個 list，2 把後半部 reverse，3 merge 兩個 list</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/">152</a></td>
+<td><strong>Maximum Product Subarray</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>code 幾行就可以完成，主要是演算法要想出來。關鍵是 contiguous，對於這種有 contiguous 限制的題目特性，有一種最為常見的思考模式需要訓練一下。另外就本題來說，思考邏輯上可以是漸進式的，首先想如果都是非 0 正整數該怎麼解，然後想如果有 0 該怎麼解，最後再想如果有負數該怎麼解</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">153</a></td>
+<td><strong>Find Minimum in Rotated Sorted Array</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>search</code></td>
+<td>與 <a href="https://chungchris.github.io/2020/07/12/software/leetcode/Search-in-Rotated-Sorted-Array/">#33 Search in Rotated Sorted Array</a> 相同且更容易</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-bits/">190</a></td>
+<td><strong>Reverse Bits</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>bit</code></td>
+<td>沒什麼</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-1-bits/">191</a></td>
+<td><strong>Number of 1 Bits</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>bit</code></td>
+<td>沒什麼</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/house-robber/">198</a></td>
+<td><a href="https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/">House Robber</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>dp</code></td>
+<td>典型 DP 題，另外有關鍵是識別出可將 DP 的 recursive function call 簡化為 iteration。DP 問題只的就是每一的解會跟其他輪有關係，若後面輪次的解只跟其前面輪次有關係，那自然就可以用 iteration 即可毋需使用到 recursion</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-islands/">200</a></td>
+<td><strong>Number of Islands</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>不難想，想到後也不難做出來</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-linked-list/">206</a></td>
+<td><strong>Reverse Linked List</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>基本題，recursion 和 iteration 作法都熟悉一下</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/course-schedule/">207</a></td>
+<td><strong>Course Schedule</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>graph</code> <code>dfs</code></td>
+<td>偵測單向圖中是否有循環的基本題。Recursive 走 DFS，如果走到重複的就是有循環。雖然每一個點都要為 root 去走 DFS 以避免漏掉獨立的迴圈，但可以另外透過記憶哪些點已經檢查通過了來避免重工</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/implement-trie-prefix-tree/">208</a></td>
+<td><strong>Implement Trie (Prefix Tree)</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code> <code>bst</code></td>
+<td>沒什麼，就是 string 版本的 binary search tree</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">211</a></td>
+<td><strong>Design Add and Search Words Data Structure</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>可以用 map/dict 來實作，概念上其實變得像一棵樹</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-search-ii/">212</a></td>
+<td>Word Search II</td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/house-robber-ii/">213</a></td>
+<td><strong>House Robber II</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>dp</code></td>
+<td>相較於 <a href="https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/">#198 House Robber</a> 因為變成 circle 所以需要多一個關鍵想法：對於本題存在一個最佳解，那我們若任選一點 x，該點 x 只有『存在於最佳解中』和『不存在於最佳解中』兩種可能性；對於 x 不存在於最佳解中的這種可能行，本題的最佳解形同由 x+1 ~ x-1 這個 circle 的最佳解；而對於 x 存在於最佳解中的這種可能性，本題的最佳解形同由 x ~ x-2 這個 circle 的最佳解。所以若我們將 x 選為 0，那只要針對 arr[0:n-1] 和 arr[1:n] 分別去求解，再取其大者即可</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/contains-duplicate/">217</a></td>
+<td><strong>Contains Duplicate</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>暖身吧…</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/invert-binary-tree/">226</a></td>
+<td><strong>Invert Binary Tree</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code></td>
+<td>暖身吧…</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">230</a></td>
+<td><strong>Kth Smallest Element in a BST</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>bst</code> <code>dfs</code></td>
+<td>基本題的小延伸吧。從小排到大就是 in-order traversal，那自然可以知道第 k 小的是誰，加上一些優化就可以在得到第 k 個時就不要再繼續走下去</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235</a></td>
+<td><strong>Lowest Common Ancestor of a Binary Search Tree</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>bst</code></td>
+<td>沒什麼，他是一個 BST，比 root 小的在左邊，比 root 大的在右邊，如果 p,q 都比 root 小，那 LCA 就往左邊找，反之往右邊；如果 root 值介於 p,q 之間，那 p,q 分別在 root 的左右子樹，此時找 LCA 不可能往左右字數去移動，因為一但移動，必定會失去 p,q 其中之一，這也代表 root 本身就是 LCA</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/product-of-array-except-self/">238</a></td>
+<td><strong>Product of Array Except Self</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>沒做過不一定想得到，關鍵想法在 prefix 和 suffix，prefix/suffix 指的是某一個數 前面所有數/後面所有數，每一個數對應的解就是 <code>product of prefix</code> 乘上 <code>product of suffix</code>。如此一來 2 passes 就可以解出來，時間複雜度就是 <code>O(n)</code>，並且只需要額外一塊等長的 space</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/valid-anagram/">242</a></td>
+<td><strong>Valid Anagram</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td><a href="https://chungchris.github.io/2020/07/13/software/leetcode/Group-Anagrams/">#49 Group Anagrams</a> 的基礎題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/meeting-rooms/"></a></td>
+<td><a href="">Meeting Rooms</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/meeting-rooms-ii/"></a></td>
+<td><a href="">Meeting Rooms II</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/graph-valid-tree/"></a></td>
+<td><a href="">Graph Valid Tree</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/missing-number/">268</a></td>
+<td><strong>Missing Number</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>跟 <a href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/">#41 First Missing Positive</a> 一樣，用 2n space 會很簡單，用 n space 會稍難一點</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/alien-dictionary/"></a></td>
+<td><a href="">Alien Dictionary</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/encode-and-decode-strings/"></a></td>
+<td><a href="">Encode and Decode Strings</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-median-from-data-stream/">295</a></td>
+<td><a href="">Find Median from Data Stream</a></td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">297</a></td>
+<td><a href="">Serialize and Deserialize Binary Tree</a></td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-increasing-subsequence/">300</a></td>
+<td><a href="https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/">Longest Increasing Subsequence</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>這種 array 類型一慣的思路都是用 greedy，就是從頭走，一步一步多看一個數字，然後去更新最佳解。但即使這題也是相同，不過沒做過還是不容易想到做法</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/coin-change/">322</a></td>
+<td><strong>Coin Change</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>第一個誤區是 greedy 無法解這題，例如 <code>[23, 22, 7 ,1]</code> 找 <code>29</code>，用 greedy 會得到 <code>23+1+1+1+1+1+1</code>，但其實 <code>22+7</code> 才是最佳解。但我們知道這題還是 DP，DP 就是前後輪次有關聯，比如 <code>f(n) = g(f(n-i))</code>，而實作就有兩種方向，若我們從 <code>f(n)</code> 出發，那就會變 recursion；若從 <code>f(0)</code> 出發，就會是 iteration</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"></a></td>
+<td><a href="">Number of Connected Components in an Undirected Graph</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/counting-bits/">338</a></td>
+<td><strong>Counting Bits</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>bit</code></td>
+<td>暴力解就是 <code>O(nlogn)</code>，如果要 <code>O(n)</code> 解就要有分解的 DP 想法，可已歸在 Medium 等級：一個整數 <code>n</code>，假設他的 binary representation 有 5 bits，那他的 1 的數量，就會是右邊 4 bits 的 1 的數量，加上最左側是否為 1，為什麼要這樣拆解？因為最左側是否為 1 這我們直接 mod 2 就可以知道，而右邊 4 bits 的 1 的數量，因該是在前面的輪次當中就已經得到答案</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/top-k-frequent-elements/">347</a></td>
+<td><strong>Top K Frequent Elements</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code> <code>heap</code></td>
+<td>用 map 統計很容易，但統計完後要找最大的前 k 個，也就是要做 sort，且題目要 <code>O(nlogn)</code> 那就可以用 heap sort，沒有一定，只是本題特性上就也剛好也蠻適合就拿來練一下 heap sort</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sum-of-two-integers/">371</a></td>
+<td><strong>Sum of Two Integers</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>bit</code></td>
+<td>Bit operation 都不適合用 python，因為 python 的 <code>int</code> 不受限於 32 bits，他可以很大，但為達成這個，shift bit 的行為就跟其他語言不一樣。所以這題用 C 或 Java 來做：<code>XOR</code> 可以得到該 bit 的結果，<code>AND</code> 可以得到是否要進位，recursive 直到不需進位為止</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/pacific-atlantic-water-flow/">417</a></td>
+<td><strong>Pacific Atlantic Water Flow</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>跟 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-islands/">#200 Number of Islands</a> 有些類似。可以反著想：從 Pacific 出發可以到達的地方，以及從 Atlantic 出發可以到達的地方，這兩個部分的交集就是答案</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-repeating-character-replacement/">424</a></td>
+<td><strong>Longest Repeating Character Replacement</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>一樣是 greedy slide window 可以解的問題，關鍵在於要認知到調整 window head 的時機是目前 window length 減去目前 window 中最常出現的那個字的次數超過 k 的時候，這代表我們就算用去 k 次機會也無法把目前的 window 都變成同一個字，所以這就是一個要縮 head 的來 recover 的時機</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/non-overlapping-intervals/">435</a></td>
+<td><strong>Non-overlapping Intervals</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>interval</code></td>
+<td>與 <a href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/">#56 Merge Intervals</a> 類似</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/subtree-of-another-tree/">572</a></td>
+<td><strong>Subtree of Another Tree</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code></td>
+<td>要實際做一下</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/palindromic-substrings/">647</a></td>
+<td><strong>Palindromic Substrings</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>跟 <a href="https://chungchris.github.io/2020/07/08/software/leetcode/Longest-Palindromic-Substring/">#5 Longest Palindromic Substring</a> 類似，就是細心一點做吧…</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Programcreek-Algorithm-Problem-Classification"><a href="#Programcreek-Algorithm-Problem-Classification" class="headerlink" title="Programcreek- Algorithm Problem Classification"></a>Programcreek- Algorithm Problem Classification</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.programcreek.com/2013/08/leetcode-problem-classification/">Link of the Original List</a></p>
+</blockquote>
+<h3 id="Array-x2F-String"><a href="#Array-x2F-String" class="headerlink" title="Array / String"></a>Array / String</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Data-Structure-Design"><a href="#Data-Structure-Design" class="headerlink" title="Data Structure Design"></a>Data Structure Design</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Bit-Manipulation"><a href="#Bit-Manipulation" class="headerlink" title="Bit Manipulation"></a>Bit Manipulation</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Math-x2F-Numbers"><a href="#Math-x2F-Numbers" class="headerlink" title="Math/Numbers"></a>Math/Numbers</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Microsoft"><a href="#Microsoft" class="headerlink" title="Microsoft"></a>Microsoft</h2><h3 id="IGotAnOffer"><a href="#IGotAnOffer" class="headerlink" title="IGotAnOffer"></a>IGotAnOffer</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://pttcareers.com/Soft_Job/1VTWa4HV">Microsoft software engineer interview: the only post you’ll need to read</a><br>the post is summarizing 250 feedbacks on Glassdoor. </p>
+</blockquote>
+<h4 id="Arrays-x2F-Strings-36-of-questions-most-frequent"><a href="#Arrays-x2F-Strings-36-of-questions-most-frequent" class="headerlink" title="Arrays / Strings (36% of questions, most frequent)"></a>Arrays / Strings (36% of questions, most frequent)</h4><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-words-in-a-string/">151</a></td>
+<td><strong>Reverse Words in a String</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>如果知道使用 split() 和 join() 會只需要 1 行。如果不知道或不能用，那從尾開始走會比從頭開始走好</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">1</a></td>
+<td><strong>Two Sum</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>應該只是暖身…</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/word-search/">79</a></td>
+<td><a href="https://chungchris.github.io/2020/07/23/software/leetcode/Word-Search/">Word Search</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code> <code>dfs</code></td>
+<td>想法不難，但要成功寫實作出來有可能會卡住</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/first-missing-positive/">41</a></td>
+<td><a href="https://chungchris.github.io/2020/08/13/software/leetcode/First-Missing-Positive/">First Missing Positive</a></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>題目規範 <code>O(n)</code>，需要意識到數列長度是一個可以在 <code>O(n)</code> 取得的資訊，<code>O(2n)</code> 也是算 <code>O(n)</code>。一但長度也是已知資訊，要想出演算法概念不難，不過要實作出來可能會遇到鬼打牆的狀況，所以還是可以算是一題 Hard 等級的題目</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/remove-comments/">722</a></td>
+<td><strong>Remove Comments</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>我覺得如果白板考這一題會非常難做對，除非已經寫過至少三四次；我也覺得不太可能純白板場合考這題，因為人工跑 test case 很容易眼花撩亂，如果是可以電腦跑 test case 的環境比較有可能考到。我認為這題最簡潔的寫法<a target="_blank" rel="noopener" href="https://leetcode.com/problems/remove-comments/discuss/295158/Simple-Python-solution">只有一種</a>，如果沒有把這種寫法細節都記下來，其他比他更瑣碎一點的寫法都可能導致在更多細節有錯誤</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/spiral-matrix/">54</a></td>
+<td><strong>Spiral Matrix</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>就分四組細心處理完就好，沒什麼</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/string-compression/">443</a></td>
+<td><strong>String Compression</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code> <code>array</code></td>
+<td>沒什麼特別的，細心做完即可，另外如果是 python 應該不會選這一題，其實只要題目規範到 string 且規定使用 Spece O(1) in-place replacement 的問題 python 都不太適用</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/">340</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.cnblogs.com/grandyang/p/5351347.html">Longest Substring with At Most K Distinct Characters</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code></td>
+<td>用 map 來記住看過的東西就行，詳細一點可以用 <code>map&lt;char, \[int\]&gt;</code> 記所有出現的位置，但其實只需要用 <code>map&lt;char, int&gt;</code> 記住出現的次數就行了，實作結果來說，記所有出現的位置對於速度沒有必然性的提升</td>
+</tr>
+</tbody></table>
+<h4 id="Linked-lists-29"><a href="#Linked-lists-29" class="headerlink" title="Linked lists (29%)"></a>Linked lists (29%)</h4><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-nodes-in-k-group/">25</a></td>
+<td><a href="https://chungchris.github.io/2020/08/15/software/leetcode/Reverse-Nodes-in-k-Group/">Reverse Nodes in k-Group</a></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>Revert linked list 升級版</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/copy-list-with-random-pointer/">138</a></td>
+<td><a href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/">Copy List with Random Pointer</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>不使用額外空間的解法沒做過不容易想到</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-k-sorted-lists/">23</a></td>
+<td><a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-k-Sorted-Lists/">Merge k Sorted Lists</a></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code> <code>sort</code></td>
+<td>其實應該不到 Hard，尤其是如果已經做過 <a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">#21 Merge Two Sorted Lists</a>。把 merge 2 個轉換成 merge k 個並沒有額外需要什麼高明想法</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/swap-nodes-in-pairs/">24</a></td>
+<td><strong>Swap Nodes in Pairs</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>不難但就是把圖畫出來細心一點確認每個該改的都有改到</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sort-list/">148</a></td>
+<td><a href="https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/">Sort List</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code> <code>sort</code></td>
+<td>是 <a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">#21 Merge Two Sorted Lists</a> 的延伸，題目規範的 <code>O(n logn)</code> time and <code>O(1)</code> memory (i.e. constant space) 反而成為提示</td>
+</tr>
+</tbody></table>
+<h4 id="Graphs-x2F-Trees-20"><a href="#Graphs-x2F-Trees-20" class="headerlink" title="Graphs / Trees (20%)"></a>Graphs / Trees (20%)</h4><p>(樹/圖 的題目不太可能 online 考，畫就搞半天… 面對面的 onsite 比較有可能)</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">105</a></td>
+<td><a href="https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">Construct Binary Tree from Preorder and Inorder Traversal</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code></td>
+<td>算是經典題吧，解法沒做過不容易想到，要特別記一下</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">297</a></td>
+<td><a href="">Serialize and Deserialize Binary Tree</a></td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/">428</a></td>
+<td><a href="">Serialize and Deserialize N-ary tree</a></td>
+<td>Hard</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/inorder-successor-in-bst/">285</a></td>
+<td><strong>Inorder Successor in BST</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code></td>
+<td>我們知道 BST 的 inorder traversal 就是會產生由小到大的數列。所以暴力解就是把整個 inorder traversal 走完，自然知道 successor 是誰，那就是 <code>O(n)</code>。不過因為本身是一個 BST，所以理論上找到目標應該是 <code>O(h)</code> 就夠。所以進階解就是從 BST root 開始走，逐漸逼近目標，把前一級的那個比目標大的點記住；這個記憶的值會一直縮小，因為你是一直在逼近目標當中，所以途經的任何比目標大的點，他的趨勢都是會一直變小。抵達目標之後，我們知道他的 inorder successor 就是會比他恰恰稍大一點：所以若此目標點有右子樹，那就會是右子樹當中的最小值；如果此目標點沒有右子樹，那他的 successor 就會是我們曾經走過的記憶的那個點；如果也不存在這個點，也就是沒有 successor，代表目標已經是 BST 中的最大值</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/inorder-successor-in-bst-ii/">510</a></td>
+<td><a href="">Inorder Successor in BST II</a></td>
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/validate-binary-search-tree/">98</a></td>
+<td><strong>Validate Binary Search Tree</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code> <code>bst</code></td>
+<td>雖然星星多，但只是因為他是演算法基本功，這其實不應該是刷題了才會的東西，所以他應該要歸在 Easy。課本上判斷一個 BST 是否合法的方法就是用 DFS 的 in-order traversal 看數字是否遞增</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/delete-node-in-a-bst/">450</a></td>
+<td><strong>Delete Node in a BST</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>dfs</code> <code>bst</code></td>
+<td>演算法部分是課本基礎，但實作有個關鍵是找到要上移的節點之後，可以繼續使用我們的 delete() 去把要上移的節點從子樹中刪除</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/all-paths-from-source-to-target/">797</a></td>
+<td><strong>All Paths From Source to Target</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>graph</code> <code>dfs</code> <code>dag</code></td>
+<td>一個有向無循環圖要找所有 path，無循環我們就可以用 greedy，所以演算法部分不難。實作部分，每次的 recursion，用回傳值來傳遞 path 比較不好，因為視語言使用的資料結構有可能在 push_frount() 這種操作有負擔，所以維護一個 global 的 path/paths，動態的 push/pop 是較佳的做法</td>
+</tr>
+</tbody></table>
+<h4 id="Search-x2F-Sort-6"><a href="#Search-x2F-Sort-6" class="headerlink" title="Search / Sort (6%)"></a>Search / Sort (6%)</h4><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/number-of-islands/">200</a></td>
+<td><strong>Number of Islands</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>不難想，想到後也不難做出來</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/">116</a></td>
+<td><strong>Populating Next Right Pointers in Each Node</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>tree</code> <code>bfs</code></td>
+<td>跟 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/binary-tree-level-order-traversal/">[#102 Binary Tree Level Order Traversal]</a> 差不多</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/median-of-two-sorted-arrays/">4</a></td>
+<td><strong>Median of Two Sorted Arrays</strong></td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code> <code>sort</code></td>
+<td>Medium 而已吧，跟 <a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">[#21 Merge Two Sorted Lists]</a> 差不多</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix/">74</a></td>
+<td><strong>Search a 2D Matrix</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code> <code>search</code></td>
+<td>不難，一樣想成一維 binary search 只要在 index 上做簡單換算就行</td>
+</tr>
+</tbody></table>
+<h4 id="Dynamic-programming-5"><a href="#Dynamic-programming-5" class="headerlink" title="Dynamic programming (5%)"></a>Dynamic programming (5%)</h4><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="Bit-manipulation-x2F-Maths-4-of-questions-least-frequent"><a href="#Bit-manipulation-x2F-Maths-4-of-questions-least-frequent" class="headerlink" title="Bit manipulation / Maths (4% of questions, least frequent)"></a>Bit manipulation / Maths (4% of questions, least frequent)</h4><p>(這種題型基本上是選 C/C++ 才會有啦，不然用 python 搞 bit operation 沒什麼意思)</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/">1239</a></td>
+<td><a href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/">Maximum Length of a Concatenated String with Unique Characters</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>p&amp;c</code> <code>string</code> <code>bit</code></td>
+<td>兩個關鍵，第一個是要會由一個給定的 list 去列出所有的無序組合；第二個是透過 bit 來取代 map 做記憶可以節省記憶體，不過如果是 python 這麽高階的語言，就不要搞什麼 bit operation 了，記憶體就給他用下去，直接用 set 來記憶就行了</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/single-number/">136</a></td>
+<td><strong>Single Number</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>bit</code> <code>xor</code></td>
+<td>就是需要記得 XOR 的特性… <code>n^n=0</code>, <code>n^0=n</code>, <code>a^b^c=b^c^a</code>，所以 <code>a^b^c^d^b^a^d = a^a^b^b^c^d^d = 0^0^c^0 = c</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Amazon"><a href="#Amazon" class="headerlink" title="Amazon"></a>Amazon</h2><h3 id="ayedot"><a href="#ayedot" class="headerlink" title="ayedot"></a>ayedot</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://ayedot.com/62/MiniBlog/All-Paid-Amazon-Leetcode-Question-for-Interview-and-Practice-For-Free">All Paid Amazon Leetcode Question for Interview and Practice For Free</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">1</a></td>
+<td><strong>Two Sum</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>小暖身而已</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/longest-palindromic-substring/">5</a></td>
+<td><a href="https://chungchris.github.io/2020/07/08/software/leetcode/Longest-Palindromic-Substring/">Longest Palindromic Substring</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>dp</code> <code>string</code></td>
+<td>不算難，但可以作為 DP 的題目，或者是進階演算法有興趣的可以藉此研究 Manacher’s algorithm</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-two-sorted-lists/">21</a></td>
+<td><a href="https://chungchris.github.io/2020/07/11/software/leetcode/Merge-Two-Sorted-Lists/">Merge Two Sorted Lists</a></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code> <code>sort</code></td>
+<td>很容易，但 Python 的 List 太強大，用久了可能會忘了在有限制的單向串列狀況下怎麼處理這個問題。同時這也是一題可以觀察 Rust 語言特性的題目</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/generate-parentheses/">22</a></td>
+<td><strong>Generate Parentheses</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>p&amp;c</code></td>
+<td>自然想到 recursive，但如果是想做成 <code>f(n) = g(f(n-1))</code>，那會很難做，因為要處理重複性的問題。所以本題用 greedy 排列組合想法才比較好，從 <code>""</code> 開始把所有的能都長出來</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/merge-intervals/">56</a></td>
+<td><a href="https://chungchris.github.io/2020/07/21/software/leetcode/Merge-Intervals/">Merge Intervals</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>interval</code></td>
+<td>想出解法容易，但可能會瑣碎，不一定能直接想到最簡潔的解法，讓其變簡潔的關鍵就是要先把 intervals 據其起點做 sort</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/spiral-matrix-ii/">59</a></td>
+<td><strong>Spiral Matrix II</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>跟 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/spiral-matrix/">#54 Spiral Matrix</a> 差不多，分四組細心處理完就好，沒什麼</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/unique-paths-ii/">63</a></td>
+<td><strong>Unique Paths II</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>不像 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/unique-paths/">#62 Unique Paths</a> 可以直接算，本題要跑。兩種作法 recursion 和 iteration，兩個方向，一個是從終點往回看 <code>f(x,y) = f(x-1,y) + f(x,y-1)</code>，一個是從起點開始看 <code>f(x,y) = f(x+1,y) + f(x,y+1)</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/minimum-path-sum/">64</a></td>
+<td><strong>Minimum Path Sum</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code> <code>graph</code></td>
+<td>算是 shortest path 的基本題</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/unique-binary-search-trees/">96</a></td>
+<td><strong>Unique Binary Search Trees</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>BST</code></td>
+<td>因為本題數字不會跳躍，所以觀察一下就知道是 DP 題，也就是 <code>f(n)</code> 會與之前的 <code>f(n-i)</code> 相關</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/copy-list-with-random-pointer/">138</a></td>
+<td><a href="https://chungchris.github.io/2020/08/19/software/leetcode/Copy-List-with-Random-Pointer/">Copy List with Random Pointer</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>ll</code></td>
+<td>不使用額外空間的解法沒做過不容易想到</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">167</a></td>
+<td><strong>Two Sum II - Input Array Is Sorted</strong></td>
+<td>Easy</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>從左右兩側往內選</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix-ii/">240</a></td>
+<td><a href="">Search a 2D Matrix II</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2darray</code></td>
+<td>跟 <a target="_blank" rel="noopener" href="https://leetcode.com/problems/search-a-2d-matrix/">#74 Search a 2D Matrix</a> 不同，這題不是 binary search，而是需要從另一角度。</td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="TECHYIELD"><a href="#TECHYIELD" class="headerlink" title="TECHYIELD"></a>TECHYIELD</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://techyield.blogspot.com/2019/07/amazon-list-of-leetcode-questions.html">Amazon List of LeetCode Questions</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="alexlop"><a href="#alexlop" class="headerlink" title="alexlop"></a>alexlop</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/discuss/interview-question/488887/Amazon-Final-Interview-Questions-or-SDE1">Amazon Final Interview Questions | SDE1</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p><a target="_blank" rel="noopener" href="https://leetcode.com/discuss/explore/amazon?currentPage=1&amp;orderBy=hot&amp;query=">Discussions on LeetCode</a></p>
+<hr>
+<h2 id="yanwei-liu"><a href="#yanwei-liu" class="headerlink" title="yanwei-liu"></a>yanwei-liu</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://yanwei-liu.medium.com/top-leetcode-interview-questions-b046298a5de">Top LeetCode Interview Questions</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="PTT-tnfshjcc"><a href="#PTT-tnfshjcc" class="headerlink" title="PTT tnfshjcc"></a>PTT tnfshjcc</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://pttcareers.com/Soft_Job/1VTWa4HV">[心得] 我的leetcode刷題清單</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Kohei-Arai"><a href="#Kohei-Arai" class="headerlink" title="Kohei Arai"></a>Kohei Arai</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://medium.com/@koheiarai94/60-leetcode-questions-to-prepare-for-coding-interview-8abbb6af589e">60 LeetCode problems to solve for coding interview</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Javarevisited"><a href="#Javarevisited" class="headerlink" title="Javarevisited"></a>Javarevisited</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://javarevisited.blogspot.com/2015/12/30-microsoft-interview-questions-for-software-development-engineers.html#axzz73KhZMFyu">Top 30 Microsoft Interview Questions for Software Development Engineers (SDE)</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="CareerCup"><a href="#CareerCup" class="headerlink" title="CareerCup"></a>CareerCup</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.careercup.com/page?pid=microsoft-interview-questions">Link of the Original List</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Level</th>
+<th>Star</th>
+<th>Tag</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/sorting-array-of-strings/problem">HackerRank</a></td>
+<td>Sorting Array of Strings</td>
+<td>Hard</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code> <code>sort</code></td>
+<td>基本 sort string 演算法的實作</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/permutations-of-strings/problem">HackerRank</a></td>
+<td><a href="https://chungchris.github.io/2020/07/31/software/leetcode/Permutations-of-Strings/">Permutations of Strings</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>string</code> <code>p&amp;c</code></td>
+<td>產生所有排列組合的其中一種演算法</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/deque-stl/problem">HackerRank</a></td>
+<td><a href="https://chungchris.github.io/2020/08/09/software/leetcode/Sliding-Window-Maximum/">Sliding Window Maximum</a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>2pointer</code></td>
+<td>Slide window. <code>O(n)</code> 解沒做過不容易想到</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://leetcode.com/problems/largest-number/">179</a></td>
+<td><strong>Largest Number</strong></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td><code>array</code></td>
+<td>需要一個簡單但常常被忽略的想法，在排列組合比大小的情境當中，如果是 greedy 可解，那我們不斷要下的決定就是下一個要選誰，所以我們會需要有邏輯去判別出 <code>A</code> 和 <code>B</code> 誰對於答案更有幫助，這個想法就會把我們導向去分析 <code>A</code> 和 <code>B</code> 的內容；但是有另外一個想法在本題更為適用，若我們現在選擇 <code>A</code>，其實就代表 <code>AB</code> 比 <code>BA</code> 更好，所以如果分析 <code>AB</code> 和 <code>BA</code> 的優劣比比較 <code>A</code> 和 <code>B</code> 的細部內容更為容易，那就應該採用這個角度</td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href=""></a></td>
+<td><a href=""></a></td>
+<td>Medium</td>
+<td><span class="github-emoji"><span>⭐</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Chris Chung</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/">https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Chris Chung</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+        <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/';
+        this.page.identifier = '/2021/07/22/software/leetcode/leetcode/';
+        this.page.title = 'Leetcode 刷題筆記';
+    };
+    let disqus_shortname = 'chungchris-ghp';
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/08/10/software/language/c-note/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1aWKS0CtDghddpyvMtpcJSrDRUnula6KV" class="responsive-img" alt="C 語言筆記">
+                        
+                        <span class="card-title">C 語言筆記</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一些 C 的個人筆記
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/software/" class="post-category">
+                                    software
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/c/">
+                        <span class="chip bg-color">c</span>
+                    </a>
+                    
+                    <a href="/tags/programming-language/">
+                        <span class="chip bg-color">programming language</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/08/taiwan/mazu/">
+                    <div class="card-image">
+                        
+                        <img src="https://drive.google.com/uc?export=view&id=1iLKCaNXhk72fZXyezU2uqzRk3XubYt2w" class="responsive-img" alt="馬祖 - 碉堡！碉堡，碉堡。碉堡...">
+                        
+                        <span class="card-title">馬祖 - 碉堡！碉堡，碉堡。碉堡...</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            2021 年 5 月勞動連假 五天四夜 馬祖 自助行
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/taiwan/" class="post-category">
+                                    taiwan
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">台灣旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/">
+                        <span class="chip bg-color">離島旅遊</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%A6%AC%E7%A5%96/">
+                        <span class="chip bg-color">馬祖</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: A Po<br />'
+            + 'Author: Chris Chung<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章成功權歸作者所有，形式的轉載都請註明出處。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Chris Chung</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
+                        class="white-color">76.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/chungchris" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:imchungchris@@hotmail.com" class="tooltipped" target="_blank" data-tooltip="Wmail me" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="Subscribe RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js?ver=202106210516"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

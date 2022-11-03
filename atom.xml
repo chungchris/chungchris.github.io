@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>A Po</title>
+  
+  <subtitle>Giraffe Lover</subtitle>
+  <link href="https://chungchris.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://chungchris.github.io/"/>
+  <updated>2022-11-03T00:10:13.506Z</updated>
+  <id>https://chungchris.github.io/</id>
+  
+  <author>
+    <name>Chris Chung</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>COVID 解封後首次出國度假！首爾（Seoul）2022-Oct</title>
+    <link href="https://chungchris.github.io/2022/10/21/travelling/seoul-2022-oct/"/>
+    <id>https://chungchris.github.io/2022/10/21/travelling/seoul-2022-oct/</id>
+    <published>2022-10-21T12:54:39.822Z</published>
+    <updated>2022-11-03T00:10:13.506Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“I’m not travelling alone. I’m travelling solo.”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Highlights&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="travelling" scheme="https://chungchris.github.io/categories/travelling/"/>
+    
+    
+    <category term="韓國" scheme="https://chungchris.github.io/tags/%E9%9F%93%E5%9C%8B/"/>
+    
+    <category term="亞洲旅遊" scheme="https://chungchris.github.io/tags/%E4%BA%9E%E6%B4%B2%E6%97%85%E9%81%8A/"/>
+    
+    <category term="首爾" scheme="https://chungchris.github.io/tags/%E9%A6%96%E7%88%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>海外工作的台灣所得稅申報</title>
+    <link href="https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/"/>
+    <id>https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/</id>
+    <published>2021-10-09T01:46:49.000Z</published>
+    <updated>2022-10-21T12:50:58.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;先講結論，就是如果在台灣待累計超過 31 天，且海外所得超過 台幣100萬，那最好要申報，但最終很難因此實際需要多繳到稅&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我只是講我 survey 的結果和個人理解，不負責任的呦 &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="sketch" scheme="https://chungchris.github.io/categories/sketch/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>封鎖/隱藏 特定網站出現在 Google Search 結果當中</title>
+    <link href="https://chungchris.github.io/2021/10/07/software/block-google-search-result/"/>
+    <id>https://chungchris.github.io/2021/10/07/software/block-google-search-result/</id>
+    <published>2021-10-07T01:52:30.000Z</published>
+    <updated>2022-10-21T12:50:58.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我真的非常討厭 Pixnet 的閱讀體驗，又慢、版面又醜，廣告蓋板就算了，廣告 load 又慢，很多時候 &lt;code&gt;x&lt;/code&gt; 還點不到，想關掉還直接會點進廣告，反正就是個垃圾&lt;br&gt;所以試了幾個 block</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="productivity" scheme="https://chungchris.github.io/tags/productivity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 語言筆記</title>
+    <link href="https://chungchris.github.io/2021/08/10/software/language/cpp-note/"/>
+    <id>https://chungchris.github.io/2021/08/10/software/language/cpp-note/</id>
+    <published>2021-08-10T06:45:45.000Z</published>
+    <updated>2022-10-21T12:50:58.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Cheat-Sheet&quot;&gt;&lt;a href=&quot;#Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;Cheat Sheet&quot;&gt;&lt;/a&gt;Cheat Sheet&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="cpp" scheme="https://chungchris.github.io/tags/cpp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C 語言筆記</title>
+    <link href="https://chungchris.github.io/2021/08/10/software/language/c-note/"/>
+    <id>https://chungchris.github.io/2021/08/10/software/language/c-note/</id>
+    <published>2021-08-10T06:45:41.000Z</published>
+    <updated>2022-10-21T12:50:58.347Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Cheat-Sheet&quot;&gt;&lt;a href=&quot;#Cheat-Sheet&quot; class=&quot;headerlink&quot; title=&quot;Cheat Sheet&quot;&gt;&lt;/a&gt;Cheat Sheet&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="c" scheme="https://chungchris.github.io/tags/c/"/>
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode 刷題筆記</title>
+    <link href="https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/"/>
+    <id>https://chungchris.github.io/2021/07/22/software/leetcode/leetcode/</id>
+    <published>2021-07-22T03:02:55.000Z</published>
+    <updated>2022-10-21T12:50:58.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因為我其實不太愛刷題，覺得意義不明… 可能主要因為我的 career path</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>馬祖 - 碉堡！碉堡，碉堡。碉堡...</title>
+    <link href="https://chungchris.github.io/2021/07/08/taiwan/mazu/"/>
+    <id>https://chungchris.github.io/2021/07/08/taiwan/mazu/</id>
+    <published>2021-07-08T02:44:54.000Z</published>
+    <updated>2022-10-21T12:50:58.338Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“I’m not travelling alone. I’m travelling solo.”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;Highlights&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="taiwan" scheme="https://chungchris.github.io/categories/taiwan/"/>
+    
+    
+    <category term="台灣旅遊" scheme="https://chungchris.github.io/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/"/>
+    
+    <category term="離島旅遊" scheme="https://chungchris.github.io/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/"/>
+    
+    <category term="馬祖" scheme="https://chungchris.github.io/tags/%E9%A6%AC%E7%A5%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go 筆記</title>
+    <link href="https://chungchris.github.io/2021/07/06/software/language/go-note/"/>
+    <id>https://chungchris.github.io/2021/07/06/software/language/go-note/</id>
+    <published>2021-07-06T03:58:22.000Z</published>
+    <updated>2022-10-21T12:50:58.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下是推薦的入門步驟&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://tour.golang.org/welcome/1&quot;&gt;A Tour of Go&lt;/a&gt;：covers basic syntax and data structures; methods</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="go" scheme="https://chungchris.github.io/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rust 筆記</title>
+    <link href="https://chungchris.github.io/2021/06/30/software/language/rust-note/"/>
+    <id>https://chungchris.github.io/2021/06/30/software/language/rust-note/</id>
+    <published>2021-06-30T08:36:53.000Z</published>
+    <updated>2022-10-21T12:50:58.347Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;學習順序&quot;&gt;&lt;a href=&quot;#學習順序&quot; class=&quot;headerlink&quot; title=&quot;學習順序&quot;&gt;&lt;/a&gt;學習順序&lt;/h2&gt;&lt;p&gt;Rust 是一個學習曲線比較陡峭的語言，即使有其他語言基礎，如果沒有先讀書，而是直接上，那在 compile</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="programming language" scheme="https://chungchris.github.io/tags/programming-language/"/>
+    
+    <category term="rust" scheme="https://chungchris.github.io/tags/rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基礎資料結構演算法筆記</title>
+    <link href="https://chungchris.github.io/2021/06/21/software/data-structure/"/>
+    <id>https://chungchris.github.io/2021/06/21/software/data-structure/</id>
+    <published>2021-06-20T21:11:28.000Z</published>
+    <updated>2022-10-21T12:50:58.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;簡單的就直接空白了…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;資料結構-Data-Structure&quot;&gt;&lt;a href=&quot;#資料結構-Data-Structure&quot; class=&quot;headerlink&quot; title=&quot;資料結構</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="sort" scheme="https://chungchris.github.io/tags/sort/"/>
+    
+    <category term="search" scheme="https://chungchris.github.io/tags/search/"/>
+    
+    <category term="演算法" scheme="https://chungchris.github.io/tags/%E6%BC%94%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="資料結構" scheme="https://chungchris.github.io/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Compile. gcc 編譯 static link, dynamic link, dynamic load</title>
+    <link href="https://chungchris.github.io/2021/06/20/software/compile/"/>
+    <id>https://chungchris.github.io/2021/06/20/software/compile/</id>
+    <published>2021-06-20T15:20:37.000Z</published>
+    <updated>2022-10-21T12:50:58.339Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Reference&lt;br&gt;PTT LinuxDev, 作者: cole945 (躂躂..) 看板: LinuxDev, 標題: [心得] 用gcc 自製Library, 時間: Sun Nov 5 04:15:45</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="compile" scheme="https://chungchris.github.io/tags/compile/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git Basic. 基礎 Git 指令</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/basic-git/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/basic-git/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2022-10-21T12:50:58.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本篇介紹幾個 git 會用到的基本 command line 指令&lt;/p&gt;
+&lt;h2 id=&quot;安裝-on-Mac-OS&quot;&gt;&lt;a href=&quot;#安裝-on-Mac-OS&quot; class=&quot;headerlink&quot; title=&quot;安裝 on Mac OS&quot;&gt;&lt;/a&gt;安裝 on</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="git" scheme="https://chungchris.github.io/tags/git/"/>
+    
+    <category term="github" scheme="https://chungchris.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Basic Network Security. 基礎網路安全筆記</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/basic-network-security/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/basic-network-security/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2022-10-21T12:50:58.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;傳輸數據時的-4-個安全性問題&quot;&gt;&lt;a href=&quot;#傳輸數據時的-4-個安全性問題&quot; class=&quot;headerlink&quot; title=&quot;傳輸數據時的 4 個安全性問題&quot;&gt;&lt;/a&gt;傳輸數據時的 4 個安全性問題&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;竊聽</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="rsa" scheme="https://chungchris.github.io/tags/rsa/"/>
+    
+    <category term="signature" scheme="https://chungchris.github.io/tags/signature/"/>
+    
+    <category term="SSL" scheme="https://chungchris.github.io/tags/SSL/"/>
+    
+    <category term="TLS" scheme="https://chungchris.github.io/tags/TLS/"/>
+    
+    <category term="加密" scheme="https://chungchris.github.io/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+    <category term="網路安全" scheme="https://chungchris.github.io/tags/%E7%B6%B2%E8%B7%AF%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="數位簽章" scheme="https://chungchris.github.io/tags/%E6%95%B8%E4%BD%8D%E7%B0%BD%E7%AB%A0/"/>
+    
+    <category term="數位憑證" scheme="https://chungchris.github.io/tags/%E6%95%B8%E4%BD%8D%E6%86%91%E8%AD%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Soft AP on Mac. 在 Mac 上啟動 Soft AP 及 CGI handler</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/soft-ap-on-mac/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/soft-ap-on-mac/</id>
+    <published>2021-06-19T01:18:23.000Z</published>
+    <updated>2022-10-21T12:50:58.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;啟動 Mac 的 Wifi 的 AP mode，其他裝置就可以發 request 到你的</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="mac" scheme="https://chungchris.github.io/tags/mac/"/>
+    
+    <category term="osx" scheme="https://chungchris.github.io/tags/osx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python Asyncio</title>
+    <link href="https://chungchris.github.io/2021/06/19/software/language/python-asyncio/"/>
+    <id>https://chungchris.github.io/2021/06/19/software/language/python-asyncio/</id>
+    <published>2021-06-18T23:34:20.000Z</published>
+    <updated>2022-10-21T12:50:58.347Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本篇整理了 asyncio 在跨 thread 的三種情境，推薦大部分時候適用的最簡單那個做法&lt;/p&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;本篇對於 event</summary>
+        
+      
+    
+    
+    
+    <category term="software" scheme="https://chungchris.github.io/categories/software/"/>
+    
+    
+    <category term="python" scheme="https://chungchris.github.io/tags/python/"/>
+    
+    <category term="multithread" scheme="https://chungchris.github.io/tags/multithread/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #300 Longest Increasing Subsequence</title>
+    <link href="https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/"/>
+    <id>https://chungchris.github.io/2020/10/17/software/leetcode/Longest-Increasing-Subsequence/</id>
+    <published>2020-10-17T06:45:11.000Z</published>
+    <updated>2022-10-21T12:50:58.339Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #198 House Robber</title>
+    <link href="https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/"/>
+    <id>https://chungchris.github.io/2020/09/18/software/leetcode/House-Robber/</id>
+    <published>2020-09-18T00:06:25.000Z</published>
+    <updated>2022-10-21T12:50:58.345Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;給一個整數陣列，找最大可能的不相鄰數總合&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #105 Construct Binary Tree from Preorder and Inorder Traversal</title>
+    <link href="https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/"/>
+    <id>https://chungchris.github.io/2020/08/28/software/leetcode/Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/</id>
+    <published>2020-08-28T01:51:16.000Z</published>
+    <updated>2022-10-21T12:50:58.344Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供 Preorder 和 Inorder 順序，重建出整棵樹&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #1239 Maximum Length of a Concatenated String with Unique Characters</title>
+    <link href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/"/>
+    <id>https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/</id>
+    <published>2020-08-27T03:13:39.000Z</published>
+    <updated>2022-10-21T12:50:58.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供一些字串，用其組合出不重複字元的字串，找出最大的可能長度&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[LeetCode] #148 Sort List</title>
+    <link href="https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/"/>
+    <id>https://chungchris.github.io/2020/08/19/software/leetcode/Sort-List/</id>
+    <published>2020-08-19T01:16:12.000Z</published>
+    <updated>2022-10-21T12:50:58.345Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;將一個 linked list 排序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
+    
+    
+  </entry>
+  
+</feed>
