@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chungchris.github.io/google51287faf795f662b.html</loc>
+    
+    <lastmod>2022-11-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chungchris.github.io/2022/10/21/travelling/seoul-2022-oct/</loc>
     
     <lastmod>2022-11-03</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://chungchris.github.io/404.html</loc>
-    
-    <lastmod>2022-10-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chungchris.github.io/google3527194fd03e4b79.html</loc>
     
     <lastmod>2022-10-21</lastmod>
     
@@ -583,13 +583,6 @@
   </url>
   
   <url>
-    <loc>https://chungchris.github.io/tags/%E9%A6%96%E7%88%BE/</loc>
-    <lastmod>2022-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chungchris.github.io/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/</loc>
     <lastmod>2022-11-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -605,6 +598,13 @@
   
   <url>
     <loc>https://chungchris.github.io/tags/%E9%A6%AC%E7%A5%96/</loc>
+    <lastmod>2022-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chungchris.github.io/tags/%E9%A6%96%E7%88%BE/</loc>
     <lastmod>2022-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -662,14 +662,14 @@
 
   
   <url>
-    <loc>https://chungchris.github.io/categories/travelling/</loc>
+    <loc>https://chungchris.github.io/categories/software/</loc>
     <lastmod>2022-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chungchris.github.io/categories/software/</loc>
+    <loc>https://chungchris.github.io/categories/travelling/</loc>
     <lastmod>2022-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

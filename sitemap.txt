@@ -1,7 +1,7 @@
+https://chungchris.github.io/google51287faf795f662b.html
 https://chungchris.github.io/2022/10/21/travelling/seoul-2022-oct/
 https://chungchris.github.io/2021/07/08/taiwan/mazu/
 https://chungchris.github.io/404.html
-https://chungchris.github.io/google3527194fd03e4b79.html
 https://chungchris.github.io/categories/index.html
 https://chungchris.github.io/tags/index.html
 https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/
@@ -67,10 +67,10 @@ https://chungchris.github.io/tags/%E6%BC%94%E7%AE%97%E6%B3%95/
 https://chungchris.github.io/tags/%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B/
 https://chungchris.github.io/tags/mac/
 https://chungchris.github.io/tags/osx/
-https://chungchris.github.io/tags/%E9%A6%96%E7%88%BE/
 https://chungchris.github.io/tags/%E5%8F%B0%E7%81%A3%E6%97%85%E9%81%8A/
 https://chungchris.github.io/tags/%E9%9B%A2%E5%B3%B6%E6%97%85%E9%81%8A/
 https://chungchris.github.io/tags/%E9%A6%AC%E7%A5%96/
+https://chungchris.github.io/tags/%E9%A6%96%E7%88%BE/
 https://chungchris.github.io/tags/c/
 https://chungchris.github.io/tags/programming-language/
 https://chungchris.github.io/tags/cpp/
@@ -78,8 +78,8 @@ https://chungchris.github.io/tags/go/
 https://chungchris.github.io/tags/python/
 https://chungchris.github.io/tags/multithread/
 https://chungchris.github.io/tags/rust/
-https://chungchris.github.io/categories/travelling/
 https://chungchris.github.io/categories/software/
+https://chungchris.github.io/categories/travelling/
 https://chungchris.github.io/categories/sketch/
 https://chungchris.github.io/categories/taiwan/
 https://chungchris.github.io/categories/software-leetcode/
