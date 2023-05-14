@@ -6,7 +6,7 @@
   <link href="https://chungchris.github.io/atom.xml" rel="self"/>
   
   <link href="https://chungchris.github.io/"/>
-  <updated>2022-11-06T00:21:14.805Z</updated>
+  <updated>2023-05-14T01:12:37.834Z</updated>
   <id>https://chungchris.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lost iPhone in Bangkok</title>
+    <link href="https://chungchris.github.io/2023/05/14/sketch/lost-iphone-in-bangkok/"/>
+    <id>https://chungchris.github.io/2023/05/14/sketch/lost-iphone-in-bangkok/</id>
+    <published>2023-05-14T01:07:12.000Z</published>
+    <updated>2023-05-14T01:12:37.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;一個 2023 年 4 月在曼谷潑水節，iphone 14 pro 被幹走的故事&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Highlights&quot;&gt;&lt;a href=&quot;#Highlights&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="sketch" scheme="https://chungchris.github.io/categories/sketch/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>COVID 解封後首次出國度假！釜山（Busan）2022-Oct</title>
@@ -87,14 +113,14 @@
     <link href="https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/"/>
     <id>https://chungchris.github.io/2021/10/09/sketch/pay-taiwan-tax-when-working-abroad/</id>
     <published>2021-10-09T01:46:49.000Z</published>
-    <updated>2022-10-21T12:50:58.349Z</updated>
+    <updated>2023-05-14T00:35:46.528Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;先講結論，就是如果在台灣待累計超過 31 天，且海外所得超過 台幣100萬，那最好要申報，但最終很難因此實際需要多繳到稅&lt;/p&gt;
+    <summary type="html">&lt;p&gt;先講結論，就是如果在台灣待累計超過 31 天，且海外所得超過&lt;code&gt;台幣 100 萬&lt;/code&gt;，那最好要申報，但最終很難因此實際需要多繳到稅&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我只是講我 survey 的結果和個人理解，不負責任的呦 &lt;span</summary>
         
@@ -544,31 +570,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供 Preorder 和 Inorder 順序，重建出整棵樹&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="software/leetcode" scheme="https://chungchris.github.io/categories/software-leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>[LeetCode] #1239 Maximum Length of a Concatenated String with Unique Characters</title>
-    <link href="https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/"/>
-    <id>https://chungchris.github.io/2020/08/27/software/leetcode/Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/</id>
-    <published>2020-08-27T03:13:39.000Z</published>
-    <updated>2022-10-21T12:50:58.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;提供一些字串，用其組合出不重複字元的字串，找出最大的可能長度&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a</summary>
         
